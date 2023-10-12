@@ -86,12 +86,10 @@ html, body {
       html .login-window .auth input:first-child, body .login-window .auth input:first-child {
         margin-top: 0; }
       html .login-window .auth input[type="text"]:hover, html .login-window .auth input[type="password"]:hover, body .login-window .auth input[type="text"]:hover, body .login-window .auth input[type="password"]:hover {
-        transform: scale(0.95);
-        box-shadow: 0 0 47px -8px #294861;
+        box-shadow: 0px 0px 10px 2px #294861;
         transition: all 0.25s; }
       html .login-window .auth input[type="text"]:focus, html .login-window .auth input[type="password"]:focus, body .login-window .auth input[type="text"]:focus, body .login-window .auth input[type="password"]:focus {
-        transform: scale(0.95);
-        box-shadow: 0 0 47px -8px #294861;
+        box-shadow: 0px 0px 10px 2px #294861;
         transition: all 0.25s; }
       html .login-window .auth input[type="submit"], body .login-window .auth input[type="submit"] {
         font-family: Poppins-Regular, sans-serif;
