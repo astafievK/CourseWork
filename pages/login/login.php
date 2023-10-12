@@ -9,16 +9,37 @@
     <title>Вход</title>
 </head>
 <body>
-    <div class="login-window">
-        <span class="title">Система контроля работ студентов</span>
-        <form class="auth" action="login.php" method="POST">
-            <span class="subtitle">Вход</span>
-            <input id="loginInput" type="text" name="login" placeholder="Логин">
-            <input id="passwordInput" type="password" name="password" placeholder="Пароль">
-            <input id="enterInput" type="submit" name="enter" value="Авторизоваться">
-        </form>
+<div class="login-window">
+    <div class="promo">
+        <h1>Система контроля работ студентов</h1>
+        <h2>Узнайте про все свои долги по работам в одном месте</h2>
     </div>
 
-    <script src="scripts/login.js"></script>
+    <form class="auth" action="login.php" method="POST">
+        <span class="subtitle">Вход</span>
+        <input
+            id="loginInput"
+            type="text"
+            name="login"
+            placeholder="Логин">
+        <input
+            id="passwordInput"
+            type="password"
+            name="password"
+            placeholder="Пароль">
+        <input
+            id="enterInput"
+            type="submit"
+            name="enter"
+            value="Авторизоваться">
+        <input
+            id="forgotPassword"
+            type="submit"
+            name="forgotPassword"
+            value="восстановить пароль">
+    </form>
+</div>
+
+<script src="scripts/login.js"></script>
 </body>
 </html>

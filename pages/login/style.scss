@@ -25,13 +25,15 @@
   box-sizing: border-box;
 }
 
+input{
+  cursor: pointer;
+}
+
 html, body{
   height: 100%;
   font-family: Poppins-Regular, sans-serif;
-
   outline: none;
   background: linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
-
 
   .login-window{
     display: flex;
@@ -48,15 +50,30 @@ html, body{
     justify-content: space-between;
     padding: 85px 33px 85px 45px;
 
-    .title{
-      color: #e1e3e6;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      font-size: 35px;
-      font-weight: 700;
+    .promo{
       width: 50%;
+      display: grid;
+      align-items: center;
+
+      h1, h2{
+        user-select: none;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 700;
+      }
+
+      h1{
+        font-size: 35px;
+        color: #e1e3e6;
+      }
+
+      h2{
+        font-size: 20px;
+        line-height: 1.1;
+        color: #afafaf;
+      }
     }
+
 
     .auth{
       display: flex;
@@ -101,13 +118,13 @@ html, body{
       }
 
       input[type="text"]:hover, input[type="password"]:hover{
-        transform: scale(0.975);
+        transform: scale(0.95);
         box-shadow: 0 0 47px -8px hsla(207, 41%, 27%, 1 );
         transition: all 0.25s;
       }
 
       input[type="text"]:focus, input[type="password"]:focus{
-          transform: scale(1);
+        transform: scale(0.95);
         box-shadow: 0 0 47px -8px hsla(207, 41%, 27%, 1);
         transition: all 0.25s;
       }
@@ -121,7 +138,6 @@ html, body{
         font-weight: 700;
         border-radius: 23px;
         background: #333333;
-
         color: #FFFFFF;
 
         transition: all 0.35s;
@@ -131,6 +147,20 @@ html, body{
         background: #408835;
 
         transition: all 0.35s;
+      }
+
+      #forgotPassword{
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: -5px;
+        color: #666;
+        width: auto;
+      }
+
+      #forgotPassword:hover{
+        color: #e1e3e6;
       }
     }
   }

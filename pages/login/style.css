@@ -17,6 +17,9 @@
   outline: none;
   box-sizing: border-box; }
 
+input {
+  cursor: pointer; }
+
 html, body {
   height: 100%;
   font-family: Poppins-Regular, sans-serif;
@@ -36,14 +39,22 @@ html, body {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 85px 33px 85px 45px; }
-    html .login-window .title, body .login-window .title {
-      color: #e1e3e6;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      font-size: 35px;
-      font-weight: 700;
-      width: 50%; }
+    html .login-window .promo, body .login-window .promo {
+      width: 50%;
+      display: grid;
+      align-items: center; }
+      html .login-window .promo h1, html .login-window .promo h2, body .login-window .promo h1, body .login-window .promo h2 {
+        user-select: none;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 700; }
+      html .login-window .promo h1, body .login-window .promo h1 {
+        font-size: 35px;
+        color: #e1e3e6; }
+      html .login-window .promo h2, body .login-window .promo h2 {
+        font-size: 20px;
+        line-height: 1.1;
+        color: #afafaf; }
     html .login-window .auth, body .login-window .auth {
       display: flex;
       align-items: center;
@@ -75,11 +86,11 @@ html, body {
       html .login-window .auth input:first-child, body .login-window .auth input:first-child {
         margin-top: 0; }
       html .login-window .auth input[type="text"]:hover, html .login-window .auth input[type="password"]:hover, body .login-window .auth input[type="text"]:hover, body .login-window .auth input[type="password"]:hover {
-        transform: scale(0.975);
+        transform: scale(0.95);
         box-shadow: 0 0 47px -8px #294861;
         transition: all 0.25s; }
       html .login-window .auth input[type="text"]:focus, html .login-window .auth input[type="password"]:focus, body .login-window .auth input[type="text"]:focus, body .login-window .auth input[type="password"]:focus {
-        transform: scale(1);
+        transform: scale(0.95);
         box-shadow: 0 0 47px -8px #294861;
         transition: all 0.25s; }
       html .login-window .auth input[type="submit"], body .login-window .auth input[type="submit"] {
@@ -96,5 +107,15 @@ html, body {
       html .login-window .auth input[type="submit"]:hover, body .login-window .auth input[type="submit"]:hover {
         background: #408835;
         transition: all 0.35s; }
+      html .login-window .auth #forgotPassword, body .login-window .auth #forgotPassword {
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: -5px;
+        color: #666;
+        width: auto; }
+      html .login-window .auth #forgotPassword:hover, body .login-window .auth #forgotPassword:hover {
+        color: #e1e3e6; }
 
 /*# sourceMappingURL=style.css.map */
