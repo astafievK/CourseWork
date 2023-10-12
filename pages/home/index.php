@@ -14,6 +14,10 @@ require "../connection.php"
     <title>Главная</title>
 </head>
 <body>
+    <table>
+        <tr>
 
+        </tr>
+    </table>
 </body>
 </html>
