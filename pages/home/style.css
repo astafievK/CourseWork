@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: Poppins-Regular;
   src: url("../../assets/fonts/poppins/Poppins-Regular.ttf"); }
@@ -29,7 +28,7 @@ html {
     html body .table-container {
       width: 100%;
       height: 100%;
-      padding: 10px 50px;
+      padding: 0 50px 10px 50px;
       border-radius: 15px;
       background: #292929;
       overflow: scroll; }
@@ -39,14 +38,18 @@ html {
         background: #292929;
         color: #e1e3e6;
         border-collapse: collapse;
-        table-layout: fixed;
-        /* установка фиксированной ширины колонок */ }
+        table-layout: fixed; }
         html body .table-container table thead {
-          position: sticky;
-          height: 40px;
-          font-size: 25px; }
+          height: 80px;
+          font-size: 25px;
+          border-color: #666; }
           html body .table-container table thead tr th {
-            width: 150px; }
+            top: 0;
+            position: sticky;
+            background-color: #292929;
+            z-index: 1;
+            width: 110px;
+            border-bottom: 1px solid #666; }
           html body .table-container table thead tr th.column-fullName {
             width: 350px; }
           html body .table-container table thead tr th.column-id {
@@ -56,12 +59,13 @@ html {
           border-bottom: 1px solid #666; }
           html body .table-container table tbody tr td {
             position: relative;
-            font-size: 18px; }
+            font-size: 21px; }
             html body .table-container table tbody tr td div {
               position: absolute;
               top: 50%;
               left: 50%;
-              transform: translate(-50%, -50%); }
+              transform: translate(-50%, -50%);
+              font-weight: 700; }
             html body .table-container table tbody tr td .bad, html body .table-container table tbody tr td .satisfactory, html body .table-container table tbody tr td .good, html body .table-container table tbody tr td .cool {
               display: flex;
               align-items: center;
@@ -70,18 +74,33 @@ html {
               height: 50px;
               border-radius: 7px; }
             html body .table-container table tbody tr td div.bad {
-              border: 2px solid rgba(255, 0, 0, 0.8);
-              background: rgba(255, 0, 0, 0.1); }
+              border: 2px solid rgba(255, 0, 0, 0.4);
+              box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.3);
+              background: rgba(255, 0, 0, 0.05); }
             html body .table-container table tbody tr td div.satisfactory {
-              border: 2px solid rgba(255, 140, 0, 0.8);
-              background: rgba(255, 140, 0, 0.1); }
+              border: 2px solid rgba(255, 140, 0, 0.4);
+              box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.3);
+              background: rgba(255, 140, 0, 0.05); }
             html body .table-container table tbody tr td div.good {
-              border: 2px solid rgba(46, 139, 87, 0.8);
-              background: rgba(46, 139, 87, 0.1); }
+              border: 2px solid rgba(46, 139, 87, 0.4);
+              box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.3);
+              background: rgba(46, 139, 87, 0.05); }
             html body .table-container table tbody tr td div.cool {
-              border: 2px solid rgba(144, 238, 144, 0.8);
-              background: rgba(144, 238, 144, 0.1); }
+              border: 2px solid rgba(144, 238, 144, 0.4);
+              box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.3);
+              background: rgba(144, 238, 144, 0.05); }
           html body .table-container table tbody tr td:first-child {
             text-align: left; }
+        html body .table-container table tbody tr:last-child {
+          border-bottom: none; }
+    html body .table-container::-webkit-scrollbar {
+      width: 5px;
+      height: 5px; }
+    html body .table-container::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 6px; }
+    html body .table-container::-webkit-scrollbar-thumb {
+      background-color: #e1e3e6;
+      border-radius: 6px; }
 
 /*# sourceMappingURL=style.css.map */
