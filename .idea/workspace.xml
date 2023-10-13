@@ -7,6 +7,7 @@
     <list default="true" id="79611863-c64d-4270-a20c-aa641f6dde78" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/.sass-cache/cb2d4f01fcb7e12e7f725a05fc0f3f83d12ee565/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/.sass-cache/cb2d4f01fcb7e12e7f725a05fc0f3f83d12ee565/style.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/style.scss" afterDir="false" />
@@ -80,7 +81,8 @@
       <workItem from="1697036193892" duration="15030000" />
       <workItem from="1697116452471" duration="2208000" />
       <workItem from="1697136627179" duration="5401000" />
-      <workItem from="1697181589438" duration="5154000" />
+      <workItem from="1697181589438" duration="10255000" />
+      <workItem from="1697195728852" duration="1323000" />
     </task>
     <servers />
   </component>
