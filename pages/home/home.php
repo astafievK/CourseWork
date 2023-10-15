@@ -1,6 +1,20 @@
 <?php
-require "../connection.php"
+require "../connection.php";
+$group = "ispp01";
+$idStudent = "1";
+function printMarks(){
+    $sql = "select * from student where groupName = 'ispp01'";
 
+
+}
+
+function checkMark(){
+
+}
+
+function averageMark(){
+    $sql = "select * from marks";
+}
 ?>
 
 <!doctype html>
@@ -15,8 +29,9 @@ require "../connection.php"
 </head>
 <body>
 <div class="table-container">
-    <table>
-        <thead>
+    <form method="POST" action="home.php">
+        <table id="table">
+            <thead>
             <tr>
                 <th class="column-id">ID</th>
                 <th class="column-fullName">ФИО</th>
@@ -26,534 +41,114 @@ require "../connection.php"
                 <th>ЛР4</th>
                 <th>ЛР5</th>
                 <th>ЛР6</th>
+                <th>ЛР7</th>
+                <th>ЛР8</th>
+                <th>ЛР9</th>
                 <th>ПР1</th>
                 <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
-                <th>ПР2</th>
+                <th>ПР3</th>
+                <th>ПР4</th>
+                <th>ПР5</th>
+                <th>ПР6</th>
+                <th>ПР7</th>
+                <th>ПР8</th>
+                <th>ПР9</th>
+                <th>ПР10</th>
+                <th>СР1</th>
+                <th>СР2</th>
+                <th>СР3</th>
+                <th>СР4</th>
+                <th>СР5</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr>
                 <td>1</td>
-                <td>Акберов Муса</td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="cool">5</div></td>
-
+                <td>Астафьев Кирилл Александрович</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
             </tr>
             <tr>
-                <td>15</td>
+                <td>1</td>
                 <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
             </tr>
             <tr>
-                <td>15</td>
+                <td>1</td>
                 <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
             </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Астафьев Кирилл Александрович</td>
-                <td><div class="satisfactory">3</div></td>
-                <td><div class="cool">5</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="bad">2</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-                <td><div class="good">4</div></td>
-            </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </form>
 </div>
 </body>
 </html>

@@ -30,18 +30,18 @@ html {
       border-radius: 15px;
       background: #292929;
       overflow: scroll; }
-      html body .table-container table {
+      html body .table-container form table {
         height: 100%;
         width: 100%;
         background: #292929;
         color: #e1e3e6;
         border-collapse: collapse;
         table-layout: fixed; }
-        html body .table-container table thead {
+        html body .table-container form table thead {
           height: 80px;
           font-size: 25px;
           border-color: #666; }
-          html body .table-container table thead tr th {
+          html body .table-container form table thead tr th {
             border-bottom: 5px solid #666666;
             top: 0;
             position: sticky;
@@ -49,35 +49,37 @@ html {
             background-color: #292929;
             width: 110px;
             border-bottom: 1px solid #666; }
-          html body .table-container table thead tr th.column-fullName {
-            width: 350px; }
-          html body .table-container table thead tr th.column-id {
+          html body .table-container form table thead tr th.column-fullName {
+            width: 200px; }
+          html body .table-container form table thead tr th.column-id {
             width: 70px; }
-        html body .table-container table tbody tr {
+        html body .table-container form table tbody tr {
           height: 100px;
           border-bottom: 1px solid #666; }
-          html body .table-container table tbody tr td:nth-child(1) {
+          html body .table-container form table tbody tr td:nth-child(1) {
             background-color: #292929;
             left: 0;
             position: sticky;
             z-index: 1;
             text-align: center; }
-          html body .table-container table tbody tr td:nth-child(2) {
+          html body .table-container form table tbody tr td:nth-child(2) {
             background-color: #292929;
             left: 70px;
             position: sticky;
             z-index: 1;
             text-align: center; }
-          html body .table-container table tbody tr td {
+          html body .table-container form table tbody tr td {
             position: relative;
             font-size: 21px; }
-            html body .table-container table tbody tr td div {
+            html body .table-container form table tbody tr td button {
               position: absolute;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
-              font-weight: 700; }
-            html body .table-container table tbody tr td .bad, html body .table-container table tbody tr td .satisfactory, html body .table-container table tbody tr td .good, html body .table-container table tbody tr td .cool {
+              font-weight: 700;
+              color: #e1e3e6;
+              font-size: 21px; }
+            html body .table-container form table tbody tr td .bad, html body .table-container form table tbody tr td .satisfactory, html body .table-container form table tbody tr td .good, html body .table-container form table tbody tr td .cool {
               display: flex;
               align-items: center;
               justify-content: center;
@@ -87,39 +89,35 @@ html {
               cursor: pointer;
               user-select: none;
               transition: all 0.2s; }
-            html body .table-container table tbody tr td div.bad {
+            html body .table-container form table tbody tr td button.bad {
               border: 2px solid rgba(255, 0, 0, 0.4);
-              box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.3);
               background: rgba(255, 0, 0, 0.05); }
-            html body .table-container table tbody tr td div.bad:hover {
+            html body .table-container form table tbody tr td button.bad:hover {
               border: 2px solid rgba(255, 0, 0, 0.9);
               box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8);
-              transition: all 0.2s; }
-            html body .table-container table tbody tr td div.satisfactory {
+              transition: all 0.3s; }
+            html body .table-container form table tbody tr td button.satisfactory {
               border: 2px solid rgba(255, 140, 0, 0.4);
-              box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.3);
               background: rgba(255, 140, 0, 0.05); }
-            html body .table-container table tbody tr td div.satisfactory:hover {
+            html body .table-container form table tbody tr td button.satisfactory:hover {
               border: 2px solid rgba(255, 140, 0, 0.9);
               box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.8);
-              transition: all 0.2s; }
-            html body .table-container table tbody tr td div.good {
+              transition: all 0.3s; }
+            html body .table-container form table tbody tr td button.good {
               border: 2px solid rgba(46, 139, 87, 0.4);
-              box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.3);
               background: rgba(46, 139, 87, 0.05); }
-            html body .table-container table tbody tr td div.good:hover {
+            html body .table-container form table tbody tr td button.good:hover {
               border: 2px solid rgba(46, 139, 87, 0.9);
               box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.8);
-              transition: all 0.2s; }
-            html body .table-container table tbody tr td div.cool {
+              transition: all 0.3s; }
+            html body .table-container form table tbody tr td button.cool {
               border: 2px solid rgba(144, 238, 144, 0.4);
-              box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.3);
               background: rgba(144, 238, 144, 0.05); }
-            html body .table-container table tbody tr td div.cool:hover {
+            html body .table-container form table tbody tr td button.cool:hover {
               border: 2px solid rgba(144, 238, 144, 0.9);
               box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.8);
-              transition: all 0.2s; }
-        html body .table-container table tbody tr:last-child {
+              transition: all 0.3s; }
+        html body .table-container form table tbody tr:last-child {
           border-bottom: none; }
     html body .table-container::-webkit-scrollbar {
       width: 5px;

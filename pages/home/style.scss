@@ -32,6 +32,7 @@ html{
     outline: none;
     background: linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
 
+
     .table-container{
       width: 100%;
       height: 100%;
@@ -40,138 +41,139 @@ html{
       background: #292929;
       overflow: scroll;
 
-      table{
-        height: 100%;
-        width: 100%;
-        background: #292929;
-        color: #e1e3e6;
-        border-collapse: collapse;
-        table-layout: fixed;
+      form{
 
-        thead{
-          height: 80px;
-          font-size: 25px;
-          border-color: #666;
+        table{
+          height: 100%;
+          width: 100%;
+          background: #292929;
+          color: #e1e3e6;
+          border-collapse: collapse;
+          table-layout: fixed;
 
-          tr{
-            th{
-              border-bottom: 5px solid #666666;
-              top: 0;
-              position: sticky;
-              z-index: 2;
-              background-color: #292929;
-              width: 110px;
+          thead{
+            height: 80px;
+            font-size: 25px;
+            border-color: #666;
+
+            tr{
+              th{
+                border-bottom: 5px solid #666666;
+                top: 0;
+                position: sticky;
+                z-index: 2;
+                background-color: #292929;
+                width: 110px;
+                border-bottom: 1px solid #666;
+              }
+
+              th.column-fullName{
+                width: 200px;
+              }
+
+              th.column-id{
+                width: 70px;
+              }
+            }
+          }
+
+          tbody{
+            tr{
+              height: 100px;
               border-bottom: 1px solid #666;
-            }
 
-            th.column-fullName{
-              width: 350px;
-            }
-
-            th.column-id{
-              width: 70px;
-            }
-          }
-        }
-
-        tbody{
-          tr{
-            height: 100px;
-            border-bottom: 1px solid #666;
-
-            td:nth-child(1){
-              background-color: #292929;
-              left: 0;
-              position: sticky;
-              z-index: 1;
-              text-align: center;
-            }
-
-            td:nth-child(2){
-              background-color: #292929;
-              left: 70px;
-              position: sticky;
-              z-index: 1;
-              text-align: center;
-            }
-
-            td{
-              position: relative;
-              font-size: 21px;
-
-              div{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-weight: 700;
+              td:nth-child(1){
+                background-color: #292929;
+                left: 0;
+                position: sticky;
+                z-index: 1;
+                text-align: center;
               }
 
-              .bad, .satisfactory, .good, .cool{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 50px;
-                height: 50px;
-                border-radius: 7px;
-                cursor: pointer;
-                user-select: none;
-
-                transition: all 0.2s;
+              td:nth-child(2){
+                background-color: #292929;
+                left: 70px;
+                position: sticky;
+                z-index: 1;
+                text-align: center;
               }
 
-              div.bad{
-                border: 2px solid rgba(255, 0, 0, 0.4);
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.3);
-                background: rgba(255, 0, 0, 0.05);
-              }
+              td{
+                position: relative;
+                font-size: 21px;
 
-              div.bad:hover{
-                border: 2px solid rgba(255, 0, 0, 0.9);
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8);
-                transition: all 0.2s;
-              }
+                button{
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  font-weight: 700;
+                  color: #e1e3e6;
+                  font-size: 21px;
+                }
 
-              div.satisfactory{
-                border: 2px solid rgba(255, 140, 0, 0.4);
-                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.3);
-                background: rgba(255, 140, 0, 0.05);
-              }
+                .bad, .satisfactory, .good, .cool{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 7px;
+                  cursor: pointer;
+                  user-select: none;
 
-              div.satisfactory:hover{
-                border: 2px solid rgba(255, 140, 0, 0.9);
-                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.8);
-                transition: all 0.2s;
-              }
+                  transition: all 0.2s;
+                }
 
-              div.good{
-                border: 2px solid rgba(46, 139, 87, 0.4);
-                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.3);
-                background: rgba(46, 139, 87, 0.05);
-              }
+                button.bad{
+                  border: 2px solid rgba(255, 0, 0, 0.4);
+                  background: rgba(255, 0, 0, 0.05);
+                }
 
-              div.good:hover{
-                border: 2px solid rgba(46, 139, 87, 0.9);
-                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.8);
-                transition: all 0.2s;
-              }
+                button.bad:hover{
+                  border: 2px solid rgba(255, 0, 0, 0.9);
+                  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8);
+                  transition: all 0.3s;
+                }
 
-              div.cool{
-                border: 2px solid rgba(144, 238, 144, 0.4);
-                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.3);
-                background: rgba(144, 238, 144, 0.05);
-              }
+                button.satisfactory{
+                  border: 2px solid rgba(255, 140, 0, 0.4);
+                  background: rgba(255, 140, 0, 0.05);
+                }
 
-              div.cool:hover{
-                border: 2px solid rgba(144, 238, 144, 0.9);
-                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.8);
-                transition: all 0.2s;
+                button.satisfactory:hover{
+                  border: 2px solid rgba(255, 140, 0, 0.9);
+                  box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.8);
+                  transition: all 0.3s;
+                }
+
+                button.good{
+                  border: 2px solid rgba(46, 139, 87, 0.4);
+                  background: rgba(46, 139, 87, 0.05);
+                }
+
+                button.good:hover{
+                  border: 2px solid rgba(46, 139, 87, 0.9);
+                  box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.8);
+                  transition: all 0.3s;
+                }
+
+                button.cool{
+                  border: 2px solid rgba(144, 238, 144, 0.4);
+                  background: rgba(144, 238, 144, 0.05);
+                }
+
+                button.cool:hover{
+                  border: 2px solid rgba(144, 238, 144, 0.9);
+                  box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.8);
+                  transition: all 0.3s;
+                }
               }
             }
-          }
 
-          tr:last-child{
-            border-bottom: none;
+            tr:last-child{
+              border-bottom: none;
+            }
           }
         }
       }
