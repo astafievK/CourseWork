@@ -13,11 +13,7 @@
   src: url('../../assets/fonts/poppins/Poppins-Medium.ttf');
 }
 
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url('../../assets/fonts/montserrat/Montserrat-Bold.ttf');
-}
-
+$headerHeight: 80px;
 $mediaSize-small: 480px;
 $mediaSize-medium: 768px;
 $mediaSize-large: 1024px;
@@ -31,24 +27,103 @@ html{
   height: 100%;
 
   body {
+    color: #e1e3e6;
     padding: 35px;
     height: 100%;
     font-family: Poppins-Regular, sans-serif;
     outline: none;
     background: linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
 
+    header{
+      height: $headerHeight;
+      border-radius: 15px;
+      background: #292929;
+      padding: 0 70px 0 70px;
 
-    .table-container{
+      .header-content{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .check{
+          width: 55%;
+          display: flex;
+          flex-direction: row;
+
+          label{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            flex-direction: row;
+            user-select: none;
+            font-size: 21px;
+            cursor: pointer;
+            flex-grow: 1;
+
+            input{
+              margin-right: 10px;
+              width: 20px;
+              height: 20px;
+              border: 2px solid red;
+
+              transition: all 0.2s;
+
+              &:checked{
+                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+              }
+            }
+
+            span{
+
+            }
+
+            &:hover{
+
+              input{
+                transition: all 0.2s;
+              }
+
+              #checkBad{
+                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+              }
+
+              #checkSatisfactory{
+                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+              }
+
+              #checkGood{
+                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+              }
+
+              #checkCool{
+                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+              }
+            }
+          }
+
+
+        }
+
+        .disciplines{
+          width: 45%;
+        }
+      }
+    }
+
+    .table-container {
       width: 100%;
-      height: 100%;
+      height: calc(100% - 95px);
+      margin-top: 15px;
       padding: 0 50px 10px 0;
       border-radius: 15px;
       background: #292929;
       overflow: scroll;
 
-      form{
+      .table-wrapper {
 
-        table{
+        table {
           height: 100%;
           width: 100%;
           background: #292929;
@@ -56,13 +131,13 @@ html{
           border-collapse: collapse;
           table-layout: fixed;
 
-          thead{
+          thead {
             height: 80px;
             font-size: 25px;
             border-color: #666;
 
-            tr{
-              th{
+            tr {
+              th {
                 border-bottom: 5px solid #666666;
                 top: 0;
                 position: sticky;
@@ -72,22 +147,22 @@ html{
                 border-bottom: 1px solid #666;
               }
 
-              th.column-fullName{
+              th.column-fullName {
                 width: 200px;
               }
 
-              th.column-id{
+              th.column-id {
                 width: 70px;
               }
             }
           }
 
-          tbody{
-            tr{
+          tbody {
+            tr {
               height: 115px;
               border-bottom: 1px solid #666;
 
-              td:nth-child(1){
+              td:nth-child(1) {
                 background-color: #292929;
                 left: 0;
                 position: sticky;
@@ -95,7 +170,7 @@ html{
                 text-align: center;
               }
 
-              td:nth-child(2){
+              td:nth-child(2) {
                 background-color: #292929;
                 left: 70px;
                 position: sticky;
@@ -103,11 +178,11 @@ html{
                 text-align: center;
               }
 
-              td{
+              td {
                 position: relative;
                 font-size: 21px;
 
-                button{
+                button {
                   position: absolute;
                   top: 50%;
                   left: 50%;
@@ -117,66 +192,75 @@ html{
                   font-size: 21px;
                 }
 
-                .bad, .satisfactory, .good, .cool{
+                button.bad,
+                button.satisfactory,
+                button.good,
+                button.cool {
+                  width: 50px;
+                  height: 50px;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  width: 50px;
-                  height: 50px;
+                  border: 2px solid rgba(102, 102, 102, 0.4);
+                  background: transparent;
                   border-radius: 7px;
                   cursor: pointer;
                   user-select: none;
 
-                  transition: all 0.2s;
+                  transition: all 0.1s;
                 }
 
-                button.bad{
+                button.bad.coloured {
                   border: 2px solid rgba(255, 0, 0, 0.4);
                   background: rgba(255, 0, 0, 0.05);
                 }
 
-                button.bad:hover{
+                button.bad:hover {
                   border: 2px solid rgba(255, 0, 0, 0.9);
-                  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8);
-                  transition: all 0.3s;
+                  background: rgba(255, 0, 0, 0.05);
+                  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+                  transition: all 0.1s;
                 }
 
-                button.satisfactory{
+                button.satisfactory.coloured {
                   border: 2px solid rgba(255, 140, 0, 0.4);
                   background: rgba(255, 140, 0, 0.05);
                 }
 
-                button.satisfactory:hover{
+                button.satisfactory:hover {
                   border: 2px solid rgba(255, 140, 0, 0.9);
-                  box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.8);
-                  transition: all 0.3s;
+                  background: rgba(255, 140, 0, 0.05);
+                  box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+                  transition: all 0.1s;
                 }
 
-                button.good{
+                button.good.coloured {
                   border: 2px solid rgba(46, 139, 87, 0.4);
                   background: rgba(46, 139, 87, 0.05);
                 }
 
-                button.good:hover{
+                button.good:hover {
                   border: 2px solid rgba(46, 139, 87, 0.9);
-                  box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.8);
-                  transition: all 0.3s;
+                  background: rgba(46, 139, 87, 0.05);
+                  box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+                  transition: all 0.1s;
                 }
 
-                button.cool{
+                button.cool.coloured {
                   border: 2px solid rgba(144, 238, 144, 0.4);
                   background: rgba(144, 238, 144, 0.05);
                 }
 
-                button.cool:hover{
+                button.cool:hover {
                   border: 2px solid rgba(144, 238, 144, 0.9);
-                  box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.8);
-                  transition: all 0.3s;
+                  background: rgba(144, 238, 144, 0.05);
+                  box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+                  transition: all 0.1s;
                 }
               }
             }
 
-            tr:last-child{
+            tr:last-child {
               border-bottom: none;
             }
           }

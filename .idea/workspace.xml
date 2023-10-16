@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79611863-c64d-4270-a20c-aa641f6dde78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/home/scripts/filter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/.sass-cache/cb2d4f01fcb7e12e7f725a05fc0f3f83d12ee565/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/.sass-cache/cb2d4f01fcb7e12e7f725a05fc0f3f83d12ee565/style.scssc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.php" afterDir="false" />
@@ -86,12 +87,23 @@
       <workItem from="1697211592649" duration="5969000" />
       <workItem from="1697295963824" duration="1276000" />
       <workItem from="1697390797139" duration="904000" />
-      <workItem from="1697460481130" duration="1754000" />
+      <workItem from="1697460481130" duration="17637000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
