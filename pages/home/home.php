@@ -57,6 +57,7 @@ function averageMark(){
             <button>МДК 01.01</button>
             <button>МДК 01.02</button>
             <button>МДК 01.03</button>
+            <button>ОПБД</button>
         </div>
     </div>
 </header>

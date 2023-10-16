@@ -70,13 +70,22 @@ html{
 
               transition: all 0.2s;
 
-              &:checked{
+
+              #checkBad:checked{
+                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+              }
+
+              #checkSatisfactory:checked{
                 box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
               }
-            }
 
-            span{
+              #checkGood:checked{
+                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+              }
 
+              #checkCool:checked{
+                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+              }
             }
 
             &:hover{
@@ -102,12 +111,30 @@ html{
               }
             }
           }
-
-
         }
 
         .disciplines{
           width: 45%;
+          display: flex;
+          justify-content: space-evenly;
+
+          button{
+            font-size: 21px;
+            color: #e1e3e6;
+            height: 50px;
+            width: 150px;
+            background: transparent;
+            border: 2px solid #666;
+            border-radius: 7px;
+
+            transition: all 0.2s;
+
+            &:hover{
+              border-color: #e1e3e6;
+
+              transition: all 0.2s;
+            }
+          }
         }
       }
     }

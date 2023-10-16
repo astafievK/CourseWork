@@ -51,8 +51,14 @@ html {
               height: 20px;
               border: 2px solid red;
               transition: all 0.2s; }
-              html body header .header-content .check label input:checked {
+              html body header .header-content .check label input #checkBad:checked {
+                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6); }
+              html body header .header-content .check label input #checkSatisfactory:checked {
                 box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6); }
+              html body header .header-content .check label input #checkGood:checked {
+                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6); }
+              html body header .header-content .check label input #checkCool:checked {
+                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6); }
             html body header .header-content .check label:hover input {
               transition: all 0.2s; }
             html body header .header-content .check label:hover #checkBad {
@@ -64,7 +70,21 @@ html {
             html body header .header-content .check label:hover #checkCool {
               box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6); }
         html body header .header-content .disciplines {
-          width: 45%; }
+          width: 45%;
+          display: flex;
+          justify-content: space-evenly; }
+          html body header .header-content .disciplines button {
+            font-size: 21px;
+            color: #e1e3e6;
+            height: 50px;
+            width: 150px;
+            background: transparent;
+            border: 2px solid #666;
+            border-radius: 7px;
+            transition: all 0.2s; }
+            html body header .header-content .disciplines button:hover {
+              border-color: #e1e3e6;
+              transition: all 0.2s; }
     html body .table-container {
       width: 100%;
       height: calc(100% - 95px);
