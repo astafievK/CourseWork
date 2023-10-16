@@ -54,7 +54,7 @@ html {
           html body .table-container form table thead tr th.column-id {
             width: 70px; }
         html body .table-container form table tbody tr {
-          height: 100px;
+          height: 115px;
           border-bottom: 1px solid #666; }
           html body .table-container form table tbody tr td:nth-child(1) {
             background-color: #292929;
@@ -120,13 +120,25 @@ html {
         html body .table-container form table tbody tr:last-child {
           border-bottom: none; }
     html body .table-container::-webkit-scrollbar {
-      width: 5px;
-      height: 5px; }
+      width: 10px;
+      height: 10px; }
     html body .table-container::-webkit-scrollbar-track {
       background-color: transparent;
-      border-radius: 6px; }
+      border-radius: 15px; }
     html body .table-container::-webkit-scrollbar-thumb {
       background-color: #e1e3e6;
-      border-radius: 6px; }
+      border-radius: 15px; }
+    html body .table-container::-webkit-scrollbar-corner {
+      background-color: transparent; }
+
+@media only screen and (max-width: 768px) {
+  html body {
+    padding: 20px; }
+    html body .table-container form table thead tr th.column-fullName {
+      width: 160px; }
+    html body .table-container form table thead tr th.column-id {
+      width: 50px; }
+    html body .table-container form table tbody tr td:nth-child(2) {
+      left: 50px; } }
 
 /*# sourceMappingURL=style.css.map */

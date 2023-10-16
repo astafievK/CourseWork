@@ -92,6 +92,202 @@ function averageMark(){
             </tr>
             <tr>
                 <td>1</td>
+                <td>Кельбалиханова Дарья Владимировна</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Астафьев Кирилл Александрович</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Астафьев Кирилл Александрович</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Астафьев Кирилл Александрович</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Астафьев Кирилл Александрович</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Астафьев Кирилл Александрович</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Астафьев Кирилл Александрович</td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="good" data-work="1">4</button></td>
+                <td><button class="cool" data-work="1">5</button></td>
+                <td><button class="satisfactory" data-work="1">3</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+                <td><button class="bad" data-work="1">2</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
                 <td>Астафьев Кирилл Александрович</td>
                 <td><button class="satisfactory" data-work="1">3</button></td>
                 <td><button class="good" data-work="1">4</button></td>
