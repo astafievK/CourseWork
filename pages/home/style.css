@@ -25,66 +25,70 @@ html {
       height: 80px;
       border-radius: 15px;
       background: #292929;
-      padding: 0 70px 0 70px; }
+      padding: 0 15px 0 15px; }
       html body header .header-content {
         display: flex;
         align-items: center;
         width: 100%;
         height: 100%; }
-        html body header .header-content .check {
-          width: 55%;
+        html body header .header-content .filters {
+          height: 100%;
+          width: 40%;
           display: flex;
-          flex-direction: row; }
-          html body header .header-content .check label {
+          flex-direction: column;
+          justify-content: space-evenly; }
+          html body header .header-content .filters span {
+            font-size: 14px;
+            text-align: center;
+            font-weight: 700; }
+          html body header .header-content .filters div {
+            display: flex;
+            justify-content: space-evenly; }
+            html body header .header-content .filters div button {
+              font-size: 16px;
+              color: #e1e3e6;
+              height: 37px;
+              width: 120px;
+              background: transparent;
+              border: 2px solid #666;
+              border-radius: 7px;
+              transition: all 0.2s; }
+              html body header .header-content .filters div button:hover {
+                border-color: #e1e3e6;
+                transition: all 0.2s; }
+        html body header .header-content .quit {
+          width: 20%;
+          height: 100%; }
+          html body header .header-content .quit form {
+            height: 100%;
             display: flex;
             justify-content: center;
-            text-align: center;
-            align-items: center;
-            flex-direction: row;
-            user-select: none;
-            font-size: 21px;
-            cursor: pointer;
-            flex-grow: 1; }
-            html body header .header-content .check label input {
-              margin-right: 10px;
-              width: 20px;
-              height: 20px;
-              border: 2px solid red;
-              transition: all 0.2s; }
-              html body header .header-content .check label input #checkBad:checked {
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6); }
-              html body header .header-content .check label input #checkSatisfactory:checked {
-                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6); }
-              html body header .header-content .check label input #checkGood:checked {
-                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6); }
-              html body header .header-content .check label input #checkCool:checked {
-                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6); }
-            html body header .header-content .check label:hover input {
-              transition: all 0.2s; }
-            html body header .header-content .check label:hover #checkBad {
-              box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6); }
-            html body header .header-content .check label:hover #checkSatisfactory {
-              box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6); }
-            html body header .header-content .check label:hover #checkGood {
-              box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6); }
-            html body header .header-content .check label:hover #checkCool {
-              box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6); }
+            align-items: center; }
         html body header .header-content .disciplines {
-          width: 45%;
+          height: 100%;
+          width: 40%;
           display: flex;
+          flex-direction: column;
           justify-content: space-evenly; }
-          html body header .header-content .disciplines button {
-            font-size: 21px;
-            color: #e1e3e6;
-            height: 50px;
-            width: 150px;
-            background: transparent;
-            border: 2px solid #666;
-            border-radius: 7px;
-            transition: all 0.2s; }
-            html body header .header-content .disciplines button:hover {
-              border-color: #e1e3e6;
+          html body header .header-content .disciplines span {
+            font-size: 14px;
+            text-align: center;
+            font-weight: 700; }
+          html body header .header-content .disciplines form {
+            display: flex;
+            justify-content: space-evenly; }
+            html body header .header-content .disciplines form button {
+              font-size: 16px;
+              color: #e1e3e6;
+              height: 37px;
+              width: 120px;
+              background: transparent;
+              border: 2px solid #666;
+              border-radius: 7px;
               transition: all 0.2s; }
+              html body header .header-content .disciplines form button:hover {
+                border-color: #e1e3e6;
+                transition: all 0.2s; }
     html body .table-container {
       width: 100%;
       height: calc(100% - 95px);

@@ -3,7 +3,7 @@ require "../connection.php";
 $group = "ispp01";
 $idStudent = "1";
 function printMarks(){
-    $sql = "select * from student where groupName = 'ispp01'";
+    //$sql = "select * from student where groupName = 'ispp01'";
 
 
 }
@@ -30,34 +30,30 @@ function averageMark(){
 <body>
 <header>
     <div class="header-content">
-        <div class="check">
-            <label class="checkbox-container">
-                <input type="checkbox" id="checkCool">
-                <span class="checkmark"></span>
-                Отлично
-            </label>
-            <label class="checkbox-container">
-                <input type="checkbox" id="checkGood">
-                <span class="checkmark"></span>
-                Хорошо
-            </label>
-            <label class="checkbox-container">
-                <input type="checkbox" id="checkSatisfactory">
-                <span class="checkmark"></span>
-                Удовлетворительно
-            </label>
-            <label class="checkbox-container">
-                <input type="checkbox" id="checkBad">
-                <span class="checkmark"></span>
-                Не сдано
-            </label>
+        <div class="filters">
+            <span>Успеваемость</span>
+            <div>
+                <button name="buttonCool">ОТЛИЧНО</button>
+                <button name="buttonSatisfactory">ХОРОШО</button>
+                <button name="buttonCool">УДОВЛ.</button>
+                <button name="buttonBad">НЕУДОВЛ.</button>
+            </div>
+        </div>
+
+        <div class="quit">
+            <form action="home.php" method="post">
+                <button>Выход</button>
+            </form>
         </div>
 
         <div class="disciplines">
-            <button>МДК 01.01</button>
-            <button>МДК 01.02</button>
-            <button>МДК 01.03</button>
-            <button>ОПБД</button>
+            <span>Дисциплина</span>
+            <form action="home.php" method="post">
+                <button name="discipline1">МДК 01.01</button>
+                <button name="discipline2">МДК 01.02</button>
+                <button name="discipline3">МДК 01.03</button>
+                <button name="discipline4">ОПБД</button>
+            </form>
         </div>
     </div>
 </header>

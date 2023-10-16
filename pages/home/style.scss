@@ -38,7 +38,7 @@ html{
       height: $headerHeight;
       border-radius: 15px;
       background: #292929;
-      padding: 0 70px 0 70px;
+      padding: 0 15px 0 15px;
 
       .header-content{
         display: flex;
@@ -46,93 +46,88 @@ html{
         width: 100%;
         height: 100%;
 
-        .check{
-          width: 55%;
+        .filters{
+          height: 100%;
+          width: 40%;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
+          justify-content: space-evenly;
 
-          label{
-            display: flex;
-            justify-content: center;
+          span{
+            font-size: 14px;
             text-align: center;
-            align-items: center;
-            flex-direction: row;
-            user-select: none;
-            font-size: 21px;
-            cursor: pointer;
-            flex-grow: 1;
+            font-weight: 700;
+          }
 
-            input{
-              margin-right: 10px;
-              width: 20px;
-              height: 20px;
-              border: 2px solid red;
+          div{
+            display: flex;
+            justify-content: space-evenly;
+
+            button{
+              font-size: 16px;
+              color: #e1e3e6;
+              height: 37px;
+              width: 120px;
+              background: transparent;
+              border: 2px solid #666;
+              border-radius: 7px;
 
               transition: all 0.2s;
 
+              &:hover{
+                border-color: #e1e3e6;
 
-              #checkBad:checked{
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
-              }
-
-              #checkSatisfactory:checked{
-                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
-              }
-
-              #checkGood:checked{
-                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
-              }
-
-              #checkCool:checked{
-                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
-              }
-            }
-
-            &:hover{
-
-              input{
                 transition: all 0.2s;
-              }
-
-              #checkBad{
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
-              }
-
-              #checkSatisfactory{
-                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
-              }
-
-              #checkGood{
-                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
-              }
-
-              #checkCool{
-                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
               }
             }
           }
         }
 
+        .quit{
+          width: 20%;
+          height: 100%;
+
+          form{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
         .disciplines{
-          width: 45%;
+          height: 100%;
+          width: 40%;
           display: flex;
+          flex-direction: column;
           justify-content: space-evenly;
 
-          button{
-            font-size: 21px;
-            color: #e1e3e6;
-            height: 50px;
-            width: 150px;
-            background: transparent;
-            border: 2px solid #666;
-            border-radius: 7px;
+          span{
+            font-size: 14px;
+            text-align: center;
+            font-weight: 700;
+          }
 
-            transition: all 0.2s;
+          form{
+            display: flex;
+            justify-content: space-evenly;
 
-            &:hover{
-              border-color: #e1e3e6;
+            button{
+              font-size: 16px;
+              color: #e1e3e6;
+              height: 37px;
+              width: 120px;
+              background: transparent;
+              border: 2px solid #666;
+              border-radius: 7px;
 
               transition: all 0.2s;
+
+              &:hover{
+                border-color: #e1e3e6;
+
+                transition: all 0.2s;
+              }
             }
           }
         }
