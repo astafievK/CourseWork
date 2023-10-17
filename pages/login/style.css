@@ -1,119 +1,149 @@
 @font-face {
   font-family: Poppins-Regular;
-  src: url("../../assets/fonts/poppins/Poppins-Regular.ttf"); }
+  src: url("../../assets/fonts/poppins/Poppins-Regular.ttf");
+}
 @font-face {
   font-family: Poppins-Bold;
-  src: url("../../assets/fonts/poppins/Poppins-Bold.ttf"); }
+  src: url("../../assets/fonts/poppins/Poppins-Bold.ttf");
+}
 @font-face {
   font-family: Poppins-Medium;
-  src: url("../../assets/fonts/poppins/Poppins-Medium.ttf"); }
+  src: url("../../assets/fonts/poppins/Poppins-Medium.ttf");
+}
 @font-face {
   font-family: Montserrat-Bold;
-  src: url("../../assets/fonts/montserrat/Montserrat-Bold.ttf"); }
+  src: url("../../assets/fonts/montserrat/Montserrat-Bold.ttf");
+}
 * {
   margin: 0;
   padding: 0;
   border: 0;
   outline: none;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 input {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 html, body {
   height: 100%;
   font-family: Poppins-Regular, sans-serif;
   outline: none;
-  background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%); }
-  html .login-window, body .login-window {
-    display: flex;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    background: #292929;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 85px 33px 85px 45px; }
-    html .login-window .promo, body .login-window .promo {
-      width: 50%;
-      display: grid;
-      align-items: center; }
-      html .login-window .promo h1, html .login-window .promo h2, body .login-window .promo h1, body .login-window .promo h2 {
-        user-select: none;
-        text-align: center;
-        font-size: 35px;
-        font-weight: 700; }
-      html .login-window .promo h1, body .login-window .promo h1 {
-        font-size: 35px;
-        color: #e1e3e6; }
-      html .login-window .promo h2, body .login-window .promo h2 {
-        font-size: 20px;
-        line-height: 1.1;
-        color: #afafaf; }
-    html .login-window .auth, body .login-window .auth {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      width: 50%; }
-      html .login-window .auth .subtitle, body .login-window .auth .subtitle {
-        color: #e1e3e6;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        font-size: 35px;
-        font-weight: 700; }
-      html .login-window .auth input[type="text"], html .login-window .auth input[type="password"], body .login-window .auth input[type="text"], body .login-window .auth input[type="password"] {
-        font-family: Poppins-Regular, sans-serif;
-        height: 50px;
-        width: 70%;
-        font-size: 20px;
-        font-weight: 700;
-        background: #e1e3e6;
-        border: 3px solid transparent;
-        margin-top: 15px;
-        border-radius: 23px;
-        padding: 0 30px;
-        transition: all 0.35s; }
-      html .login-window .auth input[type="text"]::placeholder, html .login-window .auth input[type="password"]::placeholder, body .login-window .auth input[type="text"]::placeholder, body .login-window .auth input[type="password"]::placeholder {
-        color: #666; }
-      html .login-window .auth input[type="text"]:not(:placeholder-shown), html .login-window .auth input[type="password"]:not(:placeholder-shown), body .login-window .auth input[type="text"]:not(:placeholder-shown), body .login-window .auth input[type="password"]:not(:placeholder-shown) {
-        color: black; }
-      html .login-window .auth input:first-child, body .login-window .auth input:first-child {
-        margin-top: 0; }
-      html .login-window .auth input[type="text"]:hover, html .login-window .auth input[type="password"]:hover, body .login-window .auth input[type="text"]:hover, body .login-window .auth input[type="password"]:hover {
-        box-shadow: 0px 0px 10px 2px #294861;
-        transition: all 0.25s; }
-      html .login-window .auth input[type="text"]:focus, html .login-window .auth input[type="password"]:focus, body .login-window .auth input[type="text"]:focus, body .login-window .auth input[type="password"]:focus {
-        box-shadow: 0px 0px 10px 2px #294861;
-        transition: all 0.25s; }
-      html .login-window .auth input[type="submit"], body .login-window .auth input[type="submit"] {
-        font-family: Poppins-Regular, sans-serif;
-        height: 50px;
-        width: 70%;
-        margin-top: 25px;
-        font-size: 23px;
-        font-weight: 700;
-        border-radius: 23px;
-        background: #333333;
-        color: #FFFFFF;
-        transition: all 0.35s; }
-      html .login-window .auth input[type="submit"]:hover, body .login-window .auth input[type="submit"]:hover {
-        background: #408835;
-        transition: all 0.35s; }
-      html .login-window .auth #forgotPassword, body .login-window .auth #forgotPassword {
-        background: transparent;
-        border: none;
-        font-size: 14px;
-        font-weight: 500;
-        margin-top: -5px;
-        color: #666;
-        width: auto; }
-      html .login-window .auth #forgotPassword:hover, body .login-window .auth #forgotPassword:hover {
-        color: #e1e3e6; }
-
-/*# sourceMappingURL=style.css.map */
+  background: linear-gradient(45deg, hsl(205, 46%, 10%) 0%, hsl(191, 28%, 23%) 50%, hsl(207, 41%, 27%) 100%);
+}
+html .login-window, body .login-window {
+  display: flex;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  background: #292929;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 85px 33px 85px 45px;
+}
+html .login-window .promo, body .login-window .promo {
+  width: 50%;
+  display: grid;
+  align-items: center;
+}
+html .login-window .promo h1, html .login-window .promo h2, body .login-window .promo h1, body .login-window .promo h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+}
+html .login-window .promo h1, body .login-window .promo h1 {
+  font-size: 35px;
+  color: #e1e3e6;
+}
+html .login-window .promo h2, body .login-window .promo h2 {
+  font-size: 20px;
+  line-height: 1.1;
+  color: #afafaf;
+}
+html .login-window .auth, body .login-window .auth {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+html .login-window .auth .subtitle, body .login-window .auth .subtitle {
+  color: #e1e3e6;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+}
+html .login-window .auth input[type=text], html .login-window .auth input[type=password], body .login-window .auth input[type=text], body .login-window .auth input[type=password] {
+  font-family: Poppins-Regular, sans-serif;
+  height: 50px;
+  width: 70%;
+  font-size: 20px;
+  font-weight: 700;
+  background: #e1e3e6;
+  border: 3px solid transparent;
+  margin-top: 15px;
+  border-radius: 23px;
+  padding: 0 30px;
+  transition: all 0.35s;
+}
+html .login-window .auth input[type=text]::-moz-placeholder, html .login-window .auth input[type=password]::-moz-placeholder, body .login-window .auth input[type=text]::-moz-placeholder, body .login-window .auth input[type=password]::-moz-placeholder {
+  color: #666;
+}
+html .login-window .auth input[type=text]::placeholder, html .login-window .auth input[type=password]::placeholder, body .login-window .auth input[type=text]::placeholder, body .login-window .auth input[type=password]::placeholder {
+  color: #666;
+}
+html .login-window .auth input[type=text]:not(:-moz-placeholder-shown), html .login-window .auth input[type=password]:not(:-moz-placeholder-shown), body .login-window .auth input[type=text]:not(:-moz-placeholder-shown), body .login-window .auth input[type=password]:not(:-moz-placeholder-shown) {
+  color: black;
+}
+html .login-window .auth input[type=text]:not(:placeholder-shown), html .login-window .auth input[type=password]:not(:placeholder-shown), body .login-window .auth input[type=text]:not(:placeholder-shown), body .login-window .auth input[type=password]:not(:placeholder-shown) {
+  color: black;
+}
+html .login-window .auth input:first-child, body .login-window .auth input:first-child {
+  margin-top: 0;
+}
+html .login-window .auth input[type=text]:hover, html .login-window .auth input[type=password]:hover, body .login-window .auth input[type=text]:hover, body .login-window .auth input[type=password]:hover {
+  box-shadow: 0px 0px 10px 2px hsl(207, 41%, 27%);
+  transition: all 0.25s;
+}
+html .login-window .auth input[type=text]:focus, html .login-window .auth input[type=password]:focus, body .login-window .auth input[type=text]:focus, body .login-window .auth input[type=password]:focus {
+  box-shadow: 0px 0px 10px 2px hsl(207, 41%, 27%);
+  transition: all 0.25s;
+}
+html .login-window .auth input[type=submit], body .login-window .auth input[type=submit] {
+  font-family: Poppins-Regular, sans-serif;
+  height: 50px;
+  width: 70%;
+  margin-top: 25px;
+  font-size: 23px;
+  font-weight: 700;
+  border-radius: 23px;
+  background: #333333;
+  color: #FFFFFF;
+  transition: all 0.35s;
+}
+html .login-window .auth input[type=submit]:hover, body .login-window .auth input[type=submit]:hover {
+  background: #408835;
+  transition: all 0.35s;
+}
+html .login-window .auth #forgotPassword, body .login-window .auth #forgotPassword {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: -5px;
+  color: #666;
+  width: auto;
+}
+html .login-window .auth #forgotPassword:hover, body .login-window .auth #forgotPassword:hover {
+  color: #e1e3e6;
+}/*# sourceMappingURL=style.css.map */
