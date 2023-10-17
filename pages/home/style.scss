@@ -34,38 +34,37 @@ html{
     outline: none;
     background: linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
 
-    header{
+    header {
       height: $headerHeight;
       border-radius: 15px;
       background: #292929;
       padding: 0 15px 0 15px;
-      }
 
-      .header-content{
+      .header-content {
         display: flex;
         align-items: center;
         width: 100%;
         height: 100%;
 
-        .filters{
+        .filters {
           height: 100%;
-          width: 40%;
+          width: 44%;
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
 
-          span{
-            font-size: 14px;
+          span {
+            font-size: 20px;
             text-align: center;
             font-weight: 700;
           }
 
-          div{
+          div {
             display: flex;
             justify-content: space-evenly;
 
-            button{
-              font-size: 16px;
+            button {
+              font-size: 18px;
               color: #e1e3e6;
               height: 37px;
               width: 120px;
@@ -76,49 +75,49 @@ html{
 
               transition: all 0.2s;
 
-              &:hover{
+              &:hover {
                 border-color: #e1e3e6;
 
                 transition: all 0.2s;
               }
             }
-            
 
-            #buttonCool.selected{
+
+            #buttonCool.selected {
               border-color: rgba(144, 238, 144, .8);
 
-              &:hover{
+              &:hover {
                 border-color: #e1e3e6;
 
                 transition: all 0.2s;
               }
             }
 
-            #buttonGood.selected{
+            #buttonGood.selected {
               border-color: rgba(46, 139, 87, .8);
-              
-              &:hover{
+
+              &:hover {
                 border-color: #e1e3e6;
 
                 transition: all 0.2s;
               }
             }
 
-            #buttonSatisfactory.selected{
+            #buttonSatisfactory.selected {
               border-color: rgba(255, 140, 0, .8);
-              
-              &:hover{
+
+              &:hover {
                 border-color: #e1e3e6;
 
                 transition: all 0.2s;
               }
-              
+
             }
 
-            #buttonBad.selected{
+            #buttonBad.selected {
               border-color: rgba(255, 0, 0, .8);
-              
-              &:hover{
+
+              &:hover {
                 border-color: #e1e3e6;
 
                 transition: all 0.2s;
@@ -127,37 +126,18 @@ html{
           }
         }
 
-        .quit{
-          width: 20%;
+        .quit {
+          width: 10%;
           height: 100%;
 
-          form{
+          form {
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-          }
-        }
 
-        .disciplines{
-          height: 100%;
-          width: 40%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-
-          span{
-            font-size: 14px;
-            text-align: center;
-            font-weight: 700;
-          }
-
-          form{
-            display: flex;
-            justify-content: space-evenly;
-
-            button{
-              font-size: 16px;
+            button {
+              font-size: 20px;
               color: #e1e3e6;
               height: 37px;
               width: 120px;
@@ -169,7 +149,46 @@ html{
 
               transition: all 0.2s;
 
-              &:hover{
+              &:hover {
+                border-color: #e1e3e6;
+
+                transition: all 0.2s;
+              }
+            }
+          }
+        }
+
+        .disciplines {
+          height: 100%;
+          width: 44%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+
+          span {
+            font-size: 20px;
+            text-align: center;
+            font-weight: 700;
+          }
+
+          form {
+            display: flex;
+            justify-content: space-evenly;
+
+            button {
+              font-size: 18px;
+              color: #e1e3e6;
+              height: 37px;
+              width: 120px;
+              background: transparent;
+              border: 2px solid #666;
+              border-radius: 7px;
+              cursor: pointer;
+
+
+              transition: all 0.2s;
+
+              &:hover {
                 border-color: #e1e3e6;
 
                 transition: all 0.2s;
@@ -179,192 +198,193 @@ html{
         }
       }
     }
+  }
 
-    .table-container {
-      width: 100%;
-      height: calc(100% - 95px);
-      margin-top: 15px;
-      padding: 0 50px 10px 0;
-      border-radius: 15px;
-      background: #292929;
-      overflow: scroll;
+  .table-container {
+    width: 100%;
+    height: calc(100% - 95px);
+    margin-top: 15px;
+    padding: 0 50px 10px 0;
+    border-radius: 15px;
+    background: #292929;
+    overflow: scroll;
 
-      .table-wrapper {
+    .table-wrapper {
 
-        table {
-          height: 100%;
-          width: 100%;
-          background: #292929;
-          color: #e1e3e6;
-          border-collapse: collapse;
-          table-layout: fixed;
+      table {
+        height: 100%;
+        width: 100%;
+        background: #292929;
+        color: #e1e3e6;
+        border-collapse: collapse;
+        table-layout: fixed;
 
-          thead {
-            height: 80px;
-            font-size: 25px;
-            border-color: #666;
+        thead {
+          height: 80px;
+          font-size: 25px;
+          border-color: #666;
 
-            tr {
-              th {
-                border-bottom: 5px solid #666666;
-                top: 0;
-                position: sticky;
-                z-index: 2;
-                background-color: #292929;
-                width: 110px;
-                border-bottom: 1px solid #666;
+          tr {
+            th {
+              border-bottom: 5px solid #666666;
+              top: 0;
+              position: sticky;
+              z-index: 2;
+              background-color: #292929;
+              width: 110px;
+              border-bottom: 1px solid #666;
+            }
+
+            th.column-id {
+              left: 0;
+              width: 70px;
+              z-index: 3;
+            }
+
+            th.column-fullName {
+              z-index: 3;
+              left: 70px;
+              width: 200px;
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            height: 115px;
+            border-bottom: 1px solid #666;
+
+            td:nth-child(1) {
+              background-color: #292929;
+              left: 0;
+              position: sticky;
+              z-index: 1;
+              text-align: center;
+            }
+
+            td:nth-child(2) {
+              background-color: #292929;
+              left: 70px;
+              position: sticky;
+              z-index: 1;
+              text-align: center;
+            }
+
+            td {
+              position: relative;
+              font-size: 21px;
+
+              button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: 700;
+                color: #e1e3e6;
+                font-size: 21px;
               }
 
-              th.column-id {
-                left: 0;         
-                width: 70px;
-                z-index: 3;
+              button.bad,
+              button.satisfactory,
+              button.good,
+              button.cool {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid rgba(102, 102, 102, 0.4);
+                background: transparent;
+                border-radius: 7px;
+                cursor: pointer;
+                user-select: none;
+
+                transition: all 0.1s;
               }
 
-              th.column-fullName {
-                z-index: 3;
-                left: 70px;
-                width: 200px;
-              }         
+              button.bad.coloured {
+                border: 2px solid rgba(255, 0, 0, 0.4);
+                background: rgba(255, 0, 0, 0.05);
+              }
+
+              button.bad:hover {
+                border: 2px solid rgba(255, 0, 0, 0.9);
+                background: rgba(255, 0, 0, 0.05);
+                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+                transition: all 0.1s;
+              }
+
+              button.satisfactory.coloured {
+                border: 2px solid rgba(255, 140, 0, 0.4);
+                background: rgba(255, 140, 0, 0.05);
+              }
+
+              button.satisfactory:hover {
+                border: 2px solid rgba(255, 140, 0, 0.9);
+                background: rgba(255, 140, 0, 0.05);
+                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+                transition: all 0.1s;
+              }
+
+              button.good.coloured {
+                border: 2px solid rgba(46, 139, 87, 0.4);
+                background: rgba(46, 139, 87, 0.05);
+              }
+
+              button.good:hover {
+                border: 2px solid rgba(46, 139, 87, 0.9);
+                background: rgba(46, 139, 87, 0.05);
+                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+                transition: all 0.1s;
+              }
+
+              button.cool.coloured {
+                border: 2px solid rgba(144, 238, 144, 0.4);
+                background: rgba(144, 238, 144, 0.05);
+              }
+
+              button.cool:hover {
+                border: 2px solid rgba(144, 238, 144, 0.9);
+                background: rgba(144, 238, 144, 0.05);
+                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+                transition: all 0.1s;
+              }
             }
           }
 
-          tbody {
-            tr {
-              height: 115px;
-              border-bottom: 1px solid #666;
-
-              td:nth-child(1) {
-                background-color: #292929;
-                left: 0;
-                position: sticky;
-                z-index: 1;
-                text-align: center;
-              }
-
-              td:nth-child(2) {
-                background-color: #292929;
-                left: 70px;
-                position: sticky;
-                z-index: 1;
-                text-align: center;
-              }
-
-              td {
-                position: relative;
-                font-size: 21px;
-
-                button {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  font-weight: 700;
-                  color: #e1e3e6;
-                  font-size: 21px;
-                }
-
-                button.bad,
-                button.satisfactory,
-                button.good,
-                button.cool {
-                  width: 50px;
-                  height: 50px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  border: 2px solid rgba(102, 102, 102, 0.4);
-                  background: transparent;
-                  border-radius: 7px;
-                  cursor: pointer;
-                  user-select: none;
-
-                  transition: all 0.1s;
-                }
-
-                button.bad.coloured {
-                  border: 2px solid rgba(255, 0, 0, 0.4);
-                  background: rgba(255, 0, 0, 0.05);
-                }
-
-                button.bad:hover {
-                  border: 2px solid rgba(255, 0, 0, 0.9);
-                  background: rgba(255, 0, 0, 0.05);
-                  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
-                  transition: all 0.1s;
-                }
-
-                button.satisfactory.coloured {
-                  border: 2px solid rgba(255, 140, 0, 0.4);
-                  background: rgba(255, 140, 0, 0.05);
-                }
-
-                button.satisfactory:hover {
-                  border: 2px solid rgba(255, 140, 0, 0.9);
-                  background: rgba(255, 140, 0, 0.05);
-                  box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
-                  transition: all 0.1s;
-                }
-
-                button.good.coloured {
-                  border: 2px solid rgba(46, 139, 87, 0.4);
-                  background: rgba(46, 139, 87, 0.05);
-                }
-
-                button.good:hover {
-                  border: 2px solid rgba(46, 139, 87, 0.9);
-                  background: rgba(46, 139, 87, 0.05);
-                  box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
-                  transition: all 0.1s;
-                }
-
-                button.cool.coloured {
-                  border: 2px solid rgba(144, 238, 144, 0.4);
-                  background: rgba(144, 238, 144, 0.05);
-                }
-
-                button.cool:hover {
-                  border: 2px solid rgba(144, 238, 144, 0.9);
-                  background: rgba(144, 238, 144, 0.05);
-                  box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
-                  transition: all 0.1s;
-                }
-              }
-            }
-
-            tr:last-child {
-              border-bottom: none;
-            }
+          tr:last-child {
+            border-bottom: none;
           }
         }
       }
     }
-
-    .table-container::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-
-    .table-container::-webkit-scrollbar-track {
-      background-color: transparent;
-      border-radius: 15px;
-    }
-
-    .table-container::-webkit-scrollbar-thumb {
-      background-color: #e1e3e6;
-      border-radius: 15px;
-    }
-
-    .table-container::-webkit-scrollbar-corner {
-      background-color: transparent;
-    }
   }
+
+  .table-container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .table-container::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 15px;
+  }
+
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: #e1e3e6;
+    border-radius: 15px;
+  }
+
+  .table-container::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
 
 @media only screen and (max-width: $mediaSize-medium){
   html{
 
     body{
-    padding: 20px;
+      padding: 20px;
 
       .table-container{
 
@@ -389,7 +409,7 @@ html{
             tbody{
               tr{
                 td:nth-child(1){
-                  
+
                 }
 
                 td:nth-child(2){

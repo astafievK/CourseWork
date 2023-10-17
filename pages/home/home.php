@@ -30,7 +30,7 @@ function averageMark(){
 <header>
     <div class="header-content">
         <div class="filters">
-            <span>Успеваемость</span>
+            <span>Фильтр успеваемости</span>
             <div>
                 <button id="buttonCool">ОТЛИЧНО</button>
                 <button id="buttonGood">ХОРОШО</button>
@@ -46,7 +46,7 @@ function averageMark(){
         </div>
 
         <div class="disciplines">
-            <span>Дисциплина</span>
+            <span>Фильтр дисциплин</span>
             <form action="home.php" method="post">
                 <button name="discipline1">МДК 01.01</button>
                 <button name="discipline2">МДК 01.02</button>
@@ -54,6 +54,9 @@ function averageMark(){
                 <button name="discipline4">ОПБД</button>
             </form>
         </div>
+    </div>
+    <div class="header-content__mobile">
+        
     </div>
 </header>
 <div class="table-container">
