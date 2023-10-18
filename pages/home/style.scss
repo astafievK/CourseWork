@@ -13,7 +13,7 @@
   src: url('../../assets/fonts/poppins/Poppins-Medium.ttf');
 }
 
-$headerHeight: 80px;
+$navWidth: 150px;
 $mediaSize-small: 480px;
 $mediaSize-medium: 768px;
 $mediaSize-large: 1024px;
@@ -27,6 +27,8 @@ html{
   height: 100%;
 
   body {
+    display: flex;
+    flex-direction: row;
     color: #e1e3e6;
     padding: 35px;
     height: 100%;
@@ -34,101 +36,23 @@ html{
     outline: none;
     background: linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
 
-    header {
-      height: $headerHeight;
+    nav {
+      width: $navWidth;
+      height: 100%;
       border-radius: 15px;
       background: #292929;
-      padding: 0 15px 0 15px;
+      padding: 20px 15px 40px 15px;
 
-      .header-content {
+      .nav-content {
         display: flex;
+        flex-direction: column;
         align-items: center;
         width: 100%;
         height: 100%;
 
-        .filters {
-          height: 100%;
-          width: 44%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-
-          span {
-            font-size: 20px;
-            text-align: center;
-            font-weight: 700;
-          }
-
-          div {
-            display: flex;
-            justify-content: space-evenly;
-
-            button {
-              font-size: 18px;
-              color: #e1e3e6;
-              height: 37px;
-              width: 120px;
-              background: transparent;
-              border: 2px solid #666;
-              border-radius: 7px;
-              cursor: pointer;
-
-              transition: all 0.2s;
-
-              &:hover {
-                border-color: #e1e3e6;
-
-                transition: all 0.2s;
-              }
-            }
-
-
-            #buttonCool.selected {
-              border-color: rgba(144, 238, 144, .8);
-
-              &:hover {
-                border-color: #e1e3e6;
-
-                transition: all 0.2s;
-              }
-            }
-
-            #buttonGood.selected {
-              border-color: rgba(46, 139, 87, .8);
-
-              &:hover {
-                border-color: #e1e3e6;
-
-                transition: all 0.2s;
-              }
-            }
-
-            #buttonSatisfactory.selected {
-              border-color: rgba(255, 140, 0, .8);
-
-              &:hover {
-                border-color: #e1e3e6;
-
-                transition: all 0.2s;
-              }
-
-            }
-
-            #buttonBad.selected {
-              border-color: rgba(255, 0, 0, .8);
-
-              &:hover {
-                border-color: #e1e3e6;
-
-                transition: all 0.2s;
-              }
-            }
-          }
-        }
-
         .quit {
-          width: 10%;
-          height: 100%;
+          width: 100%;
+          margin-bottom: 50px;
 
           form {
             height: 100%;
@@ -146,7 +70,6 @@ html{
               border-radius: 7px;
               cursor: pointer;
 
-
               transition: all 0.2s;
 
               &:hover {
@@ -158,33 +81,120 @@ html{
           }
         }
 
-        .disciplines {
-          height: 100%;
-          width: 44%;
+        .filters {
           display: flex;
           flex-direction: column;
-          justify-content: space-evenly;
+          height: 44%;
+          width: 100%;
 
           span {
-            font-size: 20px;
+            font-size: 21px;
             text-align: center;
             font-weight: 700;
+            margin-bottom: 10px;
           }
 
-          form {
+          div {
+            height: 100%;
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
 
             button {
-              font-size: 18px;
+              font-size: 17px;
               color: #e1e3e6;
-              height: 37px;
+              height: 45px;
               width: 120px;
+              margin-bottom: 12px;
               background: transparent;
               border: 2px solid #666;
               border-radius: 7px;
               cursor: pointer;
 
+              transition: all 0.2s;
+
+              &:hover {
+                border-color: #e1e3e6;
+
+                transition: all 0.2s;
+              }
+            }
+
+
+            #buttonCool.selected {
+              border-color: rgba(144, 238, 144, .8);
+              transform: scale(0.92);
+
+              &:hover {
+                border-color: #e1e3e6;
+
+                transition: all 0.2s;
+              }
+            }
+
+            #buttonGood.selected {
+              border-color: rgba(46, 139, 87, .8);
+              transform: scale(0.92);
+
+              &:hover {
+                border-color: #e1e3e6;
+
+                transition: all 0.2s;
+              }
+            }
+
+            #buttonSatisfactory.selected {
+              border-color: rgba(255, 140, 0, .8);
+              transform: scale(0.92);
+
+              &:hover {
+                border-color: #e1e3e6;
+
+                transition: all 0.2s;
+              }
+
+            }
+
+            #buttonBad.selected {
+              border-color: rgba(255, 0, 0, .8);
+              transform: scale(0.92);
+
+              &:hover {
+                border-color: #e1e3e6;
+
+                transition: all 0.2s;
+              }
+            }
+          }
+        }
+
+        .disciplines {
+          height: 44%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-size: 21px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+          }
+
+          form {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            button {
+              font-size: 17px;
+              color: #e1e3e6;
+              height: 45px;
+              width: 120px;
+              margin-bottom: 12px;
+              background: transparent;
+              border: 2px solid #666;
+              border-radius: 7px;
+              cursor: pointer;
 
               transition: all 0.2s;
 
@@ -202,8 +212,8 @@ html{
 
   .table-container {
     width: 100%;
-    height: calc(100% - 95px);
-    margin-top: 15px;
+    height: 100%;
+    margin-left: 15px;
     padding: 0 50px 10px 0;
     border-radius: 15px;
     background: #292929;
