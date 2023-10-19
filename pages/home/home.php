@@ -12,6 +12,7 @@ function checkMark(){
 
 function averageMark(){
     $sql = "select * from marks";
+
 }
 ?>
 
@@ -35,7 +36,7 @@ function averageMark(){
         </div>
 
         <div class="filters">
-            <span>Фильтр оценок</span>
+            <span>Оценки</span>
             <div>
                 <button id="buttonCool">ОТЛИЧНО</button>
                 <button id="buttonGood">ХОРОШО</button>
@@ -45,7 +46,7 @@ function averageMark(){
         </div>
 
         <div class="disciplines">
-            <span>Фильтр дисциплин</span>
+            <span>Дисциплины </span>
             <form action="home.php" method="post">
                 <button name="discipline1">МДК 01.01</button>
                 <button name="discipline2">МДК 01.02</button>
@@ -94,42 +95,1356 @@ function averageMark(){
                 <td>1</td>
                 <td>Астафьев<br> Кирилл</td>
                 <td>
-                    <button class="satisfactory" data-work="1">3</button>
-                </td>
-                <td>
-                    <button class="good">4</button>
-                    <div class="modal">
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
 
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
                     </div>
                 </td>
-                <td><button class="cool"">5</button></td>
-                <td><button class="satisfactory">3</button></td>
-                <td><button class="bad">2</button></td>
-                <td><button class="good">4</button></td>
-                <td><button class="cool">5</button></td>
-                <td><button class="cool">5</button></td>
-                <td><button class="good">4</button></td>
-                <td><button class="bad">2</button></td>
-                <td><button class="cool">5</button></td>
-                <td><button class="satisfactory">3</button></td>
-                <td><button class="satisfactory">3</button></td>
-                <td><button class="cool">5</button></td>
-                <td><button class="bad">2</button></td>
-                <td><button class="cool">5</button></td>
-                <td><button class="good">4</button></td>
-                <td><button class="satisfactory">3</button></td>
-                <td><button class="good">4</button></td>
-                <td><button class="cool">5</button></td>
-                <td><button class="satisfactory">3</button></td>
-                <td><button class="bad">2</button></td>
-                <td><button class="bad">2</button></td>
-                <td><button class="bad">2</button></td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 2</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 3</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 4</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 5</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 6</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="markBtn satisfactory">3</button>
+                    <div class="modal show">
+                        <div class="modal-content">
+                            <div class="title-wrapper">
+                                <span class="title">Лабораторная работа 1</span>
+                            </div>
+                            <div class="stats">
+                                <div class="task">
+                                    <span class="number">Задание 1</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 2</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 3</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 4</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 5</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 6</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 7</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 8</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 9</span>
+                                    <span class="mark not-completed">Не выполнено</span>
+                                </div>
+                                <div class="task">
+                                    <span class="number">Задание 10</span>
+                                    <span class="mark completed">Выполнено</span>
+                                </div>
+
+                            </div>
+                            <div class="close-wrapper">
+                                <button class="close-modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
 
+<script src="scripts/modal.js"></script>
 <script src="scripts/filter.js"></script>
 </body>
 </html>
