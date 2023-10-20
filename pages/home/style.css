@@ -21,290 +21,622 @@ html {
   html body {
     display: flex;
     flex-direction: row;
-    color: #e1e3e6;
     padding: 35px;
     height: 100%;
     font-family: Poppins-Regular, sans-serif;
-    outline: none;
-    background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%); }
-    html body nav {
-      width: 180px;
-      height: 100%;
-      border-radius: 15px;
-      background: #292929;
-      padding: 15px 10px 0 10px;
-      overflow: auto; }
-      html body nav .nav-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%; }
-        html body nav .nav-content div.quit, html body nav .nav-content div.filters, html body nav .nav-content div.disciplines {
-          flex-direction: column;
-          display: flex;
-          width: 100%;
-          margin-bottom: 30px; }
-          html body nav .nav-content div.quit span, html body nav .nav-content div.filters span, html body nav .nav-content div.disciplines span {
-            width: 100%;
-            font-size: 21px;
-            text-align: center;
-            font-weight: 700;
-            margin-bottom: 10px; }
-          html body nav .nav-content div.quit div, html body nav .nav-content div.quit form, html body nav .nav-content div.filters div, html body nav .nav-content div.filters form, html body nav .nav-content div.disciplines div, html body nav .nav-content div.disciplines form {
-            height: 100%;
-            flex-direction: column; }
-            html body nav .nav-content div.quit div button, html body nav .nav-content div.quit form button, html body nav .nav-content div.filters div button, html body nav .nav-content div.filters form button, html body nav .nav-content div.disciplines div button, html body nav .nav-content div.disciplines form button {
-              font-size: 17px;
-              color: #e1e3e6;
-              height: 55px;
-              width: 100%;
-              margin-bottom: 12px;
-              background: transparent;
-              border: 2px solid #666666;
-              border-radius: 7px;
-              transition: all 0.2s; }
-              html body nav .nav-content div.quit div button:hover, html body nav .nav-content div.quit form button:hover, html body nav .nav-content div.filters div button:hover, html body nav .nav-content div.filters form button:hover, html body nav .nav-content div.disciplines div button:hover, html body nav .nav-content div.disciplines form button:hover {
-                border-color: #e1e3e6;
-                transition: all 0.2s; }
-            html body nav .nav-content div.quit div button:last-child, html body nav .nav-content div.quit form button:last-child, html body nav .nav-content div.filters div button:last-child, html body nav .nav-content div.filters form button:last-child, html body nav .nav-content div.disciplines div button:last-child, html body nav .nav-content div.disciplines form button:last-child {
-              margin-bottom: 0; }
-            html body nav .nav-content div.quit div #buttonCool.selected, html body nav .nav-content div.quit form #buttonCool.selected, html body nav .nav-content div.filters div #buttonCool.selected, html body nav .nav-content div.filters form #buttonCool.selected, html body nav .nav-content div.disciplines div #buttonCool.selected, html body nav .nav-content div.disciplines form #buttonCool.selected {
-              border-color: rgba(144, 238, 144, 0.8);
-              transform: scale(0.92); }
-              html body nav .nav-content div.quit div #buttonCool.selected:hover, html body nav .nav-content div.quit form #buttonCool.selected:hover, html body nav .nav-content div.filters div #buttonCool.selected:hover, html body nav .nav-content div.filters form #buttonCool.selected:hover, html body nav .nav-content div.disciplines div #buttonCool.selected:hover, html body nav .nav-content div.disciplines form #buttonCool.selected:hover {
-                border-color: #e1e3e6;
-                transition: all 0.2s; }
-            html body nav .nav-content div.quit div #buttonGood.selected, html body nav .nav-content div.quit form #buttonGood.selected, html body nav .nav-content div.filters div #buttonGood.selected, html body nav .nav-content div.filters form #buttonGood.selected, html body nav .nav-content div.disciplines div #buttonGood.selected, html body nav .nav-content div.disciplines form #buttonGood.selected {
-              border-color: rgba(46, 139, 87, 0.8);
-              transform: scale(0.92); }
-              html body nav .nav-content div.quit div #buttonGood.selected:hover, html body nav .nav-content div.quit form #buttonGood.selected:hover, html body nav .nav-content div.filters div #buttonGood.selected:hover, html body nav .nav-content div.filters form #buttonGood.selected:hover, html body nav .nav-content div.disciplines div #buttonGood.selected:hover, html body nav .nav-content div.disciplines form #buttonGood.selected:hover {
-                border-color: #e1e3e6;
-                transition: all 0.2s; }
-            html body nav .nav-content div.quit div #buttonSatisfactory.selected, html body nav .nav-content div.quit form #buttonSatisfactory.selected, html body nav .nav-content div.filters div #buttonSatisfactory.selected, html body nav .nav-content div.filters form #buttonSatisfactory.selected, html body nav .nav-content div.disciplines div #buttonSatisfactory.selected, html body nav .nav-content div.disciplines form #buttonSatisfactory.selected {
-              border-color: rgba(255, 140, 0, 0.8);
-              transform: scale(0.92); }
-              html body nav .nav-content div.quit div #buttonSatisfactory.selected:hover, html body nav .nav-content div.quit form #buttonSatisfactory.selected:hover, html body nav .nav-content div.filters div #buttonSatisfactory.selected:hover, html body nav .nav-content div.filters form #buttonSatisfactory.selected:hover, html body nav .nav-content div.disciplines div #buttonSatisfactory.selected:hover, html body nav .nav-content div.disciplines form #buttonSatisfactory.selected:hover {
-                border-color: #e1e3e6;
-                transition: all 0.2s; }
-            html body nav .nav-content div.quit div #buttonBad.selected, html body nav .nav-content div.quit form #buttonBad.selected, html body nav .nav-content div.filters div #buttonBad.selected, html body nav .nav-content div.filters form #buttonBad.selected, html body nav .nav-content div.disciplines div #buttonBad.selected, html body nav .nav-content div.disciplines form #buttonBad.selected {
-              border-color: rgba(255, 0, 0, 0.8);
-              transform: scale(0.92); }
-              html body nav .nav-content div.quit div #buttonBad.selected:hover, html body nav .nav-content div.quit form #buttonBad.selected:hover, html body nav .nav-content div.filters div #buttonBad.selected:hover, html body nav .nav-content div.filters form #buttonBad.selected:hover, html body nav .nav-content div.disciplines div #buttonBad.selected:hover, html body nav .nav-content div.disciplines form #buttonBad.selected:hover {
-                border-color: #e1e3e6;
-                transition: all 0.2s; }
-    html body nav::-webkit-scrollbar {
-      width: 5px; }
-    html body .table-container {
-      width: 100%;
-      height: 100%;
-      margin-left: 15px;
-      padding: 0 50px 10px 0;
-      border-radius: 15px;
-      background: #292929;
-      overflow: scroll; }
-      html body .table-container .table-wrapper table {
+    outline: none; }
+    html body.dark {
+      background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%);
+      color: #e1e3e6; }
+      html body.dark nav {
+        width: 180px;
         height: 100%;
-        width: 100%;
+        border-radius: 15px 0 0 15px;
         background: #292929;
-        color: #e1e3e6;
-        border-collapse: collapse;
-        table-layout: fixed; }
-        html body .table-container .table-wrapper table thead {
-          height: 80px;
-          font-size: 25px;
-          border-color: #666666; }
-          html body .table-container .table-wrapper table thead tr th {
-            border-bottom: 5px solid #666666;
-            top: 0;
-            position: sticky;
-            z-index: 2;
-            background-color: #292929;
-            width: 100px;
-            border-bottom: 1px solid #666666; }
-          html body .table-container .table-wrapper table thead tr th.column-id {
-            left: 0;
-            width: 50px;
-            z-index: 3; }
-          html body .table-container .table-wrapper table thead tr th.column-fullName {
-            left: 50px;
-            width: 200px;
-            z-index: 3; }
-        html body .table-container .table-wrapper table tbody tr {
-          height: 90px;
-          border-bottom: 1px solid #666666; }
-          html body .table-container .table-wrapper table tbody tr td:nth-child(1) {
-            background-color: #292929;
-            left: 0;
-            position: sticky;
-            z-index: 1;
-            text-align: center; }
-          html body .table-container .table-wrapper table tbody tr td:nth-child(2) {
-            background-color: #292929;
-            left: 50px;
-            position: sticky;
-            z-index: 1;
-            text-align: center; }
-          html body .table-container .table-wrapper table tbody tr td {
-            position: relative;
-            font-size: 21px; }
-            html body .table-container .table-wrapper table tbody tr td button.bad,
-            html body .table-container .table-wrapper table tbody tr td button.satisfactory,
-            html body .table-container .table-wrapper table tbody tr td button.good,
-            html body .table-container .table-wrapper table tbody tr td button.cool {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              font-weight: 700;
-              color: #e1e3e6;
-              font-size: 25px;
-              width: 60px;
-              height: 60px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border: 2px solid rgba(102, 102, 102, 0.4);
-              background: transparent;
-              border-radius: 7px;
-              user-select: none;
-              transition: all 0.2s; }
-            html body .table-container .table-wrapper table tbody tr td button.bad.coloured {
-              border: 2px solid rgba(255, 0, 0, 0.4);
-              background: rgba(255, 0, 0, 0.05); }
-            html body .table-container .table-wrapper table tbody tr td button.bad:hover {
-              border: 2px solid rgba(255, 0, 0, 0.9);
-              background: rgba(255, 0, 0, 0.05);
-              box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
-              transition: all 0.2s; }
-            html body .table-container .table-wrapper table tbody tr td button.satisfactory.coloured {
-              border: 2px solid rgba(255, 140, 0, 0.4);
-              background: rgba(255, 140, 0, 0.05); }
-            html body .table-container .table-wrapper table tbody tr td button.satisfactory:hover {
-              border: 2px solid rgba(255, 140, 0, 0.9);
-              background: rgba(255, 140, 0, 0.05);
-              box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
-              transition: all 0.2s; }
-            html body .table-container .table-wrapper table tbody tr td button.good.coloured {
-              border: 2px solid rgba(46, 139, 87, 0.4);
-              background: rgba(46, 139, 87, 0.05); }
-            html body .table-container .table-wrapper table tbody tr td button.good:hover {
-              border: 2px solid rgba(46, 139, 87, 0.9);
-              background: rgba(46, 139, 87, 0.05);
-              box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
-              transition: all 0.2s; }
-            html body .table-container .table-wrapper table tbody tr td button.cool.coloured {
-              border: 2px solid rgba(144, 238, 144, 0.4);
-              background: rgba(144, 238, 144, 0.05); }
-            html body .table-container .table-wrapper table tbody tr td button.cool:hover {
-              border: 2px solid rgba(144, 238, 144, 0.9);
-              background: rgba(144, 238, 144, 0.05);
-              box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
-              transition: all 0.2s; }
-            html body .table-container .table-wrapper table tbody tr td .modal {
-              position: fixed;
-              top: 0;
-              left: 0;
+        padding: 15px 10px 0 10px;
+        overflow: auto;
+        flex-shrink: 0; }
+        html body.dark nav .nav-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%; }
+          html body.dark nav .nav-content div.controls, html body.dark nav .nav-content div.filters, html body.dark nav .nav-content div.disciplines {
+            flex-direction: column;
+            display: flex;
+            width: 100%;
+            margin-bottom: 25px; }
+            html body.dark nav .nav-content div.controls span, html body.dark nav .nav-content div.filters span, html body.dark nav .nav-content div.disciplines span {
               width: 100%;
+              font-size: 21px;
+              text-align: center;
+              font-weight: 700;
+              margin-bottom: 10px; }
+            html body.dark nav .nav-content div.controls div, html body.dark nav .nav-content div.controls form, html body.dark nav .nav-content div.filters div, html body.dark nav .nav-content div.filters form, html body.dark nav .nav-content div.disciplines div, html body.dark nav .nav-content div.disciplines form {
               height: 100%;
-              display: none;
-              background-color: rgba(0, 0, 0, 0.1);
-              justify-content: center;
-              align-items: center;
-              z-index: 997; }
-              html body .table-container .table-wrapper table tbody tr td .modal .modal-content {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                position: relative;
-                align-items: flex-start;
-                width: 75%;
-                min-height: 55%;
-                max-width: 450px;
-                max-height: 70%;
+              flex-direction: column; }
+              html body.dark nav .nav-content div.controls div button, html body.dark nav .nav-content div.controls form button, html body.dark nav .nav-content div.filters div button, html body.dark nav .nav-content div.filters form button, html body.dark nav .nav-content div.disciplines div button, html body.dark nav .nav-content div.disciplines form button {
+                font-size: 17px;
+                font-weight: 700;
+                color: #e1e3e6;
+                height: 55px;
+                width: 100%;
+                margin-bottom: 12px;
+                background: transparent;
+                border: 2px solid rgba(102, 102, 102, 0.4);
+                border-radius: 7px;
+                transition: all 0.2s; }
+                html body.dark nav .nav-content div.controls div button:hover, html body.dark nav .nav-content div.controls form button:hover, html body.dark nav .nav-content div.filters div button:hover, html body.dark nav .nav-content div.filters form button:hover, html body.dark nav .nav-content div.disciplines div button:hover, html body.dark nav .nav-content div.disciplines form button:hover {
+                  border-color: #e1e3e6;
+                  box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
+                  transition: all 0.2s; }
+              html body.dark nav .nav-content div.controls div button:last-child, html body.dark nav .nav-content div.controls form button:last-child, html body.dark nav .nav-content div.filters div button:last-child, html body.dark nav .nav-content div.filters form button:last-child, html body.dark nav .nav-content div.disciplines div button:last-child, html body.dark nav .nav-content div.disciplines form button:last-child {
+                margin-bottom: 0; }
+              html body.dark nav .nav-content div.controls div #buttonCool.selected, html body.dark nav .nav-content div.controls form #buttonCool.selected, html body.dark nav .nav-content div.filters div #buttonCool.selected, html body.dark nav .nav-content div.filters form #buttonCool.selected, html body.dark nav .nav-content div.disciplines div #buttonCool.selected, html body.dark nav .nav-content div.disciplines form #buttonCool.selected {
+                border-color: rgba(144, 238, 144, 0.8);
+                transform: scale(0.92); }
+                html body.dark nav .nav-content div.controls div #buttonCool.selected:hover, html body.dark nav .nav-content div.controls form #buttonCool.selected:hover, html body.dark nav .nav-content div.filters div #buttonCool.selected:hover, html body.dark nav .nav-content div.filters form #buttonCool.selected:hover, html body.dark nav .nav-content div.disciplines div #buttonCool.selected:hover, html body.dark nav .nav-content div.disciplines form #buttonCool.selected:hover {
+                  border-color: #e1e3e6;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+              html body.dark nav .nav-content div.controls div #buttonGood.selected, html body.dark nav .nav-content div.controls form #buttonGood.selected, html body.dark nav .nav-content div.filters div #buttonGood.selected, html body.dark nav .nav-content div.filters form #buttonGood.selected, html body.dark nav .nav-content div.disciplines div #buttonGood.selected, html body.dark nav .nav-content div.disciplines form #buttonGood.selected {
+                border-color: rgba(46, 139, 87, 0.8);
+                transform: scale(0.92); }
+                html body.dark nav .nav-content div.controls div #buttonGood.selected:hover, html body.dark nav .nav-content div.controls form #buttonGood.selected:hover, html body.dark nav .nav-content div.filters div #buttonGood.selected:hover, html body.dark nav .nav-content div.filters form #buttonGood.selected:hover, html body.dark nav .nav-content div.disciplines div #buttonGood.selected:hover, html body.dark nav .nav-content div.disciplines form #buttonGood.selected:hover {
+                  border-color: #e1e3e6;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+              html body.dark nav .nav-content div.controls div #buttonSatisfactory.selected, html body.dark nav .nav-content div.controls form #buttonSatisfactory.selected, html body.dark nav .nav-content div.filters div #buttonSatisfactory.selected, html body.dark nav .nav-content div.filters form #buttonSatisfactory.selected, html body.dark nav .nav-content div.disciplines div #buttonSatisfactory.selected, html body.dark nav .nav-content div.disciplines form #buttonSatisfactory.selected {
+                border-color: rgba(255, 140, 0, 0.8);
+                transform: scale(0.92); }
+                html body.dark nav .nav-content div.controls div #buttonSatisfactory.selected:hover, html body.dark nav .nav-content div.controls form #buttonSatisfactory.selected:hover, html body.dark nav .nav-content div.filters div #buttonSatisfactory.selected:hover, html body.dark nav .nav-content div.filters form #buttonSatisfactory.selected:hover, html body.dark nav .nav-content div.disciplines div #buttonSatisfactory.selected:hover, html body.dark nav .nav-content div.disciplines form #buttonSatisfactory.selected:hover {
+                  border-color: #e1e3e6;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+              html body.dark nav .nav-content div.controls div #buttonBad.selected, html body.dark nav .nav-content div.controls form #buttonBad.selected, html body.dark nav .nav-content div.filters div #buttonBad.selected, html body.dark nav .nav-content div.filters form #buttonBad.selected, html body.dark nav .nav-content div.disciplines div #buttonBad.selected, html body.dark nav .nav-content div.disciplines form #buttonBad.selected {
+                border-color: rgba(255, 0, 0, 0.8);
+                transform: scale(0.92); }
+                html body.dark nav .nav-content div.controls div #buttonBad.selected:hover, html body.dark nav .nav-content div.controls form #buttonBad.selected:hover, html body.dark nav .nav-content div.filters div #buttonBad.selected:hover, html body.dark nav .nav-content div.filters form #buttonBad.selected:hover, html body.dark nav .nav-content div.disciplines div #buttonBad.selected:hover, html body.dark nav .nav-content div.disciplines form #buttonBad.selected:hover {
+                  border-color: #e1e3e6;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+          html body.dark nav .nav-content div.controls {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap; }
+            html body.dark nav .nav-content div.controls .control {
+              width: 70px; }
+            html body.dark nav .nav-content div.controls .control.admin {
+              margin-top: 12px;
+              width: 100%; }
+              html body.dark nav .nav-content div.controls .control.admin button {
+                border: 2px solid rgba(102, 102, 102, 0.4);
+                transition: all 0.2s; }
+                html body.dark nav .nav-content div.controls .control.admin button:hover {
+                  border-color: #e1e3e6;
+                  box-shadow: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%);
+                  transition: all 0.2s; }
+      html body.dark nav::-webkit-scrollbar {
+        width: 5px; }
+      html body.dark .table-container {
+        width: 100%;
+        height: 100%;
+        margin-left: 7px;
+        padding: 0 50px 10px 0;
+        border-radius: 0 15px 15px 0;
+        background: #292929;
+        overflow: scroll; }
+        html body.dark .table-container .table-wrapper table {
+          height: 100%;
+          width: 100%;
+          background: #292929;
+          color: #e1e3e6;
+          border-collapse: collapse;
+          table-layout: fixed; }
+          html body.dark .table-container .table-wrapper table thead {
+            height: 80px;
+            font-size: 25px;
+            border-color: #666666; }
+            html body.dark .table-container .table-wrapper table thead tr th {
+              border-bottom: 5px solid #666666;
+              top: 0;
+              position: sticky;
+              z-index: 2;
+              background-color: #292929;
+              width: 100px;
+              border-bottom: 1px solid #666666; }
+            html body.dark .table-container .table-wrapper table thead tr th.column-id {
+              left: 0;
+              width: 50px;
+              z-index: 3; }
+            html body.dark .table-container .table-wrapper table thead tr th.column-fullName {
+              left: 50px;
+              width: 200px;
+              z-index: 3; }
+          html body.dark .table-container .table-wrapper table tbody tr {
+            height: 90px;
+            border-bottom: 1px solid #666666; }
+            html body.dark .table-container .table-wrapper table tbody tr td:nth-child(1) {
+              background-color: #292929;
+              left: 0;
+              position: sticky;
+              z-index: 1;
+              text-align: center; }
+            html body.dark .table-container .table-wrapper table tbody tr td:nth-child(2) {
+              background-color: #292929;
+              left: 50px;
+              position: sticky;
+              z-index: 1;
+              text-align: center; }
+            html body.dark .table-container .table-wrapper table tbody tr td {
+              position: relative;
+              font-size: 21px; }
+              html body.dark .table-container .table-wrapper table tbody tr td button.bad,
+              html body.dark .table-container .table-wrapper table tbody tr td button.satisfactory,
+              html body.dark .table-container .table-wrapper table tbody tr td button.good,
+              html body.dark .table-container .table-wrapper table tbody tr td button.cool {
+                position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                border-radius: 15px;
-                background-color: #292929;
-                padding: 60px 40px 30px 40px;
-                z-index: 998; }
-                html body .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper {
-                  width: 100%;
-                  display: flex;
-                  justify-content: center; }
-                  html body .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper .title {
-                    text-align: center;
-                    font-size: 30px; }
-                html body .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
-                  height: 100%;
-                  width: 100%;
-                  margin-top: 30px;
-                  overflow: auto;
-                  flex-grow: 1; }
-                  html body .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    text-align: center;
-                    margin-bottom: 15px; }
-                  html body .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .number {
-                    width: 50%;
-                    text-align: center; }
-                  html body .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark {
-                    width: 50%;
-                    text-align: center;
-                    font-weight: 700; }
-                    html body .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.completed {
-                      color: #408835; }
-                    html body .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.not-completed {
-                      color: red; }
-                html body .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
-                  width: 100%;
-                  height: auto;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  margin-top: 30px; }
-                  html body .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal {
-                    display: flex;
-                    color: #e1e3e6;
-                    height: 60px;
-                    font-size: 25px;
-                    align-items: center;
-                    padding: 0 15px;
-                    font-weight: 700;
-                    justify-content: center;
-                    border: 2px solid rgba(102, 102, 102, 0.4);
-                    background: transparent;
-                    border-radius: 7px;
-                    user-select: none;
-                    transition: all 0.2s; }
-                    html body .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal:hover {
-                      border-color: #e1e3e6;
-                      transition: all 0.2s; }
-              html body .table-container .table-wrapper table tbody tr td .modal::before {
-                content: "";
-                position: absolute;
+                font-weight: 700;
+                color: #e1e3e6;
+                font-size: 25px;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid rgba(102, 102, 102, 0.4);
+                background: transparent;
+                border-radius: 7px;
+                user-select: none;
+                transition: all 0.2s; }
+              html body.dark .table-container .table-wrapper table tbody tr td button.bad.coloured {
+                border: 2px solid rgba(255, 0, 0, 0.4);
+                background: rgba(255, 0, 0, 0.05); }
+              html body.dark .table-container .table-wrapper table tbody tr td button.bad:hover {
+                border: 2px solid rgba(255, 0, 0, 0.9);
+                background: rgba(255, 0, 0, 0.05);
+                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+                transition: all 0.2s; }
+              html body.dark .table-container .table-wrapper table tbody tr td button.satisfactory.coloured {
+                border: 2px solid rgba(255, 140, 0, 0.4);
+                background: rgba(255, 140, 0, 0.05); }
+              html body.dark .table-container .table-wrapper table tbody tr td button.satisfactory:hover {
+                border: 2px solid rgba(255, 140, 0, 0.9);
+                background: rgba(255, 140, 0, 0.05);
+                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+                transition: all 0.2s; }
+              html body.dark .table-container .table-wrapper table tbody tr td button.good.coloured {
+                border: 2px solid rgba(46, 139, 87, 0.4);
+                background: rgba(46, 139, 87, 0.05); }
+              html body.dark .table-container .table-wrapper table tbody tr td button.good:hover {
+                border: 2px solid rgba(46, 139, 87, 0.9);
+                background: rgba(46, 139, 87, 0.05);
+                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+                transition: all 0.2s; }
+              html body.dark .table-container .table-wrapper table tbody tr td button.cool.coloured {
+                border: 2px solid rgba(144, 238, 144, 0.4);
+                background: rgba(144, 238, 144, 0.05); }
+              html body.dark .table-container .table-wrapper table tbody tr td button.cool:hover {
+                border: 2px solid rgba(144, 238, 144, 0.9);
+                background: rgba(144, 238, 144, 0.05);
+                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+                transition: all 0.2s; }
+              html body.dark .table-container .table-wrapper table tbody tr td .modal {
+                position: fixed;
                 top: 0;
                 left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: rgba(0, 0, 0, 0.5); }
-              html body .table-container .table-wrapper table tbody tr td .modal.showed {
-                display: block; }
-        html body .table-container .table-wrapper table tbody tr:last-child {
-          border-bottom: none; }
-    html body *::-webkit-scrollbar {
-      width: 10px;
-      height: 10px; }
-    html body *::-webkit-scrollbar-track {
-      background-color: transparent;
-      border-radius: 15px; }
-    html body *::-webkit-scrollbar-thumb {
-      background-color: #e1e3e6;
-      border-radius: 15px; }
-    html body *::-webkit-scrollbar-corner {
-      background-color: transparent; }
+                width: 100%;
+                height: 100%;
+                display: none;
+                background-color: rgba(0, 0, 0, 0.1);
+                justify-content: center;
+                align-items: center;
+                z-index: 997; }
+                html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  position: relative;
+                  align-items: flex-start;
+                  width: 75%;
+                  min-height: 55%;
+                  max-width: 450px;
+                  max-height: 70%;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  border-radius: 15px;
+                  background-color: #292929;
+                  padding: 30px 40px 30px 40px;
+                  z-index: 998; }
+                  html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center; }
+                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper .title {
+                      text-align: center;
+                      font-size: 30px; }
+                  html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
+                    height: 100%;
+                    width: 100%;
+                    margin-top: 30px;
+                    overflow: auto;
+                    flex-grow: 1; }
+                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
+                      width: 100%;
+                      display: flex;
+                      flex-direction: row;
+                      text-align: center;
+                      padding: 15px 0 15px 0;
+                      border-bottom: 1px solid rgba(102, 102, 102, 0.4); }
+                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .number {
+                      width: 50%;
+                      text-align: center; }
+                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark {
+                      width: 50%;
+                      text-align: center;
+                      font-weight: 700; }
+                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.completed {
+                        color: #408835; }
+                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.not-completed {
+                        color: #830000; }
+                  html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px; }
+                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal {
+                      display: flex;
+                      color: #e1e3e6;
+                      height: 60px;
+                      font-size: 25px;
+                      align-items: center;
+                      padding: 0 15px;
+                      font-weight: 700;
+                      justify-content: center;
+                      border: 2px solid rgba(102, 102, 102, 0.4);
+                      background: transparent;
+                      border-radius: 7px;
+                      user-select: none;
+                      transition: all 0.2s; }
+                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal:hover {
+                        border-color: #e1e3e6;
+                        box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
+                        transition: all 0.2s; }
+                html body.dark .table-container .table-wrapper table tbody tr td .modal::before {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background-color: rgba(0, 0, 0, 0.5); }
+                html body.dark .table-container .table-wrapper table tbody tr td .modal.showed {
+                  display: block; }
+          html body.dark .table-container .table-wrapper table tbody tr:last-child {
+            border-bottom: none; }
+      html body.dark *::-webkit-scrollbar {
+        width: 10px;
+        height: 10px; }
+      html body.dark *::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 15px; }
+      html body.dark *::-webkit-scrollbar-thumb {
+        background-color: #e1e3e6;
+        border-radius: 15px; }
+      html body.dark *::-webkit-scrollbar-corner {
+        background-color: transparent; }
+    html body.light {
+      color: #292929;
+      background: linear-gradient(45deg, #b698f6 0%, #95c5ea 100%); }
+      html body.light nav {
+        width: 180px;
+        height: 100%;
+        border-radius: 15px 0 0 15px;
+        background: #ffffff;
+        padding: 15px 10px 0 10px;
+        overflow: auto;
+        flex-shrink: 0; }
+        html body.light nav .nav-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%; }
+          html body.light nav .nav-content div.controls, html body.light nav .nav-content div.filters, html body.light nav .nav-content div.disciplines {
+            flex-direction: column;
+            display: flex;
+            width: 100%;
+            margin-bottom: 25px; }
+            html body.light nav .nav-content div.controls span, html body.light nav .nav-content div.filters span, html body.light nav .nav-content div.disciplines span {
+              width: 100%;
+              font-size: 21px;
+              text-align: center;
+              font-weight: 700;
+              margin-bottom: 10px; }
+            html body.light nav .nav-content div.controls div, html body.light nav .nav-content div.controls form, html body.light nav .nav-content div.filters div, html body.light nav .nav-content div.filters form, html body.light nav .nav-content div.disciplines div, html body.light nav .nav-content div.disciplines form {
+              height: 100%;
+              flex-direction: column; }
+              html body.light nav .nav-content div.controls div button, html body.light nav .nav-content div.controls form button, html body.light nav .nav-content div.filters div button, html body.light nav .nav-content div.filters form button, html body.light nav .nav-content div.disciplines div button, html body.light nav .nav-content div.disciplines form button {
+                font-size: 17px;
+                font-weight: 700;
+                color: #292929;
+                height: 55px;
+                width: 100%;
+                margin-bottom: 12px;
+                background: transparent;
+                border: 2px solid rgba(102, 102, 102, 0.4);
+                border-radius: 7px;
+                transition: all 0.2s; }
+                html body.light nav .nav-content div.controls div button:hover, html body.light nav .nav-content div.controls form button:hover, html body.light nav .nav-content div.filters div button:hover, html body.light nav .nav-content div.filters form button:hover, html body.light nav .nav-content div.disciplines div button:hover, html body.light nav .nav-content div.disciplines form button:hover {
+                  border-color: #292929;
+                  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+                  transition: all 0.2s; }
+              html body.light nav .nav-content div.controls div button:last-child, html body.light nav .nav-content div.controls form button:last-child, html body.light nav .nav-content div.filters div button:last-child, html body.light nav .nav-content div.filters form button:last-child, html body.light nav .nav-content div.disciplines div button:last-child, html body.light nav .nav-content div.disciplines form button:last-child {
+                margin-bottom: 0; }
+              html body.light nav .nav-content div.controls div #buttonCool.selected, html body.light nav .nav-content div.controls form #buttonCool.selected, html body.light nav .nav-content div.filters div #buttonCool.selected, html body.light nav .nav-content div.filters form #buttonCool.selected, html body.light nav .nav-content div.disciplines div #buttonCool.selected, html body.light nav .nav-content div.disciplines form #buttonCool.selected {
+                border-color: rgba(144, 238, 144, 0.8);
+                transform: scale(0.92); }
+                html body.light nav .nav-content div.controls div #buttonCool.selected:hover, html body.light nav .nav-content div.controls form #buttonCool.selected:hover, html body.light nav .nav-content div.filters div #buttonCool.selected:hover, html body.light nav .nav-content div.filters form #buttonCool.selected:hover, html body.light nav .nav-content div.disciplines div #buttonCool.selected:hover, html body.light nav .nav-content div.disciplines form #buttonCool.selected:hover {
+                  border-color: #292929;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+              html body.light nav .nav-content div.controls div #buttonGood.selected, html body.light nav .nav-content div.controls form #buttonGood.selected, html body.light nav .nav-content div.filters div #buttonGood.selected, html body.light nav .nav-content div.filters form #buttonGood.selected, html body.light nav .nav-content div.disciplines div #buttonGood.selected, html body.light nav .nav-content div.disciplines form #buttonGood.selected {
+                border-color: rgba(46, 139, 87, 0.8);
+                transform: scale(0.92); }
+                html body.light nav .nav-content div.controls div #buttonGood.selected:hover, html body.light nav .nav-content div.controls form #buttonGood.selected:hover, html body.light nav .nav-content div.filters div #buttonGood.selected:hover, html body.light nav .nav-content div.filters form #buttonGood.selected:hover, html body.light nav .nav-content div.disciplines div #buttonGood.selected:hover, html body.light nav .nav-content div.disciplines form #buttonGood.selected:hover {
+                  border-color: #292929;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+              html body.light nav .nav-content div.controls div #buttonSatisfactory.selected, html body.light nav .nav-content div.controls form #buttonSatisfactory.selected, html body.light nav .nav-content div.filters div #buttonSatisfactory.selected, html body.light nav .nav-content div.filters form #buttonSatisfactory.selected, html body.light nav .nav-content div.disciplines div #buttonSatisfactory.selected, html body.light nav .nav-content div.disciplines form #buttonSatisfactory.selected {
+                border-color: rgba(255, 140, 0, 0.8);
+                transform: scale(0.92); }
+                html body.light nav .nav-content div.controls div #buttonSatisfactory.selected:hover, html body.light nav .nav-content div.controls form #buttonSatisfactory.selected:hover, html body.light nav .nav-content div.filters div #buttonSatisfactory.selected:hover, html body.light nav .nav-content div.filters form #buttonSatisfactory.selected:hover, html body.light nav .nav-content div.disciplines div #buttonSatisfactory.selected:hover, html body.light nav .nav-content div.disciplines form #buttonSatisfactory.selected:hover {
+                  border-color: #292929;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+              html body.light nav .nav-content div.controls div #buttonBad.selected, html body.light nav .nav-content div.controls form #buttonBad.selected, html body.light nav .nav-content div.filters div #buttonBad.selected, html body.light nav .nav-content div.filters form #buttonBad.selected, html body.light nav .nav-content div.disciplines div #buttonBad.selected, html body.light nav .nav-content div.disciplines form #buttonBad.selected {
+                border-color: rgba(255, 0, 0, 0.8);
+                transform: scale(0.92); }
+                html body.light nav .nav-content div.controls div #buttonBad.selected:hover, html body.light nav .nav-content div.controls form #buttonBad.selected:hover, html body.light nav .nav-content div.filters div #buttonBad.selected:hover, html body.light nav .nav-content div.filters form #buttonBad.selected:hover, html body.light nav .nav-content div.disciplines div #buttonBad.selected:hover, html body.light nav .nav-content div.disciplines form #buttonBad.selected:hover {
+                  border-color: #292929;
+                  box-shadow: none;
+                  transition: all 0.2s; }
+          html body.light nav .nav-content div.controls {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap; }
+            html body.light nav .nav-content div.controls .control {
+              width: 70px; }
+            html body.light nav .nav-content div.controls .control.admin {
+              margin-top: 12px;
+              width: 100%; }
+              html body.light nav .nav-content div.controls .control.admin button {
+                border: 2px solid rgba(102, 102, 102, 0.4);
+                transition: all 0.2s; }
+                html body.light nav .nav-content div.controls .control.admin button:hover {
+                  border-color: #292929;
+                  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+                  transition: all 0.2s; }
+      html body.light nav::-webkit-scrollbar {
+        width: 5px; }
+      html body.light .table-container {
+        width: 100%;
+        height: 100%;
+        margin-left: 7px;
+        padding: 0 50px 10px 0;
+        border-radius: 0 15px 15px 0;
+        background: #ffffff;
+        overflow: scroll; }
+        html body.light .table-container .table-wrapper table {
+          height: 100%;
+          width: 100%;
+          background: #ffffff;
+          color: #292929;
+          border-collapse: collapse;
+          table-layout: fixed; }
+          html body.light .table-container .table-wrapper table thead {
+            height: 80px;
+            font-size: 25px;
+            border-color: #666666; }
+            html body.light .table-container .table-wrapper table thead tr th {
+              border-bottom: 5px solid #666666;
+              top: 0;
+              position: sticky;
+              z-index: 2;
+              background-color: #ffffff;
+              width: 100px;
+              border-bottom: 1px solid #666666; }
+            html body.light .table-container .table-wrapper table thead tr th.column-id {
+              left: 0;
+              width: 50px;
+              z-index: 3; }
+            html body.light .table-container .table-wrapper table thead tr th.column-fullName {
+              left: 50px;
+              width: 200px;
+              z-index: 3; }
+          html body.light .table-container .table-wrapper table tbody tr {
+            height: 90px;
+            border-bottom: 1px solid #666666; }
+            html body.light .table-container .table-wrapper table tbody tr td:nth-child(1) {
+              background-color: #ffffff;
+              left: 0;
+              position: sticky;
+              z-index: 1;
+              text-align: center; }
+            html body.light .table-container .table-wrapper table tbody tr td:nth-child(2) {
+              background-color: #ffffff;
+              left: 50px;
+              position: sticky;
+              z-index: 1;
+              text-align: center; }
+            html body.light .table-container .table-wrapper table tbody tr td {
+              position: relative;
+              font-size: 21px; }
+              html body.light .table-container .table-wrapper table tbody tr td button.bad,
+              html body.light .table-container .table-wrapper table tbody tr td button.satisfactory,
+              html body.light .table-container .table-wrapper table tbody tr td button.good,
+              html body.light .table-container .table-wrapper table tbody tr td button.cool {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: 700;
+                color: #292929;
+                font-size: 25px;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid rgba(102, 102, 102, 0.4);
+                background: transparent;
+                border-radius: 7px;
+                user-select: none;
+                transition: all 0.2s; }
+              html body.light .table-container .table-wrapper table tbody tr td button.bad.coloured {
+                border: 2px solid rgba(255, 0, 0, 0.4);
+                background: rgba(255, 0, 0, 0.05); }
+              html body.light .table-container .table-wrapper table tbody tr td button.bad:hover {
+                border: 2px solid rgba(255, 0, 0, 0.9);
+                background: rgba(255, 0, 0, 0.05);
+                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+                transition: all 0.2s; }
+              html body.light .table-container .table-wrapper table tbody tr td button.satisfactory.coloured {
+                border: 2px solid rgba(255, 140, 0, 0.4);
+                background: rgba(255, 140, 0, 0.05); }
+              html body.light .table-container .table-wrapper table tbody tr td button.satisfactory:hover {
+                border: 2px solid rgba(255, 140, 0, 0.9);
+                background: rgba(255, 140, 0, 0.05);
+                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+                transition: all 0.2s; }
+              html body.light .table-container .table-wrapper table tbody tr td button.good.coloured {
+                border: 2px solid rgba(46, 139, 87, 0.4);
+                background: rgba(46, 139, 87, 0.05); }
+              html body.light .table-container .table-wrapper table tbody tr td button.good:hover {
+                border: 2px solid rgba(46, 139, 87, 0.9);
+                background: rgba(46, 139, 87, 0.05);
+                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+                transition: all 0.2s; }
+              html body.light .table-container .table-wrapper table tbody tr td button.cool.coloured {
+                border: 2px solid rgba(144, 238, 144, 0.4);
+                background: rgba(144, 238, 144, 0.05); }
+              html body.light .table-container .table-wrapper table tbody tr td button.cool:hover {
+                border: 2px solid rgba(144, 238, 144, 0.9);
+                background: rgba(144, 238, 144, 0.05);
+                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+                transition: all 0.2s; }
+              html body.light .table-container .table-wrapper table tbody tr td .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: none;
+                background-color: rgba(0, 0, 0, 0.1);
+                justify-content: center;
+                align-items: center;
+                z-index: 997; }
+                html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  position: relative;
+                  align-items: flex-start;
+                  width: 75%;
+                  min-height: 55%;
+                  max-width: 450px;
+                  max-height: 70%;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  border-radius: 15px;
+                  background-color: #ffffff;
+                  padding: 30px 40px 30px 40px;
+                  z-index: 998; }
+                  html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center; }
+                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper .title {
+                      text-align: center;
+                      font-size: 30px; }
+                  html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
+                    height: 100%;
+                    width: 100%;
+                    margin-top: 30px;
+                    overflow: auto;
+                    flex-grow: 1; }
+                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
+                      width: 100%;
+                      display: flex;
+                      flex-direction: row;
+                      text-align: center;
+                      padding: 15px 0 15px 0;
+                      border-bottom: 1px solid rgba(102, 102, 102, 0.4); }
+                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .number {
+                      width: 50%;
+                      text-align: center; }
+                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark {
+                      width: 50%;
+                      text-align: center;
+                      font-weight: 700; }
+                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.completed {
+                        color: #408835; }
+                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.not-completed {
+                        color: #830000; }
+                  html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px; }
+                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal {
+                      display: flex;
+                      color: #292929;
+                      height: 60px;
+                      font-size: 25px;
+                      align-items: center;
+                      padding: 0 15px;
+                      font-weight: 700;
+                      justify-content: center;
+                      border: 2px solid rgba(102, 102, 102, 0.4);
+                      background: transparent;
+                      border-radius: 7px;
+                      user-select: none;
+                      transition: all 0.2s; }
+                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal:hover {
+                        border-color: #292929;
+                        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+                        transition: all 0.2s; }
+                html body.light .table-container .table-wrapper table tbody tr td .modal::before {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background-color: rgba(0, 0, 0, 0.5); }
+                html body.light .table-container .table-wrapper table tbody tr td .modal.showed {
+                  display: block; }
+          html body.light .table-container .table-wrapper table tbody tr:last-child {
+            border-bottom: none; }
+      html body.light *::-webkit-scrollbar {
+        width: 10px;
+        height: 10px; }
+      html body.light *::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 15px; }
+      html body.light *::-webkit-scrollbar-thumb {
+        background-color: #292929;
+        border-radius: 15px; }
+      html body.light *::-webkit-scrollbar-corner {
+        background-color: transparent; }
 
 @media only screen and (max-width: 768px) {
   html body .table-container form table thead tr th.column-fullName {

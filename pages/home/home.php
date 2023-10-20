@@ -26,17 +26,25 @@ function averageMark(){
     <link rel="stylesheet" href="style.css">
     <title>Главная</title>
 </head>
-<body>
+<body class="dark">
 <nav>
     <div class="nav-content">
-        <div class="quit">
-            <form action="home.php" method="post">
+        <div class="controls">
+            <form class="control" action="home.php" method="post">
                 <button>Выход</button>
             </form>
+            <div class="control theme">
+                <button id="btnSwitchTheme">
+
+                </button>
+            </div>
+            <div class="control admin">
+                <button>Редактировать</button>
+            </div>
         </div>
 
         <div class="filters">
-            <span>Оценки</span>
+            <span>Успеваемость</span>
             <div>
                 <button id="buttonCool">ОТЛИЧНО</button>
                 <button id="buttonGood">ХОРОШО</button>
@@ -96,7 +104,7 @@ function averageMark(){
                 <td>Астафьев<br> Кирилл</td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -152,7 +160,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 2</span>
@@ -208,7 +216,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 3</span>
@@ -264,7 +272,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 4</span>
@@ -320,7 +328,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 5</span>
@@ -376,7 +384,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 6</span>
@@ -432,7 +440,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -488,7 +496,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -544,7 +552,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -600,7 +608,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -656,7 +664,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -712,7 +720,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -768,7 +776,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -824,7 +832,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -880,7 +888,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -936,7 +944,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -992,7 +1000,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1048,7 +1056,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1104,7 +1112,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1160,7 +1168,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1216,7 +1224,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1272,7 +1280,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1328,7 +1336,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1384,7 +1392,7 @@ function averageMark(){
                 </td>
                 <td>
                     <button class="markBtn satisfactory">3</button>
-                    <div class="modal show">
+                    <div class="modal">
                         <div class="modal-content">
                             <div class="title-wrapper">
                                 <span class="title">Лабораторная работа 1</span>
@@ -1446,5 +1454,6 @@ function averageMark(){
 
 <script src="scripts/modal.js"></script>
 <script src="scripts/filter.js"></script>
+<script src="scripts/theme.js"></script>
 </body>
 </html>
