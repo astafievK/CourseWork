@@ -53,20 +53,31 @@ html {
     outline: none;
     overflow: hidden;
 
+    nav:not(.mobile) {
+      width: $nav-width;
+      height: 100%;
+      border-radius: 15px;
+      padding: 15px 10px 0 10px;
+      overflow: auto;
+      flex-shrink: 0;
+    }
+
+    .table-container {
+      width: 100%;
+      height: 100%;
+      margin-left: 7px;
+      border-radius: 15px;
+      overflow: auto;
+    }
+
     &.dark {
       background: $theme-dark-color-background;
       color: $theme-dark-color-secondary;
 
-      nav {
-        width: $nav-width;
-        height: 100%;
-        border-radius: 15px;
+      nav:not(.mobile) {
         background: $theme-dark-color-primary;
-        padding: 15px 10px 0 10px;
-        overflow: auto;
-        flex-shrink: 0;
 
-        .nav-content {
+        .nav-content:not(.mobile) {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -195,17 +206,12 @@ html {
         }
       }
 
-      nav::-webkit-scrollbar {
+      nav:not(.mobile)::-webkit-scrollbar {
         width: 5px;
       }
 
       .table-container {
-        width: 100%;
-        height: 100%;
-        margin-left: 7px;
-        border-radius: 15px;
         background: $theme-dark-color-primary;
-        overflow: auto;
 
         .table-wrapper {
 
@@ -504,17 +510,10 @@ html {
       color: $theme-light-color-secondary;
       background: $theme-light-color-background;
 
-
-      nav {
-        width: $nav-width;
-        height: 100%;
-        border-radius: 15px;
+      nav:not(.mobile) {
         background: $theme-light-color-primary;
-        padding: 15px 10px 0 10px;
-        overflow: auto;
-        flex-shrink: 0;
 
-        .nav-content {
+        .nav-content:not(.mobile) {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -643,17 +642,12 @@ html {
         }
       }
 
-      nav::-webkit-scrollbar {
+      nav:not(.mobile)::-webkit-scrollbar {
         width: 5px;
       }
 
       .table-container {
-        width: 100%;
-        height: 100%;
-        margin-left: 7px;
-        border-radius: 15px;
         background: $theme-light-color-primary;
-        overflow: auto;
 
         .table-wrapper {
 
@@ -950,32 +944,87 @@ html {
   }
 }
 
-@media only screen and (max-width: $media-size-medium){
-  html{
+@media only screen and (min-width: 769px) {
+  html {
+    body {
+      nav.mobile {
+        display: none;
+      }
+    }
+  }
+}
 
-    body{
-      .table-container{
-        form{
-          table{
-            thead{
-              tr{
-                th.column-fullName{
+@media only screen and (max-width: $media-size-medium){
+  html {
+    body {
+      padding: 17px;
+
+      nav:not(.mobile) {
+        display: none;
+      }
+
+      nav.mobile {
+        position: fixed;
+        bottom: 60px;
+        height: 75px;
+        left: 50%;
+        border-radius: 15px;
+        transform: translateX(-50%);
+        z-index: 6;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+
+        .nav-content {
+          padding: 10px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+
+          button {
+            height: 100%;
+            width: 55px;
+            border-radius: 7px;
+            border: none;
+            outline: none;
+            user-select: none;
+
+            img{
+              width: 80%;
+              height: 80%;
+            }
+          }
+
+          button:not(:first-child){
+            margin-left: 15px;
+          }
+        }
+      }
+
+      .table-container {
+        margin-left: 0;
+
+        form {
+          table {
+            thead {
+              tr {
+                th.column-fullName {
                   width: 160px;
                 }
 
-                th.column-id{
+                th.column-id {
                   width: 50px;
                 }
               }
             }
 
-            tbody{
-              tr{
-                td:nth-child(1){
+            tbody {
+              tr {
+                td:nth-child(1) {
 
                 }
 
-                td:nth-child(2){
+                td:nth-child(2) {
                   left: 50px;
                 }
               }
@@ -983,6 +1032,32 @@ html {
           }
         }
       }
+
+      &.dark {
+        nav.mobile {
+          background: $theme-dark-color-primary;
+
+          .nav-content {
+            button {
+              background-color: rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+      }
+
+      &.light {
+        nav.mobile {
+          background: $theme-light-color-primary;
+
+          .nav-content {
+            button {
+              background-color: $theme-dark-color-secondary;
+            }
+          }
+        }
+      }
     }
   }
 }
+
+

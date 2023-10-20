@@ -65,6 +65,19 @@ function averageMark(){
         </div>
     </div>
 </nav>
+<nav class="mobile">
+    <div class="nav-content">
+        <button class="filter marks">
+            <img src="../../assets/images/nav/mobile/navMobileMarksDark.svg" alt=""/>
+        </button>
+        <button class="theme" id="btnMobileSwitchTheme">
+            <img alt=""/>
+        </button>
+        <button class="filter disciplines">
+            <img alt=""/>
+        </button>
+    </div>
+</nav>
 <div class="table-container">
     <div class="table-wrapper">
         <table id="table">
