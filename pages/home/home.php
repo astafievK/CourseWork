@@ -70,7 +70,7 @@ function averageMark(){
         <table id="table">
             <thead>
             <tr>
-                <th class="column-id">№</th>
+                <th class="column-id"><span>№</span></th>
                 <th class="column-fullName">ФИО</th>
                 <th>ЛР1</th>
                 <th>ЛР2</th>

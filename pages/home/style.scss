@@ -21,7 +21,7 @@ $theme-light-color-shadow:      0 0 3px 2px rgba(0, 0, 0, 0.4);
 $theme-dark-color-background:   linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
 $theme-dark-color-primary:      #292929;
 $theme-dark-color-secondary:    #e1e3e6;
-$theme-dark-color-shadow:      0 0 3px 2px rgba(255, 255, 255, 0.4);
+$theme-dark-color-shadow:       0 0 3px 2px rgba(255, 255, 255, 0.4);
 
 $nav-width: 180px;
 $media-size-small: 480px;
@@ -33,6 +33,8 @@ $media-size-large: 1024px;
   padding: 0;
   outline: none;
   box-sizing: border-box;
+
+  transition: background-color 0.3s;
 }
 
 button, input, a{
@@ -49,6 +51,7 @@ html {
     height: 100%;
     font-family: Poppins-Regular, sans-serif;
     outline: none;
+    overflow: hidden;
 
     &.dark {
       background: $theme-dark-color-background;
@@ -57,7 +60,7 @@ html {
       nav {
         width: $nav-width;
         height: 100%;
-        border-radius: 15px 0 0 15px;
+        border-radius: 15px;
         background: $theme-dark-color-primary;
         padding: 15px 10px 0 10px;
         overflow: auto;
@@ -200,10 +203,9 @@ html {
         width: 100%;
         height: 100%;
         margin-left: 7px;
-        padding: 0 50px 10px 0;
-        border-radius: 0 15px 15px 0;
+        border-radius: 15px;
         background: $theme-dark-color-primary;
-        overflow: scroll;
+        overflow: auto;
 
         .table-wrapper {
 
@@ -506,7 +508,7 @@ html {
       nav {
         width: $nav-width;
         height: 100%;
-        border-radius: 15px 0 0 15px;
+        border-radius: 15px;
         background: $theme-light-color-primary;
         padding: 15px 10px 0 10px;
         overflow: auto;
@@ -557,7 +559,7 @@ html {
                 }
               }
 
-              button:last-child{
+              button:last-child {
                 margin-bottom: 0;
               }
 
@@ -612,24 +614,24 @@ html {
             }
           }
 
-          div.controls{
+          div.controls {
             flex-direction: row;
             justify-content: space-between;
             flex-wrap: wrap;
 
-            .control{
+            .control {
               width: 70px;
             }
 
-            .control.admin{
+            .control.admin {
               margin-top: 12px;
               width: 100%;
 
-              button{
+              button {
                 border: 2px solid rgba(102, 102, 102, 0.4);
                 transition: all 0.2s;
 
-                &:hover{
+                &:hover {
                   border-color: $theme-light-color-secondary;
                   box-shadow: $theme-light-color-shadow;
 
@@ -649,10 +651,9 @@ html {
         width: 100%;
         height: 100%;
         margin-left: 7px;
-        padding: 0 50px 10px 0;
-        border-radius: 0 15px 15px 0;
+        border-radius: 15px;
         background: $theme-light-color-primary;
-        overflow: scroll;
+        overflow: auto;
 
         .table-wrapper {
 
@@ -821,25 +822,25 @@ html {
                       padding: 30px 40px 30px 40px;
                       z-index: 998;
 
-                      .title-wrapper{
+                      .title-wrapper {
                         width: 100%;
                         display: flex;
                         justify-content: center;
 
-                        .title{
+                        .title {
                           text-align: center;
                           font-size: 30px;
                         }
                       }
 
-                      .stats{
+                      .stats {
                         height: 100%;
                         width: 100%;
                         margin-top: 30px;
                         overflow: auto;
                         flex-grow: 1;
 
-                        .task{
+                        .task {
                           width: 100%;
                           display: flex;
                           flex-direction: row;
@@ -848,27 +849,27 @@ html {
                           border-bottom: 1px solid rgba(102, 102, 102, 0.4);
                         }
 
-                        .number{
+                        .number {
                           width: 50%;
                           text-align: center;
                         }
 
-                        .mark{
+                        .mark {
                           width: 50%;
                           text-align: center;
                           font-weight: 700;
 
-                          &.completed{
+                          &.completed {
                             color: #408835;
                           }
 
-                          &.not-completed{
+                          &.not-completed {
                             color: #830000;
                           }
                         }
                       }
 
-                      .close-wrapper{
+                      .close-wrapper {
                         width: 100%;
                         height: auto;
                         display: flex;
@@ -876,7 +877,7 @@ html {
                         align-items: center;
                         margin-top: 30px;
 
-                        .close-modal{
+                        .close-modal {
                           display: flex;
                           color: $theme-light-color-secondary;
                           height: 60px;
@@ -892,7 +893,7 @@ html {
 
                           transition: all 0.2s;
 
-                          &:hover{
+                          &:hover {
                             border-color: $theme-light-color-secondary;
                             box-shadow: $theme-light-color-shadow;
 
@@ -912,7 +913,7 @@ html {
                       background-color: rgba(0, 0, 0, 0.5);
                     }
 
-                    &.showed{
+                    &.showed {
                       display: block;
                     }
                   }
@@ -953,17 +954,11 @@ html {
   html{
 
     body{
-
       .table-container{
-
         form{
-
           table{
-
             thead{
-
               tr{
-
                 th.column-fullName{
                   width: 160px;
                 }
