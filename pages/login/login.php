@@ -1,3 +1,9 @@
+<?php
+    if(isset($_POST['enter'])){
+        header("Location: ../home/home.php");
+    }
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
