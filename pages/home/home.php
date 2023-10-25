@@ -24,6 +24,7 @@ function averageMark(){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Главная</title>
 </head>
 <body class="dark">
@@ -35,7 +36,7 @@ function averageMark(){
             </form>
             <div class="control theme">
                 <button id="btnSwitchTheme">
-
+                    
                 </button>
             </div>
             <div class="control admin">
@@ -68,7 +69,9 @@ function averageMark(){
 <nav class="mobile">
     <div class="nav-content">
         <button class="filter marks">
-            <img src="../../assets/images/nav/mobile/navMobileMarksDark.svg" alt=""/>
+            <a href="">
+                <i class="fa-solid fa-5" style="color: #e1e3e6;"></i>
+            </a>
         </button>
         <button class="theme" id="btnMobileSwitchTheme">
             <img alt=""/>
