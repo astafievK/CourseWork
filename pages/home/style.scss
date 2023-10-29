@@ -3,16 +3,6 @@
   src: url('../../assets/fonts/poppins/Poppins-Regular.ttf');
 }
 
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../../assets/fonts/poppins/Poppins-Bold.ttf');
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../../assets/fonts/poppins/Poppins-Medium.ttf');
-}
-
 $theme-light-color-background:  linear-gradient(45deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
 $theme-light-color-primary:     #ffffff;
 $theme-light-color-secondary:   #292929;
@@ -33,7 +23,7 @@ $media-size-large: 1024px;
   padding: 0;
   outline: none;
   box-sizing: border-box;
-
+  font-family: Poppins-Regular, sans-serif;
   transition: background-color 0.3s;
 }
 
@@ -49,7 +39,7 @@ html {
     flex-direction: row;
     padding: 35px;
     height: 100%;
-    font-family: Poppins-Regular, sans-serif;
+
     outline: none;
     overflow: hidden;
 
@@ -103,28 +93,29 @@ html {
 
               button {
                 font-size: 17px;
-                font-weight: 700;
                 color: $theme-dark-color-secondary;
                 height: 55px;
                 width: 100%;
                 margin-bottom: 12px;
                 background: transparent;
-                border: 2px solid rgba(102, 102, 102, 0.4);
+                border: 3px solid rgba(102, 102, 102, 0.4);
                 border-radius: 7px;
+                letter-spacing: 1px;
 
                 transition: all 0.2s;
 
                 &:hover {
                   border-color: $theme-dark-color-secondary;
-                  box-shadow: $theme-dark-color-shadow;;
+                  box-shadow: $theme-dark-color-shadow;
 
                   transition: all 0.2s;
                 }
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
               }
 
-              button:last-child {
-                margin-bottom: 0;
-              }
 
               #buttonCool.selected {
                 border-color: rgba(144, 238, 144, .8);
@@ -183,7 +174,7 @@ html {
             flex-wrap: wrap;
 
             .control {
-              width: 70px;
+              width: 47%;
             }
 
             .control.admin {
@@ -191,7 +182,6 @@ html {
               width: 100%;
 
               button {
-                border: 2px solid rgba(102, 102, 102, 0.4);
                 transition: all 0.2s;
 
                 &:hover {
@@ -278,10 +268,10 @@ html {
                   position: relative;
                   font-size: 21px;
 
-                  button.bad,
-                  button.satisfactory,
-                  button.good,
-                  button.cool {
+                  .markBtn.bad,
+                  .markBtn.satisfactory,
+                  .markBtn.good,
+                  .markBtn.cool {
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -294,7 +284,7 @@ html {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    border: 2px solid rgba(102, 102, 102, 0.4);
+                    border: 3px solid rgba(102, 102, 102, 0.4);
                     background: transparent;
                     border-radius: 7px;
                     user-select: none;
@@ -302,49 +292,49 @@ html {
                     transition: all 0.2s;
                   }
 
-                  button.bad.coloured {
-                    border: 2px solid rgba(255, 0, 0, 0.4);
+                  .markBtn.bad.coloured {
+                    border-color: rgba(255, 0, 0, 0.4);
                     background: rgba(255, 0, 0, 0.05);
                   }
 
-                  button.bad:hover {
-                    border: 2px solid rgba(255, 0, 0, 0.9);
+                  .markBtn.bad:hover {
+                    border-color: rgba(255, 0, 0, 0.9);
                     background: rgba(255, 0, 0, 0.05);
                     box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
                     transition: all 0.2s;
                   }
 
-                  button.satisfactory.coloured {
-                    border: 2px solid rgba(255, 140, 0, 0.4);
+                  .markBtn.satisfactory.coloured {
+                    border-color: rgba(255, 140, 0, 0.4);
                     background: rgba(255, 140, 0, 0.05);
                   }
 
-                  button.satisfactory:hover {
-                    border: 2px solid rgba(255, 140, 0, 0.9);
+                  .markBtn.satisfactory:hover {
+                    border-color: rgba(255, 140, 0, 0.9);
                     background: rgba(255, 140, 0, 0.05);
                     box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
                     transition: all 0.2s;
                   }
 
-                  button.good.coloured {
-                    border: 2px solid rgba(46, 139, 87, 0.4);
+                  .markBtn.good.coloured {
+                    border-color: rgba(46, 139, 87, 0.4);
                     background: rgba(46, 139, 87, 0.05);
                   }
 
-                  button.good:hover {
-                    border: 2px solid rgba(46, 139, 87, 0.9);
+                  .markBtn.good:hover {
+                    border-color: rgba(46, 139, 87, 0.9);
                     background: rgba(46, 139, 87, 0.05);
                     box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
                     transition: all 0.2s;
                   }
 
-                  button.cool.coloured {
-                    border: 2px solid rgba(144, 238, 144, 0.4);
+                  .markBtn.cool.coloured {
+                    border-color: rgba(144, 238, 144, 0.4);
                     background: rgba(144, 238, 144, 0.05);
                   }
 
-                  button.cool:hover {
-                    border: 2px solid rgba(144, 238, 144, 0.9);
+                  .markBtn.cool:hover {
+                    border-color: rgba(144, 238, 144, 0.9);
                     background: rgba(144, 238, 144, 0.05);
                     box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
                     transition: all 0.2s;
@@ -394,35 +384,56 @@ html {
                       .stats {
                         height: 100%;
                         width: 100%;
-                        margin-top: 30px;
+                        margin-top: 15px;
                         overflow: auto;
                         flex-grow: 1;
 
                         .task {
                           width: 100%;
+                          height: 65px;
+                          align-items: center;
                           display: flex;
                           flex-direction: row;
                           text-align: center;
-                          padding: 15px 0 15px 0;
+                          padding: 7px 10px;
                           border-bottom: 1px solid rgba(102, 102, 102, 0.4);
-                        }
 
-                        .number {
-                          width: 50%;
-                          text-align: center;
-                        }
-
-                        .mark {
-                          width: 50%;
-                          text-align: center;
-                          font-weight: 700;
-
-                          &.completed {
-                            color: #408835;
+                          .number {
+                            width: 50%;
+                            text-align: center;
                           }
 
-                          &.not-completed {
-                            color: #830000;
+                          span.mark, button.mark {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 50%;
+                            font-size: 21px;
+                            text-align: center;
+                            font-weight: 700;
+
+                            &.completed {
+                              color: #408835;
+                            }
+
+                            &.not-completed {
+                              color: #830000;
+                            }
+                          }
+
+                          button.mark{
+                            background: transparent;
+                            border: 2px solid rgba(102, 102, 102, 0.4);
+                            border-radius: 7px;
+                            transition: all 0.2s;
+
+                            &:hover{
+                              border-color: $theme-dark-color-secondary;
+                              box-shadow: $theme-dark-color-shadow;
+
+                              transition: all 0.2s;
+                            }
                           }
                         }
                       }
@@ -453,7 +464,7 @@ html {
 
                           &:hover {
                             border-color: $theme-dark-color-secondary;
-                            box-shadow: $theme-dark-color-shadow;;
+                            box-shadow: $theme-dark-color-shadow;
 
                             transition: all 0.2s;
                           }
@@ -539,14 +550,14 @@ html {
 
               button {
                 font-size: 17px;
-                font-weight: 700;
                 color: $theme-light-color-secondary;
                 height: 55px;
                 width: 100%;
                 margin-bottom: 12px;
                 background: transparent;
-                border: 2px solid rgba(102, 102, 102, 0.4);
+                border: 3px solid rgba(102, 102, 102, 0.4);
                 border-radius: 7px;
+                letter-spacing: 1px;
 
                 transition: all 0.2s;
 
@@ -619,23 +630,27 @@ html {
             flex-wrap: wrap;
 
             .control {
-              width: 70px;
-            }
+              width: 47%;
 
-            .control.admin {
-              margin-top: 12px;
-              width: 100%;
+              &.admin {
+                margin-top: 12px;
+                width: 100%;
 
-              button {
-                border: 2px solid rgba(102, 102, 102, 0.4);
-                transition: all 0.2s;
-
-                &:hover {
-                  border-color: $theme-light-color-secondary;
-                  box-shadow: $theme-light-color-shadow;
-
+                button {
+                  border: 2px solid rgba(102, 102, 102, 0.4);
                   transition: all 0.2s;
+
+                  &:hover {
+                    border-color: $theme-light-color-secondary;
+                    box-shadow: $theme-light-color-shadow;
+
+                    transition: all 0.2s;
+                  }
                 }
+              }
+
+              &.theme{
+
               }
             }
           }
@@ -714,10 +729,10 @@ html {
                   position: relative;
                   font-size: 21px;
 
-                  button.bad,
-                  button.satisfactory,
-                  button.good,
-                  button.cool {
+                  .markBtn.bad,
+                  .markBtn.satisfactory,
+                  .markBtn.good,
+                  .markBtn.cool {
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -730,7 +745,7 @@ html {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    border: 2px solid rgba(102, 102, 102, 0.4);
+                    border: 3px solid rgba(102, 102, 102, 0.4);
                     background: transparent;
                     border-radius: 7px;
                     user-select: none;
@@ -738,49 +753,49 @@ html {
                     transition: all 0.2s;
                   }
 
-                  button.bad.coloured {
-                    border: 2px solid rgba(255, 0, 0, 0.4);
+                  .markBtn.bad.coloured {
+                    border-color: rgba(255, 0, 0, 0.4);
                     background: rgba(255, 0, 0, 0.05);
                   }
 
-                  button.bad:hover {
-                    border: 2px solid rgba(255, 0, 0, 0.9);
+                  .markBtn.bad:hover {
+                    border-color: rgba(255, 0, 0, 0.9);
                     background: rgba(255, 0, 0, 0.05);
                     box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
                     transition: all 0.2s;
                   }
 
-                  button.satisfactory.coloured {
-                    border: 2px solid rgba(255, 140, 0, 0.4);
+                  .markBtn.satisfactory.coloured {
+                    border-color: rgba(255, 140, 0, 0.4);
                     background: rgba(255, 140, 0, 0.05);
                   }
 
-                  button.satisfactory:hover {
-                    border: 2px solid rgba(255, 140, 0, 0.9);
+                  .markBtn.satisfactory:hover {
+                    border-color: rgba(255, 140, 0, 0.9);
                     background: rgba(255, 140, 0, 0.05);
                     box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
                     transition: all 0.2s;
                   }
 
-                  button.good.coloured {
-                    border: 2px solid rgba(46, 139, 87, 0.4);
+                  .markBtn.good.coloured {
+                    border-color: rgba(46, 139, 87, 0.4);
                     background: rgba(46, 139, 87, 0.05);
                   }
 
-                  button.good:hover {
-                    border: 2px solid rgba(46, 139, 87, 0.9);
+                  .markBtn.good:hover {
+                    border-color: rgba(46, 139, 87, 0.9);
                     background: rgba(46, 139, 87, 0.05);
                     box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
                     transition: all 0.2s;
                   }
 
-                  button.cool.coloured {
-                    border: 2px solid rgba(144, 238, 144, 0.4);
+                  .markBtn.cool.coloured {
+                    border-color: rgba(144, 238, 144, 0.4);
                     background: rgba(144, 238, 144, 0.05);
                   }
 
-                  button.cool:hover {
-                    border: 2px solid rgba(144, 238, 144, 0.9);
+                  .markBtn.cool:hover {
+                    border-color: rgba(144, 238, 144, 0.9);
                     background: rgba(144, 238, 144, 0.05);
                     box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
                     transition: all 0.2s;
@@ -830,35 +845,56 @@ html {
                       .stats {
                         height: 100%;
                         width: 100%;
-                        margin-top: 30px;
+                        margin-top: 15px;
                         overflow: auto;
                         flex-grow: 1;
 
                         .task {
                           width: 100%;
+                          height: 65px;
+                          align-items: center;
                           display: flex;
                           flex-direction: row;
                           text-align: center;
-                          padding: 15px 0 15px 0;
+                          padding: 7px 10px;
                           border-bottom: 1px solid rgba(102, 102, 102, 0.4);
-                        }
 
-                        .number {
-                          width: 50%;
-                          text-align: center;
-                        }
-
-                        .mark {
-                          width: 50%;
-                          text-align: center;
-                          font-weight: 700;
-
-                          &.completed {
-                            color: #408835;
+                          .number {
+                            width: 50%;
+                            text-align: center;
                           }
 
-                          &.not-completed {
-                            color: #830000;
+                          span.mark, button.mark {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 50%;
+                            font-size: 21px;
+                            text-align: center;
+                            font-weight: 700;
+
+                            &.completed {
+                              color: #408835;
+                            }
+
+                            &.not-completed {
+                              color: #830000;
+                            }
+                          }
+
+                          button.mark{
+                            background: transparent;
+                            border: 2px solid rgba(102, 102, 102, 0.4);
+                            border-radius: 7px;
+                            transition: all 0.2s;
+
+                            &:hover{
+                              border-color: $theme-light-color-secondary;
+                              box-shadow: $theme-light-color-shadow;
+
+                              transition: all 0.2s;
+                            }
                           }
                         }
                       }

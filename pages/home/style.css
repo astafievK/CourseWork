@@ -1,17 +1,12 @@
 @font-face {
   font-family: Poppins-Regular;
   src: url("../../assets/fonts/poppins/Poppins-Regular.ttf"); }
-@font-face {
-  font-family: Poppins-Bold;
-  src: url("../../assets/fonts/poppins/Poppins-Bold.ttf"); }
-@font-face {
-  font-family: Poppins-Medium;
-  src: url("../../assets/fonts/poppins/Poppins-Medium.ttf"); }
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
   transition: background-color 0.3s; }
 
 button, input, a {
@@ -24,7 +19,6 @@ html {
     flex-direction: row;
     padding: 35px;
     height: 100%;
-    font-family: Poppins-Regular, sans-serif;
     outline: none;
     overflow: hidden; }
     html body nav:not(.mobile) {
@@ -66,21 +60,21 @@ html {
               flex-direction: column; }
               html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button {
                 font-size: 17px;
-                font-weight: 700;
                 color: #e1e3e6;
                 height: 55px;
                 width: 100%;
                 margin-bottom: 12px;
                 background: transparent;
-                border: 2px solid rgba(102, 102, 102, 0.4);
+                border: 3px solid rgba(102, 102, 102, 0.4);
                 border-radius: 7px;
+                letter-spacing: 1px;
                 transition: all 0.2s; }
                 html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:hover {
                   border-color: #e1e3e6;
                   box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
                   transition: all 0.2s; }
-              html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:last-child {
-                margin-bottom: 0; }
+                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:last-child {
+                  margin-bottom: 0; }
               html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonCool.selected {
                 border-color: rgba(144, 238, 144, 0.8);
                 transform: scale(0.92); }
@@ -114,12 +108,11 @@ html {
             justify-content: space-between;
             flex-wrap: wrap; }
             html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control {
-              width: 70px; }
+              width: 47%; }
             html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin {
               margin-top: 12px;
               width: 100%; }
               html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button {
-                border: 2px solid rgba(102, 102, 102, 0.4);
                 transition: all 0.2s; }
                 html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button:hover {
                   border-color: #e1e3e6;
@@ -174,10 +167,10 @@ html {
             html body.dark .table-container .table-wrapper table tbody tr td {
               position: relative;
               font-size: 21px; }
-              html body.dark .table-container .table-wrapper table tbody tr td button.bad,
-              html body.dark .table-container .table-wrapper table tbody tr td button.satisfactory,
-              html body.dark .table-container .table-wrapper table tbody tr td button.good,
-              html body.dark .table-container .table-wrapper table tbody tr td button.cool {
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad,
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory,
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good,
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -190,40 +183,40 @@ html {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 2px solid rgba(102, 102, 102, 0.4);
+                border: 3px solid rgba(102, 102, 102, 0.4);
                 background: transparent;
                 border-radius: 7px;
                 user-select: none;
                 transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td button.bad.coloured {
-                border: 2px solid rgba(255, 0, 0, 0.4);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad.coloured {
+                border-color: rgba(255, 0, 0, 0.4);
                 background: rgba(255, 0, 0, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td button.bad:hover {
-                border: 2px solid rgba(255, 0, 0, 0.9);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad:hover {
+                border-color: rgba(255, 0, 0, 0.9);
                 background: rgba(255, 0, 0, 0.05);
                 box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
                 transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td button.satisfactory.coloured {
-                border: 2px solid rgba(255, 140, 0, 0.4);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory.coloured {
+                border-color: rgba(255, 140, 0, 0.4);
                 background: rgba(255, 140, 0, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td button.satisfactory:hover {
-                border: 2px solid rgba(255, 140, 0, 0.9);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory:hover {
+                border-color: rgba(255, 140, 0, 0.9);
                 background: rgba(255, 140, 0, 0.05);
                 box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
                 transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td button.good.coloured {
-                border: 2px solid rgba(46, 139, 87, 0.4);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good.coloured {
+                border-color: rgba(46, 139, 87, 0.4);
                 background: rgba(46, 139, 87, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td button.good:hover {
-                border: 2px solid rgba(46, 139, 87, 0.9);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good:hover {
+                border-color: rgba(46, 139, 87, 0.9);
                 background: rgba(46, 139, 87, 0.05);
                 box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
                 transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td button.cool.coloured {
-                border: 2px solid rgba(144, 238, 144, 0.4);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool.coloured {
+                border-color: rgba(144, 238, 144, 0.4);
                 background: rgba(144, 238, 144, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td button.cool:hover {
-                border: 2px solid rgba(144, 238, 144, 0.9);
+              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool:hover {
+                border-color: rgba(144, 238, 144, 0.9);
                 background: rgba(144, 238, 144, 0.05);
                 box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
                 transition: all 0.2s; }
@@ -265,27 +258,43 @@ html {
                   html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
                     height: 100%;
                     width: 100%;
-                    margin-top: 30px;
+                    margin-top: 15px;
                     overflow: auto;
                     flex-grow: 1; }
                     html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
                       width: 100%;
+                      height: 65px;
+                      align-items: center;
                       display: flex;
                       flex-direction: row;
                       text-align: center;
-                      padding: 15px 0 15px 0;
+                      padding: 7px 10px;
                       border-bottom: 1px solid rgba(102, 102, 102, 0.4); }
-                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .number {
-                      width: 50%;
-                      text-align: center; }
-                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark {
-                      width: 50%;
-                      text-align: center;
-                      font-weight: 700; }
-                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.completed {
-                        color: #408835; }
-                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.not-completed {
-                        color: #830000; }
+                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task .number {
+                        width: 50%;
+                        text-align: center; }
+                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 50%;
+                        font-size: 21px;
+                        text-align: center;
+                        font-weight: 700; }
+                        html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.completed, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.completed {
+                          color: #408835; }
+                        html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.not-completed, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.not-completed {
+                          color: #830000; }
+                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+                        background: transparent;
+                        border: 2px solid rgba(102, 102, 102, 0.4);
+                        border-radius: 7px;
+                        transition: all 0.2s; }
+                        html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark:hover {
+                          border-color: #e1e3e6;
+                          box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
+                          transition: all 0.2s; }
                   html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
                     width: 100%;
                     height: auto;
@@ -360,14 +369,14 @@ html {
               flex-direction: column; }
               html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button {
                 font-size: 17px;
-                font-weight: 700;
                 color: #292929;
                 height: 55px;
                 width: 100%;
                 margin-bottom: 12px;
                 background: transparent;
-                border: 2px solid rgba(102, 102, 102, 0.4);
+                border: 3px solid rgba(102, 102, 102, 0.4);
                 border-radius: 7px;
+                letter-spacing: 1px;
                 transition: all 0.2s; }
                 html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:hover {
                   border-color: #292929;
@@ -408,17 +417,17 @@ html {
             justify-content: space-between;
             flex-wrap: wrap; }
             html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control {
-              width: 70px; }
-            html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin {
-              margin-top: 12px;
-              width: 100%; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button {
-                border: 2px solid rgba(102, 102, 102, 0.4);
-                transition: all 0.2s; }
-                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button:hover {
-                  border-color: #292929;
-                  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+              width: 47%; }
+              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin {
+                margin-top: 12px;
+                width: 100%; }
+                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button {
+                  border: 2px solid rgba(102, 102, 102, 0.4);
                   transition: all 0.2s; }
+                  html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button:hover {
+                    border-color: #292929;
+                    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+                    transition: all 0.2s; }
       html body.light nav:not(.mobile)::-webkit-scrollbar {
         width: 5px; }
       html body.light .table-container {
@@ -468,10 +477,10 @@ html {
             html body.light .table-container .table-wrapper table tbody tr td {
               position: relative;
               font-size: 21px; }
-              html body.light .table-container .table-wrapper table tbody tr td button.bad,
-              html body.light .table-container .table-wrapper table tbody tr td button.satisfactory,
-              html body.light .table-container .table-wrapper table tbody tr td button.good,
-              html body.light .table-container .table-wrapper table tbody tr td button.cool {
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad,
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory,
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.good,
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -484,40 +493,40 @@ html {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 2px solid rgba(102, 102, 102, 0.4);
+                border: 3px solid rgba(102, 102, 102, 0.4);
                 background: transparent;
                 border-radius: 7px;
                 user-select: none;
                 transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td button.bad.coloured {
-                border: 2px solid rgba(255, 0, 0, 0.4);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad.coloured {
+                border-color: rgba(255, 0, 0, 0.4);
                 background: rgba(255, 0, 0, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td button.bad:hover {
-                border: 2px solid rgba(255, 0, 0, 0.9);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad:hover {
+                border-color: rgba(255, 0, 0, 0.9);
                 background: rgba(255, 0, 0, 0.05);
                 box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
                 transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td button.satisfactory.coloured {
-                border: 2px solid rgba(255, 140, 0, 0.4);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory.coloured {
+                border-color: rgba(255, 140, 0, 0.4);
                 background: rgba(255, 140, 0, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td button.satisfactory:hover {
-                border: 2px solid rgba(255, 140, 0, 0.9);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory:hover {
+                border-color: rgba(255, 140, 0, 0.9);
                 background: rgba(255, 140, 0, 0.05);
                 box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
                 transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td button.good.coloured {
-                border: 2px solid rgba(46, 139, 87, 0.4);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.good.coloured {
+                border-color: rgba(46, 139, 87, 0.4);
                 background: rgba(46, 139, 87, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td button.good:hover {
-                border: 2px solid rgba(46, 139, 87, 0.9);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.good:hover {
+                border-color: rgba(46, 139, 87, 0.9);
                 background: rgba(46, 139, 87, 0.05);
                 box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
                 transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td button.cool.coloured {
-                border: 2px solid rgba(144, 238, 144, 0.4);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool.coloured {
+                border-color: rgba(144, 238, 144, 0.4);
                 background: rgba(144, 238, 144, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td button.cool:hover {
-                border: 2px solid rgba(144, 238, 144, 0.9);
+              html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool:hover {
+                border-color: rgba(144, 238, 144, 0.9);
                 background: rgba(144, 238, 144, 0.05);
                 box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
                 transition: all 0.2s; }
@@ -559,27 +568,43 @@ html {
                   html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
                     height: 100%;
                     width: 100%;
-                    margin-top: 30px;
+                    margin-top: 15px;
                     overflow: auto;
                     flex-grow: 1; }
                     html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
                       width: 100%;
+                      height: 65px;
+                      align-items: center;
                       display: flex;
                       flex-direction: row;
                       text-align: center;
-                      padding: 15px 0 15px 0;
+                      padding: 7px 10px;
                       border-bottom: 1px solid rgba(102, 102, 102, 0.4); }
-                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .number {
-                      width: 50%;
-                      text-align: center; }
-                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark {
-                      width: 50%;
-                      text-align: center;
-                      font-weight: 700; }
-                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.completed {
-                        color: #408835; }
-                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .mark.not-completed {
-                        color: #830000; }
+                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task .number {
+                        width: 50%;
+                        text-align: center; }
+                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 50%;
+                        font-size: 21px;
+                        text-align: center;
+                        font-weight: 700; }
+                        html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.completed, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.completed {
+                          color: #408835; }
+                        html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.not-completed, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.not-completed {
+                          color: #830000; }
+                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+                        background: transparent;
+                        border: 2px solid rgba(102, 102, 102, 0.4);
+                        border-radius: 7px;
+                        transition: all 0.2s; }
+                        html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark:hover {
+                          border-color: #292929;
+                          box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+                          transition: all 0.2s; }
                   html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
                     width: 100%;
                     height: auto;
