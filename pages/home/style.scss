@@ -13,7 +13,6 @@ $theme-dark-color-primary:      #292929;
 $theme-dark-color-secondary:    #e1e3e6;
 $theme-dark-color-shadow:       0 0 3px 2px rgba(255, 255, 255, 0.4);
 
-$nav-width: 180px;
 $media-size-small: 480px;
 $media-size-medium: 768px;
 $media-size-large: 1024px;
@@ -27,7 +26,6 @@ $header-height: 70px;
   box-sizing: border-box;
   font-family: Poppins-Regular, sans-serif;
   transition: background-color 0.3s;
-  flex-shrink: 0;
 
   &::-webkit-scrollbar {
     width: 10px;
@@ -53,6 +51,12 @@ button, input, a{
   cursor: pointer;
 }
 
+button{
+  border: 3px solid rgba(102, 102, 102, 0.4);
+  background: transparent;
+  border-radius: 7px;
+}
+
 html {
   height: 100%;
 
@@ -73,7 +77,64 @@ html {
       padding: 10px;
 
       nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
 
+        .theme{
+
+        }
+
+        .theme,
+        .exit{
+          height: 30px;
+          width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          transition: all 0.2s;
+
+          &:hover{
+            border-color: rgba(102, 102, 102, 1);
+
+            transition: all 0.2s;
+          }
+        }
+
+        .filters{
+          display: flex;
+          justify-content: center;
+          flex-grow: 1;
+
+          .filter{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+
+            label{
+
+            }
+
+            select{
+              border: 3px solid rgba(102, 102, 102, 0.4);
+              background: transparent;
+              border-radius: 7px;
+            }
+
+            &:nth-child(2){
+              margin-left: 200px;
+              margin-right: 200px;
+            }
+          }
+        }
+
+        .exit{
+          order: 3;
+        }
       }
     }
 
@@ -92,7 +153,6 @@ html {
         border-collapse: collapse;
 
         tbody {
-
           tr {
             flex-shrink: 0;
             height: 80px;
@@ -121,19 +181,22 @@ html {
                 font-size: 21px;
 
                 .markBtn {
-                  margin-left: 10px;
-                  margin-right: 10px;
+                  margin-left: 15px;
+                  margin-right: 15px;
                   font-weight: 700;
                   color: $theme-light-color-secondary;
-                  font-size: 25px;
+                  font-size: 21px;
                   width: 60px;
                   height: 60px;
-                  border: 3px solid rgba(102, 102, 102, 0.4);
-                  background: transparent;
-                  border-radius: 7px;
                   user-select: none;
 
                   transition: all 0.2s;
+
+                  &:hover{
+                    border-color: rgba(102, 102, 102, 1);
+
+                    transition: all 0.2s;
+                  }
                 }
               }
 
@@ -145,6 +208,7 @@ html {
                 left: 0;
                 z-index: 1;
                 width: 75px;
+                flex-shrink: 1;
               }
 
               &:nth-child(2) {
@@ -154,16 +218,18 @@ html {
                 z-index: 1;
                 text-align: left;
                 width: 250px;
+                flex-shrink: 1;
               }
 
               &.stats {
                 flex-shrink: 2;
+                flex-grow: 1;
               }
 
               &.total-mark,
               &.percentage {
                 display: flex;
-                width: 100px;
+                width: 150px;
                 align-items: center;
                 justify-content: center;
               }

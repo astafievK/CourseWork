@@ -7,8 +7,7 @@
   outline: none;
   box-sizing: border-box;
   font-family: Poppins-Regular, sans-serif;
-  transition: background-color 0.3s;
-  flex-shrink: 0; }
+  transition: background-color 0.3s; }
   *::-webkit-scrollbar {
     width: 10px;
     height: 10px; }
@@ -23,6 +22,11 @@
 
 button, input, a {
   cursor: pointer; }
+
+button {
+  border: 3px solid rgba(102, 102, 102, 0.4);
+  background: transparent;
+  border-radius: 7px; }
 
 html {
   height: 100%; }
@@ -40,6 +44,42 @@ html {
       border-radius: 15px 15px 0 0;
       background: #ffffff;
       padding: 10px; }
+      html body header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%; }
+        html body header nav .theme,
+        html body header nav .exit {
+          height: 30px;
+          width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s; }
+          html body header nav .theme:hover,
+          html body header nav .exit:hover {
+            border-color: #666666;
+            transition: all 0.2s; }
+        html body header nav .filters {
+          display: flex;
+          justify-content: center;
+          flex-grow: 1; }
+          html body header nav .filters .filter {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center; }
+            html body header nav .filters .filter select {
+              border: 3px solid rgba(102, 102, 102, 0.4);
+              background: transparent;
+              border-radius: 7px; }
+            html body header nav .filters .filter:nth-child(2) {
+              margin-left: 200px;
+              margin-right: 200px; }
+        html body header nav .exit {
+          order: 3; }
     html body .table-wrapper {
       width: 100%;
       height: calc(100% - 70px);
@@ -75,18 +115,18 @@ html {
               justify-content: start;
               font-size: 21px; }
               html body .table-wrapper table tbody tr td.stats .markBtn {
-                margin-left: 10px;
-                margin-right: 10px;
+                margin-left: 15px;
+                margin-right: 15px;
                 font-weight: 700;
                 color: #292929;
-                font-size: 25px;
+                font-size: 21px;
                 width: 60px;
                 height: 60px;
-                border: 3px solid rgba(102, 102, 102, 0.4);
-                background: transparent;
-                border-radius: 7px;
                 user-select: none;
                 transition: all 0.2s; }
+                html body .table-wrapper table tbody tr td.stats .markBtn:hover {
+                  border-color: #666666;
+                  transition: all 0.2s; }
             html body .table-wrapper table tbody tr td:nth-child(1) {
               position: sticky;
               display: flex;
@@ -94,19 +134,22 @@ html {
               background-color: #ffffff;
               left: 0;
               z-index: 1;
-              width: 75px; }
+              width: 75px;
+              flex-shrink: 1; }
             html body .table-wrapper table tbody tr td:nth-child(2) {
               position: sticky;
               background-color: #ffffff;
               left: 75px;
               z-index: 1;
               text-align: left;
-              width: 250px; }
+              width: 250px;
+              flex-shrink: 1; }
             html body .table-wrapper table tbody tr td.stats {
-              flex-shrink: 2; }
+              flex-shrink: 2;
+              flex-grow: 1; }
             html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
               display: flex;
-              width: 100px;
+              width: 150px;
               align-items: center;
               justify-content: center; }
           html body .table-wrapper table tbody tr:last-child {
