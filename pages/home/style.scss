@@ -1,0 +1,180 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../../assets/fonts/poppins/Poppins-Regular.ttf');
+}
+
+$theme-light-color-background:  linear-gradient(45deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
+$theme-light-color-primary:     #ffffff;
+$theme-light-color-secondary:   #292929;
+$theme-light-color-shadow:      0 0 3px 2px rgba(0, 0, 0, 0.4);
+
+$theme-dark-color-background:   linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+$theme-dark-color-primary:      #292929;
+$theme-dark-color-secondary:    #e1e3e6;
+$theme-dark-color-shadow:       0 0 3px 2px rgba(255, 255, 255, 0.4);
+
+$nav-width: 180px;
+$media-size-small: 480px;
+$media-size-medium: 768px;
+$media-size-large: 1024px;
+
+$header-height: 70px;
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $theme-light-color-secondary;
+    border-radius: 15px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+button, input, a{
+  cursor: pointer;
+}
+
+html {
+  height: 100%;
+
+  body {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    height: 100%;
+    color: $theme-light-color-secondary;
+    background: $theme-light-color-background;
+    outline: none;
+    overflow: hidden;
+
+    header {
+      height: $header-height;
+      border-radius: 15px 15px 0 0;
+      background: $theme-light-color-primary;
+      padding: 10px;
+
+      nav {
+
+      }
+    }
+
+    .table-wrapper {
+      width: 100%;
+      height: calc(100% - #{$header-height});
+      border-radius: 0 0 15px 15px;
+      overflow: auto;
+      background: $theme-light-color-primary;
+
+      table {
+        height: 100%;
+        width: 100%;
+        background: $theme-light-color-primary;
+        color: $theme-light-color-secondary;
+        border-collapse: collapse;
+
+        tbody {
+
+          tr {
+            flex-shrink: 0;
+            height: 80px;
+            border-bottom: 1px solid #666666;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+
+            td {
+              display: flex;
+              align-items: center;
+              text-align: center;
+              height: 100%;
+
+              span {
+                font-size: 21px;
+              }
+
+              &.stats {
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                position: relative;
+                display: flex;
+                justify-content: start;
+                font-size: 21px;
+
+                .markBtn {
+                  margin-left: 10px;
+                  margin-right: 10px;
+                  font-weight: 700;
+                  color: $theme-light-color-secondary;
+                  font-size: 25px;
+                  width: 60px;
+                  height: 60px;
+                  border: 3px solid rgba(102, 102, 102, 0.4);
+                  background: transparent;
+                  border-radius: 7px;
+                  user-select: none;
+
+                  transition: all 0.2s;
+                }
+              }
+
+              &:nth-child(1) {
+                position: sticky;
+                display: flex;
+                justify-content: center;
+                background-color: $theme-light-color-primary;
+                left: 0;
+                z-index: 1;
+                width: 75px;
+              }
+
+              &:nth-child(2) {
+                position: sticky;
+                background-color: $theme-light-color-primary;
+                left: 75px;
+                z-index: 1;
+                text-align: left;
+                width: 250px;
+              }
+
+              &.stats {
+                flex-shrink: 2;
+              }
+
+              &.total-mark,
+              &.percentage {
+                display: flex;
+                width: 100px;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+
+            &:last-child{
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
