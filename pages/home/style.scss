@@ -530,13 +530,14 @@ html {
           align-items: center;
           width: 100%;
 
-          div.controls, div.filters, div.disciplines {
+          .controls, .filters, .disciplines {
             flex-direction: column;
             display: flex;
             width: 100%;
             margin-bottom: 25px;
 
-            span {
+            .filters-title,
+            .disciplines-title{
               width: 100%;
               font-size: 21px;
               text-align: center;
@@ -544,7 +545,11 @@ html {
               margin-bottom: 10px;
             }
 
-            div, form {
+            .exit,
+            .theme,
+            .admin,
+            .filters-stats,
+            .disciplines-stats {
               height: 100%;
               flex-direction: column;
 
@@ -645,6 +650,108 @@ html {
                     box-shadow: $theme-light-color-shadow;
 
                     transition: all 0.2s;
+                  }
+                }
+
+                .modal {
+                  position: fixed;
+                  display: none;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-color: rgba(0, 0, 0, 0.1);
+                  justify-content: center;
+                  align-items: center;
+                  z-index: 997;
+
+                  .modal-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: relative;
+                    align-items: flex-start;
+                    width: 75%;
+                    min-height: 55%;
+                    max-width: 450px;
+                    max-height: 70%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 15px;
+                    background-color: $theme-light-color-primary;
+                    padding: 30px 40px 30px 40px;
+                    z-index: 998;
+
+                    .title-wrapper {
+                      width: 100%;
+                      display: flex;
+
+                      .title {
+                        text-align: center;
+                        font-size: 30px;
+                      }
+                    }
+
+                    .config{
+                      display: flex;
+                      flex-direction: column;
+                      height: 100%;
+                      width: 100%;
+
+                      .config-elem{
+                        width: 100%;
+                      }
+                    }
+
+                    .close-wrapper {
+                      width: 100%;
+                      height: auto;
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: center;
+                      align-items: center;
+                      margin-top: 30px;
+
+                      #btnCancel,
+                      #btnSave {
+                        display: flex;
+                        color: $theme-light-color-secondary;
+                        height: 60px;
+                        font-size: 25px;
+                        align-items: center;
+                        padding: 0 15px;
+                        font-weight: 700;
+                        justify-content: center;
+                        border: 2px solid rgba(102, 102, 102, 0.4);
+                        background: transparent;
+                        border-radius: 7px;
+                        user-select: none;
+
+                        transition: all 0.2s;
+
+                        &:hover {
+                          border-color: $theme-light-color-secondary;
+                          box-shadow: $theme-light-color-shadow;
+
+                          transition: all 0.2s;
+                        }
+                      }
+                    }
+                  }
+
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.5);
+                  }
+
+                  &.showed {
+                    display: block;
                   }
                 }
               }

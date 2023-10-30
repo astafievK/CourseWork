@@ -1,710 +1,1110 @@
 @font-face {
   font-family: Poppins-Regular;
-  src: url("../../assets/fonts/poppins/Poppins-Regular.ttf"); }
+  src: url("../../assets/fonts/poppins/Poppins-Regular.ttf");
+}
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
   font-family: Poppins-Regular, sans-serif;
-  transition: background-color 0.3s; }
+  transition: background-color 0.3s;
+}
 
 button, input, a {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 html {
-  height: 100%; }
-  html body {
-    display: flex;
-    flex-direction: row;
-    padding: 35px;
-    height: 100%;
-    outline: none;
-    overflow: hidden; }
-    html body nav:not(.mobile) {
-      width: 180px;
-      height: 100%;
-      border-radius: 15px;
-      padding: 15px 10px 0 10px;
-      overflow: auto;
-      flex-shrink: 0; }
-    html body .table-container {
-      width: 100%;
-      height: 100%;
-      margin-left: 7px;
-      border-radius: 15px;
-      overflow: auto; }
-    html body.dark {
-      background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%);
-      color: #e1e3e6; }
-      html body.dark nav:not(.mobile) {
-        background: #292929; }
-        html body.dark nav:not(.mobile) .nav-content:not(.mobile) {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%; }
-          html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines {
-            flex-direction: column;
-            display: flex;
-            width: 100%;
-            margin-bottom: 25px; }
-            html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls span, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters span, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines span {
-              width: 100%;
-              font-size: 21px;
-              text-align: center;
-              font-weight: 700;
-              margin-bottom: 10px; }
-            html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form {
-              height: 100%;
-              flex-direction: column; }
-              html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button {
-                font-size: 17px;
-                color: #e1e3e6;
-                height: 55px;
-                width: 100%;
-                margin-bottom: 12px;
-                background: transparent;
-                border: 3px solid rgba(102, 102, 102, 0.4);
-                border-radius: 7px;
-                letter-spacing: 1px;
-                transition: all 0.2s; }
-                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:hover {
-                  border-color: #e1e3e6;
-                  box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
-                  transition: all 0.2s; }
-                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:last-child {
-                  margin-bottom: 0; }
-              html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonCool.selected {
-                border-color: rgba(144, 238, 144, 0.8);
-                transform: scale(0.92); }
-                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonCool.selected:hover {
-                  border-color: #e1e3e6;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-              html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonGood.selected {
-                border-color: rgba(46, 139, 87, 0.8);
-                transform: scale(0.92); }
-                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonGood.selected:hover {
-                  border-color: #e1e3e6;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-              html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonSatisfactory.selected {
-                border-color: rgba(255, 140, 0, 0.8);
-                transform: scale(0.92); }
-                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonSatisfactory.selected:hover {
-                  border-color: #e1e3e6;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-              html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonBad.selected {
-                border-color: rgba(255, 0, 0, 0.8);
-                transform: scale(0.92); }
-                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonBad.selected:hover {
-                  border-color: #e1e3e6;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-          html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls {
-            flex-direction: row;
-            justify-content: space-between;
-            flex-wrap: wrap; }
-            html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control {
-              width: 47%; }
-            html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin {
-              margin-top: 12px;
-              width: 100%; }
-              html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button {
-                transition: all 0.2s; }
-                html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button:hover {
-                  border-color: #e1e3e6;
-                  box-shadow: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%);
-                  transition: all 0.2s; }
-      html body.dark nav:not(.mobile)::-webkit-scrollbar {
-        width: 5px; }
-      html body.dark .table-container {
-        background: #292929; }
-        html body.dark .table-container .table-wrapper table {
-          height: 100%;
-          width: 100%;
-          background: #292929;
-          color: #e1e3e6;
-          border-collapse: collapse;
-          table-layout: fixed; }
-          html body.dark .table-container .table-wrapper table thead {
-            height: 80px;
-            font-size: 25px;
-            border-color: #666666; }
-            html body.dark .table-container .table-wrapper table thead tr th {
-              border-bottom: 5px solid #666666;
-              top: 0;
-              position: sticky;
-              z-index: 2;
-              background-color: #292929;
-              width: 100px;
-              border-bottom: 1px solid #666666; }
-            html body.dark .table-container .table-wrapper table thead tr th.column-id {
-              left: 0;
-              width: 50px;
-              z-index: 3; }
-            html body.dark .table-container .table-wrapper table thead tr th.column-fullName {
-              left: 50px;
-              width: 200px;
-              z-index: 3; }
-          html body.dark .table-container .table-wrapper table tbody tr {
-            height: 90px;
-            border-bottom: 1px solid #666666; }
-            html body.dark .table-container .table-wrapper table tbody tr td:nth-child(1) {
-              background-color: #292929;
-              left: 0;
-              position: sticky;
-              z-index: 1;
-              text-align: center; }
-            html body.dark .table-container .table-wrapper table tbody tr td:nth-child(2) {
-              background-color: #292929;
-              left: 50px;
-              position: sticky;
-              z-index: 1;
-              text-align: center; }
-            html body.dark .table-container .table-wrapper table tbody tr td {
-              position: relative;
-              font-size: 21px; }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad,
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory,
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good,
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-weight: 700;
-                color: #e1e3e6;
-                font-size: 25px;
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 3px solid rgba(102, 102, 102, 0.4);
-                background: transparent;
-                border-radius: 7px;
-                user-select: none;
-                transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad.coloured {
-                border-color: rgba(255, 0, 0, 0.4);
-                background: rgba(255, 0, 0, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad:hover {
-                border-color: rgba(255, 0, 0, 0.9);
-                background: rgba(255, 0, 0, 0.05);
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
-                transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory.coloured {
-                border-color: rgba(255, 140, 0, 0.4);
-                background: rgba(255, 140, 0, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory:hover {
-                border-color: rgba(255, 140, 0, 0.9);
-                background: rgba(255, 140, 0, 0.05);
-                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
-                transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good.coloured {
-                border-color: rgba(46, 139, 87, 0.4);
-                background: rgba(46, 139, 87, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good:hover {
-                border-color: rgba(46, 139, 87, 0.9);
-                background: rgba(46, 139, 87, 0.05);
-                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
-                transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool.coloured {
-                border-color: rgba(144, 238, 144, 0.4);
-                background: rgba(144, 238, 144, 0.05); }
-              html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool:hover {
-                border-color: rgba(144, 238, 144, 0.9);
-                background: rgba(144, 238, 144, 0.05);
-                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
-                transition: all 0.2s; }
-              html body.dark .table-container .table-wrapper table tbody tr td .modal {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.1);
-                justify-content: center;
-                align-items: center;
-                z-index: 997; }
-                html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  position: relative;
-                  align-items: flex-start;
-                  width: 75%;
-                  min-height: 55%;
-                  max-width: 450px;
-                  max-height: 70%;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  border-radius: 15px;
-                  background-color: #292929;
-                  padding: 30px 40px 30px 40px;
-                  z-index: 998; }
-                  html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper {
-                    width: 100%;
-                    display: flex;
-                    justify-content: center; }
-                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper .title {
-                      text-align: center;
-                      font-size: 30px; }
-                  html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
-                    height: 100%;
-                    width: 100%;
-                    margin-top: 15px;
-                    overflow: auto;
-                    flex-grow: 1; }
-                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
-                      width: 100%;
-                      height: 65px;
-                      align-items: center;
-                      display: flex;
-                      flex-direction: row;
-                      text-align: center;
-                      padding: 7px 10px;
-                      border-bottom: 1px solid rgba(102, 102, 102, 0.4); }
-                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task .number {
-                        width: 50%;
-                        text-align: center; }
-                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 50%;
-                        font-size: 21px;
-                        text-align: center;
-                        font-weight: 700; }
-                        html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.completed, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.completed {
-                          color: #408835; }
-                        html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.not-completed, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.not-completed {
-                          color: #830000; }
-                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
-                        background: transparent;
-                        border: 2px solid rgba(102, 102, 102, 0.4);
-                        border-radius: 7px;
-                        transition: all 0.2s; }
-                        html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark:hover {
-                          border-color: #e1e3e6;
-                          box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
-                          transition: all 0.2s; }
-                  html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-top: 30px; }
-                    html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal {
-                      display: flex;
-                      color: #e1e3e6;
-                      height: 60px;
-                      font-size: 25px;
-                      align-items: center;
-                      padding: 0 15px;
-                      font-weight: 700;
-                      justify-content: center;
-                      border: 2px solid rgba(102, 102, 102, 0.4);
-                      background: transparent;
-                      border-radius: 7px;
-                      user-select: none;
-                      transition: all 0.2s; }
-                      html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal:hover {
-                        border-color: #e1e3e6;
-                        box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
-                        transition: all 0.2s; }
-                html body.dark .table-container .table-wrapper table tbody tr td .modal::before {
-                  content: "";
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background-color: rgba(0, 0, 0, 0.5); }
-                html body.dark .table-container .table-wrapper table tbody tr td .modal.showed {
-                  display: block; }
-          html body.dark .table-container .table-wrapper table tbody tr:last-child {
-            border-bottom: none; }
-      html body.dark *::-webkit-scrollbar {
-        width: 10px;
-        height: 10px; }
-      html body.dark *::-webkit-scrollbar-track {
-        background-color: transparent;
-        border-radius: 15px; }
-      html body.dark *::-webkit-scrollbar-thumb {
-        background-color: #e1e3e6;
-        border-radius: 15px; }
-      html body.dark *::-webkit-scrollbar-corner {
-        background-color: transparent; }
-    html body.light {
-      color: #292929;
-      background: linear-gradient(45deg, #b698f6 0%, #95c5ea 100%); }
-      html body.light nav:not(.mobile) {
-        background: #ffffff; }
-        html body.light nav:not(.mobile) .nav-content:not(.mobile) {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%; }
-          html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines {
-            flex-direction: column;
-            display: flex;
-            width: 100%;
-            margin-bottom: 25px; }
-            html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls span, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters span, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines span {
-              width: 100%;
-              font-size: 21px;
-              text-align: center;
-              font-weight: 700;
-              margin-bottom: 10px; }
-            html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form {
-              height: 100%;
-              flex-direction: column; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button {
-                font-size: 17px;
-                color: #292929;
-                height: 55px;
-                width: 100%;
-                margin-bottom: 12px;
-                background: transparent;
-                border: 3px solid rgba(102, 102, 102, 0.4);
-                border-radius: 7px;
-                letter-spacing: 1px;
-                transition: all 0.2s; }
-                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:hover {
-                  border-color: #292929;
-                  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
-                  transition: all 0.2s; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:last-child, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:last-child, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:last-child, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:last-child, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:last-child, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:last-child {
-                margin-bottom: 0; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonCool.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonCool.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonCool.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonCool.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonCool.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonCool.selected {
-                border-color: rgba(144, 238, 144, 0.8);
-                transform: scale(0.92); }
-                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonCool.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonCool.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonCool.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonCool.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonCool.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonCool.selected:hover {
-                  border-color: #292929;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonGood.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonGood.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonGood.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonGood.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonGood.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonGood.selected {
-                border-color: rgba(46, 139, 87, 0.8);
-                transform: scale(0.92); }
-                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonGood.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonGood.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonGood.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonGood.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonGood.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonGood.selected:hover {
-                  border-color: #292929;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonSatisfactory.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonSatisfactory.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonSatisfactory.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonSatisfactory.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonSatisfactory.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonSatisfactory.selected {
-                border-color: rgba(255, 140, 0, 0.8);
-                transform: scale(0.92); }
-                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonSatisfactory.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonSatisfactory.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonSatisfactory.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonSatisfactory.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonSatisfactory.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonSatisfactory.selected:hover {
-                  border-color: #292929;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonBad.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonBad.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonBad.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonBad.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonBad.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonBad.selected {
-                border-color: rgba(255, 0, 0, 0.8);
-                transform: scale(0.92); }
-                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonBad.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonBad.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonBad.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonBad.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonBad.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonBad.selected:hover {
-                  border-color: #292929;
-                  box-shadow: none;
-                  transition: all 0.2s; }
-          html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls {
-            flex-direction: row;
-            justify-content: space-between;
-            flex-wrap: wrap; }
-            html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control {
-              width: 47%; }
-              html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin {
-                margin-top: 12px;
-                width: 100%; }
-                html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button {
-                  border: 2px solid rgba(102, 102, 102, 0.4);
-                  transition: all 0.2s; }
-                  html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button:hover {
-                    border-color: #292929;
-                    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
-                    transition: all 0.2s; }
-      html body.light nav:not(.mobile)::-webkit-scrollbar {
-        width: 5px; }
-      html body.light .table-container {
-        background: #ffffff; }
-        html body.light .table-container .table-wrapper table {
-          height: 100%;
-          width: 100%;
-          background: #ffffff;
-          color: #292929;
-          border-collapse: collapse;
-          table-layout: fixed; }
-          html body.light .table-container .table-wrapper table thead {
-            height: 80px;
-            font-size: 25px;
-            border-color: #666666; }
-            html body.light .table-container .table-wrapper table thead tr th {
-              border-bottom: 5px solid #666666;
-              top: 0;
-              position: sticky;
-              z-index: 2;
-              background-color: #ffffff;
-              width: 100px;
-              border-bottom: 1px solid #666666; }
-            html body.light .table-container .table-wrapper table thead tr th.column-id {
-              left: 0;
-              width: 50px;
-              z-index: 3; }
-            html body.light .table-container .table-wrapper table thead tr th.column-fullName {
-              left: 50px;
-              width: 200px;
-              z-index: 3; }
-          html body.light .table-container .table-wrapper table tbody tr {
-            height: 90px;
-            border-bottom: 1px solid #666666; }
-            html body.light .table-container .table-wrapper table tbody tr td:nth-child(1) {
-              background-color: #ffffff;
-              left: 0;
-              position: sticky;
-              z-index: 1;
-              text-align: center; }
-            html body.light .table-container .table-wrapper table tbody tr td:nth-child(2) {
-              background-color: #ffffff;
-              left: 50px;
-              position: sticky;
-              z-index: 1;
-              text-align: center; }
-            html body.light .table-container .table-wrapper table tbody tr td {
-              position: relative;
-              font-size: 21px; }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad,
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory,
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.good,
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-weight: 700;
-                color: #292929;
-                font-size: 25px;
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 3px solid rgba(102, 102, 102, 0.4);
-                background: transparent;
-                border-radius: 7px;
-                user-select: none;
-                transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad.coloured {
-                border-color: rgba(255, 0, 0, 0.4);
-                background: rgba(255, 0, 0, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad:hover {
-                border-color: rgba(255, 0, 0, 0.9);
-                background: rgba(255, 0, 0, 0.05);
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
-                transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory.coloured {
-                border-color: rgba(255, 140, 0, 0.4);
-                background: rgba(255, 140, 0, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory:hover {
-                border-color: rgba(255, 140, 0, 0.9);
-                background: rgba(255, 140, 0, 0.05);
-                box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
-                transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.good.coloured {
-                border-color: rgba(46, 139, 87, 0.4);
-                background: rgba(46, 139, 87, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.good:hover {
-                border-color: rgba(46, 139, 87, 0.9);
-                background: rgba(46, 139, 87, 0.05);
-                box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
-                transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool.coloured {
-                border-color: rgba(144, 238, 144, 0.4);
-                background: rgba(144, 238, 144, 0.05); }
-              html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool:hover {
-                border-color: rgba(144, 238, 144, 0.9);
-                background: rgba(144, 238, 144, 0.05);
-                box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
-                transition: all 0.2s; }
-              html body.light .table-container .table-wrapper table tbody tr td .modal {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: none;
-                background-color: rgba(0, 0, 0, 0.1);
-                justify-content: center;
-                align-items: center;
-                z-index: 997; }
-                html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  position: relative;
-                  align-items: flex-start;
-                  width: 75%;
-                  min-height: 55%;
-                  max-width: 450px;
-                  max-height: 70%;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  border-radius: 15px;
-                  background-color: #ffffff;
-                  padding: 30px 40px 30px 40px;
-                  z-index: 998; }
-                  html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper {
-                    width: 100%;
-                    display: flex;
-                    justify-content: center; }
-                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper .title {
-                      text-align: center;
-                      font-size: 30px; }
-                  html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
-                    height: 100%;
-                    width: 100%;
-                    margin-top: 15px;
-                    overflow: auto;
-                    flex-grow: 1; }
-                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
-                      width: 100%;
-                      height: 65px;
-                      align-items: center;
-                      display: flex;
-                      flex-direction: row;
-                      text-align: center;
-                      padding: 7px 10px;
-                      border-bottom: 1px solid rgba(102, 102, 102, 0.4); }
-                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task .number {
-                        width: 50%;
-                        text-align: center; }
-                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 50%;
-                        font-size: 21px;
-                        text-align: center;
-                        font-weight: 700; }
-                        html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.completed, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.completed {
-                          color: #408835; }
-                        html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.not-completed, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.not-completed {
-                          color: #830000; }
-                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
-                        background: transparent;
-                        border: 2px solid rgba(102, 102, 102, 0.4);
-                        border-radius: 7px;
-                        transition: all 0.2s; }
-                        html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark:hover {
-                          border-color: #292929;
-                          box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
-                          transition: all 0.2s; }
-                  html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-top: 30px; }
-                    html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal {
-                      display: flex;
-                      color: #292929;
-                      height: 60px;
-                      font-size: 25px;
-                      align-items: center;
-                      padding: 0 15px;
-                      font-weight: 700;
-                      justify-content: center;
-                      border: 2px solid rgba(102, 102, 102, 0.4);
-                      background: transparent;
-                      border-radius: 7px;
-                      user-select: none;
-                      transition: all 0.2s; }
-                      html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal:hover {
-                        border-color: #292929;
-                        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
-                        transition: all 0.2s; }
-                html body.light .table-container .table-wrapper table tbody tr td .modal::before {
-                  content: "";
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background-color: rgba(0, 0, 0, 0.5); }
-                html body.light .table-container .table-wrapper table tbody tr td .modal.showed {
-                  display: block; }
-          html body.light .table-container .table-wrapper table tbody tr:last-child {
-            border-bottom: none; }
-      html body.light *::-webkit-scrollbar {
-        width: 10px;
-        height: 10px; }
-      html body.light *::-webkit-scrollbar-track {
-        background-color: transparent;
-        border-radius: 15px; }
-      html body.light *::-webkit-scrollbar-thumb {
-        background-color: #292929;
-        border-radius: 15px; }
-      html body.light *::-webkit-scrollbar-corner {
-        background-color: transparent; }
+  height: 100%;
+}
+html body {
+  display: flex;
+  flex-direction: row;
+  padding: 35px;
+  height: 100%;
+  outline: none;
+  overflow: hidden;
+}
+html body nav:not(.mobile) {
+  width: 180px;
+  height: 100%;
+  border-radius: 15px;
+  padding: 15px 10px 0 10px;
+  overflow: auto;
+  flex-shrink: 0;
+}
+html body .table-container {
+  width: 100%;
+  height: 100%;
+  margin-left: 7px;
+  border-radius: 15px;
+  overflow: auto;
+}
+html body.dark {
+  background: linear-gradient(45deg, hsl(205, 46%, 10%) 0%, hsl(191, 28%, 23%) 50%, hsl(207, 41%, 27%) 100%);
+  color: #e1e3e6;
+}
+html body.dark nav:not(.mobile) {
+  background: #292929;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls span, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters span, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines span {
+  width: 100%;
+  font-size: 21px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form {
+  height: 100%;
+  flex-direction: column;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button {
+  font-size: 17px;
+  color: #e1e3e6;
+  height: 55px;
+  width: 100%;
+  margin-bottom: 12px;
+  background: transparent;
+  border: 3px solid rgba(102, 102, 102, 0.4);
+  border-radius: 7px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:hover {
+  border-color: #e1e3e6;
+  box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div button:last-child, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form button:last-child {
+  margin-bottom: 0;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonCool.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonCool.selected {
+  border-color: rgba(144, 238, 144, 0.8);
+  transform: scale(0.92);
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonCool.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonCool.selected:hover {
+  border-color: #e1e3e6;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonGood.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonGood.selected {
+  border-color: rgba(46, 139, 87, 0.8);
+  transform: scale(0.92);
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonGood.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonGood.selected:hover {
+  border-color: #e1e3e6;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonSatisfactory.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonSatisfactory.selected {
+  border-color: rgba(255, 140, 0, 0.8);
+  transform: scale(0.92);
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonSatisfactory.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonSatisfactory.selected:hover {
+  border-color: #e1e3e6;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonBad.selected, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonBad.selected {
+  border-color: rgba(255, 0, 0, 0.8);
+  transform: scale(0.92);
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls div #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls form #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters div #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.filters form #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines div #buttonBad.selected:hover, html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.disciplines form #buttonBad.selected:hover {
+  border-color: #e1e3e6;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls {
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control {
+  width: 47%;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin {
+  margin-top: 12px;
+  width: 100%;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button {
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button:hover {
+  border-color: #e1e3e6;
+  box-shadow: linear-gradient(45deg, hsl(205, 46%, 10%) 0%, hsl(191, 28%, 23%) 50%, hsl(207, 41%, 27%) 100%);
+  transition: all 0.2s;
+}
+html body.dark nav:not(.mobile)::-webkit-scrollbar {
+  width: 5px;
+}
+html body.dark .table-container {
+  background: #292929;
+}
+html body.dark .table-container .table-wrapper table {
+  height: 100%;
+  width: 100%;
+  background: #292929;
+  color: #e1e3e6;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+html body.dark .table-container .table-wrapper table thead {
+  height: 80px;
+  font-size: 25px;
+  border-color: #666666;
+}
+html body.dark .table-container .table-wrapper table thead tr th {
+  border-bottom: 5px solid #666666;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  background-color: #292929;
+  width: 100px;
+  border-bottom: 1px solid #666666;
+}
+html body.dark .table-container .table-wrapper table thead tr th.column-id {
+  left: 0;
+  width: 50px;
+  z-index: 3;
+}
+html body.dark .table-container .table-wrapper table thead tr th.column-fullName {
+  left: 50px;
+  width: 200px;
+  z-index: 3;
+}
+html body.dark .table-container .table-wrapper table tbody tr {
+  height: 90px;
+  border-bottom: 1px solid #666666;
+}
+html body.dark .table-container .table-wrapper table tbody tr td:nth-child(1) {
+  background-color: #292929;
+  left: 0;
+  position: sticky;
+  z-index: 1;
+  text-align: center;
+}
+html body.dark .table-container .table-wrapper table tbody tr td:nth-child(2) {
+  background-color: #292929;
+  left: 50px;
+  position: sticky;
+  z-index: 1;
+  text-align: center;
+}
+html body.dark .table-container .table-wrapper table tbody tr td {
+  position: relative;
+  font-size: 21px;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad,
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory,
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good,
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  color: #e1e3e6;
+  font-size: 25px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(102, 102, 102, 0.4);
+  background: transparent;
+  border-radius: 7px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad.coloured {
+  border-color: rgba(255, 0, 0, 0.4);
+  background: rgba(255, 0, 0, 0.05);
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.bad:hover {
+  border-color: rgba(255, 0, 0, 0.9);
+  background: rgba(255, 0, 0, 0.05);
+  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory.coloured {
+  border-color: rgba(255, 140, 0, 0.4);
+  background: rgba(255, 140, 0, 0.05);
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.satisfactory:hover {
+  border-color: rgba(255, 140, 0, 0.9);
+  background: rgba(255, 140, 0, 0.05);
+  box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good.coloured {
+  border-color: rgba(46, 139, 87, 0.4);
+  background: rgba(46, 139, 87, 0.05);
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.good:hover {
+  border-color: rgba(46, 139, 87, 0.9);
+  background: rgba(46, 139, 87, 0.05);
+  box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool.coloured {
+  border-color: rgba(144, 238, 144, 0.4);
+  background: rgba(144, 238, 144, 0.05);
+}
+html body.dark .table-container .table-wrapper table tbody tr td .markBtn.cool:hover {
+  border-color: rgba(144, 238, 144, 0.9);
+  background: rgba(144, 238, 144, 0.05);
+  box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  z-index: 997;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: flex-start;
+  width: 75%;
+  min-height: 55%;
+  max-width: 450px;
+  max-height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-color: #292929;
+  padding: 30px 40px 30px 40px;
+  z-index: 998;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper .title {
+  text-align: center;
+  font-size: 30px;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
+  height: 100%;
+  width: 100%;
+  margin-top: 15px;
+  overflow: auto;
+  flex-grow: 1;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
+  width: 100%;
+  height: 65px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 7px 10px;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.4);
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task .number {
+  width: 50%;
+  text-align: center;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  font-size: 21px;
+  text-align: center;
+  font-weight: 700;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.completed, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.completed {
+  color: #408835;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.not-completed, html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.not-completed {
+  color: #830000;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+  background: transparent;
+  border: 2px solid rgba(102, 102, 102, 0.4);
+  border-radius: 7px;
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark:hover {
+  border-color: #e1e3e6;
+  box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal {
+  display: flex;
+  color: #e1e3e6;
+  height: 60px;
+  font-size: 25px;
+  align-items: center;
+  padding: 0 15px;
+  font-weight: 700;
+  justify-content: center;
+  border: 2px solid rgba(102, 102, 102, 0.4);
+  background: transparent;
+  border-radius: 7px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal:hover {
+  border-color: #e1e3e6;
+  box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4);
+  transition: all 0.2s;
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+html body.dark .table-container .table-wrapper table tbody tr td .modal.showed {
+  display: block;
+}
+html body.dark .table-container .table-wrapper table tbody tr:last-child {
+  border-bottom: none;
+}
+html body.dark *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+html body.dark *::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 15px;
+}
+html body.dark *::-webkit-scrollbar-thumb {
+  background-color: #e1e3e6;
+  border-radius: 15px;
+}
+html body.dark *::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+html body.light {
+  color: #292929;
+  background: linear-gradient(45deg, hsl(259, 84%, 78%) 0%, hsl(206, 67%, 75%) 100%);
+}
+html body.light nav:not(.mobile) {
+  background: #ffffff;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-title,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-title, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-title,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-title, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-title,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-title {
+  width: 100%;
+  font-size: 21px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats {
+  height: 100%;
+  flex-direction: column;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats button, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats button, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats button,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats button {
+  font-size: 17px;
+  color: #292929;
+  height: 55px;
+  width: 100%;
+  margin-bottom: 12px;
+  background: transparent;
+  border: 3px solid rgba(102, 102, 102, 0.4);
+  border-radius: 7px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats button:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats button:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats button:hover {
+  border-color: #292929;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats button:last-child, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats button:last-child, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats button:last-child,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats button:last-child {
+  margin-bottom: 0;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonCool.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonCool.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonCool.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonCool.selected {
+  border-color: rgba(144, 238, 144, 0.8);
+  transform: scale(0.92);
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonCool.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonCool.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonCool.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonCool.selected:hover {
+  border-color: #292929;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonGood.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonGood.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonGood.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonGood.selected {
+  border-color: rgba(46, 139, 87, 0.8);
+  transform: scale(0.92);
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonGood.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonGood.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonGood.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonGood.selected:hover {
+  border-color: #292929;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonSatisfactory.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonSatisfactory.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonSatisfactory.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonSatisfactory.selected {
+  border-color: rgba(255, 140, 0, 0.8);
+  transform: scale(0.92);
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonSatisfactory.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonSatisfactory.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonSatisfactory.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonSatisfactory.selected:hover {
+  border-color: #292929;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonBad.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonBad.selected, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonBad.selected,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonBad.selected {
+  border-color: rgba(255, 0, 0, 0.8);
+  transform: scale(0.92);
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .exit #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .theme #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .admin #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .filters-stats #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .controls .disciplines-stats #buttonBad.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .exit #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .theme #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .admin #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .filters-stats #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .filters .disciplines-stats #buttonBad.selected:hover, html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .exit #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .theme #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .admin #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .filters-stats #buttonBad.selected:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) .disciplines .disciplines-stats #buttonBad.selected:hover {
+  border-color: #292929;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls {
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control {
+  width: 47%;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin {
+  margin-top: 12px;
+  width: 100%;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button {
+  border: 2px solid rgba(102, 102, 102, 0.4);
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin button:hover {
+  border-color: #292929;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  z-index: 997;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: flex-start;
+  width: 75%;
+  min-height: 55%;
+  max-width: 450px;
+  max-height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-color: #ffffff;
+  padding: 30px 40px 30px 40px;
+  z-index: 998;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .title-wrapper {
+  width: 100%;
+  display: flex;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .title-wrapper .title {
+  text-align: center;
+  font-size: 30px;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .config {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .config .config-elem {
+  width: 100%;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .close-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .close-wrapper #btnCancel,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .close-wrapper #btnSave {
+  display: flex;
+  color: #292929;
+  height: 60px;
+  font-size: 25px;
+  align-items: center;
+  padding: 0 15px;
+  font-weight: 700;
+  justify-content: center;
+  border: 2px solid rgba(102, 102, 102, 0.4);
+  background: transparent;
+  border-radius: 7px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .close-wrapper #btnCancel:hover,
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal .modal-content .close-wrapper #btnSave:hover {
+  border-color: #292929;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+html body.light nav:not(.mobile) .nav-content:not(.mobile) div.controls .control.admin .modal.showed {
+  display: block;
+}
+html body.light nav:not(.mobile)::-webkit-scrollbar {
+  width: 5px;
+}
+html body.light .table-container {
+  background: #ffffff;
+}
+html body.light .table-container .table-wrapper table {
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  color: #292929;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+html body.light .table-container .table-wrapper table thead {
+  height: 80px;
+  font-size: 25px;
+  border-color: #666666;
+}
+html body.light .table-container .table-wrapper table thead tr th {
+  border-bottom: 5px solid #666666;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  background-color: #ffffff;
+  width: 100px;
+  border-bottom: 1px solid #666666;
+}
+html body.light .table-container .table-wrapper table thead tr th.column-id {
+  left: 0;
+  width: 50px;
+  z-index: 3;
+}
+html body.light .table-container .table-wrapper table thead tr th.column-fullName {
+  left: 50px;
+  width: 200px;
+  z-index: 3;
+}
+html body.light .table-container .table-wrapper table tbody tr {
+  height: 90px;
+  border-bottom: 1px solid #666666;
+}
+html body.light .table-container .table-wrapper table tbody tr td:nth-child(1) {
+  background-color: #ffffff;
+  left: 0;
+  position: sticky;
+  z-index: 1;
+  text-align: center;
+}
+html body.light .table-container .table-wrapper table tbody tr td:nth-child(2) {
+  background-color: #ffffff;
+  left: 50px;
+  position: sticky;
+  z-index: 1;
+  text-align: center;
+}
+html body.light .table-container .table-wrapper table tbody tr td {
+  position: relative;
+  font-size: 21px;
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad,
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory,
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.good,
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  color: #292929;
+  font-size: 25px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(102, 102, 102, 0.4);
+  background: transparent;
+  border-radius: 7px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad.coloured {
+  border-color: rgba(255, 0, 0, 0.4);
+  background: rgba(255, 0, 0, 0.05);
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.bad:hover {
+  border-color: rgba(255, 0, 0, 0.9);
+  background: rgba(255, 0, 0, 0.05);
+  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.6);
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory.coloured {
+  border-color: rgba(255, 140, 0, 0.4);
+  background: rgba(255, 140, 0, 0.05);
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.satisfactory:hover {
+  border-color: rgba(255, 140, 0, 0.9);
+  background: rgba(255, 140, 0, 0.05);
+  box-shadow: 0 0 10px 2px rgba(255, 140, 0, 0.6);
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.good.coloured {
+  border-color: rgba(46, 139, 87, 0.4);
+  background: rgba(46, 139, 87, 0.05);
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.good:hover {
+  border-color: rgba(46, 139, 87, 0.9);
+  background: rgba(46, 139, 87, 0.05);
+  box-shadow: 0 0 10px 2px rgba(46, 139, 87, 0.6);
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool.coloured {
+  border-color: rgba(144, 238, 144, 0.4);
+  background: rgba(144, 238, 144, 0.05);
+}
+html body.light .table-container .table-wrapper table tbody tr td .markBtn.cool:hover {
+  border-color: rgba(144, 238, 144, 0.9);
+  background: rgba(144, 238, 144, 0.05);
+  box-shadow: 0 0 10px 2px rgba(144, 238, 144, 0.6);
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  z-index: 997;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: flex-start;
+  width: 75%;
+  min-height: 55%;
+  max-width: 450px;
+  max-height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-color: #ffffff;
+  padding: 30px 40px 30px 40px;
+  z-index: 998;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .title-wrapper .title {
+  text-align: center;
+  font-size: 30px;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats {
+  height: 100%;
+  width: 100%;
+  margin-top: 15px;
+  overflow: auto;
+  flex-grow: 1;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task {
+  width: 100%;
+  height: 65px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 7px 10px;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.4);
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task .number {
+  width: 50%;
+  text-align: center;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  font-size: 21px;
+  text-align: center;
+  font-weight: 700;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.completed, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.completed {
+  color: #408835;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task span.mark.not-completed, html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark.not-completed {
+  color: #830000;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark {
+  background: transparent;
+  border: 2px solid rgba(102, 102, 102, 0.4);
+  border-radius: 7px;
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .stats .task button.mark:hover {
+  border-color: #292929;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal {
+  display: flex;
+  color: #292929;
+  height: 60px;
+  font-size: 25px;
+  align-items: center;
+  padding: 0 15px;
+  font-weight: 700;
+  justify-content: center;
+  border: 2px solid rgba(102, 102, 102, 0.4);
+  background: transparent;
+  border-radius: 7px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal .modal-content .close-wrapper .close-modal:hover {
+  border-color: #292929;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+html body.light .table-container .table-wrapper table tbody tr td .modal.showed {
+  display: block;
+}
+html body.light .table-container .table-wrapper table tbody tr:last-child {
+  border-bottom: none;
+}
+html body.light *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+html body.light *::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 15px;
+}
+html body.light *::-webkit-scrollbar-thumb {
+  background-color: #292929;
+  border-radius: 15px;
+}
+html body.light *::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 
 @media only screen and (min-width: 769px) {
   html body nav.mobile {
-    display: none; } }
+    display: none;
+  }
+}
 @media only screen and (max-width: 768px) {
   html body {
-    padding: 17px; }
-    html body nav:not(.mobile) {
-      display: none; }
-    html body nav.mobile {
-      position: fixed;
-      bottom: 60px;
-      height: 75px;
-      left: 50%;
-      border-radius: 15px;
-      transform: translateX(-50%);
-      z-index: 6;
-      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2); }
-      html body nav.mobile .nav-content {
-        padding: 10px;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around; }
-        html body nav.mobile .nav-content button {
-          height: 100%;
-          width: 55px;
-          border-radius: 7px;
-          border: none;
-          outline: none;
-          user-select: none; }
-          html body nav.mobile .nav-content button img {
-            width: 80%;
-            height: 80%; }
-        html body nav.mobile .nav-content button:not(:first-child) {
-          margin-left: 15px; }
-    html body .table-container {
-      margin-left: 0; }
-      html body .table-container form table thead tr th.column-fullName {
-        width: 160px; }
-      html body .table-container form table thead tr th.column-id {
-        width: 50px; }
-      html body .table-container form table tbody tr td:nth-child(2) {
-        left: 50px; }
-    html body.dark nav.mobile {
-      background: #292929; }
-      html body.dark nav.mobile .nav-content button {
-        background-color: rgba(0, 0, 0, 0.1); }
-    html body.light nav.mobile {
-      background: #ffffff; }
-      html body.light nav.mobile .nav-content button {
-        background-color: #e1e3e6; } }
-
-/*# sourceMappingURL=style.css.map */
+    padding: 17px;
+  }
+  html body nav:not(.mobile) {
+    display: none;
+  }
+  html body nav.mobile {
+    position: fixed;
+    bottom: 60px;
+    height: 75px;
+    left: 50%;
+    border-radius: 15px;
+    transform: translateX(-50%);
+    z-index: 6;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
+  html body nav.mobile .nav-content {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  html body nav.mobile .nav-content button {
+    height: 100%;
+    width: 55px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  html body nav.mobile .nav-content button img {
+    width: 80%;
+    height: 80%;
+  }
+  html body nav.mobile .nav-content button:not(:first-child) {
+    margin-left: 15px;
+  }
+  html body .table-container {
+    margin-left: 0;
+  }
+  html body .table-container form table thead tr th.column-fullName {
+    width: 160px;
+  }
+  html body .table-container form table thead tr th.column-id {
+    width: 50px;
+  }
+  html body .table-container form table tbody tr td:nth-child(2) {
+    left: 50px;
+  }
+  html body.dark nav.mobile {
+    background: #292929;
+  }
+  html body.dark nav.mobile .nav-content button {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  html body.light nav.mobile {
+    background: #ffffff;
+  }
+  html body.light nav.mobile .nav-content button {
+    background-color: #e1e3e6;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -30,11 +30,11 @@ function averageMark(){
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Главная</title>
 </head>
-<body class="dark">
+<body class="light">
 <nav>
     <div class="nav-content">
         <div class="controls">
-            <form class="control" action="home.php" method="post">
+            <form class="control exit" action="home.php" method="post">
                 <button>
                     Выход
                 </button>
@@ -45,15 +45,46 @@ function averageMark(){
                 </button>
             </div>
             <div class="control admin">
-                <button>
-                    Редактировать
+                <button id="addWork">
+                    Добавить работу
                 </button>
+                <div class="modal">
+                    <div class="modal-content">
+                        <div class="title-wrapper">
+                            <span class="title">Добавление работы</span>
+                        </div>
+                        <div class="config">
+                            <select class="config-elem">
+                                <option>Лабораторная</option>
+                                <option>Практическая</option>
+                                <option>Самостоятельная</option>
+                            </select>
+                            <input class="config-elem" type="text" placeholder="Название(заголовок)">
+                            <select class="config-elem">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                        <div class="close-wrapper">
+                            <button id="btnCancel">Отмена</button>
+                            <button id="btnSave">Добавить</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="filters">
-            <span>Успеваемость</span>
-            <div>
+            <span class="filters-title">Успеваемость</span>
+            <div class="filters-stats">
                 <button id="buttonCool">ОТЛИЧНО</button>
                 <button id="buttonGood">ХОРОШО</button>
                 <button id="buttonSatisfactory">УДОВЛ.</button>
@@ -62,8 +93,8 @@ function averageMark(){
         </div>
 
         <div class="disciplines">
-            <span>Дисциплины </span>
-            <form action="home.php" method="post">
+            <span class="disciplines-title">Дисциплины </span>
+            <form class="disciplines-stats" action="home.php" method="post">
                 <button name="discipline1">МДК 01.01</button>
                 <button name="discipline2">МДК 01.02</button>
                 <button name="discipline3">МДК 01.03</button>
