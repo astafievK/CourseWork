@@ -8,37 +8,41 @@
     <link rel="stylesheet" href="style.css">
     <title>Главная</title>
 </head>
-<body>
+<body class="dark">
 <header>
     <nav>
-        <button class="theme" id="btnSwitchTheme">Тема</button>
+        <button class="theme" id="btnSwitchTheme">
+            <img id="themeImage" src="../../assets/images/nav/desktop/theme-moon.png" alt="">
+        </button>
         <div class="filters">
             <div class="filter">
-                <label>Группа</label>
                 <select class="select-group">
+                    <option selected disabled>Группа</option>
                     <option>ИСПП-01</option>
                     <option>ИСПП-11</option>
                     <option>ПКС-01</option>
                 </select>
             </div>
             <div class="filter">
-                <label>Дисциплина</label>
                 <select class="select-discipline">
+                    <option selected disabled>Дисциплина</option>
                     <option>МДК 01.01</option>
                     <option>МДК 01.02</option>
                     <option>МДК 01.03</option>
                 </select>
             </div>
             <div class="filter">
-                <label>Работа</label>
                 <select class="select-work">
-                    <option>Лаб. работа 1</option>
-                    <option>Лаб. работа 2</option>
-                    <option>Пра. работа 3</option>
+                    <option selected disabled>Работа</option>
+                    <option>Лабораторная работа 1</option>
+                    <option>Лабораторная работа 2</option>
+                    <option>Практическая работа 3</option>
                 </select>
             </div>
         </div>
-        <button class="exit" id="btnExit">Выход</button>
+        <button class="exit" id="btnExit">
+            <img src="../../assets/images/nav/desktop/exit.png" alt="">
+        </button>
     </nav>
 </header>
 <div class="table-wrapper">
@@ -316,7 +320,6 @@
     </table>
 </div>
 
-<script src="scripts/filter.js"></script>
 <script src="scripts/theme.js"></script>
 </body>
 </html>
