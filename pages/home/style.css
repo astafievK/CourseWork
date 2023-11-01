@@ -266,4 +266,12 @@ html {
       html body.dark::-webkit-scrollbar-thumb {
         background-color: #e1e3e6; }
 
+@media screen and (max-width: 768px) {
+  html body {
+    padding: 0; }
+    html body header {
+      border-radius: 0; }
+    html body .table-wrapper {
+      border-radius: 0; } }
+
 /*# sourceMappingURL=style.css.map */

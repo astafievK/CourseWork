@@ -439,3 +439,19 @@ html {
     }
   }
 }
+
+@media screen and (max-width: $media-size-medium){
+  html{
+    body{
+      padding: 0;
+
+      header{
+        border-radius: 0;
+      }
+
+      .table-wrapper{
+        border-radius: 0;
+      }
+    }
+  }
+}
