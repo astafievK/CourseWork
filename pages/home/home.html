@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Главная</title>
+</head>
+<body class="light">
+<header>
+    <nav>
+        <button class="theme" id="btnSwitchTheme">
+            <img id="themeImage" src="../../assets/images/nav/desktop/theme-moon.png" alt="">
+        </button>
+        <div class="filters">
+            <div class="filter">
+                <select class="select-group">
+                    <option selected disabled>Группа</option>
+                    <option>ИСПП-01</option>
+                    <option>ИСПП-11</option>
+                    <option>ПКС-01</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-discipline">
+                    <option selected disabled>Дисциплина</option>
+                    <option>МДК 01.01</option>
+                    <option>МДК 01.02</option>
+                    <option>МДК 01.03</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-work">
+                    <option selected disabled>Работа</option>
+                    <option>Лабораторная работа 1</option>
+                    <option>Лабораторная работа 2</option>
+                    <option>Практическая работа 3</option>
+                </select>
+            </div>
+        </div>
+        <button class="exit" id="btnExit">
+            <img src="../../assets/images/nav/desktop/exit.png" alt="">
+        </button>
+    </nav>
+</header>
+<div class="table-wrapper">
+    <table id="table">
+        <tbody>
+            <tr>
+                <td class="number">
+                    <span>1</span>
+                </td>
+                <td class="fullname">
+                    <span>Акберов Муса</span>
+                </td>
+                <td class="stats">
+                    <button class="markBtn">1</button>
+                    <button class="markBtn">2</button>
+                    <button class="markBtn">3</button>
+                    <button class="markBtn">4</button>
+                    <button class="markBtn">5</button>
+                    <button class="markBtn">6</button>
+                    <button class="markBtn">7</button>
+                    <button class="markBtn">8</button>
+                    <button class="markBtn">9</button>
+                    <button class="markBtn">10</button>
+                    <button class="markBtn">10</button>
+                    <button class="markBtn">10</button>
+                </td>
+                <td class="actions">
+                    <button class="action all">Все</button>
+                    <input class="action numbers" type="text" name="numbers">
+                    <button class="action selected">Указанные</button>
+                </td>
+                <td class="percentage">
+                    <span>76%</span>
+                </td>
+                <td class="total-mark">
+                    <span>4</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="scripts/theme.js"></script>
+</body>
+</html>
