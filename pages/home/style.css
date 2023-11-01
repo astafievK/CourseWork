@@ -9,6 +9,9 @@
   font-family: Poppins-Regular, sans-serif;
   transition: background-color 0.3s; }
 
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5); }
+
 button, input, a, select {
   cursor: pointer;
   outline: none; }
@@ -78,6 +81,7 @@ html {
               border: 3px solid rgba(102, 102, 102, 0.4);
               background: #ffffff;
               color: #292929;
+              appearance: none;
               width: 100%;
               height: 100%;
               font-size: 21px;
@@ -189,7 +193,8 @@ html {
                 background-color: #292929;
                 margin-left: 20px;
                 padding: 0 10px;
-                text-align: center; }
+                text-align: center;
+                letter-spacing: 1px; }
                 html body .table-wrapper table tbody tr td.actions .numbers:focus {
                   border-color: #292929;
                   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
@@ -266,7 +271,7 @@ html {
       html body.dark::-webkit-scrollbar-thumb {
         background-color: #e1e3e6; }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) and (max-height: 768px) {
   html body {
     padding: 0; }
     html body header {

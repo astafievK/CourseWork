@@ -28,6 +28,10 @@ $header-height: 90px;
   transition: background-color 0.3s;
 }
 
+input::placeholder{
+  color: rgba(255, 255, 255, 0.5);
+}
+
 button, input, a, select{
   cursor: pointer;
   outline: none;
@@ -122,6 +126,7 @@ html {
               border: 3px solid rgba(102, 102, 102, 0.4);
               background: $theme-light-color-primary;
               color: $theme-light-color-secondary;
+              appearance: none;
               width: 100%;
               height: 100%;
               font-size: 21px;
@@ -260,7 +265,7 @@ html {
                   font-size: 24px;
                   height: 60px;
                   user-select: none;
-                  
+
                   transition: all 0.2s;
 
                   &:hover {
@@ -283,6 +288,7 @@ html {
                   margin-left: 20px;
                   padding: 0 10px;
                   text-align: center;
+                  letter-spacing: 1px;
 
                   &:focus {
                     border-color: $theme-light-color-secondary;
@@ -410,7 +416,7 @@ html {
                 }
 
                 &.actions {
-                  .action{
+                  .action {
                     &:hover {
                       border-color: $theme-dark-color-secondary;
                       box-shadow: $theme-dark-color-shadow;
@@ -440,17 +446,19 @@ html {
   }
 }
 
-@media screen and (max-width: $media-size-large){
-  html{
-    body{
-      padding: 0;
+@media screen and (max-width: 1200px) {
+  @media screen and (max-height: $media-size-medium) {
+    html {
+      body {
+        padding: 0;
 
-      header{
-        border-radius: 0;
-      }
+        header {
+          border-radius: 0;
+        }
 
-      .table-wrapper{
-        border-radius: 0;
+        .table-wrapper {
+          border-radius: 0;
+        }
       }
     }
   }
