@@ -28,22 +28,33 @@ $header-height: 90px;
   transition: background-color 0.3s;
 }
 
-button, input, a{
+button, input, a, select{
   cursor: pointer;
+  outline: none;
 }
 
-button{
-  border: 3px solid rgba(102, 102, 102, 0.4);
-  background: transparent;
-  border-radius: 7px;
+body{
+  button, select{
+
+    &:hover{
+      border-color: $theme-light-color-secondary
+    }
+  }
+
+  &.dark{
+    button, select{
+
+      &:hover{
+        border-color: $theme-dark-color-secondary
+      }
+    }
+  }
 }
 
 html {
   height: 100%;
 
   body {
-    display: flex;
-    flex-direction: column;
     padding: 35px;
     height: 100%;
     color: $theme-light-color-secondary;
@@ -66,12 +77,8 @@ html {
         height: 100%;
         width: 100%;
 
-        .theme{
-
-        }
-
         .theme,
-        .exit{
+        .exit {
           aspect-ratio: 1 / 1;
           height: 100%;
           display: flex;
@@ -80,30 +87,30 @@ html {
           font-size: 18px;
           background-color: $theme-light-color-primary;
           color: $theme-light-color-secondary;
-          border: 2px solid rgba(102, 102, 102, 0.4);
+          border-radius: 7px;
+          border: 3px solid rgba(102, 102, 102, 0.4);
           padding: 10px;
 
           transition: all 0.2s;
 
-          &:hover{
+          &:hover {
             border-color: rgba(102, 102, 102, 1);
-
-            transition: all 0.2s;
+            box-shadow: $theme-light-color-shadow;
           }
 
-          img{
+          img {
             height: 100%;
             width: 100%;
           }
         }
 
-        .filters{
+        .filters {
           display: flex;
           height: 100%;
           justify-content: space-evenly;
           flex-grow: 1;
 
-          .filter{
+          .filter {
             height: 100%;
             width: 30%;
             display: flex;
@@ -111,8 +118,8 @@ html {
             text-align: center;
             justify-content: center;
 
-            select{
-              border: 2px solid rgba(102, 102, 102, 0.4);
+            select {
+              border: 3px solid rgba(102, 102, 102, 0.4);
               background: $theme-light-color-primary;
               color: $theme-light-color-secondary;
               width: 100%;
@@ -123,26 +130,28 @@ html {
               transition: all 0.2s;
               letter-spacing: 1px;
 
-              &:hover{
-                border-color: rgba(102, 102, 102, 1);
+              &:hover {
+                border-color: $theme-light-color-secondary;
+                box-shadow: $theme-light-color-shadow;
               }
 
-              &:focus{
-                border-color: rgba(102, 102, 102, 1);
+              &:focus {
+                border-color: $theme-light-color-secondary;
+                box-shadow: $theme-light-color-shadow;
               }
 
-              option:nth-child(1n){
+              option:nth-child(1n) {
                 font-size: 19px;
               }
 
-              option:nth-child(1){
+              option:nth-child(1) {
                 display: none;
               }
             }
           }
         }
 
-        .exit{
+        .exit {
           order: 3;
         }
       }
@@ -164,12 +173,10 @@ html {
 
         tbody {
           tr {
-            flex-shrink: 0;
+            display: flex;
             height: 80px;
             border-bottom: 1px solid #666666;
             font-size: 20px;
-            display: flex;
-            align-items: center;
 
             td {
               display: flex;
@@ -181,20 +188,43 @@ html {
                 font-size: 21px;
               }
 
+              &.number {
+                display: flex;
+                justify-content: center;
+                position: sticky;
+                background-color: $theme-light-color-primary;
+                left: 0;
+                z-index: 1;
+                width: 45px;
+                flex-shrink: 1;
+              }
+
+              &.fullname {
+                position: sticky;
+                background-color: $theme-light-color-primary;
+                left: 45px;
+                z-index: 1;
+                text-align: left;
+                width: 250px;
+                flex-shrink: 1;
+              }
+
               &.stats {
-                height: 100%;
-                width: 100%;
-                align-items: center;
-                position: relative;
+                padding: 0 5px;
                 display: flex;
                 justify-content: start;
+                flex-grow: 1;
+                height: 100%;
+                position: relative;
                 font-size: 21px;
 
                 .markBtn {
-                  margin-left: 15px;
-                  margin-right: 15px;
+                  margin-left: 12px;
                   font-weight: 700;
+                  background-color: transparent;
                   color: $theme-light-color-secondary;
+                  border: 3px solid rgba(102, 102, 102, 0.4);
+                  border-radius: 7px;
                   font-size: 21px;
                   width: 60px;
                   height: 60px;
@@ -202,50 +232,84 @@ html {
 
                   transition: all 0.2s;
 
-                  &:hover{
-                    border-color: rgba(102, 102, 102, 1);
+                  &:first-child {
+                    margin-left: 0;
+                  }
 
-                    transition: all 0.2s;
+                  &:hover {
+                    border-color: $theme-light-color-secondary;
+                    box-shadow: $theme-light-color-shadow;
+                  }
+
+                  &.passed {
+
                   }
                 }
               }
 
-              &:nth-child(1) {
-                position: sticky;
+              &.actions {
+                padding: 0 5px;
                 display: flex;
+
                 justify-content: center;
-                background-color: $theme-light-color-primary;
-                left: 0;
-                z-index: 1;
-                width: 75px;
-                flex-shrink: 1;
-              }
 
-              &:nth-child(2) {
-                position: sticky;
-                background-color: $theme-light-color-primary;
-                left: 75px;
-                z-index: 1;
-                text-align: left;
-                width: 300px;
-                flex-shrink: 1;
-              }
+                .action {
+                  font-weight: 700;
+                  border: 3px solid transparent;
+                  border-radius: 7px;
+                  font-size: 24px;
+                  height: 60px;
+                  user-select: none;
 
-              &.stats {
-                flex-shrink: 2;
-                flex-grow: 1;
+
+                  transition: all 0.2s;
+
+                  &:hover {
+                    border-color: $theme-light-color-secondary;
+                    box-shadow: $theme-light-color-shadow;
+                  }
+                }
+
+                .all,
+                .selected {
+                  background-color: green;
+                  color: white;
+                  padding: 0 25px;
+                }
+
+                .numbers {
+                  width: 150px;
+                  color: $theme-light-color-primary;
+                  background-color: $theme-light-color-secondary;
+                  margin-left: 20px;
+                  padding: 0 10px;
+                  text-align: center;
+
+                  &:focus {
+                    border-color: $theme-light-color-secondary;
+                    box-shadow: $theme-light-color-shadow;
+                  }
+                }
+
+                .selected {
+                  margin-left: 10px;
+                }
               }
 
               &.total-mark,
               &.percentage {
-                display: flex;
-                width: 150px;
+                width: 100px;
                 align-items: center;
                 justify-content: center;
+
+                span {
+                  font-weight: 700;
+                  font-size: 35px;
+                }
               }
             }
 
-            &:last-child{
+            &:last-child {
               border-bottom: 0;
             }
           }
@@ -272,13 +336,9 @@ html {
       }
     }
 
-    &.dark{
+    &.dark {
       color: $theme-dark-color-secondary;
       background: $theme-dark-color-background;
-
-      button:hover{
-        border-color: #FFFFFF;
-      }
 
       header {
         color: $theme-dark-color-secondary;
@@ -287,18 +347,36 @@ html {
 
         nav {
           .theme,
-          .exit{
+          .exit {
             background-color: $theme-dark-color-primary;
             color: $theme-dark-color-secondary;
+
+            &:hover {
+              box-shadow: $theme-dark-color-shadow;
+            }
           }
 
-          .filters{
-            .filter{
-              select{
+          .filters {
+            .filter {
+              select {
                 background: $theme-dark-color-primary;
                 color: $theme-dark-color-secondary;
+
+                &:hover {
+                  border-color: $theme-dark-color-secondary;
+                  box-shadow: $theme-dark-color-shadow;
+                }
+
+                &:focus {
+                  border-color: $theme-dark-color-secondary;
+                  box-shadow: $theme-dark-color-shadow;
+                }
               }
             }
+          }
+
+          .exit {
+            order: 3;
           }
         }
       }
@@ -313,27 +391,51 @@ html {
           tbody {
             tr {
               td {
+                &.number {
+                  background-color: $theme-dark-color-primary;
+                }
+
+                &.fullname {
+                  background-color: $theme-dark-color-primary;
+                }
+
                 &.stats {
                   .markBtn {
                     color: $theme-dark-color-secondary;
+
+                    &:hover {
+                      border-color: $theme-dark-color-secondary;
+                      box-shadow: $theme-dark-color-shadow;
+                    }
                   }
                 }
 
-                &:nth-child(1) {
-                  background-color: $theme-dark-color-primary;
+                &.actions {
+                  .action{
+                    &:hover {
+                      border-color: $theme-dark-color-secondary;
+                      box-shadow: $theme-dark-color-shadow;
+                    }
+                  }
                 }
 
-                &:nth-child(2) {
-                  background-color: $theme-dark-color-primary;
+                .numbers {
+                  color: $theme-dark-color-primary;
+                  background-color: $theme-dark-color-secondary;
+
+                  &:focus {
+                    border-color: $theme-dark-color-secondary;
+                    box-shadow: $theme-dark-color-shadow;
+                  }
                 }
               }
             }
           }
         }
+      }
 
-        &::-webkit-scrollbar-thumb {
-          background-color: $theme-dark-color-secondary;
-        }
+      &::-webkit-scrollbar-thumb {
+        background-color: $theme-dark-color-secondary;
       }
     }
   }
