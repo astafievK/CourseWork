@@ -5,14 +5,10 @@
   margin: 0;
   padding: 0;
   outline: none;
+  font-size: 22px;
   box-sizing: border-box;
   font-family: Poppins-Regular, sans-serif;
   transition: background-color 0.3s; }
-
-input[type="text"]::placeholder {
-  color: #666666; }
-input[type="text"] :focus::placeholder {
-  color: transparent; }
 
 button, input, a, select {
   cursor: pointer;
@@ -57,11 +53,11 @@ html {
           color: #292929;
           border-radius: 7px;
           border: 3px solid rgba(102, 102, 102, 0.4);
-          padding: 10px;
+          padding: 5px;
           transition: all 0.2s; }
           html body header nav .theme:hover,
           html body header nav .exit:hover {
-            border-color: #666666;
+            border-color: #292929;
             box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
           html body header nav .theme img,
           html body header nav .exit img {
@@ -86,7 +82,6 @@ html {
               appearance: none;
               width: 100%;
               height: 100%;
-              font-size: 21px;
               border-radius: 7px;
               text-align: center;
               transition: all 0.2s;
@@ -118,16 +113,13 @@ html {
         html body .table-wrapper table tbody tr {
           display: flex;
           height: 80px;
-          border-bottom: 1px solid #666666;
-          font-size: 20px; }
+          border-bottom: 1px solid #666666; }
           html body .table-wrapper table tbody tr td {
             display: flex;
             align-items: center;
             text-align: center;
             height: 100%;
             white-space: nowrap; }
-            html body .table-wrapper table tbody tr td span {
-              font-size: 27px; }
             html body .table-wrapper table tbody tr td.number {
               display: flex;
               justify-content: center;
@@ -165,7 +157,6 @@ html {
                 color: #292929;
                 border: 3px solid rgba(102, 102, 102, 0.4);
                 border-radius: 7px;
-                font-size: 21px;
                 width: 60px;
                 height: 60px;
                 user-select: none;
@@ -183,18 +174,23 @@ html {
                 font-weight: 700;
                 border: 3px solid transparent;
                 border-radius: 7px;
-                font-size: 24px;
                 height: 60px;
                 user-select: none;
                 transition: all 0.2s; }
                 html body .table-wrapper table tbody tr td.actions .action:hover {
-                  border-color: #292929;
                   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
               html body .table-wrapper table tbody tr td.actions .all,
               html body .table-wrapper table tbody tr td.actions .selected {
-                background-color: green;
-                color: white;
+                border-color: green;
+                color: #292929;
+                background-color: #ffffff;
                 padding: 0 25px; }
+                html body .table-wrapper table tbody tr td.actions .all:hover,
+                html body .table-wrapper table tbody tr td.actions .selected:hover {
+                  background-color: green;
+                  border-color: green;
+                  color: #ffffff;
+                  box-shadow: none; }
               html body .table-wrapper table tbody tr td.actions .numbers {
                 width: 150px;
                 color: #292929;
@@ -204,7 +200,6 @@ html {
                 text-align: center;
                 letter-spacing: 1px; }
                 html body .table-wrapper table tbody tr td.actions .numbers:focus {
-                  border-color: #292929;
                   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
               html body .table-wrapper table tbody tr td.actions .selected {
                 margin-left: 10px; }
@@ -213,8 +208,7 @@ html {
               align-items: center;
               justify-content: center; }
               html body .table-wrapper table tbody tr td.total-mark span, html body .table-wrapper table tbody tr td.percentage span {
-                font-weight: 700;
-                font-size: 35px; }
+                font-weight: 700; }
           html body .table-wrapper table tbody tr:last-child {
             border-bottom: 0; }
       html body .table-wrapper::-webkit-scrollbar {
@@ -241,6 +235,7 @@ html {
           color: #e1e3e6; }
           html body.dark header nav .theme:hover,
           html body.dark header nav .exit:hover {
+            border-color: #e1e3e6;
             box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
         html body.dark header nav .filters .filter select {
           background: #292929;
@@ -267,29 +262,48 @@ html {
             html body.dark .table-wrapper table tbody tr td.stats .markBtn:hover {
               border-color: #e1e3e6;
               box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
-          html body.dark .table-wrapper table tbody tr td.actions .action:hover {
-            border-color: #e1e3e6;
-            box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
-          html body.dark .table-wrapper table tbody tr td .numbers:focus {
-            border-color: #e1e3e6;
-            box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
+          html body.dark .table-wrapper table tbody tr td.actions .all,
+          html body.dark .table-wrapper table tbody tr td.actions .selected {
+            color: #e1e3e6;
+            background-color: #292929; }
+            html body.dark .table-wrapper table tbody tr td.actions .all:hover,
+            html body.dark .table-wrapper table tbody tr td.actions .selected:hover {
+              background-color: green;
+              border-color: green; }
+          html body.dark .table-wrapper table tbody tr td.actions .numbers {
+            color: #292929;
+            background-color: #e1e3e6; }
+            html body.dark .table-wrapper table tbody tr td.actions .numbers:hover, html body.dark .table-wrapper table tbody tr td.actions .numbers:focus {
+              box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
       html body.dark::-webkit-scrollbar-thumb {
         background-color: #e1e3e6; }
 
 @media screen and (max-width: 1200px) {
+  * {
+    font-size: 18px; }
+
   html body {
     padding: 0; }
     html body header {
       border-radius: 0; }
+      html body header nav .filters .filter select {
+        font-size: 14px; }
     html body .table-wrapper {
       border-radius: 0; }
-      html body .table-wrapper table tbody tr td.number {
-        display: none; }
-      html body .table-wrapper table tbody tr td.fullname {
-        left: 0; }
-        html body .table-wrapper table tbody tr td.fullname .surname {
-          margin-left: 10px; }
-        html body .table-wrapper table tbody tr td.fullname .name {
-          display: none; } }
+      html body .table-wrapper table tbody tr {
+        height: 60px; }
+        html body .table-wrapper table tbody tr td.number {
+          display: none; }
+        html body .table-wrapper table tbody tr td.fullname {
+          left: 0; }
+          html body .table-wrapper table tbody tr td.fullname .surname {
+            margin-left: 10px; }
+          html body .table-wrapper table tbody tr td.fullname .name {
+            display: none; }
+        html body .table-wrapper table tbody tr td.stats .markBtn {
+          height: 50px;
+          width: 50px; }
+        html body .table-wrapper table tbody tr td.actions .action {
+          height: 50px; } }
 
 /*# sourceMappingURL=style.css.map */
