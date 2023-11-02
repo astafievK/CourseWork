@@ -285,9 +285,20 @@ html {
   html body {
     padding: 0; }
     html body header {
+      padding: 5px;
+      height: 110px;
       border-radius: 0; }
-      html body header nav .filters .filter select {
-        font-size: 14px; }
+      html body header nav .theme,
+      html body header nav .exit {
+        height: 60%; }
+      html body header nav .filters {
+        padding: 0 10px;
+        flex-direction: column; }
+        html body header nav .filters .filter {
+          width: 100%; }
+          html body header nav .filters .filter select {
+            font-size: 17px;
+            height: 90%; }
     html body .table-wrapper {
       border-radius: 0; }
       html body .table-wrapper table tbody tr {

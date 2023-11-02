@@ -466,13 +466,26 @@ html {
       padding: 0;
 
       header {
+        padding: 5px;
+        height: 110px;
         border-radius: 0;
 
         nav{
+          .theme,
+          .exit{
+            height: 60%;
+          }
+
           .filters{
+            padding: 0 10px;
+            flex-direction: column;
+
             .filter{
+              width: 100%;
+
               select{
-                font-size: 14px;
+                font-size: 17px;
+                height: 90%;
 
                 option{
 
