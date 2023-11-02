@@ -28,8 +28,17 @@ $header-height: 90px;
   transition: background-color 0.3s;
 }
 
-input::placeholder{
-  color: rgba(255, 255, 255, 0.5);
+input[type="text"]{
+
+  &::placeholder{
+    color: #666666;
+  }
+
+  :focus{
+    &::placeholder{
+      color: transparent;
+    }
+  }
 }
 
 button, input, a, select{
@@ -188,9 +197,10 @@ html {
               align-items: center;
               text-align: center;
               height: 100%;
+              white-space: nowrap;
 
               span {
-                font-size: 21px;
+                font-size: 27px;
               }
 
               &.number {
@@ -206,16 +216,23 @@ html {
 
               &.fullname {
                 position: sticky;
+                display: flex;
+                flex-direction: row;
                 background-color: $theme-light-color-primary;
                 left: 45px;
                 z-index: 1;
                 text-align: left;
-                width: 250px;
                 flex-shrink: 1;
+                padding: 0 15px 0 5px;
+                border-right: 1px solid #666666;
+
+                .name{
+                  margin-left: 5px;
+                }
               }
 
               &.stats {
-                padding: 0 5px;
+                padding: 0 5px 0 15px;
                 display: flex;
                 justify-content: start;
                 flex-grow: 1;
@@ -283,8 +300,8 @@ html {
 
                 .numbers {
                   width: 150px;
-                  color: $theme-light-color-primary;
-                  background-color: $theme-light-color-secondary;
+                  color: $theme-dark-color-primary;
+                  background-color: $theme-dark-color-secondary;
                   margin-left: 20px;
                   padding: 0 10px;
                   text-align: center;
@@ -425,9 +442,6 @@ html {
                 }
 
                 .numbers {
-                  color: $theme-dark-color-primary;
-                  background-color: $theme-dark-color-secondary;
-
                   &:focus {
                     border-color: $theme-dark-color-secondary;
                     box-shadow: $theme-dark-color-shadow;
@@ -447,17 +461,40 @@ html {
 }
 
 @media screen and (max-width: 1200px) {
-  @media screen and (max-height: $media-size-medium) {
-    html {
-      body {
-        padding: 0;
+  html {
+    body {
+      padding: 0;
 
-        header {
-          border-radius: 0;
-        }
+      header {
+        border-radius: 0;
+      }
 
-        .table-wrapper {
-          border-radius: 0;
+      .table-wrapper {
+        border-radius: 0;
+
+        table {
+          tbody {
+            tr {
+              td {
+                &.number {
+                  display: none;
+
+                }
+
+                &.fullname{
+                  left: 0;
+
+                  .surname{
+                    margin-left: 10px;
+                  }
+
+                  .name{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
