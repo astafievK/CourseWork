@@ -460,7 +460,7 @@ html {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $media-size-large) {
   *{
     font-size: 18px;
   }

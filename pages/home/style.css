@@ -280,7 +280,7 @@ html {
       html body.dark::-webkit-scrollbar-thumb {
         background-color: #e1e3e6; }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   * {
     font-size: 18px; }
 
