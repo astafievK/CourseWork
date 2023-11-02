@@ -30,8 +30,6 @@ $header-height: 90px;
 }
 
 button, input, a, select{
-  -webkit-text-align: center;
-  text-align: center;
   cursor: pointer;
   outline: none;
 }
@@ -128,7 +126,11 @@ html {
               width: 100%;
               height: 100%;
               border-radius: 7px;
+
               text-align: center;
+              text-align: -moz-center;
+              text-align: -webkit-center;
+
               transition: all 0.2s;
               letter-spacing: 1px;
 
@@ -488,10 +490,6 @@ html {
               select{
                 font-size: 17px;
                 height: 90%;
-
-                option{
-
-                }
               }
             }
           }

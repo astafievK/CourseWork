@@ -11,8 +11,6 @@
   transition: background-color 0.3s; }
 
 button, input, a, select {
-  -webkit-text-align: center;
-  text-align: center;
   cursor: pointer;
   outline: none; }
 
@@ -86,6 +84,8 @@ html {
               height: 100%;
               border-radius: 7px;
               text-align: center;
+              text-align: -moz-center;
+              text-align: -webkit-center;
               transition: all 0.2s;
               letter-spacing: 1px; }
               html body header nav .filters .filter select:hover {
