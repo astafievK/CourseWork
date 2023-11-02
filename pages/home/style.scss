@@ -30,6 +30,8 @@ $header-height: 90px;
 }
 
 button, input, a, select{
+  -webkit-text-align: center;
+  text-align: center;
   cursor: pointer;
   outline: none;
 }

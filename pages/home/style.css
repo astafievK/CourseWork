@@ -11,6 +11,8 @@
   transition: background-color 0.3s; }
 
 button, input, a, select {
+  -webkit-text-align: center;
+  text-align: center;
   cursor: pointer;
   outline: none; }
 
