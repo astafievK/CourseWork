@@ -284,189 +284,121 @@ html {
         html body.dark .table-wrapper::-webkit-scrollbar-thumb {
           background-color: #e1e3e6; }
 
-/*
 @media (max-width: 850px) {
-  *{
-    font-size: 18px;
-  }
+  * {
+    font-size: 18px; }
 
-  html {
-    body {
-      padding: 0;
-
-      header {
-        padding: 5px;
-        height: 75px !important;
-        border-radius: 0;
-
-        nav {
-          &.mobile {
-            display: flex;
-            justify-content: space-between;
-
-            .buttons{
-              height: 100%;
-              display: flex;
-              justify-content: space-between;
-              flex-direction: column;
-
-              .theme,
-              .exit {
-                position: fixed;
-                bottom: 7%;
-                height: 55px;
-              }
-
-              .theme{
-                left: 5%;
-              }
-
-              .exit{
-                right: 5%;
-              }
-            }
-
-            .filters {
-              align-items: center;
-              padding: 0;
-              flex-direction: row;
-              justify-content: space-evenly;
-
-              .filter {
-                width: 30%;
-
-                select {
-                  font-size: 17px;
-                  height: 90%;
-                }
-              }
-            }
-          }
-
-          &:not(.mobile){
-            display: none;
-          }
-        }
-      }
-
-      .table-wrapper {
-        border-radius: 0;
-
-        table {
-          tbody {
-            tr {
-              height: 60px;
-
-              td {
-                &.number {
-                  display: none;
-
-                }
-
-                &.fullname{
-                  left: 0;
-
-                  .surname{
-                    margin-left: 10px;
-                  }
-
-                  .name{
-                    display: none;
-                  }
-
-                  .name-short{
-                    display: flex;
-                  }
-                }
-
-                &.stats{
-
-
-                  .markBtn{
-                    height: 50px;
-                    width: 50px;
-                  }
-                }
-
-                &.actions{
-                  .action{
-                    height: 50px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-
+  html body {
+    padding: 0; }
+    html body header {
+      height: 75px;
+      padding: 5px;
+      border-radius: 0; }
+      html body header nav.mobile {
+        display: flex;
+        justify-content: space-between; }
+        html body header nav.mobile .buttons {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column; }
+          html body header nav.mobile .buttons .theme,
+          html body header nav.mobile .buttons .exit {
+            position: fixed;
+            bottom: 7%;
+            height: 55px; }
+          html body header nav.mobile .buttons .theme {
+            left: 5%; }
+          html body header nav.mobile .buttons .exit {
+            right: 5%; }
+        html body header nav.mobile .filters {
+          align-items: center;
+          padding: 0;
+          flex-direction: row;
+          justify-content: space-evenly; }
+          html body header nav.mobile .filters .filter {
+            width: 30%; }
+            html body header nav.mobile .filters .filter select {
+              font-size: 17px;
+              height: 90%; }
+      html body header nav:not(.mobile) {
+        display: none; }
+    html body .table-wrapper {
+      border-radius: 0;
+      height: calc(100% - 75px); }
+      html body .table-wrapper table tbody tr {
+        height: 60px; }
+        html body .table-wrapper table tbody tr td.number {
+          display: none; }
+        html body .table-wrapper table tbody tr td.fullname {
+          left: 0; }
+          html body .table-wrapper table tbody tr td.fullname .surname {
+            margin-left: 10px; }
+          html body .table-wrapper table tbody tr td.fullname .name {
+            display: none; }
+          html body .table-wrapper table tbody tr td.fullname .name-short {
+            display: flex; }
+        html body .table-wrapper table tbody tr td.stats .markBtn {
+          height: 50px;
+          width: 50px; }
+        html body .table-wrapper table tbody tr td.actions .action {
+          height: 50px; } }
 @media (max-width: 485px) {
   * {
-    font-size: 18px;
-  }
+    font-size: 18px; }
 
-  html {
-    body {
-      padding: 0;
-
-      header {
-        padding: 5px;
-        height: 120px !important;
-        border-radius: 0;
-
-        nav {
-          &.mobile {
-            display: flex;
-            justify-content: space-between;
-
-            .buttons {
-              height: 100%;
-              display: flex;
-              justify-content: space-between;
-              flex-direction: column;
-
-              .theme,
-              .exit {
-                position: absolute;
-                bottom: 7%;
-                height: 55px;
-              }
-
-              .theme {
-                left: 5%;
-              }
-
-              .exit {
-                right: 5%;
-              }
-            }
-
-            .filters {
-              padding: 0;
-              flex-direction: column;
-
-              .filter {
-                width: 100%;
-
-                select {
-                  font-size: 17px;
-                  height: 90%;
-                }
-              }
-            }
-          }
-
-          &:not(.mobile) {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-}
- */
+  html body {
+    padding: 0; }
+    html body header {
+      height: 120px;
+      padding: 5px;
+      border-radius: 0; }
+      html body header nav.mobile {
+        display: flex;
+        justify-content: space-between; }
+        html body header nav.mobile .buttons {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column; }
+          html body header nav.mobile .buttons .theme,
+          html body header nav.mobile .buttons .exit {
+            position: absolute;
+            bottom: 7%;
+            height: 55px; }
+          html body header nav.mobile .buttons .theme {
+            left: 5%; }
+          html body header nav.mobile .buttons .exit {
+            right: 5%; }
+        html body header nav.mobile .filters {
+          padding: 0;
+          flex-direction: column; }
+          html body header nav.mobile .filters .filter {
+            width: 100%; }
+            html body header nav.mobile .filters .filter select {
+              font-size: 17px;
+              height: 90%; }
+      html body header nav:not(.mobile) {
+        display: none; }
+    html body .table-wrapper {
+      border-radius: 0;
+      height: calc(100% - 120px); }
+      html body .table-wrapper table tbody tr {
+        height: 60px; }
+        html body .table-wrapper table tbody tr td.number {
+          display: none; }
+        html body .table-wrapper table tbody tr td.fullname {
+          left: 0; }
+          html body .table-wrapper table tbody tr td.fullname .surname {
+            margin-left: 10px; }
+          html body .table-wrapper table tbody tr td.fullname .name {
+            display: none; }
+          html body .table-wrapper table tbody tr td.fullname .name-short {
+            display: flex; }
+        html body .table-wrapper table tbody tr td.stats .markBtn {
+          height: 50px;
+          width: 50px; }
+        html body .table-wrapper table tbody tr td.actions .action {
+          height: 50px; } }
 
 /*# sourceMappingURL=style.css.map */
