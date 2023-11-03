@@ -468,7 +468,10 @@ html {
   }
 }
 
+
 @media (max-width: 850px) {
+  $header-height: 75px;
+
   *{
     font-size: 18px;
   }
@@ -478,8 +481,8 @@ html {
       padding: 0;
 
       header {
+        height: $header-height;
         padding: 5px;
-        height: 75px !important;
         border-radius: 0;
 
         nav {
@@ -534,6 +537,7 @@ html {
 
       .table-wrapper {
         border-radius: 0;
+        height: calc(100% - #{$header-height});
 
         table {
           tbody {
@@ -587,6 +591,8 @@ html {
 
 
 @media (max-width: 485px) {
+  $header-height: 120px;
+
   * {
     font-size: 18px;
   }
@@ -596,8 +602,8 @@ html {
       padding: 0;
 
       header {
+        height: $header-height;
         padding: 5px;
-        height: 120px !important;
         border-radius: 0;
 
         nav {
@@ -650,6 +656,7 @@ html {
 
       .table-wrapper {
         border-radius: 0;
+        height: calc(100% - #{$header-height});
 
         table {
           tbody {
@@ -662,34 +669,34 @@ html {
 
                 }
 
-                &.fullname {
+                &.fullname{
                   left: 0;
 
-                  .surname {
+                  .surname{
                     margin-left: 10px;
                   }
 
-                  .name {
+                  .name{
                     display: none;
                   }
 
-                  .name-short {
+                  .name-short{
                     display: flex;
                   }
                 }
 
-                &.stats {
+                &.stats{
 
 
-                  .markBtn {
+                  .markBtn{
                     height: 50px;
                     width: 50px;
                   }
                 }
 
-                &.actions {
-                  .action {
-                    height: 10px;
+                &.actions{
+                  .action{
+                    height: 50px;
                   }
                 }
               }
