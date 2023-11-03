@@ -5,8 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
     <link rel="stylesheet" href="style.css">
     <title>Главная</title>
 </head>
@@ -45,6 +43,43 @@
         <button class="exit" id="btnExit">
             <img src="../../assets/images/nav/desktop/exit.png" alt="">
         </button>
+    </nav>
+
+    <nav class="mobile">
+        <div class="buttons">
+            <button class="theme" id="btnSwitchThemeMobile">
+                <img id="themeImageMobile" src="../../assets/images/nav/desktop/theme-moon.png" alt="">
+            </button>
+            <button class="exit" id="btnExitMobile">
+                <img src="../../assets/images/nav/desktop/exit.png" alt="">
+            </button>
+        </div>
+        <div class="filters">
+            <div class="filter">
+                <select class="select-group">
+                    <option selected disabled>Группа</option>
+                    <option>ИСПП-01</option>
+                    <option>ИСПП-11</option>
+                    <option>ПКС-01</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-discipline">
+                    <option selected disabled>Дисциплина</option>
+                    <option>МДК 01.01</option>
+                    <option>МДК 01.02</option>
+                    <option>МДК 01.03</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-work">
+                    <option selected disabled>Работа</option>
+                    <option>Лабораторная работа 1</option>
+                    <option>Лабораторная работа 2</option>
+                    <option>Практическая работа 3</option>
+                </select>
+            </div>
+        </div>
     </nav>
 </header>
 <div class="table-wrapper">

@@ -68,7 +68,7 @@ html {
       height: $header-height;
       border-radius: 15px 15px 0 0;
       background: $theme-light-color-primary;
-      padding: 15px 3%;
+      padding: 15px 10%;
       border-bottom: 1px solid #666666;
 
       nav {
@@ -157,6 +157,10 @@ html {
 
         .exit {
           order: 3;
+        }
+        
+        &.mobile{
+          display: none;
         }
       }
     }
@@ -470,28 +474,44 @@ html {
       padding: 0;
 
       header {
-        padding: 5px;
-        height: 110px;
+        padding: 5px 10px;
+        height: 130px;
         border-radius: 0;
 
-        nav{
-          .theme,
-          .exit{
-            height: 60%;
-          }
+        nav {
+          &.mobile {
+            display: flex;
+            justify-content: space-between;
 
-          .filters{
-            padding: 0 10px;
-            flex-direction: column;
-
-            .filter{
-              width: 100%;
-
-              select{
-                font-size: 17px;
-                height: 90%;
+            .buttons{
+              height: 100%;
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              .theme,
+              .exit {
+                height: 48%;
               }
             }
+
+            .filters {
+              width: 90%;
+              padding: 0 0 0 10px;
+              flex-direction: column;
+
+              .filter {
+                width: 100%;
+
+                select {
+                  font-size: 17px;
+                  height: 90%;
+                }
+              }
+            }
+          }
+
+          &:not(.mobile){
+            display: none;
           }
         }
       }

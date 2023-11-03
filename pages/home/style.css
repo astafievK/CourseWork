@@ -33,7 +33,7 @@ html {
       height: 90px;
       border-radius: 15px 15px 0 0;
       background: #ffffff;
-      padding: 15px 3%;
+      padding: 15px 10%;
       border-bottom: 1px solid #666666; }
       html body header nav {
         display: flex;
@@ -100,6 +100,8 @@ html {
                 display: none; }
         html body header nav .exit {
           order: 3; }
+        html body header nav.mobile {
+          display: none; }
     html body .table-wrapper {
       width: 100%;
       height: calc(100% - 90px);
@@ -287,20 +289,31 @@ html {
   html body {
     padding: 0; }
     html body header {
-      padding: 5px;
-      height: 110px;
+      padding: 5px 10px;
+      height: 130px;
       border-radius: 0; }
-      html body header nav .theme,
-      html body header nav .exit {
-        height: 60%; }
-      html body header nav .filters {
-        padding: 0 10px;
-        flex-direction: column; }
-        html body header nav .filters .filter {
-          width: 100%; }
-          html body header nav .filters .filter select {
-            font-size: 17px;
-            height: 90%; }
+      html body header nav.mobile {
+        display: flex;
+        justify-content: space-between; }
+        html body header nav.mobile .buttons {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column; }
+          html body header nav.mobile .buttons .theme,
+          html body header nav.mobile .buttons .exit {
+            height: 48%; }
+        html body header nav.mobile .filters {
+          width: 90%;
+          padding: 0 0 0 10px;
+          flex-direction: column; }
+          html body header nav.mobile .filters .filter {
+            width: 100%; }
+            html body header nav.mobile .filters .filter select {
+              font-size: 17px;
+              height: 90%; }
+      html body header nav:not(.mobile) {
+        display: none; }
     html body .table-wrapper {
       border-radius: 0; }
       html body .table-wrapper table tbody tr {
