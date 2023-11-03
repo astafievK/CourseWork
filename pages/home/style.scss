@@ -459,16 +459,16 @@ html {
             }
           }
         }
-      }
 
-      &::-webkit-scrollbar-thumb {
-        background-color: $theme-dark-color-secondary;
+        &::-webkit-scrollbar-thumb {
+          background-color: $theme-dark-color-secondary;
+        }
       }
     }
   }
 }
 
-@media (min-width: 485px) and (max-width: 850px) {
+@media (max-width: 850px) {
   *{
     font-size: 18px;
   }
@@ -496,7 +496,7 @@ html {
               .theme,
               .exit {
                 position: fixed;
-                bottom: 5%;
+                bottom: 7%;
                 height: 55px;
               }
 
@@ -586,7 +586,7 @@ html {
 }
 
 
-@media (max-width: 484px) {
+@media (max-width: 485px) {
   *{
     font-size: 18px;
   }
@@ -613,8 +613,8 @@ html {
 
               .theme,
               .exit {
-                position: fixed;
-                bottom: 5%;
+                position: absolute;
+                bottom: 7%;
                 height: 55px;
               }
 
