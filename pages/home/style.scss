@@ -587,7 +587,7 @@ html {
 
 
 @media (max-width: 485px) {
-  *{
+  * {
     font-size: 18px;
   }
 
@@ -605,7 +605,7 @@ html {
             display: flex;
             justify-content: space-between;
 
-            .buttons{
+            .buttons {
               height: 100%;
               display: flex;
               justify-content: space-between;
@@ -618,11 +618,11 @@ html {
                 height: 55px;
               }
 
-              .theme{
+              .theme {
                 left: 5%;
               }
 
-              .exit{
+              .exit {
                 right: 5%;
               }
             }
@@ -642,7 +642,7 @@ html {
             }
           }
 
-          &:not(.mobile){
+          &:not(.mobile) {
             display: none;
           }
         }
@@ -662,34 +662,34 @@ html {
 
                 }
 
-                &.fullname{
+                &.fullname {
                   left: 0;
 
-                  .surname{
+                  .surname {
                     margin-left: 10px;
                   }
 
-                  .name{
+                  .name {
                     display: none;
                   }
 
-                  .name-short{
+                  .name-short {
                     display: flex;
                   }
                 }
 
-                &.stats{
+                &.stats {
 
 
-                  .markBtn{
+                  .markBtn {
                     height: 50px;
                     width: 50px;
                   }
                 }
 
-                &.actions{
-                  .action{
-                    height: 50px;
+                &.actions {
+                  .action {
+                    height: 10px;
                   }
                 }
               }
