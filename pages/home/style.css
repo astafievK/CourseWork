@@ -146,6 +146,9 @@ html {
               border-right: 1px solid #666666; }
               html body .table-wrapper table tbody tr td.fullname .name {
                 margin-left: 5px; }
+              html body .table-wrapper table tbody tr td.fullname .name-short {
+                display: none;
+                margin-left: 5px; }
             html body .table-wrapper table tbody tr td.stats {
               padding: 0 5px 0 15px;
               display: flex;
@@ -231,7 +234,6 @@ html {
       background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%); }
       html body.dark header {
         color: #e1e3e6;
-        height: 90px;
         background: #292929; }
         html body.dark header nav .theme,
         html body.dark header nav .exit {
@@ -282,15 +284,15 @@ html {
       html body.dark::-webkit-scrollbar-thumb {
         background-color: #e1e3e6; }
 
-@media screen and (max-width: 1024px) {
+@media (min-width: 485px) and (max-width: 850px) {
   * {
     font-size: 18px; }
 
   html body {
     padding: 0; }
     html body header {
-      padding: 5px 10px;
-      height: 130px;
+      padding: 5px;
+      height: 75px !important;
       border-radius: 0; }
       html body header nav.mobile {
         display: flex;
@@ -302,10 +304,73 @@ html {
           flex-direction: column; }
           html body header nav.mobile .buttons .theme,
           html body header nav.mobile .buttons .exit {
-            height: 48%; }
+            position: fixed;
+            bottom: 5%;
+            height: 55px; }
+          html body header nav.mobile .buttons .theme {
+            left: 5%; }
+          html body header nav.mobile .buttons .exit {
+            right: 5%; }
         html body header nav.mobile .filters {
-          width: 90%;
-          padding: 0 0 0 10px;
+          align-items: center;
+          padding: 0;
+          flex-direction: row;
+          justify-content: space-evenly; }
+          html body header nav.mobile .filters .filter {
+            width: 30%; }
+            html body header nav.mobile .filters .filter select {
+              font-size: 17px;
+              height: 90%; }
+      html body header nav:not(.mobile) {
+        display: none; }
+    html body .table-wrapper {
+      border-radius: 0; }
+      html body .table-wrapper table tbody tr {
+        height: 60px; }
+        html body .table-wrapper table tbody tr td.number {
+          display: none; }
+        html body .table-wrapper table tbody tr td.fullname {
+          left: 0; }
+          html body .table-wrapper table tbody tr td.fullname .surname {
+            margin-left: 10px; }
+          html body .table-wrapper table tbody tr td.fullname .name {
+            display: none; }
+          html body .table-wrapper table tbody tr td.fullname .name-short {
+            display: flex; }
+        html body .table-wrapper table tbody tr td.stats .markBtn {
+          height: 50px;
+          width: 50px; }
+        html body .table-wrapper table tbody tr td.actions .action {
+          height: 50px; } }
+@media (max-width: 484px) {
+  * {
+    font-size: 18px; }
+
+  html body {
+    padding: 0; }
+    html body header {
+      padding: 5px;
+      height: 120px !important;
+      border-radius: 0; }
+      html body header nav.mobile {
+        display: flex;
+        justify-content: space-between; }
+        html body header nav.mobile .buttons {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column; }
+          html body header nav.mobile .buttons .theme,
+          html body header nav.mobile .buttons .exit {
+            position: fixed;
+            bottom: 5%;
+            height: 55px; }
+          html body header nav.mobile .buttons .theme {
+            left: 5%; }
+          html body header nav.mobile .buttons .exit {
+            right: 5%; }
+        html body header nav.mobile .filters {
+          padding: 0;
           flex-direction: column; }
           html body header nav.mobile .filters .filter {
             width: 100%; }
@@ -326,6 +391,8 @@ html {
             margin-left: 10px; }
           html body .table-wrapper table tbody tr td.fullname .name {
             display: none; }
+          html body .table-wrapper table tbody tr td.fullname .name-short {
+            display: flex; }
         html body .table-wrapper table tbody tr td.stats .markBtn {
           height: 50px;
           width: 50px; }
