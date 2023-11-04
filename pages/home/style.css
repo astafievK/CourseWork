@@ -52,7 +52,7 @@ html {
           background-color: #ffffff;
           color: #292929;
           border-radius: 7px;
-          border: 3px solid rgba(102, 102, 102, 0.4);
+          border: 2px solid rgba(102, 102, 102, 0.4);
           padding: 5px;
           transition: all 0.2s; }
           html body header nav .theme:hover,
@@ -76,10 +76,12 @@ html {
             justify-content: center;
             text-align: center; }
             html body header nav .filters .filter select {
-              border: 3px solid rgba(102, 102, 102, 0.4);
+              border: 2px solid rgba(102, 102, 102, 0.4);
               background: #ffffff;
               color: #292929;
               width: 100%;
+              max-height: 200px;
+              overflow-y: auto;
               height: 100%;
               border-radius: 7px;
               letter-spacing: 1px;
@@ -96,7 +98,14 @@ html {
               html body header nav .filters .filter select option:nth-child(1) {
                 display: none; }
         html body header nav .exit {
-          order: 3; }
+          display: flex;
+          order: 3;
+          padding: 0; }
+          html body header nav .exit button {
+            background-color: transparent;
+            border: 0;
+            height: 100%;
+            padding: 5px; }
         html body header nav.mobile {
           display: none; }
     html body .table-wrapper {
@@ -159,7 +168,7 @@ html {
                 font-weight: 700;
                 background-color: transparent;
                 color: #292929;
-                border: 3px solid rgba(102, 102, 102, 0.4);
+                border: 2px solid rgba(102, 102, 102, 0.4);
                 border-radius: 7px;
                 width: 60px;
                 height: 60px;
@@ -176,7 +185,7 @@ html {
               justify-content: center; }
               html body .table-wrapper table tbody tr td.actions .action {
                 font-weight: 700;
-                border: 3px solid transparent;
+                border: 2px solid transparent;
                 border-radius: 7px;
                 height: 60px;
                 user-select: none;
@@ -363,14 +372,14 @@ html {
           html body header nav.mobile .buttons .theme,
           html body header nav.mobile .buttons .exit {
             position: fixed;
-            bottom: 7%;
+            bottom: 13%;
             width: 55px;
             height: 55px;
             z-index: 99; }
           html body header nav.mobile .buttons .theme {
-            left: 5%; }
+            left: 7%; }
           html body header nav.mobile .buttons .exit {
-            right: 5%; }
+            right: 7%; }
         html body header nav.mobile .filters {
           padding: 0;
           flex-direction: column; }

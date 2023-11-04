@@ -1,5 +1,5 @@
 window.onload = function() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark');
     }
 };

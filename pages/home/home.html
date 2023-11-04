@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Главная</title>
@@ -15,33 +15,50 @@
         </button>
         <div class="filters">
             <div class="filter">
-                <select class="select-group">
+                <select class="select-group" id="filterGroup">
                     <option selected disabled>Группа</option>
-                    <option>ИСПП-01</option>
-                    <option>ИСПП-11</option>
-                    <option>ПКС-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-11">ИСПП-11</option>
                 </select>
             </div>
             <div class="filter">
-                <select class="select-discipline">
+                <select class="select-discipline" id="filterDiscipline">
                     <option selected disabled>Дисциплина</option>
-                    <option>МДК 01.01</option>
-                    <option>МДК 01.02</option>
-                    <option>МДК 01.03</option>
+                    <option value="ИСПП-11">МДК 01.01</option>
+                    <option value="ИСПП-11">МДК 01.02</option>
                 </select>
             </div>
             <div class="filter">
-                <select class="select-work">
+                <select class="select-work" id="filterWork">
                     <option selected disabled>Работа</option>
-                    <option>Лабораторная работа 1</option>
-                    <option>Лабораторная работа 2</option>
-                    <option>Практическая работа 3</option>
+                    <option value="Лабораторная работа 1">Лабораторная работа 1</option>
+                    <option value="Лабораторная работа 2">Лабораторная работа 2</option>
                 </select>
             </div>
         </div>
-        <button class="exit" id="btnExit">
-            <img src="../../assets/images/nav/desktop/exit.png" alt="">
-        </button>
+        <form class="exit" method="post" action="scripts/exit.php">
+            <button name="exit">
+                <img src="../../assets/images/nav/desktop/exit.png" alt="">
+            </button>
+        </form>
     </nav>
 
     <nav class="mobile">
@@ -49,38 +66,56 @@
             <button class="theme" id="btnSwitchThemeMobile">
                 <img id="themeImageMobile" src="../../assets/images/nav/desktop/theme-moon.png" alt="">
             </button>
-            <button class="exit" id="btnExitMobile">
-                <img src="../../assets/images/nav/desktop/exit.png" alt="">
-            </button>
+            <form class="exit" method="post" action="scripts/exit.php">
+                <button name="exit">
+                    <img src="../../assets/images/nav/desktop/exit.png" alt="">
+                </button>
+            </form>
         </div>
         <div class="filters">
             <div class="filter">
-                <select class="select-group">
+                <select class="select-group" id="filterGroupMobile">
                     <option selected disabled>Группа</option>
-                    <option>ИСПП-01</option>
-                    <option>ИСПП-11</option>
-                    <option>ПКС-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-11">ИСПП-11</option>
                 </select>
             </div>
             <div class="filter">
-                <select class="select-discipline">
+                <select class="select-discipline" id="filterDisciplineMobile">
                     <option selected disabled>Дисциплина</option>
-                    <option>МДК 01.01</option>
-                    <option>МДК 01.02</option>
-                    <option>МДК 01.03</option>
+                    <option value="ИСПП-11">МДК 01.01</option>
+                    <option value="ИСПП-11">МДК 01.02</option>
                 </select>
             </div>
             <div class="filter">
-                <select class="select-work">
+                <select class="select-work" id="filterWorkMobile">
                     <option selected disabled>Работа</option>
-                    <option>Лабораторная работа 1</option>
-                    <option>Лабораторная работа 2</option>
-                    <option>Практическая работа 3</option>
+                    <option value="Лабораторная работа 1">Лабораторная работа 1</option>
+                    <option value="Лабораторная работа 2">Лабораторная работа 2</option>
                 </select>
             </div>
         </div>
     </nav>
 </header>
+
 <div class="table-wrapper">
     <table id="table">
         <tbody>
@@ -124,5 +159,8 @@
 <script src="scripts/table.js"></script>
 <script src="scripts/themeSet.js"></script>
 <script src="scripts/themeSwitch.js"></script>
+<script>
+
+</script>
 </body>
 </html>
