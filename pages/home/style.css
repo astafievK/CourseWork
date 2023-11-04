@@ -303,6 +303,7 @@ html {
           html body header nav.mobile .buttons .exit {
             position: fixed;
             bottom: 7%;
+            width: 55px;
             height: 55px; }
           html body header nav.mobile .buttons .theme {
             left: 5%; }
@@ -360,8 +361,9 @@ html {
           flex-direction: column; }
           html body header nav.mobile .buttons .theme,
           html body header nav.mobile .buttons .exit {
-            position: absolute;
+            position: fixed;
             bottom: 7%;
+            width: 55px;
             height: 55px; }
           html body header nav.mobile .buttons .theme {
             left: 5%; }
