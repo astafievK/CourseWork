@@ -73,7 +73,8 @@ html {
             width: 30%;
             display: flex;
             flex-direction: column;
-            justify-content: center; }
+            justify-content: center;
+            text-align: center; }
             html body header nav .filters .filter select {
               border: 3px solid rgba(102, 102, 102, 0.4);
               background: #ffffff;
@@ -303,7 +304,8 @@ html {
             position: fixed;
             bottom: 7%;
             width: 55px;
-            height: 55px; }
+            height: 55px;
+            z-index: 99; }
           html body header nav.mobile .buttons .theme {
             left: 5%; }
           html body header nav.mobile .buttons .exit {
@@ -363,7 +365,8 @@ html {
             position: fixed;
             bottom: 7%;
             width: 55px;
-            height: 55px; }
+            height: 55px;
+            z-index: 99; }
           html body header nav.mobile .buttons .theme {
             left: 5%; }
           html body header nav.mobile .buttons .exit {
