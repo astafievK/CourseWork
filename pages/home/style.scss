@@ -35,18 +35,10 @@ button, input, a, select{
 }
 
 body{
-  button, select{
-
-    &:hover{
-      border-color: $theme-light-color-secondary
-    }
-  }
-
   &.dark{
     button, select{
-
       &:hover{
-        border-color: $theme-dark-color-secondary
+        border-color: $theme-dark-color-secondary;
       }
     }
   }
@@ -62,6 +54,23 @@ html {
     background: $theme-light-color-background;
     outline: none;
     overflow: hidden;
+
+    button,
+    select,
+    input
+    {
+      background-color: transparent;
+      color: $theme-light-color-secondary;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      user-select: none;
+      transition: all 0.2s;
+      border-radius: 7px;
+      height: 60px;
+
+      &:hover{
+        border-color: $theme-light-color-secondary;
+      }
+    }
 
     header {
       color: $theme-light-color-secondary;
@@ -80,8 +89,8 @@ html {
 
         .theme,
         .exit {
-          aspect-ratio: 1 / 1;
           height: 100%;
+          max-width: $header-height;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -89,7 +98,7 @@ html {
           background-color: $theme-light-color-primary;
           color: $theme-light-color-secondary;
           border-radius: 7px;
-          border: 3px solid rgba(102, 102, 102, 0.4);
+          border: 2px solid rgba(102, 102, 102, 0.4);
           padding: 5px;
           transition: all 0.2s;
 
@@ -115,24 +124,22 @@ html {
             width: 30%;
             display: flex;
             flex-direction: column;
-            text-align: center;
             justify-content: center;
+            text-align: center;
 
             select {
-              border: 3px solid rgba(102, 102, 102, 0.4);
+              border: 2px solid rgba(102, 102, 102, 0.4);
               background: $theme-light-color-primary;
               color: $theme-light-color-secondary;
-              appearance: none;
               width: 100%;
+              max-height: 200px;
+              overflow-y: auto;
               height: 100%;
               border-radius: 7px;
-
-              text-align: center;
-              text-align: -moz-center;
-              text-align: -webkit-center;
+              letter-spacing: 1px;
+              text-align-last: center;
 
               transition: all 0.2s;
-              letter-spacing: 1px;
 
               &:hover {
                 border-color: $theme-light-color-secondary;
@@ -155,8 +162,17 @@ html {
           }
         }
 
-        .exit {
+        .exit{
+          display: flex;
           order: 3;
+          padding: 0;
+
+          button {
+            background-color: transparent;
+            border: 0;
+            height: 100%;
+            padding: 5px;
+          }
         }
         
         &.mobile{
@@ -230,7 +246,7 @@ html {
               }
 
               &.stats {
-                padding: 0 5px 0 15px;
+                padding: 0 15px;
                 display: flex;
                 justify-content: start;
                 flex-grow: 1;
@@ -241,15 +257,7 @@ html {
                 .markBtn {
                   margin-left: 12px;
                   font-weight: 700;
-                  background-color: transparent;
-                  color: $theme-light-color-secondary;
-                  border: 3px solid rgba(102, 102, 102, 0.4);
-                  border-radius: 7px;
                   width: 60px;
-                  height: 60px;
-                  user-select: none;
-
-                  transition: all 0.2s;
 
                   &:first-child {
                     margin-left: 0;
@@ -260,25 +268,27 @@ html {
                     box-shadow: $theme-light-color-shadow;
                   }
 
-                  &.passed {
+                  &.passed{
+                    border-color: green;
+                    box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.2);
 
+                    &:hover{
+                      border-color: $theme-light-color-secondary;
+                    }
                   }
                 }
               }
 
               &.actions {
-                padding: 0 5px;
+                padding: 0 15px 0 0;
                 display: flex;
-
                 justify-content: center;
 
                 .action {
                   font-weight: 700;
-                  border: 3px solid transparent;
+                  border: 2px solid transparent;
                   border-radius: 7px;
-                  height: 60px;
                   user-select: none;
-
                   transition: all 0.2s;
 
                   &:hover {
@@ -287,10 +297,9 @@ html {
                 }
 
                 .all,
-                .selected {
-                  border-color: green;
-                  color: $theme-light-color-secondary;
-                  background-color: $theme-light-color-primary;
+                .selected,
+                .nothing{
+                  border-color: $theme-light-color-secondary;
                   padding: 0 25px;
 
                   &:hover {
@@ -301,11 +310,14 @@ html {
                   }
                 }
 
+                .nothing{
+                  margin-left: 5px;
+                }
+
                 .numbers {
                   width: 150px;
-                  color: $theme-dark-color-primary;
                   background-color: $theme-dark-color-secondary;
-                  margin-left: 20px;
+                  margin-left: 14px;
                   padding: 0 10px;
                   text-align: center;
                   letter-spacing: 1px;
@@ -316,13 +328,13 @@ html {
                 }
 
                 .selected {
-                  margin-left: 10px;
+                  margin-left: 5px;
                 }
               }
 
               &.total-mark,
               &.percentage {
-                width: 100px;
+                width: 75px;
                 align-items: center;
                 justify-content: center;
 
@@ -359,111 +371,8 @@ html {
       }
     }
 
-    &.dark {
-      color: $theme-dark-color-secondary;
-      background: $theme-dark-color-background;
+    &.dark{
 
-      header {
-        color: $theme-dark-color-secondary;
-        background: $theme-dark-color-primary;
-
-        nav {
-          .theme,
-          .exit {
-            background-color: $theme-dark-color-primary;
-            color: $theme-dark-color-secondary;
-
-            &:hover {
-              border-color: $theme-dark-color-secondary;
-              box-shadow: $theme-dark-color-shadow;
-            }
-          }
-
-          .filters {
-            .filter {
-              select {
-                background: $theme-dark-color-primary;
-                color: $theme-dark-color-secondary;
-
-                &:hover {
-                  border-color: $theme-dark-color-secondary;
-                  box-shadow: $theme-dark-color-shadow;
-                }
-
-                &:focus {
-                  border-color: $theme-dark-color-secondary;
-                  box-shadow: $theme-dark-color-shadow;
-                }
-              }
-            }
-          }
-
-          .exit {
-            order: 3;
-          }
-        }
-      }
-
-      .table-wrapper {
-        background: $theme-dark-color-primary;
-
-        table {
-          background: $theme-dark-color-primary;
-          color: $theme-dark-color-secondary;
-
-          tbody {
-            tr {
-              td {
-                &.number {
-                  background-color: $theme-dark-color-primary;
-                }
-
-                &.fullname {
-                  background-color: $theme-dark-color-primary;
-                }
-
-                &.stats {
-                  .markBtn {
-                    color: $theme-dark-color-secondary;
-
-                    &:hover {
-                      border-color: $theme-dark-color-secondary;
-                      box-shadow: $theme-dark-color-shadow;
-                    }
-                  }
-                }
-
-                &.actions {
-                  .all,
-                  .selected {
-                    color: $theme-dark-color-secondary;
-                    background-color: $theme-dark-color-primary;
-
-                    &:hover {
-                      background-color: green;
-                      border-color: green;
-                    }
-                  }
-
-                  .numbers {
-                    color: $theme-dark-color-primary;
-                    background-color: $theme-dark-color-secondary;
-
-                    &:hover,
-                    &:focus{
-                      box-shadow: $theme-dark-color-shadow;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background-color: $theme-dark-color-secondary;
-        }
-      }
     }
   }
 }
@@ -500,7 +409,9 @@ html {
               .exit {
                 position: fixed;
                 bottom: 7%;
+                width: 55px;
                 height: 55px;
+                z-index: 99;
               }
 
               .theme{
@@ -619,17 +530,19 @@ html {
 
               .theme,
               .exit {
-                position: absolute;
-                bottom: 7%;
+                position: fixed;
+                bottom: 13%;
+                width: 55px;
                 height: 55px;
+                z-index: 99;
               }
 
               .theme {
-                left: 5%;
+                left: 7%;
               }
 
               .exit {
-                right: 5%;
+                right: 7%;
               }
             }
 
