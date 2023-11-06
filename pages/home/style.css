@@ -198,25 +198,23 @@ html {
                 transition: all 0.2s; }
                 html body .table-wrapper table tbody tr td.actions .action:hover {
                   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
-              html body .table-wrapper table tbody tr td.actions .numbers {
-                border: 2px solid transparent; }
-              html body .table-wrapper table tbody tr td.actions .all,
-              html body .table-wrapper table tbody tr td.actions .selected,
-              html body .table-wrapper table tbody tr td.actions .nothing {
-                padding: 0 25px; }
-              html body .table-wrapper table tbody tr td.actions .nothing {
-                margin-left: 5px; }
-              html body .table-wrapper table tbody tr td.actions .numbers {
-                width: 150px;
-                background-color: #e1e3e6;
-                margin-left: 14px;
-                padding: 0 10px;
-                text-align: center;
-                letter-spacing: 1px; }
-                html body .table-wrapper table tbody tr td.actions .numbers:focus {
-                  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
-              html body .table-wrapper table tbody tr td.actions .selected {
-                margin-left: 5px; }
+                html body .table-wrapper table tbody tr td.actions .action.numbers {
+                  border: 2px solid transparent; }
+                html body .table-wrapper table tbody tr td.actions .action.all, html body .table-wrapper table tbody tr td.actions .action.selected, html body .table-wrapper table tbody tr td.actions .action.nothing {
+                  padding: 0 15px; }
+                html body .table-wrapper table tbody tr td.actions .action.nothing {
+                  margin-left: 5px; }
+                html body .table-wrapper table tbody tr td.actions .action.numbers {
+                  width: 150px;
+                  background-color: #e1e3e6;
+                  margin-left: 14px;
+                  padding: 0 10px;
+                  text-align: center;
+                  letter-spacing: 1px; }
+                  html body .table-wrapper table tbody tr td.actions .action.numbers:focus {
+                    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
+                html body .table-wrapper table tbody tr td.actions .action.selected {
+                  margin-left: 5px; }
             html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
               flex-grow: 1;
               width: 67px;

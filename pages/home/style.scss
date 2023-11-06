@@ -291,37 +291,37 @@ html {
                   &:hover {
                     box-shadow: $theme-light-color-shadow;
                   }
-                }
 
-                .numbers{
-                  border: 2px solid transparent;
-                }
-
-                .all,
-                .selected,
-                .nothing{
-                  padding: 0 25px;
-                }
-
-                .nothing{
-                  margin-left: 5px;
-                }
-
-                .numbers {
-                  width: 150px;
-                  background-color: $theme-dark-color-secondary;
-                  margin-left: 14px;
-                  padding: 0 10px;
-                  text-align: center;
-                  letter-spacing: 1px;
-
-                  &:focus {
-                    box-shadow: $theme-light-color-shadow;
+                  &.numbers{
+                    border: 2px solid transparent;
                   }
-                }
 
-                .selected {
-                  margin-left: 5px;
+                  &.all,
+                  &.selected,
+                  &.nothing{
+                    padding: 0 15px;
+                  }
+
+                  &.nothing{
+                    margin-left: 5px;
+                  }
+
+                  &.numbers {
+                    width: 150px;
+                    background-color: $theme-dark-color-secondary;
+                    margin-left: 14px;
+                    padding: 0 10px;
+                    text-align: center;
+                    letter-spacing: 1px;
+
+                    &:focus {
+                      box-shadow: $theme-light-color-shadow;
+                    }
+                  }
+
+                  &.selected {
+                    margin-left: 5px;
+                  }
                 }
               }
 
