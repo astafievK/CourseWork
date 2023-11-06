@@ -17,3 +17,4 @@ function calculateWidth() {
 calculateWidth();
 
 window.addEventListener('resize', calculateWidth);
+window.addEventListener('orientationchange', calculateWidth)

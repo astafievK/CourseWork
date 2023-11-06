@@ -190,6 +190,7 @@ html {
             html body .table-wrapper table tbody tr td.actions {
               padding: 0 15px 0 0;
               display: flex;
+              margin-left: auto;
               justify-content: center; }
               html body .table-wrapper table tbody tr td.actions .action {
                 font-weight: 700;
@@ -216,20 +217,20 @@ html {
                 html body .table-wrapper table tbody tr td.actions .action.selected {
                   margin-left: 5px; }
             html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
-              flex-grow: 1;
               width: 67px;
               align-items: center;
               justify-content: center; }
               html body .table-wrapper table tbody tr td.total-mark span, html body .table-wrapper table tbody tr td.percentage span {
                 font-weight: 700; }
             html body .table-wrapper table tbody tr td.rectangle {
-              transition: all 0.3s; }
+              transition: all 0.3s;
+              margin-left: 20px; }
               html body .table-wrapper table tbody tr td.rectangle.good {
-                box-shadow: 0 0 20px 6px green; }
+                box-shadow: 0 0 20px 5px green; }
               html body .table-wrapper table tbody tr td.rectangle.medium {
-                box-shadow: 0 0 20px 6px orange; }
+                box-shadow: 0 0 20px 5px orange; }
               html body .table-wrapper table tbody tr td.rectangle.bad {
-                box-shadow: 0 0 20px 6px red; }
+                box-shadow: 0 0 20px 5px red; }
           html body .table-wrapper table tbody tr:last-child {
             border-bottom: 0; }
       html body .table-wrapper::-webkit-scrollbar {

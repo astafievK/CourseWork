@@ -280,6 +280,7 @@ html {
               &.actions {
                 padding: 0 15px 0 0;
                 display: flex;
+                margin-left: auto;
                 justify-content: center;
 
                 .action {
@@ -327,7 +328,6 @@ html {
 
               &.total-mark,
               &.percentage {
-                flex-grow: 1;
                 width: 67px;
                 align-items: center;
                 justify-content: center;
@@ -339,17 +339,18 @@ html {
 
               &.rectangle{
                 transition: all 0.3s;
+                margin-left: 20px;
 
                 &.good{
-                  box-shadow: 0 0 20px 6px rgba(0, 128, 0, 1);
+                  box-shadow: 0 0 20px 5px rgba(0, 128, 0, 1);
                 }
 
                 &.medium{
-                  box-shadow: 0 0 20px 6px rgba(255, 165, 0, 1);
+                  box-shadow: 0 0 20px 5px rgba(255, 165, 0, 1);
                 }
 
                 &.bad{
-                  box-shadow: 0 0 20px 6px rgba(255, 0, 0 , 1);
+                  box-shadow: 0 0 20px 5px rgba(255, 0, 0 , 1);
                 }
               }
             }
