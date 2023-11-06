@@ -171,7 +171,6 @@ html {
               padding: 0 15px;
               display: flex;
               justify-content: start;
-              flex-grow: 1;
               height: 100%;
               position: relative;
               font-size: 21px; }
@@ -182,11 +181,10 @@ html {
                 html body .table-wrapper table tbody tr td.stats .markBtn:first-child {
                   margin-left: 0; }
                 html body .table-wrapper table tbody tr td.stats .markBtn:hover {
-                  border-color: #292929;
-                  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
+                  border-color: #292929; }
                 html body .table-wrapper table tbody tr td.stats .markBtn.passed {
                   border-color: green;
-                  box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.2); }
+                  box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4); }
                   html body .table-wrapper table tbody tr td.stats .markBtn.passed:hover {
                     border-color: #292929; }
             html body .table-wrapper table tbody tr td.actions {
@@ -195,24 +193,17 @@ html {
               justify-content: center; }
               html body .table-wrapper table tbody tr td.actions .action {
                 font-weight: 700;
-                border: 2px solid transparent;
                 border-radius: 7px;
                 user-select: none;
                 transition: all 0.2s; }
                 html body .table-wrapper table tbody tr td.actions .action:hover {
                   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
+              html body .table-wrapper table tbody tr td.actions .numbers {
+                border: 2px solid transparent; }
               html body .table-wrapper table tbody tr td.actions .all,
               html body .table-wrapper table tbody tr td.actions .selected,
               html body .table-wrapper table tbody tr td.actions .nothing {
-                border-color: #292929;
                 padding: 0 25px; }
-                html body .table-wrapper table tbody tr td.actions .all:hover,
-                html body .table-wrapper table tbody tr td.actions .selected:hover,
-                html body .table-wrapper table tbody tr td.actions .nothing:hover {
-                  background-color: green;
-                  border-color: green;
-                  color: #ffffff;
-                  box-shadow: none; }
               html body .table-wrapper table tbody tr td.actions .nothing {
                 margin-left: 5px; }
               html body .table-wrapper table tbody tr td.actions .numbers {
@@ -227,26 +218,87 @@ html {
               html body .table-wrapper table tbody tr td.actions .selected {
                 margin-left: 5px; }
             html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
-              width: 75px;
+              flex-grow: 1;
+              width: 67px;
               align-items: center;
               justify-content: center; }
               html body .table-wrapper table tbody tr td.total-mark span, html body .table-wrapper table tbody tr td.percentage span {
                 font-weight: 700; }
+            html body .table-wrapper table tbody tr td.rectangle {
+              transition: all 0.3s; }
+              html body .table-wrapper table tbody tr td.rectangle.good {
+                box-shadow: 0 0 20px 6px green; }
+              html body .table-wrapper table tbody tr td.rectangle.medium {
+                box-shadow: 0 0 20px 6px orange; }
+              html body .table-wrapper table tbody tr td.rectangle.bad {
+                box-shadow: 0 0 20px 6px red; }
           html body .table-wrapper table tbody tr:last-child {
             border-bottom: 0; }
       html body .table-wrapper::-webkit-scrollbar {
-        width: 10px;
-        height: 10px; }
+        width: 7px;
+        height: 7px; }
       html body .table-wrapper::-webkit-scrollbar-track {
-        background-color: transparent;
         border-radius: 15px; }
       html body .table-wrapper::-webkit-scrollbar-thumb {
         background-color: #292929;
         border-radius: 15px; }
       html body .table-wrapper::-webkit-scrollbar-corner {
         background-color: transparent; }
+    html body.dark {
+      color: #e1e3e6;
+      background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%); }
+      html body.dark button,
+      html body.dark select,
+      html body.dark input {
+        color: #e1e3e6; }
+        html body.dark button:hover,
+        html body.dark select:hover,
+        html body.dark input:hover {
+          border-color: #e1e3e6; }
+      html body.dark header {
+        color: #e1e3e6;
+        background: #292929; }
+        html body.dark header nav .theme,
+        html body.dark header nav .exit {
+          background-color: #292929;
+          color: #e1e3e6; }
+          html body.dark header nav .theme:hover,
+          html body.dark header nav .exit:hover {
+            border-color: #e1e3e6;
+            box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
+        html body.dark header nav .filters .filter select {
+          background: #292929;
+          color: #e1e3e6; }
+          html body.dark header nav .filters .filter select:hover {
+            border-color: #e1e3e6;
+            box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
+          html body.dark header nav .filters .filter select:focus {
+            border-color: #e1e3e6;
+            box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
+      html body.dark .table-wrapper {
+        background: #292929; }
+        html body.dark .table-wrapper table {
+          background: #292929;
+          color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr td.number {
+            background-color: #292929; }
+          html body.dark .table-wrapper table tbody tr td.fullname {
+            background-color: #292929; }
+          html body.dark .table-wrapper table tbody tr td.stats .markBtn:hover {
+            border-color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr td.stats .markBtn.passed:hover {
+            border-color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr td.actions .action:hover {
+            box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
+          html body.dark .table-wrapper table tbody tr td.actions .numbers {
+            color: #292929;
+            background-color: #e1e3e6; }
+            html body.dark .table-wrapper table tbody tr td.actions .numbers:focus {
+              box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
+        html body.dark .table-wrapper::-webkit-scrollbar-thumb {
+          background-color: #e1e3e6; }
 
-@media (max-width: 1024) {
+@media (max-width: 850px) {
   * {
     font-size: 18px; }
 
