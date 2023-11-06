@@ -199,9 +199,13 @@ html {
                 transition: all 0.2s; }
                 html body .table-wrapper table tbody tr td.actions .action:hover {
                   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
+                html body .table-wrapper table tbody tr td.actions .action.all, html body .table-wrapper table tbody tr td.actions .action.nothing {
+                  padding: 10px; }
+                  html body .table-wrapper table tbody tr td.actions .action.all img, html body .table-wrapper table tbody tr td.actions .action.nothing img {
+                    height: 100%; }
                 html body .table-wrapper table tbody tr td.actions .action.numbers {
                   border: 2px solid transparent; }
-                html body .table-wrapper table tbody tr td.actions .action.all, html body .table-wrapper table tbody tr td.actions .action.selected, html body .table-wrapper table tbody tr td.actions .action.nothing {
+                html body .table-wrapper table tbody tr td.actions .action.selected {
                   padding: 0 15px; }
                 html body .table-wrapper table tbody tr td.actions .action.nothing {
                   margin-left: 5px; }

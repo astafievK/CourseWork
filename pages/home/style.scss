@@ -293,13 +293,20 @@ html {
                     box-shadow: $theme-light-color-shadow;
                   }
 
+                  &.all,
+                  &.nothing{
+                    padding: 10px;
+
+                    img{
+                      height: 100%;
+                    }
+                  }
+
                   &.numbers{
                     border: 2px solid transparent;
                   }
 
-                  &.all,
-                  &.selected,
-                  &.nothing{
+                  &.selected{
                     padding: 0 15px;
                   }
 
