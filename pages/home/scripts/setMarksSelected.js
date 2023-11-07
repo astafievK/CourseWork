@@ -7,7 +7,9 @@ selectedButton.forEach(button => {
         const inputNumbers = parentRow.querySelectorAll('.action.numbers');
         const inputText = inputNumbers[0].value;
         const textArray = inputText.replace(/\s/g, "").split(',');
-        const numbersArray = [];
+        const numbersArray = []
+
+        inputNumbers[0].value = ""
 
         textArray.forEach(item => {
             if (item.includes('-')) {

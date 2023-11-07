@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="student.css">
+    <title>Главная</title>
+</head>
+<body>
+<header>
+    <nav>
+        <button class="theme" id="btnSwitchTheme">
+            <img id="themeImage" src="../../../assets/images/moon.svg" alt="">
+        </button>
+        <div class="filters">
+            <div class="filter info">
+                <span>Астафьев Кирилл ИСПП-01</span>
+            </div>
+            <div class="filter">
+                <select class="select-discipline" id="filterDiscipline">
+                    <option value="ИСПП-11">МДК 01.01</option>
+                    <option value="ИСПП-11">МДК 01.02</option>
+                </select>
+            </div>
+        </div>
+        <form class="exit" method="post" action="../scripts/exit.php">
+            <button name="exit">
+                <img src="../../../assets/images/exit.svg" alt="">
+            </button>
+        </form>
+    </nav>
+    <nav class="mobile">
+        <div class="buttons">
+            <button class="theme" id="btnSwitchThemeMobile">
+                <img id="themeImageMobile" src="../../../assets/images/moon.svg" alt="">
+            </button>
+            <form class="exit" method="post" action="../scripts/exit.php">
+                <button name="exit">
+                    <img src="../../../assets/images/exit.svg" alt="">
+                </button>
+            </form>
+        </div>
+        <div class="filters">
+            <div class="filter">
+                <span class="info">
+                    Астафьев Кирилл ИСПП-01
+                </span>
+            </div>
+            <div class="filter">
+                <select class="select-discipline" id="filterDisciplineMobile">
+                    <option value="ИСПП-11">МДК 01.01</option>
+                    <option value="ИСПП-11">МДК 01.02</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="table-wrapper">
+    <table id="table">
+        <tbody>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 1</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 2</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 3</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 4</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 5</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 6</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 7</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 8</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 9</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 10</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 11</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 12</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 13</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 14</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 15</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Лабораторная работа 16</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Практическая работа 1</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Практическая работа 2</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Практическая работа 3</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Практическая работа 4</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Самостоятельная работа 1</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        <tr>
+            <td class="labwork">
+                <span class="title">Курсовая работа</span>
+            </td>
+            <td class="stats">
+                <button class="mark passed">1</button>
+                <button class="mark passed">2</button>
+                <button class="mark passed">3</button>
+                <button class="mark passed">4</button>
+                <button class="mark">5</button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="scripts/tableColumnWidth.js"></script>
+<script src="../scripts/themeSwitch.js"></script>
+<script src="../scripts/setMarksAllNothing.js"></script>
+<script src="../scripts/setMarksSelected.js"></script>
+</body>
+</html>

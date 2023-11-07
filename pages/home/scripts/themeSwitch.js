@@ -27,18 +27,7 @@ btnSwitchTheme.addEventListener("click", switchTheme);
 btnSwitchThemeMobile.addEventListener("click", switchTheme);
 
 function toggleTheme(isDark) {
-    const checkImgPath = isDark ? "../../assets/images/light/check_dark.png" : "../../assets/images/dark/check_light.png";
-    const crossImgPath = isDark ? "../../assets/images/light/cross_dark.png" : "../../assets/images/dark/cross_light.png";
-    const themeImgPath = isDark ? "../../assets/images/nav/desktop/theme-sun.png" : "../../assets/images/nav/desktop/theme-moon.png";
-
-    btnActionAll.forEach(button => {
-        button.querySelector('img').src = checkImgPath;
-    });
-
-    btnActionNothing.forEach(button => {
-        button.querySelector('img').src = crossImgPath;
-    });
-
+    const themeImgPath = isDark ? "../../../assets/images/sun.svg" : "../../../assets/images/moon.svg";
     themeImageMobile.src = themeImgPath;
     themeImage.src = themeImgPath;
 }

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="admin.css">
+    <title>Главная</title>
+</head>
+<body>
+<header>
+    <nav>
+        <button class="theme" id="btnSwitchTheme">
+            <img id="themeImage" src="../../../assets/images/moon.svg" alt="">
+        </button>
+        <div class="filters">
+            <div class="filter">
+                <select class="select-group" id="filterGroup">
+                    <option selected disabled>Группа</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-discipline" id="filterDiscipline">
+                    <option selected disabled>Дисциплина</option>
+                    <option value="ИСПП-11">МДК 01.01</option>
+                    <option value="ИСПП-11">МДК 01.02</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-work" id="filterWork">
+                    <option selected disabled>Работа</option>
+                    <option value="Лабораторная работа 1">Лабораторная работа 1</option>
+                    <option value="Лабораторная работа 2">Лабораторная работа 2</option>
+                </select>
+            </div>
+        </div>
+        <form class="exit" method="post" action="scripts/exit.php">
+            <button name="exit">
+                <img src="../../../assets/images/exit.svg" alt="">
+            </button>
+        </form>
+    </nav>
+    <nav class="mobile">
+        <div class="buttons">
+            <button class="theme" id="btnSwitchThemeMobile">
+                <img id="themeImageMobile" src="../../../assets/images/moon.svg" alt="">
+            </button>
+            <form class="exit" method="post" action="scripts/exit.php">
+                <button name="exit">
+                    <img src="../../../assets/images/exit.svg" alt="">
+                </button>
+            </form>
+        </div>
+        <div class="filters">
+            <div class="filter">
+                <select class="select-group" id="filterGroupMobile">
+                    <option selected disabled>Группа</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ИСПП-01</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-discipline" id="filterDisciplineMobile">
+                    <option selected disabled>Дисциплина</option>
+                    <option value="ИСПП-11">МДК 01.01</option>
+                    <option value="ИСПП-11">МДК 01.02</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select class="select-work" id="filterWorkMobile">
+                    <option selected disabled>Работа</option>
+                    <option value="Лабораторная работа 1">Лабораторная работа 1</option>
+                    <option value="Лабораторная работа 2">Лабораторная работа 2</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="table-wrapper">
+    <table id="table">
+        <tbody>
+        <tr>
+            <td class="number">
+                <span>1</span>
+            </td>
+            <td class="fullname">
+                <span class="surname">Акберов</span>
+                <span class="name">Муса</span>
+                <span class="name-short">А.</span>
+            </td>
+            <td class="stats">
+                <button class="markBtn passed" data-value="1" data-user="2" data-work="7" data-passed="1">1</button>
+                <button class="markBtn passed" data-value="2" data-user="2" data-work="7" data-passed="1">2</button>
+                <button class="markBtn passed" data-value="3" data-user="2" data-work="7" data-passed="1">3</button>
+                <button class="markBtn passed" data-value="4" data-user="2" data-work="7" data-passed="1">4</button>
+                <button class="markBtn passed" data-value="5" data-user="2" data-work="7" data-passed="1">5</button>
+            </td>
+            <td class="actions">
+                <button class="action all">
+                    <img src="../../../assets/images/checkmark.svg" alt="Все">
+                </button>
+                <button class="action nothing">
+                    <img src="../../../assets/images/cross.svg" alt="Отменить">
+                </button>
+                <input class="action numbers" type="text" name="numbers" placeholder="1-3,5">
+                <button class="action selected">
+                    Выбранные
+                </button>
+            </td>
+            <td class="percentage">
+                <span>100%</span>
+            </td>
+            <td class="total-mark">
+                <span>5</span>
+            </td>
+            <td class="rectangle good">
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="../scripts/tableColumnWidth.js"></script>
+<script src="../scripts/themeSwitch.js"></script>
+<script src="../scripts/markBtn.js"></script>
+<script src="../scripts/setMarksAllNothing.js"></script>
+<script src="../scripts/setMarksSelected.js"></script>
+</body>
+</html>
