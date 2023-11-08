@@ -1,4 +1,48 @@
-@import "../style.scss";
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../../../assets/fonts/poppins/Poppins-Regular.ttf');
+}
+
+$theme-light-color-background:  linear-gradient(45deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
+$theme-light-color-primary:     #ffffff;
+$theme-light-color-secondary:   #292929;
+$theme-light-color-shadow:      0 0 3px 2px rgba(0, 0, 0, 0.4);
+
+$theme-dark-color-background:   linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+$theme-dark-color-primary:      #292929;
+$theme-dark-color-secondary:    #e1e3e6;
+$theme-dark-color-shadow:       0 0 3px 2px rgba(255, 255, 255, 0.4);
+
+$media-size-small: 480px;
+$media-size-medium: 768px;
+$media-size-large: 1024px;
+
+$header-height: 90px;
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 22px;
+  box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
+  transition: background-color 0.3s;
+}
+
+button, input, a, select{
+  cursor: pointer;
+  outline: none;
+}
+
+body{
+  &.dark{
+    button, select{
+      &:hover{
+        border-color: $theme-dark-color-secondary;
+      }
+    }
+  }
+}
 
 html {
   height: 100%;
@@ -21,7 +65,7 @@ html {
       user-select: none;
       transition: all 0.2s;
       border-radius: 7px;
-      height: 60px;
+      height: 100%;
 
       &:hover{
         border-color: $theme-light-color-secondary;
@@ -34,7 +78,7 @@ html {
       border-radius: 15px 15px 0 0;
       background: $theme-light-color-primary;
       padding: 15px 10%;
-      border-bottom: 1px solid #666666;
+      border-bottom: 2px solid #666666;
 
       nav {
         display: flex;
@@ -109,10 +153,6 @@ html {
               option:nth-child(1n) {
                 font-size: 19px;
               }
-
-              option:nth-child(1) {
-                display: none;
-              }
             }
           }
 
@@ -161,13 +201,12 @@ html {
           tr {
             display: flex;
             height: 80px;
-            border-bottom: 1px solid #666666;
+            border-bottom: 2px solid #666666;
 
             td {
               display: flex;
               align-items: center;
               text-align: center;
-              height: 100%;
               white-space: nowrap;
 
               &.labwork {
@@ -180,11 +219,17 @@ html {
                 text-align: left;
                 flex-shrink: 1;
                 padding: 0 15px;
-                border-right: 1px solid #666666;
+                border-right: 2px solid #666666;
+
+                .title{
+                  &.short{
+                    display: none;
+                  }
+                }
               }
 
               &.stats {
-                padding: 0 15px;
+                padding: 10px 15px;
                 display: flex;
                 justify-content: start;
                 height: 100%;
@@ -194,20 +239,25 @@ html {
                 .mark {
                   margin-left: 12px;
                   font-weight: 700;
-                  width: 60px;
                   cursor: default;
+                  height: 100%;
+                  aspect-ratio: 1 / 1;
 
                   &:first-child {
                     margin-left: 0;
                   }
 
                   &:hover{
-                    border-color: rgba(102, 102, 102, 0.4);
+                    border-color: rgba(102, 102, 102, 0.4) !important;
                   }
 
                   &.passed{
                     border-color: green;
                     box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4);
+
+                    &:hover{
+                      border-color: green !important;
+                    }
                   }
                 }
               }
@@ -243,10 +293,6 @@ html {
                   box-shadow: 0 0 20px 5px rgba(255, 0, 0 , 1);
                 }
               }
-            }
-
-            &:last-child {
-              border-bottom: 0;
             }
           }
         }
@@ -369,8 +415,7 @@ html {
 }
 
 
-@media
-screen and (max-width: 1150px){
+@media screen and (max-width: 1150px){
   $header-height: 75px;
 
   *{
@@ -400,18 +445,18 @@ screen and (max-width: 1150px){
               .theme,
               .exit {
                 position: fixed;
-                bottom: 7%;
+                bottom: 12%;
                 width: 55px;
                 height: 55px;
                 z-index: 99;
               }
 
-              .theme{
-                left: 5%;
+              .theme {
+                left: 12%;
               }
 
-              .exit{
-                right: 5%;
+              .exit {
+                right: 12%;
               }
             }
 
@@ -448,29 +493,18 @@ screen and (max-width: 1150px){
               height: 60px;
 
               td {
-                &.number {
-                  display: none;
-
-                }
-
-                &.fullname{
-                  left: 0;
-
-                  .surname{
-                    margin-left: 10px;
-                  }
-
-                  .name{
+                &.labwork {
+                  .title{
                     display: none;
-                  }
 
-                  .name-short{
-                    display: flex;
+                    &.short{
+                      display: flex;
+                    }
                   }
                 }
 
                 &.stats{
-
+                  padding: 5px 10px;
 
                   .markBtn{
                     height: 50px;
@@ -492,7 +526,7 @@ screen and (max-width: 1150px){
   }
 }
 
-@media (max-width: 485px) {
+@media screen and (max-width: 485px) {
   $header-height: 120px;
 
   * {
@@ -518,23 +552,6 @@ screen and (max-width: 1150px){
               display: flex;
               justify-content: space-between;
               flex-direction: column;
-
-              .theme,
-              .exit {
-                position: fixed;
-                bottom: 13%;
-                width: 55px;
-                height: 55px;
-                z-index: 99;
-              }
-
-              .theme {
-                left: 7%;
-              }
-
-              .exit {
-                right: 7%;
-              }
             }
 
             .filters {

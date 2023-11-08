@@ -11,33 +11,35 @@
 <header>
     <nav>
         <button class="theme" id="btnSwitchTheme">
-            <img id="themeImage" src="../../../assets/images/moon.svg" alt="">
+            <img id="themeImage" src="../../../assets/images/moon.svg" alt="Тема">
         </button>
+        <div class="functions">
+            <button class="import">Импорт</button>
+            <button class="export">Экспорт</button>
+        </div>
         <div class="filters">
             <div class="filter">
                 <select class="select-group" id="filterGroup">
-                    <option selected disabled>Группа</option>
                     <option value="ИСПП-01">ИСПП-01</option>
+                    <option value="ИСПП-01">ПКС-01</option>
                 </select>
             </div>
             <div class="filter">
                 <select class="select-discipline" id="filterDiscipline">
-                    <option selected disabled>Дисциплина</option>
                     <option value="ИСПП-11">МДК 01.01</option>
                     <option value="ИСПП-11">МДК 01.02</option>
                 </select>
             </div>
             <div class="filter">
                 <select class="select-work" id="filterWork">
-                    <option selected disabled>Работа</option>
                     <option value="Лабораторная работа 1">Лабораторная работа 1</option>
                     <option value="Лабораторная работа 2">Лабораторная работа 2</option>
                 </select>
             </div>
         </div>
-        <form class="exit" method="post" action="scripts/exit.php">
+        <form class="exit" method="post" action="../scripts/exit.php">
             <button name="exit">
-                <img src="../../../assets/images/exit.svg" alt="">
+                <img src="../../../assets/images/exit.svg" alt="Выход">
             </button>
         </form>
     </nav>
@@ -46,7 +48,7 @@
             <button class="theme" id="btnSwitchThemeMobile">
                 <img id="themeImageMobile" src="../../../assets/images/moon.svg" alt="">
             </button>
-            <form class="exit" method="post" action="scripts/exit.php">
+            <form class="exit" method="post" action="../scripts/exit.php">
                 <button name="exit">
                     <img src="../../../assets/images/exit.svg" alt="">
                 </button>
@@ -81,6 +83,9 @@
     <table id="table">
         <tbody>
         <tr>
+            <td class="retired">
+                <button>Отчилен(-а)</button>
+            </td>
             <td class="number">
                 <span>1</span>
             </td>
@@ -95,6 +100,11 @@
                 <button class="markBtn passed" data-value="3" data-user="2" data-work="7" data-passed="1">3</button>
                 <button class="markBtn passed" data-value="4" data-user="2" data-work="7" data-passed="1">4</button>
                 <button class="markBtn passed" data-value="5" data-user="2" data-work="7" data-passed="1">5</button>
+            </td>
+            <td class="add">
+                <button>
+                    <img class="add-img" src="../../../assets/images/add_dark.svg" alt="Добавить задание">
+                </button>
             </td>
             <td class="actions">
                 <button class="action all">
@@ -122,8 +132,8 @@
     </table>
 </div>
 
-<script src="../scripts/tableColumnWidth.js"></script>
-<script src="../scripts/themeSwitch.js"></script>
+<script src="scripts/tableColumnWidth.js"></script>
+<script src="scripts/themeSwitch.js"></script>
 <script src="../scripts/markBtn.js"></script>
 <script src="../scripts/setMarksAllNothing.js"></script>
 <script src="../scripts/setMarksSelected.js"></script>

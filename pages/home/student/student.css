@@ -35,7 +35,7 @@ html {
       user-select: none;
       transition: all 0.2s;
       border-radius: 7px;
-      height: 60px; }
+      height: 100%; }
       html body button:hover,
       html body select:hover,
       html body input:hover {
@@ -46,7 +46,7 @@ html {
       border-radius: 15px 15px 0 0;
       background: #ffffff;
       padding: 15px 10%;
-      border-bottom: 1px solid #666666; }
+      border-bottom: 2px solid #666666; }
       html body header nav {
         display: flex;
         justify-content: space-between;
@@ -106,8 +106,6 @@ html {
                 box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
               html body header nav .filters .filter select option:nth-child(1n) {
                 font-size: 19px; }
-              html body header nav .filters .filter select option:nth-child(1) {
-                display: none; }
           html body header nav .filters .info {
             border: none; }
             html body header nav .filters .info:hover {
@@ -137,12 +135,11 @@ html {
         html body .table-wrapper table tbody tr {
           display: flex;
           height: 80px;
-          border-bottom: 1px solid #666666; }
+          border-bottom: 2px solid #666666; }
           html body .table-wrapper table tbody tr td {
             display: flex;
             align-items: center;
             text-align: center;
-            height: 100%;
             white-space: nowrap; }
             html body .table-wrapper table tbody tr td.labwork {
               position: sticky;
@@ -154,9 +151,11 @@ html {
               text-align: left;
               flex-shrink: 1;
               padding: 0 15px;
-              border-right: 1px solid #666666; }
+              border-right: 2px solid #666666; }
+              html body .table-wrapper table tbody tr td.labwork .title.short {
+                display: none; }
             html body .table-wrapper table tbody tr td.stats {
-              padding: 0 15px;
+              padding: 10px 15px;
               display: flex;
               justify-content: start;
               height: 100%;
@@ -165,15 +164,18 @@ html {
               html body .table-wrapper table tbody tr td.stats .mark {
                 margin-left: 12px;
                 font-weight: 700;
-                width: 60px;
-                cursor: default; }
+                cursor: default;
+                height: 100%;
+                aspect-ratio: 1 / 1; }
                 html body .table-wrapper table tbody tr td.stats .mark:first-child {
                   margin-left: 0; }
                 html body .table-wrapper table tbody tr td.stats .mark:hover {
-                  border-color: rgba(102, 102, 102, 0.4); }
+                  border-color: rgba(102, 102, 102, 0.4) !important; }
                 html body .table-wrapper table tbody tr td.stats .mark.passed {
                   border-color: green;
                   box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4); }
+                  html body .table-wrapper table tbody tr td.stats .mark.passed:hover {
+                    border-color: green !important; }
             html body .table-wrapper table tbody tr td.percentage {
               margin-left: auto; }
             html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
@@ -191,8 +193,6 @@ html {
                 box-shadow: 0 0 20px 5px orange; }
               html body .table-wrapper table tbody tr td.rectangle.bad {
                 box-shadow: 0 0 20px 5px red; }
-          html body .table-wrapper table tbody tr:last-child {
-            border-bottom: 0; }
       html body .table-wrapper::-webkit-scrollbar {
         width: 7px;
         height: 7px; }
@@ -269,14 +269,14 @@ html {
           html body header nav.mobile .buttons .theme,
           html body header nav.mobile .buttons .exit {
             position: fixed;
-            bottom: 7%;
+            bottom: 12%;
             width: 55px;
             height: 55px;
             z-index: 99; }
           html body header nav.mobile .buttons .theme {
-            left: 5%; }
+            left: 12%; }
           html body header nav.mobile .buttons .exit {
-            right: 5%; }
+            right: 12%; }
         html body header nav.mobile .filters {
           align-items: center;
           padding: 0;
@@ -294,22 +294,18 @@ html {
       height: calc(100% - 75px); }
       html body .table-wrapper table tbody tr {
         height: 60px; }
-        html body .table-wrapper table tbody tr td.number {
+        html body .table-wrapper table tbody tr td.labwork .title {
           display: none; }
-        html body .table-wrapper table tbody tr td.fullname {
-          left: 0; }
-          html body .table-wrapper table tbody tr td.fullname .surname {
-            margin-left: 10px; }
-          html body .table-wrapper table tbody tr td.fullname .name {
-            display: none; }
-          html body .table-wrapper table tbody tr td.fullname .name-short {
+          html body .table-wrapper table tbody tr td.labwork .title.short {
             display: flex; }
-        html body .table-wrapper table tbody tr td.stats .markBtn {
-          height: 50px;
-          width: 50px; }
+        html body .table-wrapper table tbody tr td.stats {
+          padding: 5px 10px; }
+          html body .table-wrapper table tbody tr td.stats .markBtn {
+            height: 50px;
+            width: 50px; }
         html body .table-wrapper table tbody tr td.actions .action {
           height: 50px; } }
-@media (max-width: 485px) {
+@media screen and (max-width: 485px) {
   * {
     font-size: 18px; }
 
@@ -327,17 +323,6 @@ html {
           display: flex;
           justify-content: space-between;
           flex-direction: column; }
-          html body header nav.mobile .buttons .theme,
-          html body header nav.mobile .buttons .exit {
-            position: fixed;
-            bottom: 13%;
-            width: 55px;
-            height: 55px;
-            z-index: 99; }
-          html body header nav.mobile .buttons .theme {
-            left: 7%; }
-          html body header nav.mobile .buttons .exit {
-            right: 7%; }
         html body header nav.mobile .filters {
           padding: 0;
           flex-direction: column; }
