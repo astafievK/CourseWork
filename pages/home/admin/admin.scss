@@ -32,6 +32,7 @@ $header-height: 90px;
 button, input, a, select{
   cursor: pointer;
   outline: none;
+  padding: 0 15px;
 }
 
 body{
@@ -63,13 +64,23 @@ html {
       color: $theme-light-color-secondary;
       border: 2px solid rgba(102, 102, 102, 0.4);
       user-select: none;
-      transition: all 0.2s;
       border-radius: 7px;
       height: 100%;
+      transition: all 0.2s;
 
       &:hover{
         border-color: $theme-light-color-secondary;
       }
+    }
+
+    input[type=text]{
+      width: 100px;
+      background-color: $theme-dark-color-secondary;
+      padding: 0 10px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      border: 2px solid transparent;
     }
 
     header {
@@ -77,7 +88,7 @@ html {
       height: $header-height;
       border-radius: 15px 15px 0 0;
       background: $theme-light-color-primary;
-      padding: 15px 10%;
+      padding: 15px;
       border-bottom: 2px solid #666666;
 
       nav {
@@ -112,35 +123,24 @@ html {
         }
 
         .functions{
-          padding: 0 30px;
+          margin-left: 12px;
           height: 100%;
           display: flex;
           justify-content: space-around;
-
-          .import,
-          .export{
-            padding: 0 15px;
-          }
-
-          .import{
-            border-radius: 7px 0 0 7px;
-          }
-
-          .export {
-            border-radius: 0 7px 7px 0;
-          }
         }
 
-        .filters {
+        .options {
           display: flex;
           height: 100%;
           justify-content: space-evenly;
-          flex-grow: 1;
+          width: auto;
+          margin-left: auto;
 
           .filter {
             height: 100%;
-            width: 30%;
+            width: 350px;
             display: flex;
+            margin-left: 12px;
             flex-direction: column;
             justify-content: center;
             text-align: center;
@@ -173,6 +173,7 @@ html {
           display: flex;
           order: 3;
           padding: 0;
+          margin-left: 12px;
 
           button {
             background-color: transparent;
@@ -294,13 +295,24 @@ html {
               &.add{
                 padding: 10px 12px;
 
-                button{
-                  height: 100%;
-                  aspect-ratio: 1 / 1;
+                .add-form{
 
-                  img{
-                    height: 100%;
-                    width: 100%;
+                  display: flex;
+                  height: 100%;
+
+                  .add-numbers{
+                    border-radius: 7px 0 0 7px;
+                  }
+
+                  button{
+                    padding: 0;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 0 7px 7px 0;
+
+                    img{
+                      height: 100%;
+                      width: 100%;
+                    }
                   }
                 }
               }
@@ -326,29 +338,18 @@ html {
                     }
                   }
 
-                  &.numbers{
-                    border: 2px solid transparent;
-                  }
-
-                  &.selected{
-                    padding: 0 15px;
-                  }
-
                   &.nothing{
                     margin-left: 5px;
                   }
 
                   &.numbers {
-                    width: 150px;
-                    background-color: $theme-dark-color-secondary;
                     margin-left: 12px;
-                    padding: 0 10px;
-                    text-align: center;
-                    letter-spacing: 1px;
+                    border-radius: 7px 0 0 7px;
                   }
 
                   &.selected {
-                    margin-left: 5px;
+                    padding: 0 15px;
+                    border-radius: 0 7px 7px 0;
                   }
                 }
               }
@@ -435,7 +436,7 @@ html {
             }
           }
 
-          .filters {
+          .options {
             .filter {
               select {
                 background: $theme-dark-color-primary;
@@ -550,7 +551,7 @@ html {
               }
             }
 
-            .filters {
+            .options {
               align-items: center;
               padding: 0;
               flex-direction: row;
@@ -593,13 +594,10 @@ html {
                   }
                 }
 
-                &.stats{
+                &.retired,
+                &.stats,
+                &.add,{
                   padding: 5px 10px;
-
-                  .markBtn{
-                    height: 50px;
-                    width: 50px;
-                  }
                 }
 
                 &.actions{
@@ -644,7 +642,7 @@ html {
               flex-direction: column;
             }
 
-            .filters {
+            .options {
               padding: 0;
               flex-direction: column;
 

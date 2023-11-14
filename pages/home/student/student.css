@@ -74,19 +74,19 @@ html {
           html body header nav .exit img {
             height: 100%;
             width: 100%; }
-        html body header nav .filters {
+        html body header nav .options {
           display: flex;
           height: 100%;
           justify-content: space-evenly;
           flex-grow: 1; }
-          html body header nav .filters .filter {
+          html body header nav .options .filter {
             height: 100%;
             width: 40%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center; }
-            html body header nav .filters .filter select {
+            html body header nav .options .filter select {
               border: 2px solid rgba(102, 102, 102, 0.4);
               background: #ffffff;
               color: #292929;
@@ -98,17 +98,17 @@ html {
               letter-spacing: 1px;
               text-align-last: center;
               transition: all 0.2s; }
-              html body header nav .filters .filter select:hover {
+              html body header nav .options .filter select:hover {
                 border-color: #292929;
                 box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
-              html body header nav .filters .filter select:focus {
+              html body header nav .options .filter select:focus {
                 border-color: #292929;
                 box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4); }
-              html body header nav .filters .filter select option:nth-child(1n) {
+              html body header nav .options .filter select option:nth-child(1n) {
                 font-size: 19px; }
-          html body header nav .filters .info {
+          html body header nav .options .info {
             border: none; }
-            html body header nav .filters .info:hover {
+            html body header nav .options .info:hover {
               border: none; }
         html body header nav .exit {
           display: flex;
@@ -225,13 +225,13 @@ html {
           html body.dark header nav .exit:hover {
             border-color: #e1e3e6;
             box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
-        html body.dark header nav .filters .filter select {
+        html body.dark header nav .options .filter select {
           background: #292929;
           color: #e1e3e6; }
-          html body.dark header nav .filters .filter select:hover {
+          html body.dark header nav .options .filter select:hover {
             border-color: #e1e3e6;
             box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
-          html body.dark header nav .filters .filter select:focus {
+          html body.dark header nav .options .filter select:focus {
             border-color: #e1e3e6;
             box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.4); }
       html body.dark .table-wrapper {
@@ -277,14 +277,14 @@ html {
             left: 12%; }
           html body header nav.mobile .buttons .exit {
             right: 12%; }
-        html body header nav.mobile .filters {
+        html body header nav.mobile .options {
           align-items: center;
           padding: 0;
           flex-direction: row;
           justify-content: space-evenly; }
-          html body header nav.mobile .filters .filter {
+          html body header nav.mobile .options .filter {
             flex: 1; }
-            html body header nav.mobile .filters .filter select {
+            html body header nav.mobile .options .filter select {
               font-size: 17px;
               height: 90%; }
       html body header nav:not(.mobile) {
@@ -323,12 +323,12 @@ html {
           display: flex;
           justify-content: space-between;
           flex-direction: column; }
-        html body header nav.mobile .filters {
+        html body header nav.mobile .options {
           padding: 0;
           flex-direction: column; }
-          html body header nav.mobile .filters .filter {
+          html body header nav.mobile .options .filter {
             width: 100%; }
-            html body header nav.mobile .filters .filter select {
+            html body header nav.mobile .options .filter select {
               font-size: 17px;
               height: 90%; }
       html body header nav:not(.mobile) {

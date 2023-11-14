@@ -14,10 +14,9 @@
             <img id="themeImage" src="../../../assets/images/moon.svg" alt="Тема">
         </button>
         <div class="functions">
-            <button class="import">Импорт</button>
             <button class="export">Экспорт</button>
         </div>
-        <div class="filters">
+        <div class="options">
             <div class="filter">
                 <select class="select-group" id="filterGroup">
                     <option value="ИСПП-01">ИСПП-01</option>
@@ -54,7 +53,7 @@
                 </button>
             </form>
         </div>
-        <div class="filters">
+        <div class="options">
             <div class="filter">
                 <select class="select-group" id="filterGroupMobile">
                     <option selected disabled>Группа</option>
@@ -102,9 +101,12 @@
                 <button class="markBtn passed" data-value="5" data-user="2" data-work="7" data-passed="1">5</button>
             </td>
             <td class="add">
-                <button>
-                    <img class="add-img" src="../../../assets/images/add_dark.svg" alt="Добавить задание">
-                </button>
+                <div class="add-form">
+                    <input class="add-numbers" type="text" name="numbers" placeholder="3">
+                    <button>
+                        <img class="add-img" src="../../../assets/images/add_dark.svg" alt="Добавить задание">
+                    </button>
+                </div>
             </td>
             <td class="actions">
                 <button class="action all">

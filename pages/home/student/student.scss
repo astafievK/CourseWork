@@ -112,7 +112,7 @@ html {
           }
         }
 
-        .filters {
+        .options {
           display: flex;
           height: 100%;
           justify-content: space-evenly;
@@ -349,7 +349,7 @@ html {
             }
           }
 
-          .filters {
+          .options {
             .filter {
               select {
                 background: $theme-dark-color-primary;
@@ -460,7 +460,7 @@ html {
               }
             }
 
-            .filters {
+            .options {
               align-items: center;
               padding: 0;
               flex-direction: row;
@@ -554,7 +554,7 @@ html {
               flex-direction: column;
             }
 
-            .filters {
+            .options {
               padding: 0;
               flex-direction: column;
 
