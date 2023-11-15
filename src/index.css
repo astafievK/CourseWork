@@ -1,0 +1,65 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../../../assets/fonts/poppins/Poppins-Regular.ttf"); }
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 22px;
+  box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
+  transition: background-color 0.3s; }
+
+button, input, a, select {
+  cursor: pointer;
+  outline: none; }
+
+body.dark button:hover, body.dark select:hover {
+  border-color: #e1e3e6; }
+
+html {
+  height: 100%; }
+  html body {
+    padding: 35px;
+    height: 100%;
+    color: #222222;
+    background: linear-gradient(45deg, #b698f6 0%, #95c5ea 100%);
+    outline: none;
+    overflow: hidden; }
+    html body button,
+    html body select,
+    html body input {
+      background-color: transparent;
+      color: #222222;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      user-select: none;
+      border-radius: 7px;
+      height: 100%;
+      transition: all 0.2s; }
+      html body button:hover,
+      html body select:hover,
+      html body input:hover {
+        border-color: #222222; }
+    html body input[type=text] {
+      width: 100px;
+      background-color: #e1e3e6;
+      padding: 0 10px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      border: 2px solid transparent; }
+    html body.dark {
+      color: #e1e3e6;
+      background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%); }
+      html body.dark button,
+      html body.dark select,
+      html body.dark input {
+        color: #e1e3e6; }
+        html body.dark button:hover,
+        html body.dark select:hover,
+        html body.dark input:hover {
+          border-color: #e1e3e6; }
+      html body.dark input[type=text] {
+        background-color: #e1e3e6; }
+
+/*# sourceMappingURL=index.css.map */

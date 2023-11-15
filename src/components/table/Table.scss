@@ -1,0 +1,21 @@
+@import "../../index.scss";
+
+.table-wrapper {
+  width: 100%;
+  height: calc(100% - #{$header-height});
+  border-radius: 0 0 15px 15px;
+  overflow: auto;
+  background: $theme-light-color-primary;
+
+  table {
+    height: 100%;
+    width: 100%;
+    background: $theme-light-color-primary;
+    color: $theme-light-color-secondary;
+    border-collapse: collapse;
+
+    tbody {
+
+    }
+  }
+}

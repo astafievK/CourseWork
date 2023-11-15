@@ -1,0 +1,252 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('./assets/fonts/poppins/Poppins-Regular.ttf');
+}
+
+$theme-light-color-background:  linear-gradient(45deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
+$theme-light-color-primary:     #ffffff;
+$theme-light-color-secondary:   #222222;
+
+$theme-dark-color-background:   linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+$theme-dark-color-primary:      #222222;
+$theme-dark-color-secondary:    #e1e3e6;
+
+$media-size-small: 480px;
+$media-size-medium: 768px;
+$media-size-large: 1024px;
+
+$header-height: 90px;
+
+#root{
+  height: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 22px;
+  box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
+  transition: background-color 0.3s;
+}
+
+button, input, a, select{
+  cursor: pointer;
+  outline: none;
+  padding: 0 15px;
+}
+
+html {
+  height: 100%;
+
+  body {
+    padding: 35px;
+    height: 100%;
+    color: $theme-light-color-secondary;
+    background: $theme-light-color-background;
+    outline: none;
+    overflow: hidden;
+
+    button,
+    select,
+    input {
+      background-color: transparent;
+      color: $theme-light-color-secondary;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      user-select: none;
+      border-radius: 7px;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: $theme-light-color-secondary;
+      }
+    }
+
+    input[type=text] {
+      width: 100px;
+      background-color: $theme-dark-color-secondary;
+      padding: 0 10px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      border: 2px solid transparent;
+
+      &:hover,
+      &:focus{
+        border-color: $theme-light-color-secondary;
+      }
+    }
+
+    select {
+      height: 100%;
+      max-height: 200px;
+      background: $theme-light-color-primary;
+      color: $theme-light-color-secondary;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      border-radius: 7px;
+      text-align-last: center;
+      overflow-y: auto;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: $theme-light-color-secondary;
+      }
+
+      &:focus {
+        border-color: $theme-light-color-secondary;
+      }
+    }
+  }
+
+  &.dark {
+    color: $theme-dark-color-secondary;
+    background: $theme-dark-color-background;
+
+    button,
+    select,
+    input {
+      color: $theme-dark-color-secondary;
+
+      &:hover {
+        border-color: $theme-dark-color-secondary;
+      }
+    }
+
+    input[type=text] {
+      background-color: $theme-dark-color-secondary;
+
+      &:hover,
+      &:focus{
+        border-color: $theme-dark-color-secondary;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+  $header-height: 75px;
+
+  * {
+    font-size: 18px;
+  }
+
+  html {
+    body {
+      padding: 0;
+
+      .table-wrapper {
+        border-radius: 0;
+        height: calc(100% - #{$header-height});
+
+        table {
+          tbody {
+            tr {
+              height: 60px;
+
+              td {
+                &.labwork {
+                  .title {
+                    display: none;
+
+                    &.short {
+                      display: flex;
+                    }
+                  }
+                }
+
+                &.retired,
+                &.stats,
+                &.add, {
+                  padding: 5px 10px;
+                }
+
+                &.actions {
+                  .action {
+                    height: 50px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 510px) {
+  html {
+    body {
+      padding: 0;
+
+      .table-wrapper {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 485px) {
+
+  * {
+    font-size: 18px;
+  }
+
+  html {
+    body {
+      padding: 0;
+
+      .table-wrapper {
+        border-radius: 0;
+        height: calc(100% - #{$header-height});
+
+        table {
+          tbody {
+            tr {
+              height: 60px;
+
+              td {
+                &.number {
+                  display: none;
+
+                }
+
+                &.fullname {
+                  left: 0;
+
+                  .surname {
+                    margin-left: 10px;
+                  }
+
+                  .name {
+                    display: none;
+                  }
+
+                  .name-short {
+                    display: flex;
+                  }
+                }
+
+                &.stats {
+                  .markBtn {
+                    height: 50px;
+                    width: 50px;
+                  }
+                }
+
+                &.actions {
+                  .action {
+                    height: 50px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

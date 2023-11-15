@@ -1,0 +1,293 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("./assets/fonts/poppins/Poppins-Regular.ttf"); }
+#root {
+  height: 100%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 22px;
+  box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
+  transition: background-color 0.3s; }
+
+button, input, a, select {
+  cursor: pointer;
+  outline: none;
+  padding: 0 15px; }
+
+html {
+  height: 100%; }
+  html body {
+    padding: 35px;
+    height: 100%;
+    color: #222222;
+    background: linear-gradient(45deg, #b698f6 0%, #95c5ea 100%);
+    outline: none;
+    overflow: hidden; }
+    html body button,
+    html body select,
+    html body input {
+      background-color: transparent;
+      color: #222222;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      user-select: none;
+      border-radius: 7px;
+      transition: all 0.2s; }
+      html body button:hover,
+      html body select:hover,
+      html body input:hover {
+        border-color: #222222; }
+    html body input[type=text] {
+      width: 100px;
+      background-color: #e1e3e6;
+      padding: 0 10px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      border: 2px solid transparent; }
+      html body input[type=text]:hover, html body input[type=text]:focus {
+        border-color: #222222; }
+    html body select {
+      height: 100%;
+      max-height: 200px;
+      background: #ffffff;
+      color: #222222;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      border-radius: 7px;
+      text-align-last: center;
+      overflow-y: auto;
+      transition: all 0.2s; }
+      html body select:hover {
+        border-color: #222222; }
+      html body select:focus {
+        border-color: #222222; }
+  html.dark {
+    color: #e1e3e6;
+    background: linear-gradient(45deg, #0e1b25 0%, #2a454b 50%, #294861 100%); }
+    html.dark button,
+    html.dark select,
+    html.dark input {
+      color: #e1e3e6; }
+      html.dark button:hover,
+      html.dark select:hover,
+      html.dark input:hover {
+        border-color: #e1e3e6; }
+    html.dark input[type=text] {
+      background-color: #e1e3e6; }
+      html.dark input[type=text]:hover, html.dark input[type=text]:focus {
+        border-color: #e1e3e6; }
+
+@media screen and (max-width: 1150px) {
+  * {
+    font-size: 18px; }
+
+  html body {
+    padding: 0; }
+    html body .table-wrapper {
+      border-radius: 0;
+      height: calc(100% - 75px); }
+      html body .table-wrapper table tbody tr {
+        height: 60px; }
+        html body .table-wrapper table tbody tr td.labwork .title {
+          display: none; }
+          html body .table-wrapper table tbody tr td.labwork .title.short {
+            display: flex; }
+        html body .table-wrapper table tbody tr td.retired, html body .table-wrapper table tbody tr td.stats, html body .table-wrapper table tbody tr td.add {
+          padding: 5px 10px; }
+        html body .table-wrapper table tbody tr td.actions .action {
+          height: 50px; } }
+@media screen and (max-height: 510px) {
+  html body {
+    padding: 0; }
+    html body .table-wrapper {
+      border-radius: 0; } }
+@media screen and (max-width: 485px) {
+  * {
+    font-size: 18px; }
+
+  html body {
+    padding: 0; }
+    html body .table-wrapper {
+      border-radius: 0;
+      height: calc(100% - 90px); }
+      html body .table-wrapper table tbody tr {
+        height: 60px; }
+        html body .table-wrapper table tbody tr td.number {
+          display: none; }
+        html body .table-wrapper table tbody tr td.fullname {
+          left: 0; }
+          html body .table-wrapper table tbody tr td.fullname .surname {
+            margin-left: 10px; }
+          html body .table-wrapper table tbody tr td.fullname .name {
+            display: none; }
+          html body .table-wrapper table tbody tr td.fullname .name-short {
+            display: flex; }
+        html body .table-wrapper table tbody tr td.stats .markBtn {
+          height: 50px;
+          width: 50px; }
+        html body .table-wrapper table tbody tr td.actions .action {
+          height: 50px; } }
+header {
+  color: #222222;
+  height: 90px;
+  border-radius: 15px 15px 0 0;
+  background: #ffffff;
+  padding: 13px;
+  border-bottom: 2px solid #666666; }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%; }
+    header nav .filter {
+      justify-content: center;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      flex: 1; }
+    header nav .name,
+    header nav .select-discipline {
+      display: flex;
+      align-items: center;
+      height: 100%; }
+    header nav .name {
+      margin-left: 12px; }
+      header nav .name span {
+        font-size: 25px; }
+    header nav .select-discipline {
+      margin-right: auto;
+      margin-left: 12px; }
+    header nav .theme,
+    header nav .exit {
+      height: 100%;
+      max-width: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      background-color: #ffffff;
+      color: #222222;
+      border-radius: 7px;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      padding: 0;
+      transition: all 0.2s; }
+      header nav .theme:hover,
+      header nav .exit:hover {
+        border-color: #222222; }
+      header nav .theme img,
+      header nav .exit img {
+        height: 100%;
+        width: 100%; }
+      header nav .theme button,
+      header nav .exit button {
+        padding: 0; }
+    header nav .functions {
+      margin-left: 12px;
+      height: 100%;
+      display: flex;
+      justify-content: space-around; }
+      header nav .functions .export {
+        padding: 0 15px; }
+    header nav .options {
+      display: flex;
+      height: 100%;
+      justify-content: space-evenly;
+      width: auto;
+      margin-left: auto; }
+      header nav .options .filter {
+        height: 100%;
+        display: flex;
+        margin-left: 12px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center; }
+    header nav .exit {
+      display: flex;
+      order: 3;
+      padding: 0;
+      margin-left: 12px; }
+      header nav .exit button {
+        background-color: transparent;
+        border: 0;
+        height: 100%; }
+    header nav.mobile {
+      display: none;
+      justify-content: space-between; }
+
+@media screen and (max-width: 1150px) {
+  * {
+    font-size: 20px; }
+
+  html body {
+    padding: 0; }
+    html body header {
+      height: 90px;
+      padding: 5px;
+      border-radius: 0; }
+      html body header nav {
+        display: flex; }
+        html body header nav .options {
+          align-items: center;
+          width: 100%;
+          padding: 0;
+          flex-direction: row;
+          justify-content: space-evenly; }
+          html body header nav .options .filter {
+            width: 32%;
+            margin-left: 0;
+            min-width: auto; }
+            html body header nav .options .filter select {
+              font-size: 20px; }
+        html body header nav .theme,
+        html body header nav .exit {
+          position: fixed;
+          bottom: 10%;
+          height: 65px;
+          width: 65px; }
+        html body header nav .theme {
+          left: 10%; }
+        html body header nav .exit {
+          right: 10%; }
+        html body header nav .name span {
+          text-align: center;
+          font-size: 20px; } }
+@media screen and (max-width: 545px) {
+  * {
+    font-size: 18px; }
+
+  html body {
+    padding: 0; }
+    html body header {
+      height: 90px;
+      padding: 5px;
+      border-radius: 0; }
+      html body header nav {
+        display: flex;
+        justify-content: space-evenly; }
+        html body header nav .options {
+          padding: 0;
+          flex-direction: column; }
+          html body header nav .options .filter {
+            width: 100%; }
+            html body header nav .options .filter select {
+              height: 90%; }
+        html body header nav .name,
+        html body header nav .select-discipline {
+          margin-left: 0;
+          margin-right: 0;
+          flex: 1; }
+        html body header nav .select-discipline {
+          padding: 0 5px; }
+        html body header nav .name span {
+          text-align: center; } }
+@media screen and (max-height: 510px) {
+  html body {
+    padding: 0; }
+    html body header {
+      border-radius: 0; } }
+
+/*# sourceMappingURL=Header.css.map */

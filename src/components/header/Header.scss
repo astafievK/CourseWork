@@ -1,0 +1,252 @@
+@import "../../index.scss";
+
+header {
+  color: $theme-light-color-secondary;
+  height: $header-height;
+  border-radius: 15px 15px 0 0;
+  background: $theme-light-color-primary;
+  padding: 13px;
+  border-bottom: 2px solid #666666;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+
+    .filter{
+      justify-content: center;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      flex: 1;
+    }
+
+    .name,
+    .select-discipline{
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .name{
+      margin-left: 12px;
+
+      span{
+        font-size: 25px;
+      }
+    }
+
+    .select-discipline{
+      margin-right: auto;
+      margin-left: 12px;
+    }
+
+    .theme,
+    .exit {
+      height: 100%;
+      max-width: $header-height;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      background-color: $theme-light-color-primary;
+      color: $theme-light-color-secondary;
+      border-radius: 7px;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      padding: 0;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: $theme-light-color-secondary;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      button{
+        padding: 0;
+      }
+    }
+
+    .functions{
+      margin-left: 12px;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      .export{
+        padding: 0 15px;
+      }
+    }
+
+    .options {
+      display: flex;
+      height: 100%;
+      justify-content: space-evenly;
+      width: auto;
+      margin-left: auto;
+
+      .filter {
+        height: 100%;
+        display: flex;
+        margin-left: 12px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    .exit{
+      display: flex;
+      order: 3;
+      padding: 0;
+      margin-left: 12px;
+
+      button {
+        background-color: transparent;
+        border: 0;
+        height: 100%;
+      }
+    }
+
+    &.mobile{
+      display: none;
+      justify-content: space-between;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+  * {
+    font-size: 20px;
+  }
+
+  html {
+    body {
+      padding: 0;
+
+      header {
+        height: $header-height;
+        padding: 5px;
+        border-radius: 0;
+
+        nav {
+          display: flex;
+
+          .options {
+            align-items: center;
+            width: 100%;
+            padding: 0;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .filter {
+              width: 32%;
+              margin-left: 0;
+              min-width: auto;
+
+              select {
+                font-size: 20px;
+              }
+            }
+          }
+
+          .theme,
+          .exit {
+            position: fixed;
+            bottom: 10%;
+            height: 65px;
+            width: 65px;
+          }
+
+          .theme{
+            left: 10%;
+          }
+
+          .exit{
+            right: 10%;
+          }
+
+          .name{
+            span{
+              text-align: center;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 545px) {
+  * {
+    font-size: 18px;
+  }
+
+  html {
+    body {
+      padding: 0;
+
+      header {
+        height: $header-height;
+        padding: 5px;
+        border-radius: 0;
+
+        nav {
+          display: flex;
+          justify-content: space-evenly;
+
+          .options {
+            padding: 0;
+            flex-direction: column;
+
+            .filter {
+              width: 100%;
+
+              select {
+                height: 90%;
+              }
+            }
+          }
+
+          .name,
+          .select-discipline{
+            margin-left: 0;
+            margin-right: 0;
+            flex: 1;
+          }
+
+          .select-discipline{
+            padding: 0 5px;
+          }
+
+          .name{
+            span{
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-height: 510px) {
+  html {
+    body {
+      padding: 0;
+
+      header {
+        border-radius: 0;
+      }
+    }
+  }
+}
