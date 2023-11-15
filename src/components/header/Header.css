@@ -135,8 +135,7 @@ header {
   height: 90px;
   border-radius: 15px 15px 0 0;
   background: #ffffff;
-  padding: 13px;
-  border-bottom: 2px solid #666666; }
+  padding: 13px; }
   header nav {
     display: flex;
     justify-content: space-between;
