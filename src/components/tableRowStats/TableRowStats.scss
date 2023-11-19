@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../index";
 
 tr {
   display: flex;
@@ -10,15 +10,7 @@ tr {
     align-items: center;
     text-align: center;
     white-space: nowrap;
-
-    &.retired{
-      padding: 10px 12px;
-
-      button{
-        height: 100%;
-        padding: 0 15px;
-      }
-    }
+    padding: 10px 12px;
 
     &.labwork {
       position: sticky;
@@ -59,7 +51,6 @@ tr {
       z-index: 1;
       text-align: left;
       flex-shrink: 1;
-      padding: 0 15px 0 5px;
       border-right: 2px solid #666666;
 
       .name {
@@ -77,36 +68,11 @@ tr {
     }
 
     &.stats {
-      padding: 10px 12px;
       display: flex;
       justify-content: start;
       height: 100%;
       position: relative;
       font-size: 21px;
-
-      .markBtn {
-        margin-left: 12px;
-        font-weight: 700;
-        height: 100%;
-        aspect-ratio: 1 / 1;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:hover {
-          border-color: $theme-light-color-secondary;
-        }
-
-        &.passed{
-          border-color: green;
-          box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4);
-
-          &:hover{
-            border-color: $theme-light-color-secondary;
-          }
-        }
-      }
     }
 
     &.add{
@@ -134,7 +100,6 @@ tr {
     }
 
     &.actions {
-      padding: 10px 12px;
       display: flex;
       margin-left: auto;
       justify-content: center;
@@ -171,10 +136,6 @@ tr {
       }
     }
 
-    &.percentage{
-      margin-left: auto;
-    }
-
     &.total-mark,
     &.percentage {
       width: 67px;
@@ -186,9 +147,15 @@ tr {
       }
     }
 
+    &.percentage{
+      margin-left: auto;
+    }
+
     &.rectangle{
       transition: all 0.3s;
       margin-left: 20px;
+      padding: 0;
+
 
       &.good{
         box-shadow: 0 0 20px 5px rgba(0, 128, 0, 1);

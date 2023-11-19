@@ -1,13 +1,14 @@
 import './Table.css'
-import TableRow from "../tableRow/TableRow.jsx";
+import TableRowStats from "../TableRowStats/TableRowStats.jsx";
+import TableRowStudents from "../TableRowStudents/TableRowStudents.jsx";
+import TableRowDisciplines from "../TableRowDisciplines/TableRowDisciplines.jsx";
 
-// eslint-disable-next-line react/prop-types
-function Table({ role }) {
+function Table() {
     return(
         <div className="table-wrapper">
             <table id="table">
                 <tbody>
-                {<TableRow role={role}/>}
+                {<TableRowStats/>}
                 </tbody>
             </table>
         </div>

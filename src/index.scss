@@ -17,6 +17,24 @@ $media-size-large: 1024px;
 
 $header-height: 90px;
 
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $theme-light-color-secondary;
+  border-radius: 15px;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 #root{
   height: 100%;
 }
@@ -89,11 +107,8 @@ html {
       overflow-y: auto;
       transition: all 0.2s;
 
-      &:hover {
-        border-color: $theme-light-color-secondary;
-      }
-
-      &:focus {
+      &:hover,
+      &:focus{
         border-color: $theme-light-color-secondary;
       }
     }
@@ -135,43 +150,6 @@ html {
   html {
     body {
       padding: 0;
-
-      .table-wrapper {
-        border-radius: 0;
-        height: calc(100% - #{$header-height});
-
-        table {
-          tbody {
-            tr {
-              height: 60px;
-
-              td {
-                &.labwork {
-                  .title {
-                    display: none;
-
-                    &.short {
-                      display: flex;
-                    }
-                  }
-                }
-
-                &.retired,
-                &.stats,
-                &.add, {
-                  padding: 5px 10px;
-                }
-
-                &.actions {
-                  .action {
-                    height: 50px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -183,68 +161,6 @@ html {
 
       .table-wrapper {
         border-radius: 0;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 485px) {
-
-  * {
-    font-size: 18px;
-  }
-
-  html {
-    body {
-      padding: 0;
-
-      .table-wrapper {
-        border-radius: 0;
-        height: calc(100% - #{$header-height});
-
-        table {
-          tbody {
-            tr {
-              height: 60px;
-
-              td {
-                &.number {
-                  display: none;
-
-                }
-
-                &.fullname {
-                  left: 0;
-
-                  .surname {
-                    margin-left: 10px;
-                  }
-
-                  .name {
-                    display: none;
-                  }
-
-                  .name-short {
-                    display: flex;
-                  }
-                }
-
-                &.stats {
-                  .markBtn {
-                    height: 50px;
-                    width: 50px;
-                  }
-                }
-
-                &.actions {
-                  .action {
-                    height: 50px;
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     }
   }

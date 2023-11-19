@@ -1,9 +1,21 @@
-import './TableRow.css'
-import Mark from "../mark/Mark.jsx";
-import "../../data.js"
+import './TableRowStats.css'
+import ButtonMark from "../Mark/ButtonMark.jsx";
 import {data} from "../../data.js";
+import {useEffect, useState} from "react";
+import {fetchMarks} from "../../api/fetchMarks.js";
 
-function TableRow() {
+function TableRowStats() {
+    const [marks, setMarks] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const items = await fetchMarks()
+            setMarks(items)
+        }
+
+        fetchData()
+    }, []);
+
     return (
         data[0].role === 'Студент' ? (
             <tr>
@@ -12,11 +24,11 @@ function TableRow() {
                     <span className="title short">Лаб 1</span>
                 </td>
                 <td className="stats">
-                    <Mark role='Студент'/>
-                    <Mark role='Студент'/>
-                    <Mark role='Студент'/>
-                    <Mark role='Студент'/>
-                    <Mark role='Студент'/>
+                    {
+                        marks.map(mark =>
+                            mark.tasks.map((task, index) =>
+                                <ButtonMark key={index} counter={index+1} userId={mark.userId} workId={mark.workId} isPassed={mark.tasks[index]}/>))
+                    }
                 </td>
                 <td className="percentage">
                     <span>100%</span>
@@ -28,9 +40,6 @@ function TableRow() {
             </tr>
         ) : (
             <tr>
-                <td className="retired">
-                    <button>Отчилен(-а)</button>
-                </td>
                 <td className="number">
                     <span>1</span>
                 </td>
@@ -40,11 +49,11 @@ function TableRow() {
                     <span className="name-short">{data[0].surname.charAt(0)}</span>
                 </td>
                 <td className="stats">
-                    <Mark role='Преподаватель'/>
-                    <Mark role='Преподаватель'/>
-                    <Mark role='Преподаватель'/>
-                    <Mark role='Преподаватель'/>
-                    <Mark role='Преподаватель'/>
+                    {
+                        marks.map(mark =>
+                            mark.tasks.map((task, index) =>
+                                <ButtonMark key={index} counter={index+1} userId={mark.userId} workId={mark.workId} isPassed={mark.tasks[index]}/>))
+                    }
                 </td>
                 <td className="add">
                     <div className="add-form">
@@ -62,9 +71,9 @@ function TableRow() {
                         <img src="src/assets/images/cross.svg" alt="Отменить"/>
                     </button>
                     <input className="action numbers" type="text" name="numbers" placeholder="1-3,5"/>
-                        <button className="action selected">
-                            Выбранные
-                        </button>
+                    <button className="action selected">
+                        Выбранные
+                    </button>
                 </td>
                 <td className="percentage">
                     <span>100%</span>
@@ -78,4 +87,4 @@ function TableRow() {
     )
 }
 
-export default TableRow;
+export default TableRowStats

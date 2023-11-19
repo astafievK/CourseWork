@@ -1,6 +1,20 @@
 @font-face {
   font-family: Poppins-Regular;
   src: url("./assets/fonts/poppins/Poppins-Regular.ttf"); }
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px; }
+
+*::-webkit-scrollbar-track {
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #222222;
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent; }
+
 #root {
   height: 100%; }
 
@@ -60,9 +74,7 @@ html {
       text-align-last: center;
       overflow-y: auto;
       transition: all 0.2s; }
-      html body select:hover {
-        border-color: #222222; }
-      html body select:focus {
+      html body select:hover, html body select:focus {
         border-color: #222222; }
   html.dark {
     color: #e1e3e6;
@@ -85,51 +97,12 @@ html {
     font-size: 18px; }
 
   html body {
-    padding: 0; }
-    html body .table-wrapper {
-      border-radius: 0;
-      height: calc(100% - 75px); }
-      html body .table-wrapper table tbody tr {
-        height: 60px; }
-        html body .table-wrapper table tbody tr td.labwork .title {
-          display: none; }
-          html body .table-wrapper table tbody tr td.labwork .title.short {
-            display: flex; }
-        html body .table-wrapper table tbody tr td.retired, html body .table-wrapper table tbody tr td.stats, html body .table-wrapper table tbody tr td.add {
-          padding: 5px 10px; }
-        html body .table-wrapper table tbody tr td.actions .action {
-          height: 50px; } }
+    padding: 0; } }
 @media screen and (max-height: 510px) {
   html body {
     padding: 0; }
     html body .table-wrapper {
       border-radius: 0; } }
-@media screen and (max-width: 485px) {
-  * {
-    font-size: 18px; }
-
-  html body {
-    padding: 0; }
-    html body .table-wrapper {
-      border-radius: 0;
-      height: calc(100% - 90px); }
-      html body .table-wrapper table tbody tr {
-        height: 60px; }
-        html body .table-wrapper table tbody tr td.number {
-          display: none; }
-        html body .table-wrapper table tbody tr td.fullname {
-          left: 0; }
-          html body .table-wrapper table tbody tr td.fullname .surname {
-            margin-left: 10px; }
-          html body .table-wrapper table tbody tr td.fullname .name {
-            display: none; }
-          html body .table-wrapper table tbody tr td.fullname .name-short {
-            display: flex; }
-        html body .table-wrapper table tbody tr td.stats .markBtn {
-          height: 50px;
-          width: 50px; }
-        html body .table-wrapper table tbody tr td.actions .action {
-          height: 50px; } }
 tr {
   display: flex;
   height: 80px;
@@ -138,12 +111,8 @@ tr {
     display: flex;
     align-items: center;
     text-align: center;
-    white-space: nowrap; }
-    tr td.retired {
-      padding: 10px 12px; }
-      tr td.retired button {
-        height: 100%;
-        padding: 0 15px; }
+    white-space: nowrap;
+    padding: 10px 12px; }
     tr td.labwork {
       position: sticky;
       display: flex;
@@ -175,7 +144,6 @@ tr {
       z-index: 1;
       text-align: left;
       flex-shrink: 1;
-      padding: 0 15px 0 5px;
       border-right: 2px solid #666666; }
       tr td.fullname .name {
         margin-left: 5px; }
@@ -183,26 +151,11 @@ tr {
         display: none;
         margin-left: 5px; }
     tr td.stats {
-      padding: 10px 12px;
       display: flex;
       justify-content: start;
       height: 100%;
       position: relative;
       font-size: 21px; }
-      tr td.stats .markBtn {
-        margin-left: 12px;
-        font-weight: 700;
-        height: 100%;
-        aspect-ratio: 1 / 1; }
-        tr td.stats .markBtn:first-child {
-          margin-left: 0; }
-        tr td.stats .markBtn:hover {
-          border-color: #222222; }
-        tr td.stats .markBtn.passed {
-          border-color: green;
-          box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4); }
-          tr td.stats .markBtn.passed:hover {
-            border-color: #222222; }
     tr td.add {
       padding: 10px 12px 10px 0; }
       tr td.add .add-form {
@@ -218,7 +171,6 @@ tr {
             height: 100%;
             width: 100%; }
     tr td.actions {
-      padding: 10px 12px;
       display: flex;
       margin-left: auto;
       justify-content: center; }
@@ -240,17 +192,18 @@ tr {
         tr td.actions .action.selected {
           padding: 0 15px;
           border-radius: 0 7px 7px 0; }
-    tr td.percentage {
-      margin-left: auto; }
     tr td.total-mark, tr td.percentage {
       width: 67px;
       align-items: center;
       justify-content: center; }
       tr td.total-mark span, tr td.percentage span {
         font-weight: 700; }
+    tr td.percentage {
+      margin-left: auto; }
     tr td.rectangle {
       transition: all 0.3s;
-      margin-left: 20px; }
+      margin-left: 20px;
+      padding: 0; }
       tr td.rectangle.good {
         box-shadow: 0 0 20px 5px green; }
       tr td.rectangle.medium {
@@ -258,4 +211,4 @@ tr {
       tr td.rectangle.bad {
         box-shadow: 0 0 20px 5px red; }
 
-/*# sourceMappingURL=TableRow.css.map */
+/*# sourceMappingURL=TableRowStats.css.map */

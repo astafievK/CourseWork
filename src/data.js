@@ -1,4 +1,4 @@
 export const data = [
-    { role: 'Студент', surname: "Астафьев", name: "Кирилл", secondName: "Александрович", groupName: "ИСПП-01"},
-    { role: 'Преподаватель', surname: "Маломан", name: "Юлия", secondName: "Сергеевна", groupName: null}
+    { role: 'Преподаватель', surname: "Астафьев", name: "Кирилл", secondName: "Александрович", groupName: null},
+    { role: 'Студент', surname: "Астафьев", name: "Кирилл", secondName: "Александрович", groupName: "ИСПП-01"}
 ]

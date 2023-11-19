@@ -11,3 +11,7 @@ for (var i = 0; i < buttons.length; i++) {
         console.log(this.dataset);
     });
 }
+
+function switchMark(){
+
+}

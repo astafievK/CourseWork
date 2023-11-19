@@ -1,6 +1,20 @@
 @font-face {
   font-family: Poppins-Regular;
   src: url("./assets/fonts/poppins/Poppins-Regular.ttf"); }
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px; }
+
+*::-webkit-scrollbar-track {
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #222222;
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent; }
+
 #root {
   height: 100%; }
 
@@ -60,9 +74,7 @@ html {
       text-align-last: center;
       overflow-y: auto;
       transition: all 0.2s; }
-      html body select:hover {
-        border-color: #222222; }
-      html body select:focus {
+      html body select:hover, html body select:focus {
         border-color: #222222; }
   html.dark {
     color: #e1e3e6;
@@ -85,51 +97,12 @@ html {
     font-size: 18px; }
 
   html body {
-    padding: 0; }
-    html body .table-wrapper {
-      border-radius: 0;
-      height: calc(100% - 75px); }
-      html body .table-wrapper table tbody tr {
-        height: 60px; }
-        html body .table-wrapper table tbody tr td.labwork .title {
-          display: none; }
-          html body .table-wrapper table tbody tr td.labwork .title.short {
-            display: flex; }
-        html body .table-wrapper table tbody tr td.retired, html body .table-wrapper table tbody tr td.stats, html body .table-wrapper table tbody tr td.add {
-          padding: 5px 10px; }
-        html body .table-wrapper table tbody tr td.actions .action {
-          height: 50px; } }
+    padding: 0; } }
 @media screen and (max-height: 510px) {
   html body {
     padding: 0; }
     html body .table-wrapper {
       border-radius: 0; } }
-@media screen and (max-width: 485px) {
-  * {
-    font-size: 18px; }
-
-  html body {
-    padding: 0; }
-    html body .table-wrapper {
-      border-radius: 0;
-      height: calc(100% - 90px); }
-      html body .table-wrapper table tbody tr {
-        height: 60px; }
-        html body .table-wrapper table tbody tr td.number {
-          display: none; }
-        html body .table-wrapper table tbody tr td.fullname {
-          left: 0; }
-          html body .table-wrapper table tbody tr td.fullname .surname {
-            margin-left: 10px; }
-          html body .table-wrapper table tbody tr td.fullname .name {
-            display: none; }
-          html body .table-wrapper table tbody tr td.fullname .name-short {
-            display: flex; }
-        html body .table-wrapper table tbody tr td.stats .markBtn {
-          height: 50px;
-          width: 50px; }
-        html body .table-wrapper table tbody tr td.actions .action {
-          height: 50px; } }
 .table-wrapper {
   width: 100%;
   height: calc(100% - 90px);
