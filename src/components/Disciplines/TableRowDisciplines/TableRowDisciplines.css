@@ -1,0 +1,20 @@
+.group {
+  position: sticky;
+  background-color: #ffffff;
+  left: 0; }
+
+.disciplines {
+  overflow: auto; }
+  .disciplines .disciplineBtn {
+    margin-left: 12px; }
+    .disciplines .disciplineBtn.selected {
+      border-color: green; }
+      .disciplines .disciplineBtn.selected:hover {
+        border-color: #222222;
+        box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4); }
+    .disciplines .disciplineBtn:first-child {
+      margin-left: 0; }
+    .disciplines .disciplineBtn:hover {
+      box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.25); }
+
+/*# sourceMappingURL=TableRowDisciplines.css.map */

@@ -1,0 +1,110 @@
+.fullname {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  left: 45px;
+  z-index: 1;
+  text-align: left;
+  flex-shrink: 1;
+  border-right: 2px solid #666666; }
+  .fullname .name {
+    margin-left: 5px; }
+  .fullname .name-short {
+    display: none;
+    margin-left: 5px; }
+
+.labwork {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+  flex-shrink: 1;
+  padding: 0 15px;
+  border-right: 2px solid #666666; }
+  .labwork .title.short {
+    display: none; }
+
+.number {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  background-color: #ffffff;
+  left: 0;
+  z-index: 1;
+  width: 45px;
+  flex-shrink: 1; }
+
+.stats {
+  display: flex;
+  justify-content: start;
+  height: 100%;
+  position: relative;
+  font-size: 21px; }
+
+.add-task {
+  padding: 10px 12px 10px 0; }
+  .add-task .add-form {
+    display: flex;
+    height: 100%; }
+    .add-task .add-form .add-numbers {
+      border-radius: 7px 0 0 7px; }
+    .add-task .add-form button {
+      padding: 0;
+      aspect-ratio: 1 / 1;
+      border-radius: 0 7px 7px 0; }
+      .add-task .add-form button img {
+        height: 100%;
+        width: 100%; }
+
+.actions {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+  padding: 10px 12px 10px 0; }
+  .actions .action {
+    font-weight: 700;
+    border-radius: 7px;
+    height: 100%;
+    user-select: none;
+    transition: all 0.2s; }
+    .actions .action.all, .actions .action.nothing {
+      padding: 10px; }
+      .actions .action.all img, .actions .action.nothing img {
+        height: 100%; }
+    .actions .action.nothing {
+      margin-left: 5px; }
+    .actions .action.numbers {
+      margin-left: 12px;
+      border-radius: 7px 0 0 7px; }
+    .actions .action.selected {
+      padding: 0 15px;
+      border-radius: 0 7px 7px 0; }
+
+.total-mark,
+.percentage {
+  padding: 10px 12px 10px 0;
+  width: 67px;
+  align-items: center;
+  justify-content: center; }
+  .total-mark span,
+  .percentage span {
+    font-weight: 700; }
+
+.percentage {
+  margin-left: auto; }
+
+.rectangle {
+  padding: 0;
+  transition: all 0.3s; }
+  .rectangle.good {
+    box-shadow: 0 0 20px 5px green; }
+  .rectangle.medium {
+    box-shadow: 0 0 20px 5px orange; }
+  .rectangle.bad {
+    box-shadow: 0 0 20px 5px red; }
+
+/*# sourceMappingURL=TableRowMarks.css.map */

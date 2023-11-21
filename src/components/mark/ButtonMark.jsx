@@ -1,4 +1,4 @@
-import './ButtonMark.css'
+import "../../index.css"
 import {data} from "../../data.js";
 import classNames from "classnames";
 

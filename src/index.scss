@@ -1,25 +1,14 @@
+@import "./Variables.scss";
+
 @font-face {
   font-family: Poppins-Regular;
   src: url('./assets/fonts/poppins/Poppins-Regular.ttf');
 }
 
-$theme-light-color-background:  linear-gradient(45deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
-$theme-light-color-primary:     #ffffff;
-$theme-light-color-secondary:   #222222;
-
-$theme-dark-color-background:   linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
-$theme-dark-color-primary:      #222222;
-$theme-dark-color-secondary:    #e1e3e6;
-
-$media-size-small: 480px;
-$media-size-medium: 768px;
-$media-size-large: 1024px;
-
-$header-height: 90px;
 
 *::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 12px;
+  height: 12px;
 }
 
 *::-webkit-scrollbar-track {
@@ -49,10 +38,13 @@ $header-height: 90px;
   transition: background-color 0.3s;
 }
 
-button, input, a, select{
+button,
+input,
+a,
+select{
   cursor: pointer;
   outline: none;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 html {
@@ -112,28 +104,47 @@ html {
         border-color: $theme-light-color-secondary;
       }
     }
-  }
 
-  &.dark {
-    color: $theme-dark-color-secondary;
-    background: $theme-dark-color-background;
 
-    button,
-    select,
-    input {
-      color: $theme-dark-color-secondary;
+    .table-wrapper {
+      width: 100%;
+      height: calc(100% - #{$header-height});
+      border-radius: 0 0 15px 15px;
+      overflow: auto;
+      background: $theme-light-color-primary;
 
-      &:hover {
-        border-color: $theme-dark-color-secondary;
-      }
-    }
 
-    input[type=text] {
-      background-color: $theme-dark-color-secondary;
+      table {
+        height: 100%;
+        width: 100%;
+        background: $theme-light-color-primary;
+        color: $theme-light-color-secondary;
+        border-collapse: collapse;
 
-      &:hover,
-      &:focus{
-        border-color: $theme-dark-color-secondary;
+        tbody{
+          tr{
+            display: flex;
+            height: 80px;
+            border-bottom: 2px solid #666666;
+
+            td {
+              display: flex;
+              align-items: center;
+              text-align: center;
+              white-space: nowrap;
+              padding: 10px 12px;
+            }
+
+            &.add{
+              background: $theme-light-color-primary;
+              position: sticky;
+              left: 0;
+              top: 0;
+              z-index: 2;
+              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+            }
+          }
+        }
       }
     }
   }
@@ -144,12 +155,29 @@ html {
   $header-height: 75px;
 
   * {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   html {
     body {
       padding: 0;
+
+      header {
+        height: $header-height;
+        padding: 5px;
+        border-radius: 0;
+
+        nav {
+          display: flex;
+
+          .name{
+            span{
+              text-align: center;
+              font-size: 20px;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -159,7 +187,7 @@ html {
     body {
       padding: 0;
 
-      .table-wrapper {
+      header {
         border-radius: 0;
       }
     }
