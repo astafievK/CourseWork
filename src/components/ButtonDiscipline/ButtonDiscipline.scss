@@ -2,6 +2,7 @@
 
 .disciplineBtn{
   margin-left: 12px;
+  height: 100%;
 
   &.selected{
     border-color: green;
@@ -14,9 +15,5 @@
 
   &:first-child{
     margin-left: 0;
-  }
-
-  &:hover{
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.25);
   }
 }

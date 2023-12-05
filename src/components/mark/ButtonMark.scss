@@ -1,54 +1,87 @@
 @import "../../Variables";
 
-.markBtn {
-  margin-left: 12px;
-  font-weight: 700;
-  height: 100%;
-  aspect-ratio: 1 / 1;
 
-  &:first-child {
-    margin-left: 0;
-  }
+body{
+  .markBtn {
+    margin-left: 12px;
+    font-weight: 700;
+    height: 100%;
+    aspect-ratio: 1 / 1;
 
-  &:hover {
-    border-color: $theme-light-color-secondary;
-  }
+    &:first-child {
+      margin-left: 0;
+    }
 
-  &.passed{
-    border-color: green;
-
-    &:hover{
-      box-shadow: 0 3px 10px rgba(0, 128, 0, 0.4);
+    &:hover {
       border-color: $theme-light-color-secondary;
     }
-  }
 
-  &:hover{
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-  }
-}
+    &.passed{
+      border-color: green;
 
-.mark {
-  margin-left: 12px;
-  font-weight: 700;
-  cursor: default;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:hover{
-    border-color: rgba(102, 102, 102, 0.4) !important;
-  }
-
-  &.passed{
-    border-color: green;
-    box-shadow: 1px 5px 10px rgba(0, 128, 0, 0.4);
+      &:hover{
+        box-shadow: 0 3px 10px rgba(0, 128, 0, 0.4);
+        border-color: $theme-light-color-secondary;
+      }
+    }
 
     &:hover{
-      border-color: green !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .mark {
+    margin-left: 12px;
+    font-weight: 700;
+    cursor: default;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover{
+      border-color: rgba(102, 102, 102, 0.4) !important;
+    }
+
+    &.passed{
+      border-color: green;
+      box-shadow: 1px 5px 10px rgba(0, 128, 0, 0.4);
+
+      &:hover{
+        border-color: green !important;
+      }
+    }
+  }
+
+  &.dark{
+    .markBtn {
+      &:hover {
+        border-color: $theme-dark-color-secondary;
+      }
+
+      &.passed{
+        &:hover{
+          border-color: $theme-dark-color-secondary;
+        }
+      }
+    }
+
+    .mark {
+      &:hover{
+        border-color: rgba(102, 102, 102, 0.4) !important;
+      }
+
+      &.passed{
+        border-color: green;
+        box-shadow: 1px 5px 10px rgba(0, 128, 0, 0.4);
+
+        &:hover{
+          border-color: green !important;
+        }
+      }
     }
   }
 }
+

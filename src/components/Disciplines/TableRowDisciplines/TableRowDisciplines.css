@@ -1,20 +1,32 @@
-.group {
+@keyframes opacity-out {
+  0% {
+    opacity: 0.55; }
+  100% {
+    opacity: 1; } }
+@keyframes selected-out-light {
+  0% {
+    background-color: #ffffff;
+    color: #202020; }
+  100% {
+    background-color: #202020;
+    color: #ffffff; } }
+@keyframes selected-out-dark {
+  0% {
+    background-color: #202020;
+    color: #e1e3e6; }
+  100% {
+    background-color: #e1e3e6;
+    color: #202020; } }
+body td.group {
   position: sticky;
   background-color: #ffffff;
+  border-right: 2px solid #666666;
   left: 0; }
-
-.disciplines {
+body td.disciplines {
   overflow: auto; }
-  .disciplines .disciplineBtn {
-    margin-left: 12px; }
-    .disciplines .disciplineBtn.selected {
-      border-color: green; }
-      .disciplines .disciplineBtn.selected:hover {
-        border-color: #222222;
-        box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4); }
-    .disciplines .disciplineBtn:first-child {
-      margin-left: 0; }
-    .disciplines .disciplineBtn:hover {
-      box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.25); }
+body.dark .group {
+  background-color: #202020; }
+body.dark .disciplines .disciplineBtn.selected:hover {
+  border-color: #e1e3e6; }
 
 /*# sourceMappingURL=TableRowDisciplines.css.map */
