@@ -1,0 +1,21 @@
+@keyframes opacity-out {
+  0% {
+    opacity: 0.55; }
+  100% {
+    opacity: 1; } }
+@keyframes selected-out-light {
+  0% {
+    background-color: #ffffff;
+    color: #202020; }
+  100% {
+    background-color: #202020;
+    color: #ffffff; } }
+@keyframes selected-out-dark {
+  0% {
+    background-color: #202020;
+    color: #e1e3e6; }
+  100% {
+    background-color: #e1e3e6;
+    color: #202020; } }
+
+/*# sourceMappingURL=TableStudents.css.map */

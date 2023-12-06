@@ -1,0 +1,43 @@
+@keyframes opacity-out {
+  0% {
+    opacity: 0.55; }
+  100% {
+    opacity: 1; } }
+@keyframes selected-out-light {
+  0% {
+    background-color: #ffffff;
+    color: #202020; }
+  100% {
+    background-color: #202020;
+    color: #ffffff; } }
+@keyframes selected-out-dark {
+  0% {
+    background-color: #202020;
+    color: #e1e3e6; }
+  100% {
+    background-color: #e1e3e6;
+    color: #202020; } }
+body .fullName {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  text-align: left;
+  border-right: 2px solid #666666; }
+body .retiredBtn {
+  height: 100%; }
+body .input {
+  width: auto; }
+  body .input input[type=text] {
+    height: 100%;
+    width: auto; }
+body .addStudentBtn {
+  border-color: green;
+  height: 100%; }
+  body .addStudentBtn:hover {
+    border-color: green;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); }
+body.dark .fullName {
+  background-color: #202020; }
+
+/*# sourceMappingURL=TableRowStudents.css.map */

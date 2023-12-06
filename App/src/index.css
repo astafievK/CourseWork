@@ -1,0 +1,351 @@
+@keyframes opacity-out {
+  0% {
+    opacity: 0.55; }
+  100% {
+    opacity: 1; } }
+@keyframes selected-out-light {
+  0% {
+    background-color: #ffffff;
+    color: #202020; }
+  100% {
+    background-color: #202020;
+    color: #ffffff; } }
+@keyframes selected-out-dark {
+  0% {
+    background-color: #202020;
+    color: #e1e3e6; }
+  100% {
+    background-color: #e1e3e6;
+    color: #202020; } }
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("./assets/fonts/poppins/Poppins-Regular.ttf"); }
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px; }
+
+*::-webkit-scrollbar-track {
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #202020;
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent; }
+
+#root {
+  height: 100%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 22px;
+  box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
+  transition: background-color 0.3s; }
+
+button,
+input,
+a,
+select {
+  cursor: pointer;
+  outline: none;
+  padding: 0 10px; }
+
+a {
+  text-decoration: none;
+  color: #202020; }
+
+html {
+  height: 100%; }
+  html body {
+    height: 100%;
+    background: #ffffff;
+    color: #202020;
+    outline: none;
+    overflow: hidden; }
+    html body button,
+    html body select,
+    html body input {
+      background-color: transparent;
+      color: #202020;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      user-select: none;
+      border-radius: 7px;
+      transition: all 0.2s; }
+      html body button:hover, html body button:focus,
+      html body select:hover,
+      html body select:focus,
+      html body input:hover,
+      html body input:focus {
+        border-color: #202020; }
+    html body input[type=text],
+    html body input[type=password] {
+      width: 100px;
+      background-color: #e1e3e6;
+      padding: 0 10px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      border: 2px solid transparent; }
+      html body input[type=text]:hover, html body input[type=text]:focus,
+      html body input[type=password]:hover,
+      html body input[type=password]:focus {
+        border-color: #202020; }
+    html body select {
+      height: 100%;
+      max-height: 200px;
+      background: #ffffff;
+      color: #202020;
+      border: 2px solid rgba(102, 102, 102, 0.4);
+      border-radius: 7px;
+      text-align-last: center;
+      overflow-y: auto;
+      transition: all 0.2s; }
+      html body select:hover, html body select:focus {
+        border-color: #202020; }
+      html body select:focus {
+        background-color: #202020;
+        color: #ffffff; }
+    html body header {
+      display: flex;
+      max-height: 80px;
+      flex-direction: row;
+      color: #202020;
+      background: #ffffff;
+      padding: 12px;
+      border-bottom: 2px solid #666666;
+      overflow: auto; }
+      html body header button,
+      html body header input {
+        height: auto; }
+      html body header .exit {
+        margin-left: 12px;
+        border-color: red;
+        color: red;
+        transition: all 0.3s; }
+        html body header .exit:hover {
+          border-color: red !important;
+          background-color: red;
+          color: #FFFFFF; }
+      html body header .functions {
+        display: flex;
+        flex-direction: row; }
+        html body header .functions .function {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          justify-content: center;
+          border-radius: 7px;
+          border: 2px solid rgba(102, 102, 102, 0.4);
+          color: #202020;
+          padding: 12px 10px;
+          transition: all 0.2s; }
+          html body header .functions .function.selected {
+            border-color: #202020;
+            animation: selected-out-light 0.2s forwards; }
+          html body header .functions .function:hover {
+            border-color: #202020; }
+          html body header .functions .function:not(:first-child) {
+            margin-left: 12px; }
+        html body header .functions .export {
+          padding: 0 10px; }
+      html body header .filters {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto; }
+        html body header .filters .filter {
+          justify-content: center;
+          display: flex;
+          height: 100%;
+          align-items: center;
+          margin-left: 12px;
+          flex-direction: column;
+          text-align: center; }
+      html body header .name span {
+        font-size: 25px; }
+      html body header::-webkit-scrollbar {
+        width: 6px;
+        height: 6px; }
+    html body .table-wrapper {
+      height: calc(100% - 80px);
+      width: 100%;
+      overflow: auto;
+      background: #ffffff;
+      animation: opacity-out;
+      animation-duration: 0.5s; }
+      html body .table-wrapper table {
+        height: 100%;
+        width: 100%;
+        background: #ffffff;
+        color: #202020;
+        border-collapse: collapse; }
+        html body .table-wrapper table tbody tr {
+          display: flex;
+          height: 80px;
+          border-bottom: 2px solid #666666; }
+          html body .table-wrapper table tbody tr td {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            white-space: nowrap;
+            padding: 10px 12px; }
+            html body .table-wrapper table tbody tr td.stats .markBtn,
+            html body .table-wrapper table tbody tr td.stats .mark {
+              height: 100%;
+              font-weight: 700; }
+            html body .table-wrapper table tbody tr td.disciplines .disciplineBtn {
+              height: 100%;
+              font-weight: 700; }
+            html body .table-wrapper table tbody tr td.stats .markBtn,
+            html body .table-wrapper table tbody tr td.stats .mark {
+              height: 100%;
+              font-weight: 700; }
+            html body .table-wrapper table tbody tr td .retiredBtn {
+              height: 100%;
+              font-weight: 700; }
+          html body .table-wrapper table tbody tr.add {
+            background: #ffffff;
+            position: sticky;
+            left: 0;
+            top: 0;
+            z-index: 2; }
+            html body .table-wrapper table tbody tr.add.work .work-title .work-title__input {
+              height: 100%;
+              width: auto; }
+            html body .table-wrapper table tbody tr.add.work .marks__title {
+              margin-left: auto; }
+            html body .table-wrapper table tbody tr.add.work .marks .mark {
+              margin-left: 12px;
+              aspect-ratio: 1/1;
+              border-radius: 7px; }
+              html body .table-wrapper table tbody tr.add.work .marks .mark input {
+                border-radius: 7px;
+                width: 100%;
+                height: 100%;
+                border: 2px solid transparent; }
+                html body .table-wrapper table tbody tr.add.work .marks .mark input:hover, html body .table-wrapper table tbody tr.add.work .marks .mark input:focus {
+                  border: 2px solid #202020; }
+              html body .table-wrapper table tbody tr.add.work .marks .mark:first-child {
+                margin-left: 0; }
+            html body .table-wrapper table tbody tr.add.work .add-task__title {
+              margin-left: auto; }
+            html body .table-wrapper table tbody tr.add.work .add-task__numbers {
+              height: 100%;
+              border-radius: 7px 0 0 7px; }
+            html body .table-wrapper table tbody tr.add.work .add-work .add-work__button {
+              height: 100%; }
+            html body .table-wrapper table tbody tr.add.work .add-task {
+              padding: 10px 12px;
+              display: flex;
+              height: 100%; }
+              html body .table-wrapper table tbody tr.add.work .add-task .add-task__add {
+                height: 100%;
+                padding: 0;
+                aspect-ratio: 1 / 1;
+                border-radius: 0 7px 7px 0; }
+                html body .table-wrapper table tbody tr.add.work .add-task .add-task__add .add-task__img {
+                  height: 100%;
+                  width: 100%; }
+              html body .table-wrapper table tbody tr.add.work .add-task:focus-within button {
+                border-color: #202020; }
+            html body .table-wrapper table tbody tr.add.student .student-name input[type=text],
+            html body .table-wrapper table tbody tr.add.student .student-surname input[type=text] {
+              height: 100%;
+              width: auto; }
+            html body .table-wrapper table tbody tr.add.student .add-student .add-student__button {
+              height: 100%; }
+            html body .table-wrapper table tbody tr.add.student .add-group__title {
+              margin-left: auto; }
+            html body .table-wrapper table tbody tr.add.student .group-name input[type=text] {
+              height: 100%;
+              width: auto; }
+            html body .table-wrapper table tbody tr.add.student .add-group .add-group__button {
+              height: 100%; }
+            html body .table-wrapper table tbody tr.add.discipline .discipline-name input[type=text] {
+              height: 100%;
+              width: auto; }
+            html body .table-wrapper table tbody tr.add.discipline .add-discipline .add-discipline__button {
+              height: 100%; }
+    html body.dark {
+      color: #e1e3e6;
+      background: #202020; }
+      html body.dark *::-webkit-scrollbar-thumb {
+        background-color: #e1e3e6; }
+      html body.dark button,
+      html body.dark select,
+      html body.dark input {
+        color: #e1e3e6; }
+        html body.dark button:hover, html body.dark button:focus,
+        html body.dark select:hover,
+        html body.dark select:focus,
+        html body.dark input:hover,
+        html body.dark input:focus {
+          border-color: #e1e3e6; }
+      html body.dark input[type=text],
+      html body.dark input[type=password] {
+        background-color: #e1e3e6;
+        color: #202020; }
+        html body.dark input[type=text]:focus,
+        html body.dark input[type=password]:focus {
+          color: #e1e3e6;
+          background-color: #202020;
+          border-color: #e1e3e6; }
+      html body.dark select {
+        background: #202020;
+        color: #e1e3e6; }
+        html body.dark select:hover, html body.dark select:focus {
+          border-color: #e1e3e6; }
+        html body.dark select:focus {
+          background-color: #e1e3e6;
+          color: #202020; }
+      html body.dark header {
+        color: #e1e3e6;
+        background: #202020; }
+        html body.dark header .functions .function {
+          color: #e1e3e6; }
+          html body.dark header .functions .function.selected {
+            border-color: #e1e3e6;
+            animation: selected-out-dark 0.2s forwards; }
+          html body.dark header .functions .function:hover {
+            border-color: #e1e3e6; }
+        html body.dark header .marks .mark input:hover, html body.dark header .marks .mark input:focus {
+          border: 2px solid #e1e3e6; }
+      html body.dark .table-wrapper {
+        background: #202020; }
+        html body.dark .table-wrapper table {
+          background: #202020;
+          color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr {
+            display: flex;
+            height: 80px;
+            border-bottom: 2px solid #666666; }
+            html body.dark .table-wrapper table tbody tr.add {
+              background: #202020; }
+              html body.dark .table-wrapper table tbody tr.add .add-task:focus-within button {
+                border-color: #e1e3e6; }
+
+@media screen and (max-width: 1150px) {
+  * {
+    font-size: 20px; }
+
+  html body {
+    padding: 0; }
+    html body header {
+      height: 75px;
+      padding: 5px;
+      border-radius: 0; }
+      html body header nav {
+        display: flex; }
+        html body header nav .name span {
+          text-align: center;
+          font-size: 20px; } }
+@media screen and (max-height: 510px) {
+  html body {
+    padding: 0; }
+    html body header {
+      border-radius: 0; } }
+
+/*# sourceMappingURL=index.css.map */
