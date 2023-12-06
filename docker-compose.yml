@@ -19,8 +19,8 @@ services:
     restart: always
 
   api:
-    container_name: KirillApi
-    image: kirill-api
+    container_name: Api
+    image: kirill_api
     build:
       network: host
       context: .
@@ -41,7 +41,7 @@ services:
     image: react
     build:
       network: host
-      context: ./Coursework
+      context: ./ReactApp
       dockerfile: Dockerfile
     depends_on:
       - api
