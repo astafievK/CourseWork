@@ -1,8 +1,13 @@
 import "./ButtonDiscipline.css"
 import classNames from "classnames";
+import React from "react";
 
-function ButtonDiscipline (props) {
-    const {disciplineName} = props;
+interface ButtonDisciplineProps {
+    disciplineName: string;
+}
+
+const ButtonDiscipline: React.FC<ButtonDisciplineProps> = (props) => {
+    const { disciplineName } = props
 
     return(
         <button className={classNames({disciplineBtn: true})}>{disciplineName}</button>

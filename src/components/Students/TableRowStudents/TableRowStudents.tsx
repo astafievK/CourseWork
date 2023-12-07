@@ -1,6 +1,5 @@
 import "./TableRowStudents.css"
 import "../../../data.ts"
-import ButtonDiscipline from "../../ButtonDiscipline/ButtonDiscipline.tsx";
 
 function TableRowStudents() {
     return (
