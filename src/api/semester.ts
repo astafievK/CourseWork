@@ -1,8 +1,8 @@
-import {api} from "./api.ts";
+import {baseApi} from "./api.ts";
 
-export const semesterApi = api.injectEndpoints({
+export const semesterApi = baseApi.injectEndpoints({
     endpoints: builder => ({
-        getSemesters: builder.query<Semester[], void>({
+        getSemesters: builder.query<ISemester[], void>({
             query: () => ({
                 url: `Semester`,
                 method: "GET",

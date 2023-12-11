@@ -1,4 +1,4 @@
-interface WorkMark{
-    mark: Mark
+interface IWorkMark {
+    mark: IMark
     taskCount: number
 }

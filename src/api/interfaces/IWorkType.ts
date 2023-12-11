@@ -1,4 +1,4 @@
-interface WorkType{
+interface IWorkType {
     id: number
     name: string
 }

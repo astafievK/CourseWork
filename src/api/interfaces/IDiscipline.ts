@@ -1,4 +1,4 @@
-interface Discipline{
+interface IDiscipline {
     id: number;
     name: string
 }

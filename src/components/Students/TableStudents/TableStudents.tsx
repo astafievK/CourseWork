@@ -1,13 +1,15 @@
-import "../../../index.css"
 import TableRowStudents from "../TableRowStudents/TableRowStudents.tsx";
 import AddStudent from "../../AddStudent/AddStudent.tsx";
+import {userInfo} from "../../../userInfo.ts";
 
 function TableStudents() {
     return(
         <div className="table-wrapper">
             <table id="table">
                 <tbody>
-                <AddStudent/>
+                {
+                    userInfo[0].role === 'Преподаватель' ? <AddStudent/> : ''
+                }
                 {<TableRowStudents/>}
                 {<TableRowStudents/>}
                 {<TableRowStudents/>}

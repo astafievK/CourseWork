@@ -1,15 +1,15 @@
-import {api} from "./api.ts";
+import {baseApi} from "./api.ts";
 import {buildUrlArguments} from "../utils/buildUrlArgument.ts";
 
-export const disciplineApi = api.injectEndpoints({
+export const disciplineApi = baseApi.injectEndpoints({
     endpoints: builder => ({
-        updateDiscipline: builder.query<Discipline[], {name: number} | void>({
+        updateDiscipline: builder.query<IDiscipline[], {name: number} | void>({
             query: query => ({
                 url: `Discipline?${buildUrlArguments(query ?? {})}`,
                 method: "PUT",
             }),
         }),
-        getDisciplines: builder.query<Discipline[], void>({
+        getDisciplines: builder.query<IDiscipline[], void>({
             query: () => ({
                 url: `Discipline`,
                 method: "GET",

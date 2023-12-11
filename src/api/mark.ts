@@ -1,8 +1,8 @@
-import {api} from "./api.ts";
+import {baseApi} from "./api.ts";
 
-export const markApi = api.injectEndpoints({
+export const markApi = baseApi.injectEndpoints({
     endpoints: builder => ({
-        getMarks: builder.query<Discipline[], void>({
+        getMarks: builder.query<IDiscipline[], void>({
             query: () => ({
                 url: `Mark`,
                 method: "GET",

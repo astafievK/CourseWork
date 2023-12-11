@@ -1,3 +1,3 @@
-interface Course{
+interface ICourse{
     id: number
 }

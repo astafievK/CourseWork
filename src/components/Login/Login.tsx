@@ -1,37 +1,62 @@
-import "./Login.css"
+import React from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {Link, Navigate} from "react-router-dom";
+import {useLoginMutation} from "../../api/user.ts";
+import {useTypedSelector} from "../../store/hooks/redux.ts";
 
-function Login () {
+interface LoginFormProps {
+
+}
+
+const Login: React.FC<LoginFormProps> = () => {
+    const {handleSubmit, register} = useForm<ILoginCommand>()
+
+    const onSubmit: SubmitHandler<ILoginCommand> = async data => {
+        await login(data)
+    }
+
+    const [login] = useLoginMutation()
+
+    const {user} = useTypedSelector(state => state.auth)
+
+
     return (
-        <div className="login-window">
-            <div className="promo">
+        <div className="auth-window">
+            {
+                user && <Navigate to='/stats'/>
+            }
+            <div className="auth-promo">
                 <h1>Система контроля работ студентов</h1>
                 <h2>Узнайте про все свои долги по работам в одном месте</h2>
             </div>
 
-            <form className="auth">
+            <form className="auth" onSubmit={handleSubmit(onSubmit)}>
                 <span className="subtitle">Вход</span>
                 <input
-                    id="loginInput"
+                    className="auth-login"
                     type="text"
-                    name="login"
-                    placeholder="Логин"/>
+                    {...register("login", {
+                        required: "Required",
+                    })
+                    }
+                    placeholder="Логин"
+                />
                 <input
-                    id="passwordInput"
+                    className="auth-password"
                     type="password"
-                    name="password"
-                    placeholder="Пароль"/>
-                <input
-                    id="enterInput"
-                    type="submit"
-                    name="enter"
-                    value="Авторизоваться"/>
-                <input
-                    id="forgotPassword"
-                    type="submit"
-                    name="forgotPassword"
-                    value="восстановить пароль"/>
+                    {...register("password", {
+                        required: "Required",
+                    })
+                    }
+                    placeholder="Пароль"
+                />
+
+                <button className="auth-submit" type="submit">Войти</button>
+
+                <Link className="auth-forgot" to="/forgot">восстановить аккаунт</Link>
             </form>
         </div>
-    )
-}
+    );
+};
+
 export default Login;

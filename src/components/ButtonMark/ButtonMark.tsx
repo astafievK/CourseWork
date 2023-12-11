@@ -2,7 +2,7 @@ import React from "react";
 import "./ButtonMark.css";
 
 import classNames from "classnames";
-import {data} from "../../data.ts";
+import {userInfo} from "../../userInfo.ts";
 
 interface ButtonMarkProps {
     counter: number;
@@ -14,7 +14,7 @@ interface ButtonMarkProps {
 const ButtonMark: React.FC<ButtonMarkProps> = (props) => {
     const { counter, userId, workId, isPassed } = props;
 
-    if (data[0].role === "Студент") {
+    if (userInfo[0].role === "Студент") {
         return (
             <button
                 className={classNames({ mark: true }, { passed: isPassed === 1 })}

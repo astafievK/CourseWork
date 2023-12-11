@@ -1,7 +1,7 @@
-interface Group {
+interface IGroup {
     id: number;
     name: string;
-    course: Course;
-    semester: Semester;
-    disciplines: Discipline
+    course: ICourse;
+    semester: ISemester;
+    disciplines: IDiscipline
 }

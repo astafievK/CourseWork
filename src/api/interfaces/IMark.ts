@@ -1,4 +1,4 @@
-interface Mark{
+interface IMark {
     id: number
     value: number
 }

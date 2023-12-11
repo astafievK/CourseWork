@@ -1,7 +1,7 @@
-interface Work{
+interface IWork {
     id: number
     name: string
-    workType: WorkType
-    tasks: Task[]
-    workMarks: WorkMark[]
+    workType: IWorkType
+    tasks: ITask[]
+    workMarks: IWorkMark[]
 }

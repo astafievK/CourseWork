@@ -9,6 +9,8 @@ import StaffHeaderDisciplines from './components/StaffHeaderDisciplines/StaffHea
 import Login from "./components/Login/Login.jsx";
 import { Provider } from 'react-redux';
 import {store} from "./store/store.ts";
+import {userInfo} from "./userInfo.ts";
+import StudentHeaderStats from "./components/StudentHeaderStats/StudentHeaderStats.tsx";
 
 const Root = () => {
     return (
@@ -21,14 +23,14 @@ const Root = () => {
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<Root />}>
-            <Route path="login" element={
+            <Route path="" element={
                 <>
                     <Login/>
                 </>
             } />
             <Route path="stats" element={
                 <>
-                    <StaffHeaderStats/>
+                    {userInfo[0].role === 'Студент' ? <StudentHeaderStats/> : <StaffHeaderStats/>}
                     <TableMarks/>
                 </>
             } />
@@ -49,7 +51,6 @@ const router = createBrowserRouter(
 
 
 function App() {
-
   return (
   <Provider store={store}>
       <RouterProvider router={router} />

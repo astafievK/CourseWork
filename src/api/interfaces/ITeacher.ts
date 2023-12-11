@@ -1,4 +1,4 @@
-interface Teacher{
+interface ITeacher {
     id: number
-    user: User
+    user: IUser
 }

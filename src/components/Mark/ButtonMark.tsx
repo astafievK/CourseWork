@@ -1,5 +1,5 @@
 import "./ButtonMark.css";
-import { data } from "../../data";
+import { userInfo } from "../../userInfo.ts";
 import classNames from "classnames";
 
 interface ButtonMarkProps {
@@ -12,7 +12,7 @@ interface ButtonMarkProps {
 function ButtonMark(props: ButtonMarkProps) {
     const {counter, userId, workId, isPassed} = props;
 
-    if (data[0].role === 'Студент') {
+    if (userInfo[0].role === 'Студент') {
         return (
             <button className={classNames({mark: true}, {passed: isPassed === 1})}>{counter}</button>
         );

@@ -1,3 +1,3 @@
-interface Semester{
+interface ISemester {
     id: number
 }

@@ -1,11 +1,7 @@
 import React from "react";
 import SelectWorkType from "../SelectWorkType/SelectWorkType.tsx";
 
-type AddWorkProps = {
-
-};
-
-const AddWork: React.FC<AddWorkProps> = ({  }) => {
+const AddWork: React.FC = () => {
     return(
         <tr className="add work">
             <td className="add-work__title">Добавить работу</td>
@@ -20,19 +16,19 @@ const AddWork: React.FC<AddWorkProps> = ({  }) => {
             <td className="marks__title">Шаблон</td>
             <td className="marks">
                 <div className="mark cool">
-                    <input type="text" placeholder="5"/>
+                    <input type="text" maxLength={1} placeholder="5"/>
                 </div>
                 <div className="mark good">
-                    <input type="text" placeholder="4"/>
+                    <input type="text" maxLength={1} placeholder="4"/>
                 </div>
                 <div className="mark bad">
-                    <input type="text" placeholder="3"/>
+                    <input type="text" maxLength={1} placeholder="3"/>
                 </div>
             </td>
 
             <td className="add-task__title">Добавить задания</td>
             <td className="add-task">
-                <input className="add-task__numbers" type="text" name="numbers" placeholder="3"/>
+                <input className="add-task__numbers" type="text" maxLength={2}  name="numbers" placeholder="3"/>
                 <button className="add-task__add">
                     <img className="add-task__img" src="src/assets/images/add_light.svg" alt="Добавить задание"/>
                 </button>

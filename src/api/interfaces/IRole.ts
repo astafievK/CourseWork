@@ -1,4 +1,4 @@
-interface Role{
+interface IRole {
     id: number
     name: string
 }

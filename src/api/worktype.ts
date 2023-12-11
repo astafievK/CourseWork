@@ -1,8 +1,8 @@
-import {api} from "./api.ts";
+import {baseApi} from "./api.ts";
 
-export const workTypeApi = api.injectEndpoints({
+export const workTypeApi = baseApi.injectEndpoints({
     endpoints: builder => ({
-        getWorkTypes: builder.query<WorkType[], void>({
+        getWorkTypes: builder.query<IWorkType[], void>({
             query: () => ({
                 url: `WorkType`,
                 method: "GET",

@@ -1,10 +1,10 @@
 import "./TableRowMarks.css"
 import ButtonMark from "../../ButtonMark/ButtonMark.tsx";
-import {data} from "../../../data.ts";
+import {userInfo} from "../../../userInfo.ts";
 
 function TableRowMarks() {
     return (
-        data[0].role === 'Студент' ? (
+        userInfo[0].role === 'Студент' ? (
             <tr>
                 <td className="labwork">
                     <span className="title">Лабораторная работа 1</span>
@@ -27,9 +27,9 @@ function TableRowMarks() {
                     <span>1</span>
                 </td>
                 <td className="fullname">
-                    <span className="surname">{data[0].surname}</span>
-                    <span className="name">{data[0].name}</span>
-                    <span className="name-short">{data[0].surname.charAt(0)}</span>
+                    <span className="surname">{userInfo[0].surname}</span>
+                    <span className="name">{userInfo[0].name}</span>
+                    <span className="name-short">{userInfo[0].surname.charAt(0)}</span>
                 </td>
                 <td className="stats">
                     <ButtonMark counter={0} userId={0} workId={0} isPassed={0}/>

@@ -1,5 +1,5 @@
 import "./TableRowStudents.css"
-import "../../../data.ts"
+import "../../../userInfo.ts"
 
 function TableRowStudents() {
     return (

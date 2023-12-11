@@ -9,7 +9,7 @@ function SelectCourse(){
                 {
                     data?.map((course) => (
                     <option key={course.id}>{course.id} курс</option>
-                ))
+                    ))
                 }
             </select>
         </div>

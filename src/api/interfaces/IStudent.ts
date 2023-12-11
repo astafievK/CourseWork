@@ -1,4 +1,4 @@
-interface Student{
+interface IStudent {
     id: number
     isRetired: boolean
     

@@ -1,4 +1,3 @@
-import "./StaffHeaderDisciplines.css"
 import { Link } from 'react-router-dom'
 import ExitButton from "../ExitButton/ExitButton.tsx";
 import SelectSemester from "../SelectSemester/SelectSemester.tsx";

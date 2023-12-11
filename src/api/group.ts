@@ -1,21 +1,21 @@
-import {api} from "./api.ts";
+import {baseApi} from "./api.ts";
 import {buildUrlArguments} from "../utils/buildUrlArgument.ts";
 
-export const groupApi = api.injectEndpoints({
+export const groupApi = baseApi.injectEndpoints({
     endpoints: builder => ({
-        getGroups: builder.query<Group[], void>({
+        getGroups: builder.query<IGroup[], void>({
             query: () => ({
                 url: `Group`,
                 method: "GET",
             }),
         }),
-        getDisciplines: builder.query<Discipline, { idGroup: number }>({
+        getDisciplines: builder.query<IDiscipline, { idGroup: number }>({
             query: query => ({
                 url: `Group/${query.idGroup}`,
                 method: "GET",
             }),
         }),
-        getWorks: builder.query<Work, {idGroup: number, idDiscipline: number}>({
+        getWorks: builder.query<IWork, {idGroup: number, idDiscipline: number}>({
             query: query => ({
                 url: `Group/${query.idGroup}/works?${buildUrlArguments(query)}`,
                 method: "GET",

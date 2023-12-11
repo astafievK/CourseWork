@@ -72,13 +72,14 @@ html {
       transition: all 0.2s;
 
       &:hover,
-      &:focus{
+      &:focus {
         border-color: $theme-light-color-secondary;
+        transition: all 0.2s;
       }
     }
 
     input[type=text],
-    input[type=password]{
+    input[type=password] {
       width: 100px;
       background-color: $theme-dark-color-secondary;
       padding: 0 10px;
@@ -88,12 +89,12 @@ html {
       border: 2px solid transparent;
 
       &:hover,
-      &:focus{
+      &:focus {
         border-color: $theme-light-color-secondary;
       }
     }
 
-    select{
+    select {
       height: 100%;
       max-height: 200px;
       background: $theme-light-color-primary;
@@ -105,11 +106,11 @@ html {
       transition: all 0.2s;
 
       &:hover,
-      &:focus{
+      &:focus {
         border-color: $theme-light-color-secondary;
       }
 
-      &:focus{
+      &:focus {
         background-color: $theme-light-color-secondary;
         color: $theme-light-color-primary;
       }
@@ -117,7 +118,7 @@ html {
 
     header {
       display: flex;
-      max-height: 80px;
+      min-height: $header-height;
       flex-direction: row;
       color: $theme-light-color-secondary;
       background: $theme-light-color-primary;
@@ -126,20 +127,23 @@ html {
       overflow: auto;
 
       button,
-      input{
+      input {
         height: auto;
       }
 
-      .exit {
-        margin-left: 12px;
-        border-color: red;
-        color: red;
-        transition: all 0.3s;
+      .info{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        white-space: nowrap;
 
-        &:hover {
-          border-color: red !important;
-          background-color: red;
-          color: #FFFFFF;
+        .info-item{
+          font-size: 26px;
+
+          &:not(:first-child){
+            margin-left: 8px;
+          }
         }
       }
 
@@ -163,11 +167,11 @@ html {
             animation: selected-out-light 0.2s forwards;
           }
 
-          &:hover{
+          &:hover {
             border-color: $theme-light-color-secondary;
           }
 
-          &:not(:first-child){
+          &:not(:first-child) {
             margin-left: 12px;
           }
         }
@@ -193,9 +197,16 @@ html {
         }
       }
 
-      .name {
-        span {
-          font-size: 25px;
+      .exit {
+        margin-left: 12px;
+        border-color: red;
+        color: red;
+        transition: all 0.3s;
+
+        &:hover {
+          border-color: red !important;
+          background-color: red;
+          color: #FFFFFF;
         }
       }
 
@@ -205,10 +216,99 @@ html {
       }
     }
 
+    .auth-window {
+      display: flex;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 800px;
+      background: #292929;
+      border-radius: 7px;
+      overflow: hidden;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 60px 33px;
+
+      .auth-promo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        h1, h2 {
+          text-align: center;
+          font-size: 35px;
+          font-weight: 700;
+        }
+
+        h1 {
+          font-size: 35px;
+          color: #e1e3e6;
+        }
+
+        h2 {
+          font-size: 20px;
+          line-height: 1.1;
+          color: #afafaf;
+        }
+      }
+
+      .auth {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
+        width: 50%;
+
+        .subtitle {
+          color: #e1e3e6;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          font-size: 35px;
+          font-weight: 700;
+        }
+
+        .auth-login,
+        .auth-password,
+        .auth-submit{
+          width: 80%;
+          padding: 5px 12px;
+        }
+
+        .auth-submit{
+          width: 65%;
+
+          &:hover{
+            border-color: green;
+            box-shadow: 0px 0px 12px 0px green;
+          }
+        }
+
+        .auth-forgot {
+          background: transparent;
+          border: none;
+          font-size: 14px;
+          font-weight: 500;
+          margin-top: -5px;
+          color: #666;
+          width: auto;
+
+          &:hover{
+            color: #e1e3e6;
+
+          }
+        }
+      }
+    }
+
     .table-wrapper {
-      height: calc(100% - #{$header-max-height});
-      width: 100%;
+      max-height: calc(100% - 87px);
       overflow: auto;
+      width: 100%;
       background: $theme-light-color-primary;
       animation: opacity-out;
       animation-duration: 0.5s;
@@ -220,8 +320,8 @@ html {
         color: $theme-light-color-secondary;
         border-collapse: collapse;
 
-        tbody{
-          tr{
+        tbody {
+          tr {
             display: flex;
             height: 80px;
             border-bottom: 2px solid #666666;
@@ -233,53 +333,52 @@ html {
               white-space: nowrap;
               padding: 10px 12px;
 
-              &.stats{
+              &.stats {
                 .markBtn,
-                .mark{
+                .mark {
                   height: 100%;
                   font-weight: 700;
+                  
+                  &:hover{
+                    border-color: rgba(102, 102, 102, 0.4);
+                  }
                 }
               }
 
               &.disciplines {
-                .disciplineBtn{
+                .disciplineBtn {
                   height: 100%;
                   font-weight: 700;
+
+                  &:hover{
+                    border-color: rgba(102, 102, 102, 0.4);
+                  }
                 }
               }
 
-              &.stats{
-                .markBtn,
-                .mark{
-                  height: 100%;
-                  font-weight: 700;
-                }
-              }
-
-              .retiredBtn{
+              .retiredBtn {
                 height: 100%;
                 font-weight: 700;
               }
             }
 
-            &.add{
+            &.add {
               background: $theme-light-color-primary;
               position: sticky;
               left: 0;
               top: 0;
               z-index: 2;
 
-              &.work{
-                .work-title{
-                  .work-title__input{
+              &.work {
+                .work-title {
+                  .work-title__input {
                     height: 100%;
                     width: auto;
                   }
                 }
 
-                .marks__title{
+                .marks__title {
                   margin-left: auto;
-
                 }
 
                 .marks {
@@ -300,95 +399,95 @@ html {
                       }
                     }
 
-                    &:first-child{
+                    &:first-child {
                       margin-left: 0;
                     }
                   }
                 }
 
-                .add-task__title{
+                .add-task__title {
                   margin-left: auto;
                 }
 
-                .add-task__numbers{
+                .add-task__numbers {
                   height: 100%;
                   border-radius: 7px 0 0 7px;
                 }
 
-                .add-work{
-                  .add-work__button{
+                .add-work {
+                  .add-work__button {
                     height: 100%;
                   }
                 }
 
-                .add-task{
+                .add-task {
                   padding: 10px 12px;
                   display: flex;
                   height: 100%;
 
-                  .add-task__add{
+                  .add-task__add {
                     height: 100%;
                     padding: 0;
                     aspect-ratio: 1 / 1;
                     border-radius: 0 7px 7px 0;
 
-                    .add-task__img{
+                    .add-task__img {
                       height: 100%;
                       width: 100%;
                     }
                   }
 
-                  &:focus-within{
-                    button{
+                  &:focus-within {
+                    button {
                       border-color: $theme-light-color-secondary;
                     }
                   }
                 }
               }
 
-              &.student{
+              &.student {
                 .student-name,
-                .student-surname{
-                  input[type=text]{
+                .student-surname {
+                  input[type=text] {
                     height: 100%;
                     width: auto;
                   }
                 }
 
-                .add-student{
-                  .add-student__button{
+                .add-student {
+                  .add-student__button {
                     height: 100%;
                   }
                 }
 
-                .add-group__title{
+                .add-group__title {
                   margin-left: auto;
                 }
 
-                .group-name{
-                  input[type=text]{
+                .group-name {
+                  input[type=text] {
                     height: 100%;
                     width: auto;
                   }
                 }
 
-                .add-group{
-                  .add-group__button{
+                .add-group {
+                  .add-group__button {
                     height: 100%;
                   }
                 }
               }
 
-              &.discipline{
-                .discipline-name{
-                  input[type=text]{
+              &.discipline {
+                .discipline-name {
+                  input[type=text] {
                     height: 100%;
                     width: auto;
                   }
                 }
 
-                .add-discipline{
-                  .add-discipline__button{
+                .add-discipline {
+                  .add-discipline__button {
                     height: 100%;
                   }
                 }
@@ -399,7 +498,7 @@ html {
       }
     }
 
-    &.dark{
+    &.dark {
       color: $theme-dark-color-secondary;
       background: $theme-dark-color-primary;
 
@@ -413,17 +512,17 @@ html {
         color: $theme-dark-color-secondary;
 
         &:hover,
-        &:focus{
+        &:focus {
           border-color: $theme-dark-color-secondary;
         }
       }
 
       input[type=text],
-      input[type=password]{
+      input[type=password] {
         background-color: $theme-dark-color-secondary;
         color: $theme-dark_color-primary;
 
-        &:focus{
+        &:focus {
           color: $theme-dark-color-secondary;
           background-color: $theme-dark-color-primary;
           border-color: $theme-dark-color-secondary;
@@ -435,11 +534,11 @@ html {
         color: $theme-dark-color-secondary;
 
         &:hover,
-        &:focus{
+        &:focus {
           border-color: $theme-dark-color-secondary;
         }
 
-        &:focus{
+        &:focus {
           background-color: $theme-dark-color-secondary;
           color: $theme-dark-color-primary;
         }
@@ -458,19 +557,8 @@ html {
               animation: selected-out-dark 0.2s forwards;
             }
 
-            &:hover{
+            &:hover {
               border-color: $theme-dark-color-secondary;
-            }
-          }
-        }
-
-        .marks {
-          .mark {
-            input {
-              &:hover,
-              &:focus {
-                border: 2px solid $theme-dark-color-secondary
-              }
             }
           }
         }
@@ -484,19 +572,37 @@ html {
           background: $theme-dark-color-primary;
           color: $theme-dark-color-secondary;
 
-          tbody{
-            tr{
+          tbody {
+            tr {
               display: flex;
               height: 80px;
               border-bottom: 2px solid #666666;
 
-              &.add{
+              &.add {
                 background: $theme-dark-color-primary;
 
-                .add-task{
-                  &:focus-within{
-                    button{
+                .add-task {
+                  &:focus-within {
+                    button {
                       border-color: $theme-dark-color-secondary;
+                    }
+                  }
+                }
+
+                .marks {
+                  .mark {
+                    input {
+                      &:hover {
+                        border-color: $theme-dark-color-secondary;
+                      }
+
+                      &:focus {
+                        border-color: $theme-dark-color-secondary;
+                      }
+                    }
+
+                    &:first-child {
+                      margin-left: 0;
                     }
                   }
                 }
@@ -508,48 +614,3 @@ html {
     }
   }
 }
-
-
-@media screen and (max-width: 1150px) {
-  $header-height: 75px;
-
-  * {
-    font-size: 20px;
-  }
-
-  html {
-    body {
-      padding: 0;
-
-      header {
-        height: $header-height;
-        padding: 5px;
-        border-radius: 0;
-
-        nav {
-          display: flex;
-
-          .name{
-            span{
-              text-align: center;
-              font-size: 20px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-height: 510px) {
-  html {
-    body {
-      padding: 0;
-
-      header {
-        border-radius: 0;
-      }
-    }
-  }
-}
-

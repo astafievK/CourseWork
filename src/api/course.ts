@@ -1,8 +1,8 @@
-import {api} from "./api.ts";
+import {baseApi} from "./api.ts";
 
-export const courseApi = api.injectEndpoints({
+export const courseApi = baseApi.injectEndpoints({
     endpoints: builder => ({
-        getCourses: builder.query<Discipline[], void>({
+        getCourses: builder.query<ICourse[], void>({
             query: () => ({
                 url: `Course`,
                 method: "GET",
