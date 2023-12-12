@@ -1,5 +1,4 @@
 import React from "react";
-import "./ButtonMark.css";
 
 import classNames from "classnames";
 import {userInfo} from "../../userInfo.ts";

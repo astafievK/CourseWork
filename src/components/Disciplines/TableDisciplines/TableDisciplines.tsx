@@ -1,7 +1,7 @@
 import TableRowDisciplines from "../TableRowDisciplines/TableRowDisciplines.tsx";
-import AddDiscipline from "../../AddDiscipline/AddDiscipline.tsx";
 import {useGetGroupsQuery} from "../../../api/group.ts";
 import {userInfo} from "../../../userInfo.ts";
+import AddRowDisciplines from "../../AddRowDisciplines/AddRowDisciplines.tsx";
 
 function TableDisciplines() {
     const { data } = useGetGroupsQuery();
@@ -11,7 +11,7 @@ function TableDisciplines() {
             <table id="table">
                 <tbody>
                 {
-                    userInfo[0].role === 'Преподаватель' ? <AddDiscipline/> : ''
+                    userInfo[0].role === 'Преподаватель' ? <AddRowDisciplines/> : ''
                 }
                 {
                     data?.map((group) => (

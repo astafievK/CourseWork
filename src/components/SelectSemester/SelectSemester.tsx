@@ -7,7 +7,7 @@ function SelectSemester() {
         <div className="filter semester">
             <select className="select-semester" id="filterSemester" onChange={(event) => { console.log(event.target.value) }}>
                 {data?.map((semester) => (
-                    <option key={semester.id}>{semester.id} семестр</option>
+                    <option key={semester.id} data-id={semester.id}>{semester.id} семестр</option>
                 ))}
             </select>
         </div>

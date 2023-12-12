@@ -1,16 +1,11 @@
 import './index.css'
-import TableMarks from "./components/Marks/TableMarks/TableMarks.jsx";
-import TableDisciplines from "./components/Disciplines/TableDisciplines/TableDisciplines.jsx";
-import TableStudents from "./components/Students/TableStudents/TableStudents.jsx";
 import { Outlet, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import StaffHeaderStats from './components/StaffHeaderStats/StaffHeaderStats.jsx';
-import StaffHeaderStudents from './components/StaffHeaderStudents/StaffHeaderStudents.jsx';
-import StaffHeaderDisciplines from './components/StaffHeaderDisciplines/StaffHeaderDisciplines.jsx';
 import Login from "./components/Login/Login.jsx";
 import { Provider } from 'react-redux';
 import {store} from "./store/store.ts";
-import {userInfo} from "./userInfo.ts";
-import StudentHeaderStats from "./components/StudentHeaderStats/StudentHeaderStats.tsx";
+import PageStats from "./components/PageStats/PageStats.tsx";
+import PageStudents from "./components/PageStudents/PageStudents.tsx";
+import PageDisciplines from "./components/PageDisciplines/PageDisciplines.tsx";
 
 const Root = () => {
     return (
@@ -19,6 +14,7 @@ const Root = () => {
         </>
     )
 }
+
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,20 +26,17 @@ const router = createBrowserRouter(
             } />
             <Route path="stats" element={
                 <>
-                    {userInfo[0].role === 'Студент' ? <StudentHeaderStats/> : <StaffHeaderStats/>}
-                    <TableMarks/>
+                    <PageStats/>
                 </>
             } />
             <Route path="students" element={
                 <>
-                    <StaffHeaderStudents/>
-                    <TableStudents />
+                    <PageStudents/>
                 </>
             }/>
             <Route path="disciplines" element={
                 <>
-                    <StaffHeaderDisciplines/>
-                    <TableDisciplines />
+                    <PageDisciplines/>
                 </>
             }/>
         </Route>
@@ -51,11 +44,13 @@ const router = createBrowserRouter(
 
 
 function App() {
-  return (
-  <Provider store={store}>
-      <RouterProvider router={router} />
-  </Provider>
-  )
+
+
+    return (
+        <Provider store={store}>
+          <RouterProvider router={router} />
+        </Provider>
+    )
 }
 
 export default App

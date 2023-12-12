@@ -1,7 +1,6 @@
-import "../../../index.css"
 import TableRowMarks from "../TableRowMarks/TableRowMarks.tsx";
-import AddWork from "../../AddWork/AddWork.tsx";
 import {userInfo} from "../../../userInfo.ts";
+import AddRowStats from "../../AddRowStats/AddRowStats.tsx";
 
 function TableMarks() {
     return(
@@ -9,7 +8,7 @@ function TableMarks() {
             <table id="table">
                 <tbody>
                 {
-                    userInfo[0].role === 'Преподаватель' ? <AddWork/> : ''
+                    userInfo[0].role === 'Преподаватель' ? <AddRowStats/> : ''
                 }
                 <TableRowMarks/>
                 <TableRowMarks/>

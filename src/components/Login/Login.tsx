@@ -36,7 +36,7 @@ const Login: React.FC<LoginFormProps> = () => {
                     className="auth-login"
                     type="text"
                     {...register("login", {
-                        required: "Required",
+                        required: "45645654654645",
                     })
                     }
                     placeholder="Логин"
@@ -45,7 +45,7 @@ const Login: React.FC<LoginFormProps> = () => {
                     className="auth-password"
                     type="password"
                     {...register("password", {
-                        required: "Required",
+                        required: "123123123",
                     })
                     }
                     placeholder="Пароль"

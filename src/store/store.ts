@@ -7,6 +7,7 @@ const rootReducer = combineReducers({
     auth: authSlice,
 })
 
+
 export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,

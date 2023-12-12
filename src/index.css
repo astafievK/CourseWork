@@ -110,74 +110,6 @@ html {
       html body select:focus {
         background-color: #202020;
         color: #ffffff; }
-    html body header {
-      display: flex;
-      min-height: 80px;
-      flex-direction: row;
-      color: #202020;
-      background: #ffffff;
-      padding: 12px;
-      border-bottom: 2px solid #666666;
-      overflow: auto; }
-      html body header button,
-      html body header input {
-        height: auto; }
-      html body header .info {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        white-space: nowrap; }
-        html body header .info .info-item {
-          font-size: 26px; }
-          html body header .info .info-item:not(:first-child) {
-            margin-left: 8px; }
-      html body header .functions {
-        display: flex;
-        flex-direction: row; }
-        html body header .functions .function {
-          display: flex;
-          align-items: center;
-          height: 100%;
-          justify-content: center;
-          border-radius: 7px;
-          border: 2px solid rgba(102, 102, 102, 0.4);
-          color: #202020;
-          padding: 12px 10px;
-          transition: all 0.2s; }
-          html body header .functions .function.selected {
-            border-color: #202020;
-            animation: selected-out-light 0.2s forwards; }
-          html body header .functions .function:hover {
-            border-color: #202020; }
-          html body header .functions .function:not(:first-child) {
-            margin-left: 12px; }
-        html body header .functions .export {
-          padding: 0 10px; }
-      html body header .filters {
-        display: flex;
-        flex-direction: row;
-        margin-left: auto; }
-        html body header .filters .filter {
-          justify-content: center;
-          display: flex;
-          height: 100%;
-          align-items: center;
-          margin-left: 12px;
-          flex-direction: column;
-          text-align: center; }
-      html body header .exit {
-        margin-left: 12px;
-        border-color: red;
-        color: red;
-        transition: all 0.3s; }
-        html body header .exit:hover {
-          border-color: red !important;
-          background-color: red;
-          color: #FFFFFF; }
-      html body header::-webkit-scrollbar {
-        width: 6px;
-        height: 6px; }
     html body .auth-window {
       display: flex;
       position: relative;
@@ -231,7 +163,7 @@ html {
           width: 65%; }
           html body .auth-window .auth .auth-submit:hover {
             border-color: green;
-            box-shadow: 0px 0px 12px 0px green; }
+            box-shadow: 0 0 12px 0 green; }
         html body .auth-window .auth .auth-forgot {
           background: transparent;
           border: none;
@@ -242,6 +174,73 @@ html {
           width: auto; }
           html body .auth-window .auth .auth-forgot:hover {
             color: #e1e3e6; }
+    html body header {
+      display: flex;
+      height: 85px;
+      flex-direction: row;
+      color: #202020;
+      background: #ffffff;
+      padding: 12px;
+      border-bottom: 2px solid #666666;
+      overflow: auto; }
+      html body header button,
+      html body header input {
+        height: auto; }
+      html body header .info {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        white-space: nowrap;
+        gap: 8px; }
+        html body header .info .info-item {
+          font-size: 26px; }
+      html body header .functions {
+        display: flex;
+        flex-direction: row; }
+        html body header .functions .function {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          justify-content: center;
+          border-radius: 7px;
+          border: 2px solid rgba(102, 102, 102, 0.4);
+          color: #202020;
+          padding: 12px 10px;
+          transition: all 0.2s; }
+          html body header .functions .function.selected {
+            border-color: #202020;
+            animation: selected-out-light 0.2s forwards; }
+          html body header .functions .function:hover {
+            border-color: #202020; }
+          html body header .functions .function:not(:first-child) {
+            margin-left: 12px; }
+        html body header .functions .export {
+          padding: 0 10px; }
+      html body header .filters {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto; }
+        html body header .filters .filter {
+          justify-content: center;
+          display: flex;
+          height: 100%;
+          align-items: center;
+          margin-left: 12px;
+          flex-direction: column;
+          text-align: center; }
+      html body header .exit {
+        margin-left: 12px;
+        border-color: red;
+        color: red;
+        transition: all 0.3s; }
+        html body header .exit:hover {
+          border-color: red !important;
+          background-color: red;
+          color: #FFFFFF; }
+      html body header::-webkit-scrollbar {
+        width: 6px;
+        height: 6px; }
     html body .table-wrapper {
       max-height: calc(100% - 87px);
       overflow: auto;
@@ -259,6 +258,56 @@ html {
           display: flex;
           height: 80px;
           border-bottom: 2px solid #666666; }
+          html body .table-wrapper table tbody tr.add {
+            padding: 12px;
+            background: #ffffff;
+            position: sticky;
+            height: 85px;
+            left: 0;
+            top: 0;
+            z-index: 2; }
+            html body .table-wrapper table tbody tr.add td:not(:first-child) {
+              margin-left: auto; }
+            html body .table-wrapper table tbody tr.add td {
+              padding: 0; }
+              html body .table-wrapper table tbody tr.add td form {
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 12px; }
+                html body .table-wrapper table tbody tr.add td form input,
+                html body .table-wrapper table tbody tr.add td form button,
+                html body .table-wrapper table tbody tr.add td form select {
+                  height: 100%;
+                  width: auto; }
+                html body .table-wrapper table tbody tr.add td form .sample {
+                  height: 100%;
+                  gap: 12px; }
+                  html body .table-wrapper table tbody tr.add td form .sample .mark {
+                    height: 100%;
+                    aspect-ratio: 1/1; }
+                    html body .table-wrapper table tbody tr.add td form .sample .mark input[type=text] {
+                      width: 100%; }
+                html body .table-wrapper table tbody tr.add td form.add-tasks {
+                  gap: 0; }
+                  html body .table-wrapper table tbody tr.add td form.add-tasks .add-task__title {
+                    margin-right: 12px; }
+                  html body .table-wrapper table tbody tr.add td form.add-tasks .add-task {
+                    display: flex;
+                    flex-direction: row;
+                    height: 100%; }
+                    html body .table-wrapper table tbody tr.add td form.add-tasks .add-task .add-task__numbers {
+                      aspect-ratio: 1/1;
+                      border-radius: 7px 0 0 7px; }
+                    html body .table-wrapper table tbody tr.add td form.add-tasks .add-task .add-task__add {
+                      width: 100%;
+                      aspect-ratio: 1/1;
+                      padding: 0;
+                      border-radius: 0 7px 7px 0; }
+                      html body .table-wrapper table tbody tr.add td form.add-tasks .add-task .add-task__add img {
+                        height: 100%;
+                        width: 100%; }
           html body .table-wrapper table tbody tr td {
             display: flex;
             align-items: center;
@@ -267,82 +316,45 @@ html {
             padding: 10px 12px; }
             html body .table-wrapper table tbody tr td.stats .markBtn,
             html body .table-wrapper table tbody tr td.stats .mark {
+              font-size: 26px;
+              margin-left: 12px;
+              font-weight: 700;
               height: 100%;
-              font-weight: 700; }
+              aspect-ratio: 1 / 1; }
+              html body .table-wrapper table tbody tr td.stats .markBtn:first-child,
+              html body .table-wrapper table tbody tr td.stats .mark:first-child {
+                margin-left: 0; }
+              html body .table-wrapper table tbody tr td.stats .markBtn.passed,
+              html body .table-wrapper table tbody tr td.stats .mark.passed {
+                border-color: green; }
+                html body .table-wrapper table tbody tr td.stats .markBtn.passed:hover,
+                html body .table-wrapper table tbody tr td.stats .mark.passed:hover {
+                  box-shadow: 0 3px 10px rgba(0, 128, 0, 0.4);
+                  border-color: #202020; }
               html body .table-wrapper table tbody tr td.stats .markBtn:hover,
               html body .table-wrapper table tbody tr td.stats .mark:hover {
-                border-color: rgba(102, 102, 102, 0.4); }
-            html body .table-wrapper table tbody tr td.disciplines .disciplineBtn {
-              height: 100%;
-              font-weight: 700; }
-              html body .table-wrapper table tbody tr td.disciplines .disciplineBtn:hover {
-                border-color: rgba(102, 102, 102, 0.4); }
+                border-color: #202020; }
+            html body .table-wrapper table tbody tr td.stats .mark {
+              cursor: default; }
+              html body .table-wrapper table tbody tr td.stats .mark:hover {
+                border-color: rgba(102, 102, 102, 0.4) !important; }
+              html body .table-wrapper table tbody tr td.stats .mark.passed {
+                border-color: green;
+                box-shadow: 1px 5px 10px rgba(0, 128, 0, 0.4); }
+                html body .table-wrapper table tbody tr td.stats .mark.passed:hover {
+                  border-color: green !important; }
+            html body .table-wrapper table tbody tr td.disciplines {
+              gap: 12px; }
+              html body .table-wrapper table tbody tr td.disciplines .disciplineBtn {
+                height: 100%; }
+                html body .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected {
+                  border-color: green; }
+                  html body .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {
+                    border-color: #202020;
+                    box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4); }
             html body .table-wrapper table tbody tr td .retiredBtn {
               height: 100%;
               font-weight: 700; }
-          html body .table-wrapper table tbody tr.add {
-            background: #ffffff;
-            position: sticky;
-            left: 0;
-            top: 0;
-            z-index: 2; }
-            html body .table-wrapper table tbody tr.add.work .work-title .work-title__input {
-              height: 100%;
-              width: auto; }
-            html body .table-wrapper table tbody tr.add.work .marks__title {
-              margin-left: auto; }
-            html body .table-wrapper table tbody tr.add.work .marks .mark {
-              margin-left: 12px;
-              aspect-ratio: 1/1;
-              border-radius: 7px; }
-              html body .table-wrapper table tbody tr.add.work .marks .mark input {
-                border-radius: 7px;
-                width: 100%;
-                height: 100%;
-                border: 2px solid transparent; }
-                html body .table-wrapper table tbody tr.add.work .marks .mark input:hover, html body .table-wrapper table tbody tr.add.work .marks .mark input:focus {
-                  border: 2px solid #202020; }
-              html body .table-wrapper table tbody tr.add.work .marks .mark:first-child {
-                margin-left: 0; }
-            html body .table-wrapper table tbody tr.add.work .add-task__title {
-              margin-left: auto; }
-            html body .table-wrapper table tbody tr.add.work .add-task__numbers {
-              height: 100%;
-              border-radius: 7px 0 0 7px; }
-            html body .table-wrapper table tbody tr.add.work .add-work .add-work__button {
-              height: 100%; }
-            html body .table-wrapper table tbody tr.add.work .add-task {
-              padding: 10px 12px;
-              display: flex;
-              height: 100%; }
-              html body .table-wrapper table tbody tr.add.work .add-task .add-task__add {
-                height: 100%;
-                padding: 0;
-                aspect-ratio: 1 / 1;
-                border-radius: 0 7px 7px 0; }
-                html body .table-wrapper table tbody tr.add.work .add-task .add-task__add .add-task__img {
-                  height: 100%;
-                  width: 100%; }
-              html body .table-wrapper table tbody tr.add.work .add-task:focus-within button {
-                border-color: #202020; }
-            html body .table-wrapper table tbody tr.add.student .student-name input[type=text],
-            html body .table-wrapper table tbody tr.add.student .student-surname input[type=text] {
-              height: 100%;
-              width: auto; }
-            html body .table-wrapper table tbody tr.add.student .add-student .add-student__button {
-              height: 100%; }
-            html body .table-wrapper table tbody tr.add.student .add-group__title {
-              margin-left: auto; }
-            html body .table-wrapper table tbody tr.add.student .group-name input[type=text] {
-              height: 100%;
-              width: auto; }
-            html body .table-wrapper table tbody tr.add.student .add-group .add-group__button {
-              height: 100%; }
-            html body .table-wrapper table tbody tr.add.discipline .discipline-name input[type=text] {
-              height: 100%;
-              width: auto; }
-            html body .table-wrapper table tbody tr.add.discipline .add-discipline .add-discipline__button {
-              height: 100%; }
     html body.dark {
       color: #e1e3e6;
       background: #202020; }
@@ -390,19 +402,17 @@ html {
         html body.dark .table-wrapper table {
           background: #202020;
           color: #e1e3e6; }
-          html body.dark .table-wrapper table tbody tr {
-            display: flex;
-            height: 80px;
-            border-bottom: 2px solid #666666; }
-            html body.dark .table-wrapper table tbody tr.add {
-              background: #202020; }
-              html body.dark .table-wrapper table tbody tr.add .add-task:focus-within button {
-                border-color: #e1e3e6; }
-              html body.dark .table-wrapper table tbody tr.add .marks .mark input:hover {
-                border-color: #e1e3e6; }
-              html body.dark .table-wrapper table tbody tr.add .marks .mark input:focus {
-                border-color: #e1e3e6; }
-              html body.dark .table-wrapper table tbody tr.add .marks .mark:first-child {
-                margin-left: 0; }
+          html body.dark .table-wrapper table tbody tr.add {
+            background: #202020; }
+            html body.dark .table-wrapper table tbody tr.add .add-task:focus-within button {
+              border-color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr.stats .markBtn.passed:hover,
+          html body.dark .table-wrapper table tbody tr.stats .mark.passed:hover {
+            border-color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr.stats .markBtn:hover,
+          html body.dark .table-wrapper table tbody tr.stats .mark:hover {
+            border-color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr.stats .mark:hover {
+            border-color: #e1e3e6; }
 
 /*# sourceMappingURL=index.css.map */

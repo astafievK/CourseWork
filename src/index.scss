@@ -73,7 +73,7 @@ html {
 
       &:hover,
       &:focus {
-        border-color: $theme-light-color-secondary;
+        border-color: $theme-dark-color-primary;
         transition: all 0.2s;
       }
     }
@@ -116,9 +116,98 @@ html {
       }
     }
 
+    .auth-window {
+      display: flex;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 800px;
+      background: #292929;
+      border-radius: 7px;
+      overflow: hidden;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 60px 33px;
+
+      .auth-promo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        h1, h2 {
+          text-align: center;
+          font-size: 35px;
+          font-weight: 700;
+        }
+
+        h1 {
+          font-size: 35px;
+          color: #e1e3e6;
+        }
+
+        h2 {
+          font-size: 20px;
+          line-height: 1.1;
+          color: #afafaf;
+        }
+      }
+
+      .auth {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
+        width: 50%;
+
+        .subtitle {
+          color: #e1e3e6;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          font-size: 35px;
+          font-weight: 700;
+        }
+
+        .auth-login,
+        .auth-password,
+        .auth-submit{
+          width: 80%;
+          padding: 5px 12px;
+        }
+
+        .auth-submit{
+          width: 65%;
+
+          &:hover{
+            border-color: green;
+            box-shadow: 0 0 12px 0 green;
+          }
+        }
+
+        .auth-forgot {
+          background: transparent;
+          border: none;
+          font-size: 14px;
+          font-weight: 500;
+          margin-top: -5px;
+          color: #666;
+          width: auto;
+
+          &:hover{
+            color: #e1e3e6;
+
+          }
+        }
+      }
+    }
+
     header {
       display: flex;
-      min-height: $header-height;
+      height: $header-height;
       flex-direction: row;
       color: $theme-light-color-secondary;
       background: $theme-light-color-primary;
@@ -137,13 +226,10 @@ html {
         align-items: center;
         flex-direction: row;
         white-space: nowrap;
+        gap: 8px;
 
         .info-item{
           font-size: 26px;
-
-          &:not(:first-child){
-            margin-left: 8px;
-          }
         }
       }
 
@@ -216,95 +302,6 @@ html {
       }
     }
 
-    .auth-window {
-      display: flex;
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 800px;
-      background: #292929;
-      border-radius: 7px;
-      overflow: hidden;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 60px 33px;
-
-      .auth-promo {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-
-        h1, h2 {
-          text-align: center;
-          font-size: 35px;
-          font-weight: 700;
-        }
-
-        h1 {
-          font-size: 35px;
-          color: #e1e3e6;
-        }
-
-        h2 {
-          font-size: 20px;
-          line-height: 1.1;
-          color: #afafaf;
-        }
-      }
-
-      .auth {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 25px;
-        width: 50%;
-
-        .subtitle {
-          color: #e1e3e6;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          font-size: 35px;
-          font-weight: 700;
-        }
-
-        .auth-login,
-        .auth-password,
-        .auth-submit{
-          width: 80%;
-          padding: 5px 12px;
-        }
-
-        .auth-submit{
-          width: 65%;
-
-          &:hover{
-            border-color: green;
-            box-shadow: 0px 0px 12px 0px green;
-          }
-        }
-
-        .auth-forgot {
-          background: transparent;
-          border: none;
-          font-size: 14px;
-          font-weight: 500;
-          margin-top: -5px;
-          color: #666;
-          width: auto;
-
-          &:hover{
-            color: #e1e3e6;
-
-          }
-        }
-      }
-    }
-
     .table-wrapper {
       max-height: calc(100% - 87px);
       overflow: auto;
@@ -326,6 +323,84 @@ html {
             height: 80px;
             border-bottom: 2px solid #666666;
 
+            &.add {
+              padding: 12px;
+              background: $theme-light-color-primary;
+              position: sticky;
+              height: $header-height;
+              left: 0;
+              top: 0;
+              z-index: 2;
+
+              td:not(:first-child){
+                margin-left: auto;
+              }
+
+              td{
+                padding: 0;
+
+                form{
+                  height: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  gap: 12px;
+
+                  input,
+                  button,
+                  select{
+                    height: 100%;
+                    width: auto;
+                  }
+
+                  .sample{
+                    height: 100%;
+                    gap: 12px;
+
+                    .mark{
+                      height: 100%;
+                      aspect-ratio: 1/1;
+
+                      input[type=text]{
+                        width: 100%;
+                      }
+                    }
+                  }
+
+                  &.add-tasks{
+                    gap: 0;
+
+                    .add-task__title{
+                      margin-right: 12px;
+                    }
+
+                    .add-task{
+                      display: flex;
+                      flex-direction: row;
+                      height: 100%;
+
+                      .add-task__numbers{
+                        aspect-ratio: 1/1;
+                        border-radius: 7px 0 0 7px;
+                      }
+
+                      .add-task__add{
+                        width: 100%;
+                        aspect-ratio: 1/1;
+                        padding: 0;
+                        border-radius: 0 7px 7px 0;
+
+                        img{
+                          height: 100%;
+                          width: 100%;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
             td {
               display: flex;
               align-items: center;
@@ -336,22 +411,61 @@ html {
               &.stats {
                 .markBtn,
                 .mark {
-                  height: 100%;
+                  font-size: 26px;
+                  margin-left: 12px;
                   font-weight: 700;
-                  
+                  height: 100%;
+                  aspect-ratio: 1 / 1;
+
+                  &:first-child {
+                    margin-left: 0;
+                  }
+
+                  &.passed{
+                    border-color: green;
+
+                    &:hover{
+                      box-shadow: 0 3px 10px rgba(0, 128, 0, 0.4);
+                      border-color: $theme-light-color-secondary;
+                    }
+                  }
+
                   &:hover{
-                    border-color: rgba(102, 102, 102, 0.4);
+                    border-color: $theme-light-color-secondary;
+                  }
+                }
+
+                .mark{
+                  cursor: default;
+
+                  &:hover{
+                    border-color: rgba(102, 102, 102, 0.4) !important;
+                  }
+
+                  &.passed{
+                    border-color: green;
+                    box-shadow: 1px 5px 10px rgba(0, 128, 0, 0.4);
+
+                    &:hover{
+                      border-color: green !important;
+                    }
                   }
                 }
               }
 
               &.disciplines {
-                .disciplineBtn {
-                  height: 100%;
-                  font-weight: 700;
+                gap: 12px;
 
-                  &:hover{
-                    border-color: rgba(102, 102, 102, 0.4);
+                .disciplineBtn{
+                  height: 100%;
+
+                  &.selected{
+                    border-color: green;
+
+                    &:hover{
+                      border-color: $theme-light-color-secondary;
+                      box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4);
+                    }
                   }
                 }
               }
@@ -359,138 +473,6 @@ html {
               .retiredBtn {
                 height: 100%;
                 font-weight: 700;
-              }
-            }
-
-            &.add {
-              background: $theme-light-color-primary;
-              position: sticky;
-              left: 0;
-              top: 0;
-              z-index: 2;
-
-              &.work {
-                .work-title {
-                  .work-title__input {
-                    height: 100%;
-                    width: auto;
-                  }
-                }
-
-                .marks__title {
-                  margin-left: auto;
-                }
-
-                .marks {
-                  .mark {
-                    margin-left: 12px;
-                    aspect-ratio: 1/1;
-                    border-radius: 7px;
-
-                    input {
-                      border-radius: 7px;
-                      width: 100%;
-                      height: 100%;
-                      border: 2px solid transparent;
-
-                      &:hover,
-                      &:focus {
-                        border: 2px solid $theme-light-color-secondary
-                      }
-                    }
-
-                    &:first-child {
-                      margin-left: 0;
-                    }
-                  }
-                }
-
-                .add-task__title {
-                  margin-left: auto;
-                }
-
-                .add-task__numbers {
-                  height: 100%;
-                  border-radius: 7px 0 0 7px;
-                }
-
-                .add-work {
-                  .add-work__button {
-                    height: 100%;
-                  }
-                }
-
-                .add-task {
-                  padding: 10px 12px;
-                  display: flex;
-                  height: 100%;
-
-                  .add-task__add {
-                    height: 100%;
-                    padding: 0;
-                    aspect-ratio: 1 / 1;
-                    border-radius: 0 7px 7px 0;
-
-                    .add-task__img {
-                      height: 100%;
-                      width: 100%;
-                    }
-                  }
-
-                  &:focus-within {
-                    button {
-                      border-color: $theme-light-color-secondary;
-                    }
-                  }
-                }
-              }
-
-              &.student {
-                .student-name,
-                .student-surname {
-                  input[type=text] {
-                    height: 100%;
-                    width: auto;
-                  }
-                }
-
-                .add-student {
-                  .add-student__button {
-                    height: 100%;
-                  }
-                }
-
-                .add-group__title {
-                  margin-left: auto;
-                }
-
-                .group-name {
-                  input[type=text] {
-                    height: 100%;
-                    width: auto;
-                  }
-                }
-
-                .add-group {
-                  .add-group__button {
-                    height: 100%;
-                  }
-                }
-              }
-
-              &.discipline {
-                .discipline-name {
-                  input[type=text] {
-                    height: 100%;
-                    width: auto;
-                  }
-                }
-
-                .add-discipline {
-                  .add-discipline__button {
-                    height: 100%;
-                  }
-                }
               }
             }
           }
@@ -574,10 +556,6 @@ html {
 
           tbody {
             tr {
-              display: flex;
-              height: 80px;
-              border-bottom: 2px solid #666666;
-
               &.add {
                 background: $theme-dark-color-primary;
 
@@ -588,22 +566,25 @@ html {
                     }
                   }
                 }
+              }
 
-                .marks {
-                  .mark {
-                    input {
-                      &:hover {
-                        border-color: $theme-dark-color-secondary;
-                      }
-
-                      &:focus {
-                        border-color: $theme-dark-color-secondary;
-                      }
+              &.stats {
+                .markBtn,
+                .mark {
+                  &.passed{
+                    &:hover{
+                      border-color: $theme-dark-color-secondary;
                     }
+                  }
 
-                    &:first-child {
-                      margin-left: 0;
-                    }
+                  &:hover{
+                    border-color: $theme-dark-color-secondary;
+                  }
+                }
+
+                .mark{
+                  &:hover{
+                    border-color: $theme-dark-color-secondary
                   }
                 }
               }
