@@ -1,6 +1,6 @@
 import "./TableRowMarks.css"
-import ButtonMark from "../../ButtonMark/ButtonMark.tsx";
-import {userInfo} from "../../../userInfo.ts";
+import ButtonMark from "../Mark/ButtonMark.tsx";
+import {userInfo} from "../../userInfo.ts";
 
 function TableRowMarks() {
     return (
@@ -11,7 +11,7 @@ function TableRowMarks() {
                     <span className="title short">Лаб 1</span>
                 </td>
                 <td className="stats">
-                    <ButtonMark counter={0} userId={0} workId={0} isPassed={0}/>
+                    <ButtonMark/>
                 </td>
                 <td className="percentage">
                     <span>100%</span>
@@ -32,14 +32,14 @@ function TableRowMarks() {
                     <span className="name-short">{userInfo[0].surname.charAt(0)}</span>
                 </td>
                 <td className="stats">
-                    <ButtonMark counter={0} userId={0} workId={0} isPassed={0}/>
+                    <ButtonMark/>
                 </td>
                 <td className="actions">
                     <button className="action all">
-                        <img src="src/assets/images/checkmark.svg" alt="Все"/>
+                        <img src="../../assets/images/checkmark.svg" alt="Все"/>
                     </button>
                     <button className="action nothing">
-                        <img src="src/assets/images/cross.svg" alt="Отменить"/>
+                        <img src="../../assets/images/cross.svg" alt="Отменить"/>
                     </button>
                     <div className="action select-tasks">
                         <input className="select-tasks__numbers" type="text" name="numbers" placeholder="1-3,5"/>

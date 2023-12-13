@@ -1,14 +1,21 @@
 import TableRowMarks from "../TableRowMarks/TableRowMarks.tsx";
-import {userInfo} from "../../../userInfo.ts";
-import AddRowStats from "../../AddRowStats/AddRowStats.tsx";
+import AddRowStats from "../AddRowStats/AddRowStats.tsx";
+import {useTypedSelector} from "../../store/hooks/redux.ts";
+import {Navigate} from "react-router-dom";
 
 function TableMarks() {
+    const {user} = useTypedSelector(state => state.auth)
+
+    if(!user){
+        return <Navigate to="/"/>
+    }
+
     return(
         <div className="table-wrapper">
             <table id="table">
                 <tbody>
                 {
-                    userInfo[0].role === 'Преподаватель' ? <AddRowStats/> : ''
+                    user.role.name !== 'Student' ? <AddRowStats/> : ''
                 }
                 <TableRowMarks/>
                 <TableRowMarks/>

@@ -1,24 +1,25 @@
 import "./ButtonMark.css";
-import { userInfo } from "../../userInfo.ts";
-import classNames from "classnames";
+import {useTypedSelector} from "../../store/hooks/redux.ts";
+import React from "react";
+import {Navigate} from "react-router-dom";
 
 interface ButtonMarkProps {
-    counter: number;
-    userId: string;
-    workId: string;
-    isPassed: number;
+
 }
 
-function ButtonMark(props: ButtonMarkProps) {
-    const {counter, userId, workId, isPassed} = props;
+const ButtonMark: React.FC<ButtonMarkProps> = () => {
+    const {user} = useTypedSelector(state => state.auth)
 
-    if (userInfo[0].role === 'Студент') {
-        return (
-            <button className={classNames({mark: true}, {passed: isPassed === 1})}>{counter}</button>
-        );
+    if(!user){
+        return <Navigate to="/"/>
     }
+
     return (
-        <button className={classNames({markBtn: true}, {passed: isPassed === 1})} data-userid={userId} data-workid={workId} data-passed={isPassed}>{counter}</button>
-    );
+        <>
+            {
+                user.role.name === "Student" ? <button className="mark">1</button> : <button className="markBtn">1</button>
+            }
+        </>
+    )
 }
 export default ButtonMark;

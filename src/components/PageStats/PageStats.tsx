@@ -1,7 +1,7 @@
 import React from "react";
 import StudentHeaderStats from "../StudentHeaderStats/StudentHeaderStats.tsx";
 import StaffHeaderStats from "../StaffHeaderStats/StaffHeaderStats.tsx";
-import TableMarks from "../Marks/TableMarks/TableMarks.tsx";
+import TableMarks from "../TableMarks/TableMarks.tsx";
 import {useTypedSelector} from "../../store/hooks/redux.ts";
 import {Navigate} from "react-router-dom";
 
