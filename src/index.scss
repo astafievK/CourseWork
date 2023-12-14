@@ -324,6 +324,7 @@ html {
             border-bottom: 2px solid #666666;
 
             &.add {
+              overflow: auto;
               padding: 12px;
               background: $theme-light-color-primary;
               position: sticky;
