@@ -1,6 +1,11 @@
 import {useGetCoursesQuery} from "../../api/course.ts";
+import React from "react";
 
-function SelectCourse(){
+interface SelectCourseProps{
+
+}
+
+const SelectCourse: React.FC<SelectCourseProps> = () => {
     const { data } = useGetCoursesQuery();
 
     return(

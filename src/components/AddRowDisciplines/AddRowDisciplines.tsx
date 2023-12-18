@@ -7,9 +7,9 @@ interface AddRowDisciplinesProps {
 
 const AddRowDisciplines: React.FC<AddRowDisciplinesProps> = () => {
     return(
-        <tr className="add discipline">
+        <div className="add discipline">
             <FormAddDiscipline/>
-        </tr>
+        </div>
     )
 }
 

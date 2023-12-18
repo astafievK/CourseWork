@@ -9,11 +9,11 @@ interface AddRowStatsProps {
 
 const AddRowStats: React.FC<AddRowStatsProps> = () => {
     return(
-        <tr className="add stats">
+        <div className="add stats">
             <FormAddWork/>
             <FormMarksSample/>
             <FormAddTasks/>
-        </tr>
+        </div>
     )
 }
 

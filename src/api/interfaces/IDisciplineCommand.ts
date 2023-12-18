@@ -1,0 +1,3 @@
+interface IDisciplineCommand {
+    disciplineName: string
+}

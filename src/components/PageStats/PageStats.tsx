@@ -1,9 +1,10 @@
 import React from "react";
-import StudentHeaderStats from "../StudentHeaderStats/StudentHeaderStats.tsx";
-import StaffHeaderStats from "../StaffHeaderStats/StaffHeaderStats.tsx";
-import TableMarks from "../TableMarks/TableMarks.tsx";
+import HeaderStatsStudent from "../HeaderStatsStudent/HeaderStatsStudent.tsx";
+import HeaderStatsStaff from "../HeaderStatsStaff/HeaderStatsStaff.tsx";
+import TableMarksStudent from "../TableMarksStudent/TableMarksStudent.tsx";
 import {useTypedSelector} from "../../store/hooks/redux.ts";
 import {Navigate} from "react-router-dom";
+import TableMarksStaff from "../TableMarksStaff/TableMarksStaff.tsx";
 
 interface PageStatsProps {
 
@@ -18,8 +19,17 @@ const PageStats: React.FC<PageStatsProps> = () => {
 
     return(
         <>
-            {user.role.name === "Student" ? <StudentHeaderStats name={user.name} surname={user.surname}/> : <StaffHeaderStats/>}
-            <TableMarks/>
+            {user.role.name === "Student" ? (
+                <>
+                    <HeaderStatsStudent name={user.name} surname={user.surname}/>
+                    <TableMarksStudent/>
+                </>
+            ) : (
+                <>
+                    <HeaderStatsStaff/>
+                    <TableMarksStaff/>
+                </>
+            )}
         </>
     )
 }

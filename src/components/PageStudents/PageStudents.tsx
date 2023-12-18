@@ -1,6 +1,6 @@
 import React from "react";
 import StaffHeaderStudents from "../StaffHeaderStudents/StaffHeaderStudents.tsx";
-import TableStudents from "../Students/TableStudents/TableStudents.tsx";
+import TableStudentsStaff from "../TableStudentsStaff/TableStudentsStaff.tsx";
 import {useTypedSelector} from "../../store/hooks/redux.ts";
 import {Navigate} from "react-router-dom";
 
@@ -22,7 +22,7 @@ const PageStudents: React.FC<PageStudentsProps> = () => {
     return(
         <>
             <StaffHeaderStudents/>
-            <TableStudents />
+            <TableStudentsStaff/>
         </>
     )
 }

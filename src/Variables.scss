@@ -1,10 +1,22 @@
-$theme-light-color-background:  linear-gradient(45deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
-$theme-light-color-primary:     #ffffff;
-$theme-light-color-secondary:   #202020;
+$theme-light-color-primary:               #ffffff;
+$theme-light-color-secondary:             #202020;
+$theme-light-hover-background-color:      rgb(220, 222, 226);
+$theme-light-active-background-color:     rgb(191, 192, 197);
+$theme-light-login-background:            rgb(196, 196, 204);
 
-$theme-dark-color-background:   linear-gradient(45deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
-$theme-dark-color-primary:      #202020;
-$theme-dark-color-secondary:    #e1e3e6;
+$theme-light-mark-passed:                 rgb(178,217,178);
+$theme-light-mark-hover:                  rgb(127,191,127);
+$theme-light-mark-active:                 rgb(117,169,117);
+
+
+$theme-dark-color-primary:                #202020;
+$theme-dark-color-secondary:              #e1e3e6;
+$theme-dark-hover-background-color:       rgb(61, 62, 69);
+$theme-dark-active-background-color:      rgb(50,50,54);
+
+$theme-dark-mark-passed: rgb(65, 82, 65);
+$theme-dark-mark-hover:                   rgb(96,140,96);
+$theme-dark-mark-active: rgb(88, 119, 88);
 
 $media-size-small: 480px;
 $media-size-medium: 768px;
@@ -23,7 +35,7 @@ $header-height: 85px;
 
 @keyframes selected-out-light{
   0%{
-    background-color: $theme-light-color-primary;
+    background-color: $theme-light-hover-background-color;
     color: $theme-light-color-secondary;
   }
   100%{
@@ -34,7 +46,7 @@ $header-height: 85px;
 
 @keyframes selected-out-dark{
   0%{
-    background-color: $theme-dark-color-primary;
+    background-color: $theme-dark-hover-background-color;
     color: $theme-dark-color-secondary;
   }
   100%{

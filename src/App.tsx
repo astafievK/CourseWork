@@ -1,11 +1,12 @@
 import './index.css'
 import { Outlet, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import Login from "./components/Login/Login.jsx";
+import PageLogin from "./components/PageLogin/PageLogin.tsx";
 import { Provider } from 'react-redux';
-import {store} from "./store/store.ts";
+import {persistor, store} from "./store/store.ts";
 import PageStats from "./components/PageStats/PageStats.tsx";
 import PageStudents from "./components/PageStudents/PageStudents.tsx";
 import PageDisciplines from "./components/PageDisciplines/PageDisciplines.tsx";
+import {PersistGate} from "redux-persist/integration/react";
 
 const Root = () => {
     return (
@@ -21,7 +22,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<Root />}>
             <Route path="" element={
                 <>
-                    <Login/>
+                    <PageLogin/>
                 </>
             } />
             <Route path="stats" element={
@@ -44,11 +45,11 @@ const router = createBrowserRouter(
 
 
 function App() {
-
-
     return (
         <Provider store={store}>
-          <RouterProvider router={router} />
+            <PersistGate loading={null} persistor={persistor}>
+                <RouterProvider router={router} />
+            </PersistGate>
         </Provider>
     )
 }

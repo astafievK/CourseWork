@@ -1,26 +1,23 @@
 import { Link } from 'react-router-dom'
-import ExitButton from "../ExitButton/ExitButton.tsx";
+import ButtonExport from "../ButtonExport/ButtonExport.tsx";
+import ButtonExit from "../ButtonExit/ButtonExit.tsx";
+import SelectGroup from "../SelectGroup/SelectGroup.tsx";
+import ButtonTheme from "../ButtonTheme/ButtonTheme.tsx";
 
 function StaffHeaderStudents() {
     return (
         <header>
-            <div className="functions">
-                <Link className="function stats" to="/stats">Статистика</Link>
-                <Link className="function students selected" to="/students">Студенты</Link>
-                <Link className="function disciplines" to="/disciplines">Дисциплины</Link>
-                <button className="function export">Экспорт</button>
-            </div>
+            <ButtonTheme/>
+            <nav>
+                <Link className="stats" to="/stats">Статистика</Link>
+                <Link className="students selected" to="/students">Студенты</Link>
+                <Link className="disciplines" to="/disciplines">Дисциплины</Link>
+            </nav>
+            <ButtonExport/>
             <div className="filters">
-                <div className="filter group">
-                    <select className="select-group" id="filterGroup" onChange={(event) => {
-                        console.log(event.target.value)
-                    }}>
-                        <option>ИСПП-01</option>
-                        <option>ПКС-01</option>
-                    </select>
-                </div>
+                <SelectGroup/>
             </div>
-            <ExitButton/>
+            <ButtonExit/>
         </header>
     )
 }

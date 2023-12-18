@@ -3,7 +3,7 @@ import {buildUrlArguments} from "../utils/buildUrlArgument.ts";
 
 export const disciplineApi = baseApi.injectEndpoints({
     endpoints: builder => ({
-        updateDiscipline: builder.query<IDiscipline[], {name: number} | void>({
+        updateDiscipline: builder.query<IDiscipline[], {name: string} | void>({
             query: query => ({
                 url: `Discipline?${buildUrlArguments(query ?? {})}`,
                 method: "PUT",

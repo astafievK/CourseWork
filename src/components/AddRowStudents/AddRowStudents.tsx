@@ -8,10 +8,10 @@ interface AddRowStudentsProps {
 
 const AddRowStudents: React.FC<AddRowStudentsProps> = () => {
     return(
-        <tr className="add students">
+        <div className="add students">
             <FormAddStudent/>
             <FormAddGroup/>
-        </tr>
+        </div>
     )
 }
 
