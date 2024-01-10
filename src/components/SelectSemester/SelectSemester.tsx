@@ -1,4 +1,4 @@
-import { useGetSemestersQuery } from "../../api/semester.ts";
+import { useGetSemestersQuery } from "../../api/semesterApi.ts";
 
 function SelectSemester() {
     const { data } = useGetSemestersQuery();

@@ -1,4 +1,4 @@
 interface IDiscipline {
-    id: number;
+    id?: number;
     name: string
 }

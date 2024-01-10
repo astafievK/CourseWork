@@ -1,5 +1,5 @@
 import React from "react";
-import StaffHeaderDisciplines from "../StaffHeaderDisciplines/StaffHeaderDisciplines.tsx";
+import HeaderDisciplinesStaff from "../HeaderDisciplinesStaff/HeaderDisciplinesStaff.tsx";
 import TableDisciplinesStaff from "../TableDisciplinesStaff/TableDisciplinesStaff.tsx";
 import {useTypedSelector} from "../../store/hooks/redux.ts";
 import {Navigate} from "react-router-dom";
@@ -21,8 +21,8 @@ const PageDisciplines: React.FC<PageDisciplinesProps> = () => {
 
     return(
         <>
-            <StaffHeaderDisciplines/>
-            <TableDisciplinesStaff />
+            <HeaderDisciplinesStaff/>
+            <TableDisciplinesStaff/>
         </>
     )
 }

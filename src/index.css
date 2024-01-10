@@ -56,7 +56,8 @@
 
 a {
   text-decoration: none;
-  color: #202020; }
+  color: #202020;
+  transition: all 0.2s; }
 
 html {
   height: 100%; }
@@ -66,6 +67,15 @@ html {
     color: #202020;
     outline: none;
     overflow: hidden; }
+    html body button.add-svg {
+      padding: 0;
+      aspect-ratio: 1/1; }
+      html body button.add-svg svg {
+        height: 100%;
+        width: 100%; }
+        html body button.add-svg svg g path {
+          transition: all 0.2s;
+          stroke: #202020; }
     html body button,
     html body select,
     html body input {
@@ -94,7 +104,9 @@ html {
       transition: all 0s;
       background: #bfc0c5; }
     html body input[type=text],
-    html body input[type=password] {
+    html body input[type=password],
+    html body input[type=number] {
+      text-overflow: ellipsis;
       width: 100px;
       background: #dcdee2;
       border: 2px solid transparent;
@@ -104,9 +116,15 @@ html {
       font-weight: 700; }
       html body input[type=text]:hover, html body input[type=text]:focus,
       html body input[type=password]:hover,
-      html body input[type=password]:focus {
+      html body input[type=password]:focus,
+      html body input[type=number]:hover,
+      html body input[type=number]:focus {
         border-color: #202020;
         background: transparent !important; }
+    html body input[type=number]::-webkit-inner-spin-button,
+    html body input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     html body select {
       height: 100%;
       max-height: 200px;
@@ -161,8 +179,13 @@ html {
             animation-duration: 0.2s; }
           html body header nav a:hover, html body header nav a:focus {
             background-color: #dcdee2; }
-        html body header nav .export {
-          padding: 0 10px; }
+      html body header .export {
+        padding: 0 10px; }
+        html body header .export a {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%; }
       html body header .filters {
         display: flex;
         flex-direction: row;
@@ -282,7 +305,8 @@ html {
       animation: opacity-out;
       animation-duration: 0.35s; }
       html body .add span {
-        text-wrap: nowrap; }
+        text-wrap: nowrap;
+        transition: color 0.2s; }
       html body .add form {
         height: 100%;
         display: flex;
@@ -294,6 +318,9 @@ html {
         html body .add form select {
           height: 100%;
           width: auto; }
+        html body .add form input[type=text],
+        html body .add form input[type=password] {
+          max-width: 250px; }
         html body .add form .sample {
           height: 100%;
           gap: 12px; }
@@ -306,36 +333,13 @@ html {
           gap: 12px; }
           html body .add form.add-tasks .add-task {
             display: flex;
-            border: 2px solid transparent;
-            border-radius: 7px;
+            gap: 12px;
             flex-direction: row;
             height: 100%; }
             html body .add form.add-tasks .add-task .add-task__numbers {
-              border: 2px solid transparent;
-              aspect-ratio: 1/1;
-              border-radius: 7px 0 0 7px; }
+              aspect-ratio: 1/1; }
               html body .add form.add-tasks .add-task .add-task__numbers:hover {
                 border-color: #202020; }
-            html body .add form.add-tasks .add-task .add-task__add {
-              width: 100%;
-              aspect-ratio: 1/1;
-              padding: 0;
-              border: 2px solid #d2d4d8;
-              border-radius: 0 7px 7px 0; }
-              html body .add form.add-tasks .add-task .add-task__add svg {
-                height: 100%;
-                width: 100%; }
-                html body .add form.add-tasks .add-task .add-task__add svg g path {
-                  stroke: #202020; }
-            html body .add form.add-tasks .add-task:focus-within {
-              border-color: #202020; }
-              html body .add form.add-tasks .add-task:focus-within .add-task__numbers,
-              html body .add form.add-tasks .add-task:focus-within .add-task__add {
-                border-color: transparent; }
-              html body .add form.add-tasks .add-task:focus-within .add-task__numbers {
-                border-right-color: #202020; }
-              html body .add form.add-tasks .add-task:focus-within .add-task__add {
-                border-left-color: #202020; }
         html body .add form .sample {
           display: flex;
           flex-direction: row; }
@@ -362,7 +366,8 @@ html {
         html body .table-wrapper table tbody tr {
           display: flex;
           height: 80px;
-          border-bottom: 2px solid #666666; }
+          border-bottom: 2px solid #666666;
+          transition: all 0.2s; }
           html body .table-wrapper table tbody tr td {
             display: flex;
             align-items: center;
@@ -370,7 +375,7 @@ html {
             white-space: nowrap;
             padding: 10px 12px; }
             html body .table-wrapper table tbody tr td.group {
-              border-right: 2px solid #666666;
+              min-width: 200px;
               position: sticky;
               left: 0; }
             html body .table-wrapper table tbody tr td.number {
@@ -383,6 +388,7 @@ html {
               width: 45px;
               flex-shrink: 1; }
             html body .table-wrapper table tbody tr td.fullName {
+              min-width: 300px;
               position: sticky;
               display: flex;
               flex-direction: row;
@@ -390,14 +396,14 @@ html {
               left: 45px;
               z-index: 1;
               text-align: left;
-              flex-shrink: 1;
-              border-right: 2px solid #666666; }
+              flex-shrink: 1; }
               html body .table-wrapper table tbody tr td.fullName .name {
                 margin-left: 5px; }
               html body .table-wrapper table tbody tr td.fullName .name-short {
                 display: none;
                 margin-left: 5px; }
             html body .table-wrapper table tbody tr td.labwork {
+              min-width: 325px;
               position: sticky;
               display: flex;
               flex-direction: row;
@@ -406,8 +412,7 @@ html {
               z-index: 1;
               text-align: left;
               flex-shrink: 1;
-              padding: 0 15px;
-              border-right: 2px solid #666666; }
+              padding: 0 15px; }
               html body .table-wrapper table tbody tr td.labwork .title.short {
                 display: none; }
             html body .table-wrapper table tbody tr td.actions {
@@ -432,32 +437,19 @@ html {
                 html body .table-wrapper table tbody tr td.actions .action.nothing:hover svg {
                   fill: red; }
               html body .table-wrapper table tbody tr td.actions .select-tasks {
-                border: 2px solid transparent;
-                border-radius: 7px; }
+                display: flex;
+                gap: 5px; }
                 html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__numbers {
                   height: 100%;
-                  border-radius: 7px 0 0 7px;
-                  border: 2px solid transparent; }
+                  margin-left: 5px; }
                   html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__numbers:hover {
                     border-color: #202020; }
                 html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select {
-                  height: 100%;
-                  padding: 0 15px;
-                  border: 2px solid #dcdee2;
-                  border-radius: 0 7px 7px 0; }
+                  height: 100%; }
                   html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:hover {
                     background: #dcdee2; }
                   html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
                     background: #bfc0c5; }
-                html body .table-wrapper table tbody tr td.actions .select-tasks:focus-within {
-                  border-color: #202020; }
-                  html body .table-wrapper table tbody tr td.actions .select-tasks:focus-within .select-tasks__numbers,
-                  html body .table-wrapper table tbody tr td.actions .select-tasks:focus-within .select-tasks__select {
-                    border-color: transparent; }
-                  html body .table-wrapper table tbody tr td.actions .select-tasks:focus-within .select-tasks__numbers {
-                    border-right-color: #202020; }
-                  html body .table-wrapper table tbody tr td.actions .select-tasks:focus-within .select-tasks__select {
-                    border-left-color: #202020; }
             html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
               width: 80px;
               align-items: center;
@@ -521,6 +513,10 @@ html {
     html body.dark {
       background: #202020;
       color: #e1e3e6; }
+      html body.dark a {
+        color: #e1e3e6; }
+      html body.dark button.add-svg svg g path {
+        stroke: #e1e3e6; }
       html body.dark button,
       html body.dark select,
       html body.dark input {
@@ -591,18 +587,10 @@ html {
             background: #415241; }
           html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__numbers:hover {
             border-color: #e1e3e6; }
-          html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select {
-            border: 2px solid #3d3e45; }
-            html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:hover {
-              background: #3d3e45; }
-            html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
-              background: #323236; }
-          html body.dark .table-wrapper table tbody tr td.actions .select-tasks:focus-within {
-            border-color: #e1e3e6; }
-            html body.dark .table-wrapper table tbody tr td.actions .select-tasks:focus-within .select-tasks__numbers {
-              border-right-color: #e1e3e6; }
-            html body.dark .table-wrapper table tbody tr td.actions .select-tasks:focus-within .select-tasks__select {
-              border-left-color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:hover {
+            background: #3d3e45; }
+          html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
+            background: #323236; }
           html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {
             border-color: #e1e3e6; }
 

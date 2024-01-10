@@ -1,6 +1,11 @@
-import {useGetWorkTypesQuery} from "../../api/worktype.ts";
+import {useGetWorkTypesQuery} from "../../api/workTypeApi.ts";
+import React from "react";
 
-function SelectWorkType() {
+interface SelectWorkTypeProps {
+
+}
+
+const SelectWorkType: React.FC<SelectWorkTypeProps> = () => {
     const { data } = useGetWorkTypesQuery();
 
     return (

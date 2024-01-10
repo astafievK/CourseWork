@@ -52,7 +52,8 @@
 
 a{
   text-decoration: none;
-  color: $theme-light-color-secondary
+  color: $theme-light-color-secondary;
+  transition: all 0.2s;
 }
 
 html {
@@ -64,6 +65,23 @@ html {
     color: $theme-light-color-secondary;
     outline: none;
     overflow: hidden;
+
+    button.add-svg{
+      padding: 0;
+      aspect-ratio: 1/1;
+
+      svg {
+        height: 100%;
+        width: 100%;
+
+        g {
+          path {
+            transition: all 0.2s;
+            stroke: $theme-light-color-secondary;
+          }
+        }
+      }
+    }
 
     button,
     select,
@@ -97,7 +115,9 @@ html {
     }
 
     input[type=text],
-    input[type=password] {
+    input[type=password],
+    input[type=number]{
+      text-overflow: ellipsis;
       width: 100px;
       background: $theme-light-hover-background-color;
       border: 2px solid transparent;
@@ -111,6 +131,12 @@ html {
         border-color: $theme-light-color-secondary;
         background: transparent !important;
       }
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
 
     select {
@@ -186,9 +212,16 @@ html {
             background-color: $theme-light-hover-background-color;
           }
         }
+      }
 
-        .export {
-          padding: 0 10px;
+      .export {
+        padding: 0 10px;
+
+        a{
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
         }
       }
 
@@ -355,6 +388,7 @@ html {
 
       span{
         text-wrap: nowrap;
+        transition: color 0.2s;
       }
 
       form {
@@ -369,6 +403,11 @@ html {
         select {
           height: 100%;
           width: auto;
+        }
+
+        input[type=text],
+        input[type=password]{
+          max-width: 250px;
         }
 
         .sample {
@@ -390,54 +429,15 @@ html {
 
           .add-task {
             display: flex;
-            border: 2px solid transparent;
-            border-radius: 7px;
+            gap: 12px;
             flex-direction: row;
             height: 100%;
 
             .add-task__numbers {
-              border: 2px solid transparent;
               aspect-ratio: 1/1;
-              border-radius: 7px 0 0 7px;
 
               &:hover{
                 border-color: $theme-light-color-secondary;
-              }
-            }
-
-            .add-task__add {
-              width: 100%;
-              aspect-ratio: 1/1;
-              padding: 0;
-              border: 2px solid #d2d4d8;
-              border-radius: 0 7px 7px 0;
-
-              svg {
-                height: 100%;
-                width: 100%;
-
-                g {
-                  path {
-                    stroke: $theme-light-color-secondary;
-                  }
-                }
-              }
-            }
-
-            &:focus-within {
-              border-color: $theme-light-color-secondary;
-
-              .add-task__numbers,
-              .add-task__add {
-                border-color: transparent;
-              }
-
-              .add-task__numbers {
-                border-right-color: $theme-light-color-secondary;
-              }
-
-              .add-task__add {
-                border-left-color: $theme-light-color-secondary;
               }
             }
           }
@@ -481,6 +481,7 @@ html {
             display: flex;
             height: 80px;
             border-bottom: 2px solid #666666;
+            transition: all 0.2s;
 
             td {
               display: flex;
@@ -490,7 +491,7 @@ html {
               padding: 10px 12px;
 
               &.group{
-                border-right: 2px solid #666666;
+                min-width: 200px;
                 position: sticky;
                 left: 0;
               }
@@ -507,6 +508,7 @@ html {
               }
 
               &.fullName {
+                min-width: 300px;
                 position: sticky;
                 display: flex;
                 flex-direction: row;
@@ -515,7 +517,6 @@ html {
                 z-index: 1;
                 text-align: left;
                 flex-shrink: 1;
-                border-right: 2px solid #666666;
 
                 .name {
                   margin-left: 5px;
@@ -532,6 +533,7 @@ html {
               }
 
               &.labwork {
+                min-width: 325px;
                 position: sticky;
                 display: flex;
                 flex-direction: row;
@@ -541,7 +543,6 @@ html {
                 text-align: left;
                 flex-shrink: 1;
                 padding: 0 15px;
-                border-right: 2px solid #666666;
 
                 .title{
                   &.short{
@@ -596,13 +597,12 @@ html {
                 }
 
                 .select-tasks{
-                  border: 2px solid transparent;
-                  border-radius: 7px;
+                  display: flex;
+                  gap: 5px;
 
                   .select-tasks__numbers {
                     height: 100%;
-                    border-radius: 7px 0 0 7px;
-                    border: 2px solid transparent;
+                    margin-left: 5px;
 
                     &:hover{
                       border-color: $theme-light-color-secondary;
@@ -611,9 +611,6 @@ html {
 
                   .select-tasks__select{
                     height: 100%;
-                    padding: 0 15px;
-                    border: 2px solid $theme-light-hover-background-color;
-                    border-radius: 0 7px 7px 0;
 
                     &:hover{
                       background: $theme-light-hover-background-color;
@@ -621,23 +618,6 @@ html {
 
                     &:active{
                       background: $theme-light-active-background-color;
-                    }
-                  }
-
-                  &:focus-within{
-                    border-color: $theme-light-color-secondary;
-
-                    .select-tasks__numbers,
-                    .select-tasks__select{
-                      border-color: transparent;
-                    }
-
-                    .select-tasks__numbers{
-                      border-right-color: $theme-light-color-secondary;
-                    }
-
-                    .select-tasks__select{
-                      border-left-color: $theme-light-color-secondary;
                     }
                   }
                 }
@@ -764,6 +744,20 @@ html {
     &.dark {
       background: $theme-dark-color-primary;
       color: $theme-dark-color-secondary;
+
+      a{
+        color: $theme-dark-color-secondary
+      }
+
+      button.add-svg{
+        svg {
+          g {
+            path {
+              stroke: $theme-dark-color-secondary;
+            }
+          }
+        }
+      }
 
       button,
       select,
@@ -930,26 +924,12 @@ html {
                     }
 
                     .select-tasks__select{
-                      border: 2px solid $theme-dark-hover-background-color;
-
                       &:hover{
                         background: $theme-dark-hover-background-color;
                       }
 
                       &:active{
                         background: $theme-dark-active-background-color;
-                      }
-                    }
-
-                    &:focus-within{
-                      border-color: $theme-dark-color-secondary;
-
-                      .select-tasks__numbers{
-                        border-right-color: $theme-dark-color-secondary;
-                      }
-
-                      .select-tasks__select{
-                        border-left-color: $theme-dark-color-secondary;
                       }
                     }
                   }

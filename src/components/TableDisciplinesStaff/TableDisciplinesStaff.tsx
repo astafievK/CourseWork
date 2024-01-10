@@ -1,5 +1,5 @@
 import TableRowDisciplinesStaff from "../TableRowDisciplinesStaff/TableRowDisciplinesStaff.tsx";
-import {useGetGroupsQuery} from "../../api/group.ts";
+import {useGetGroupsQuery} from "../../api/groupApi.ts";
 import AddRowDisciplines from "../AddRowDisciplines/AddRowDisciplines.tsx";
 
 function TableDisciplinesStaff() {

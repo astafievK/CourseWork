@@ -1,4 +1,4 @@
-import {useGetCoursesQuery} from "../../api/course.ts";
+import {useGetCoursesQuery} from "../../api/courseApi.ts";
 import React from "react";
 
 interface SelectCourseProps{
@@ -10,7 +10,7 @@ const SelectCourse: React.FC<SelectCourseProps> = () => {
 
     return(
         <div className="filter course">
-            <select className="select-course" id="filterCourse" onChange={(event) => { console.log(event.target.value) }}>
+            <select className="select-course" id="filterCourse">
                 {
                     data?.map((course) => (
                     <option key={course.id} data-id={course.id}>{course.id} курс</option>

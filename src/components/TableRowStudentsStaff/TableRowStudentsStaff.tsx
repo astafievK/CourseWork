@@ -1,9 +1,9 @@
 import React from "react";
 
 interface TableRowStudentsStaffProps{
+    key?: number
     name: string
     surname: string
-    isRetired: boolean
 }
 
 const TableRowStudentsStaff: React.FC<TableRowStudentsStaffProps> = (props) => {
@@ -15,7 +15,6 @@ const TableRowStudentsStaff: React.FC<TableRowStudentsStaffProps> = (props) => {
             <td className="fullName">
                 <span className="surname">{props.surname}</span>
                 <span className="name">{props.name}</span>
-                <span className="name-short">{props.name[0]}</span>
             </td>
             <td>
                 <button className="retiredBtn">Отчислен(-а)</button>

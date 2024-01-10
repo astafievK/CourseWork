@@ -1,15 +1,15 @@
-import classNames from "classnames";
 import React from "react";
 
 interface ButtonDisciplineProps {
+    key?: number;
     disciplineName: string;
 }
 
 const ButtonDiscipline: React.FC<ButtonDisciplineProps> = (props) => {
-    const { disciplineName } = props
+    const { key, disciplineName } = props
 
     return(
-        <button className={classNames({disciplineBtn: true})}>{disciplineName}</button>
+        <button className="disciplineBtn" key={key}>{disciplineName}</button>
     )
 }
 export default ButtonDiscipline;
