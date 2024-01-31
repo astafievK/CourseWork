@@ -7,15 +7,15 @@ export const disciplineApi = baseApi.injectEndpoints({
                 url: `Discipline`,
                 method: "GET",
             }),
-            providesTags: ['Discipline'],
+            providesTags: ['Disciplines'],
         }),
-        addDiscipline: builder.mutation<IDiscipline[], { name: string }>({
+        addDiscipline: builder.mutation<IDiscipline, { name: string }>({
             query: query => ({
                 url: `Discipline`,
                 method: "POST",
-                body: query
+                body: query,
             }),
-            invalidatesTags: ['Discipline'],
+            invalidatesTags: ['Disciplines'],
         }),
     })
 })

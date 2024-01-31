@@ -1,17 +1,42 @@
 import React from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {useAddStudentMutation} from "../../api/studentApi.ts";
+import {useTypedSelector} from "../../store/hooks/redux.ts";
 
 interface FormAddStudentProps {
 
 }
 
 const FormAddStudent: React.FC<FormAddStudentProps> = () => {
+    const {handleSubmit, register} = useForm<IStudentCommand>()
+    const { group } = useTypedSelector(state => state.select)
+
+    const onSubmit: SubmitHandler<IStudentCommand> = async data => {
+        await addStudent({
+            idGroup: (group ? group.id : 0),
+            login: data.login,
+            password: data.password,
+            name: data.name,
+            surname: data.surname,
+            patronymic: data.patronymic
+        })
+    }
+
+    const [addStudent] = useAddStudentMutation()
+
     return(
-        <form className="add-student">
+        <form className="add-student" onSubmit={handleSubmit(onSubmit)}>
             <span className="add-student__title">Добавить студента</span>
-            <input className="student-name" type="text" placeholder="Имя" title="Имя студента" required/>
-            <input className="student-surname" type="text" placeholder="Фамилия" title="Фамилия студента" required/>
-            <input className="student-login" type="text" placeholder="Логин" title="Логин учетной записи студента" required/>
-            <input className="student-password" type="password" placeholder="Пароль" title="Пароль учетной записи студента" required/>
+            <input className="student-surname" type="text" placeholder="Фамилия" {...register("surname")}
+                   title="Фамилия студента" required/>
+            <input className="student-name" type="text" placeholder="Имя" {...register("name")} title="Имя студента"
+                   required/>
+            <input className="student-patronymic" type="text" placeholder="Отчество" {...register("patronymic")}
+                   title="Отчество студента" required/>
+            <input className="student-login" type="text" placeholder="Логин" {...register("login")}
+                   title="Логин учетной записи студента" required/>
+            <input className="student-password" type="password" placeholder="Пароль" {...register("password")}
+                   title="Пароль учетной записи студента" required/>
             <button className="add-student__button add-svg" type="submit" title="Добавить учетную запись в систему">
                 <svg viewBox="0 0 24 24" fill="none">
                     <g id="Edit / Add_Plus">

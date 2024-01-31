@@ -13,7 +13,7 @@ function TableDisciplinesStaff() {
                     <tbody>
                     {
                         data?.map((group) => (
-                            <TableRowDisciplinesStaff key={group.id} groupName={group.name}/>
+                            <TableRowDisciplinesStaff key={group.id} groupName={group.name} groupId={group.id}/>
                         ))
                     }
                     </tbody>

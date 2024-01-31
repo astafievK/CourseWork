@@ -1,5 +1,5 @@
 import React from "react";
-import {logout} from "../../api/interfaces/IAuthState.ts";
+import {logout} from "../../api/slices/authSlice.ts";
 import {useAppDispatch} from "../../store/hooks/redux.ts";
 
 interface ButtonExitProps{

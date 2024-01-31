@@ -1,15 +1,32 @@
 import React from "react";
+import {useSetGroupDisciplineMutation} from "../../api/groupApi.ts";
 
 interface ButtonDisciplineProps {
-    key?: number;
+    value: number;
     disciplineName: string;
+    isSelected: boolean;
 }
 
 const ButtonDiscipline: React.FC<ButtonDisciplineProps> = (props) => {
-    const { key, disciplineName } = props
+    const { value, disciplineName, isSelected } = props
+
+    const disciplineBtnRef = React.useRef<HTMLButtonElement>(null);
+
+    const [addDiscipline] = useSetGroupDisciplineMutation()
+
+    const toggleSelectedStatus = () => {
+        if (disciplineBtnRef.current) {
+            const newDisciplineId = Number(disciplineBtnRef.current.value)
+            const newGroupId = Number(disciplineBtnRef.current.parentElement?.parentElement?.querySelector(".group")?.getAttribute('data-id'))
+            disciplineBtnRef.current.classList.toggle('selected');
+            addDiscipline({idGroup: newGroupId, idDiscipline: newDisciplineId})
+        }
+    };
 
     return(
-        <button className="disciplineBtn" key={key}>{disciplineName}</button>
+        <>
+            <button ref={disciplineBtnRef} className={"disciplineBtn" + (isSelected ? " selected" : "")} value={value} onClick={toggleSelectedStatus}>{disciplineName}</button>
+        </>
     )
 }
 export default ButtonDiscipline;

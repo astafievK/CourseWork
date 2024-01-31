@@ -107,13 +107,6 @@ html {
       }
     }
 
-    button{
-      &:active{
-        transition: all 0s;
-        background: $theme-light-active-background-color;
-      }
-    }
-
     input[type=text],
     input[type=password],
     input[type=number]{
@@ -238,6 +231,10 @@ html {
           align-items: center;
           flex-direction: column;
           text-align: center;
+
+          .select-work{
+            max-width: 15rem;
+          }
         }
       }
 
@@ -451,6 +448,13 @@ html {
         &:not(:first-child){
           margin-left: auto;
         }
+
+        &.add-student{
+          input[type=text],
+          input[type=password]{
+            width: 7rem;
+          }
+        }
       }
 
       &::-webkit-scrollbar {
@@ -491,7 +495,8 @@ html {
               padding: 10px 12px;
 
               &.group{
-                min-width: 200px;
+                background: $theme-light-color-primary;
+                min-width: 140px;
                 position: sticky;
                 left: 0;
               }
@@ -708,6 +713,11 @@ html {
                 }
               }
 
+              .retiredBtn {
+                height: 100%;
+                font-weight: 700;
+              }
+
               &.disciplines {
                 gap: 12px;
 
@@ -715,19 +725,13 @@ html {
                   height: 100%;
 
                   &.selected{
-                    border-color: green;
+                    background: $theme-light-mark-passed;
 
                     &:hover{
-                      border-color: $theme-light-color-secondary;
-                      box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4);
+                      background: $theme-light-mark-hover;
                     }
                   }
                 }
-              }
-
-              .retiredBtn {
-                height: 100%;
-                font-weight: 700;
               }
             }
           }
@@ -735,8 +739,8 @@ html {
       }
 
       &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
+        width: 10px;
+        height: 10px;
       }
     }
 
@@ -744,6 +748,10 @@ html {
     &.dark {
       background: $theme-dark-color-primary;
       color: $theme-dark-color-secondary;
+
+      *::-webkit-scrollbar-thumb {
+        background-color: $theme-dark-color-secondary;
+      }
 
       a{
         color: $theme-dark-color-secondary
@@ -766,12 +774,6 @@ html {
 
         &:hover{
           background-color: $theme-dark-hover-background-color;
-        }
-      }
-
-      button{
-        &:active{
-          background: $theme-dark-active-background-color;
         }
       }
 
@@ -864,6 +866,10 @@ html {
           tbody {
             tr {
               td {
+                &.group{
+                  background: $theme-dark-color-primary;
+                }
+
                 &.number {
                   background: $theme-dark-color-primary;
                 }
@@ -891,23 +897,17 @@ html {
                       &:hover{
                         background: $theme-dark-mark-hover;
                       }
-
-                      &:active{
-                        background: $theme-dark-mark-active;
-                      }
                     }
                   }
 
                   .mark{
                     &:hover,
-                    &:active,
                     &:focus{
                       background: transparent;
                     }
 
                     &.passed{
                       &:hover,
-                      &:active,
                       &:focus{
                         background: $theme-dark-mark-passed;
                       }
@@ -938,8 +938,10 @@ html {
                 &.disciplines {
                   .disciplineBtn{
                     &.selected{
+                      background: $theme-dark-mark-passed;
+
                       &:hover{
-                        border-color: $theme-dark-color-secondary;
+                        background: $theme-dark-mark-hover;
                       }
                     }
                   }

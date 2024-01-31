@@ -1,14 +1,30 @@
 import React from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {useAddGroupMutation} from "../../api/groupApi.ts";
 
 interface FormAddGroupProps {
 
 }
 
 const FormAddGroup: React.FC<FormAddGroupProps> = () => {
+    const {handleSubmit, register} = useForm<IGroupCommand>()
+
+    const onSubmit: SubmitHandler<IGroupCommand> = async data => {
+        await addGroup({name: data.groupName})
+    }
+
+    const [addGroup] = useAddGroupMutation()
+
     return(
-        <form className="add-group">
+        <form className="add-group" onSubmit={handleSubmit(onSubmit)}>
             <span className="add-group__title">Добавить группу</span>
-            <input className="group-name" type="text" placeholder="Имя группы" title="Имя группы" required/>
+            <input
+                className="group-name"
+                type="text"
+                placeholder="Имя группы"
+                {...register("groupName")}
+                title="Имя группы"
+                required/>
             <button className="add-group__button add-svg" type="submit" title="Добавить группу в систему">
                 <svg viewBox="0 0 24 24" fill="none">
                     <g id="Edit / Add_Plus">

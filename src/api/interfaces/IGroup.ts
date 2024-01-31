@@ -3,5 +3,5 @@ interface IGroup {
     name: string;
     course: ICourse;
     semester: ISemester;
-    disciplines: IDiscipline
+    disciplines: IDiscipline[];
 }

@@ -16,11 +16,11 @@ const FormAddDiscipline: React.FC<FormAddDisciplineProps> = () => {
     const onSubmit: SubmitHandler<IDisciplineCommand> = async data => {
         // Проверка на случай, если длина названия дисциплины больше 100 символов
         if(data.disciplineName.length > 100){
-            // Оповещает пользователя об ошибке
+            // Оповещаем пользователя об ошибке
             alert("Максимальная длина названия дисциплины - 100 символов")
         }
         else{
-            // Елси ошибки нет, то добавляем дисциплину в систему
+            // Если ошибок нет, то добавляем дисциплину в систему
             await updateDiscipline({name: data.disciplineName})
         }
     }

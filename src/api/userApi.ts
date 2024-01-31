@@ -1,5 +1,5 @@
 import {baseApi} from "./api.ts";
-import {login} from "./interfaces/IAuthState.ts";
+import {login} from "./slices/authSlice.ts";
 
 
 interface UserData{

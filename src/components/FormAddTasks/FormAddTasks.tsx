@@ -1,23 +1,38 @@
 import React from "react";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {useTypedSelector} from "../../store/hooks/redux.ts";
+import {useAddTaskForWorkMutation} from "../../api/taskApi.ts";
 
 interface FormAddTasksProps {
 
 }
 
 const FormAddTasks: React.FC<FormAddTasksProps> = () => {
-    function validateInput(event: React.ChangeEvent<HTMLInputElement>) {
-        const value = event.target.value;
+    const {handleSubmit, register} = useForm<ITasksCommand>()
+    const {work} = useTypedSelector(state => state.select)
 
-        if (!value.match(/^[0-9]+$/)) {
-            event.target.value = value.substring(0, value.length - 1);
+    const [addTasks] = useAddTaskForWorkMutation()
+
+    const onSubmit: SubmitHandler<ITasksCommand> = async data => {
+        if (work) {
+            await addTasks({
+                idWork: work.id,
+                count: data.tasksCount
+            })
         }
     }
 
     return(
-        <form className="add-tasks">
+        <form className="add-tasks" onSubmit={handleSubmit(onSubmit)}>
             <span className="add-task__title">Добавить задания</span>
             <div className="add-task">
-                <input className="add-task__numbers" type="text" maxLength={2}  name="numbers" placeholder="3" onChange={validateInput} title="Количество заданий для добавления (не больше 99)" required/>
+                <input
+                    className="add-task__numbers"
+                    type="text" maxLength={2}
+                    placeholder="3"
+                    {...register("tasksCount")}
+                    title="Количество заданий для добавления (не больше 99)"
+                    required/>
                 <button className="add-task__add add-svg" title="Добавить задания в работу">
                     <svg viewBox="0 0 24 24" fill="none">
                         <g id="Edit / Add_Plus">

@@ -100,9 +100,6 @@ html {
       html body input svg {
         height: 100%;
         width: 100%; }
-    html body button:active {
-      transition: all 0s;
-      background: #bfc0c5; }
     html body input[type=text],
     html body input[type=password],
     html body input[type=number] {
@@ -198,6 +195,8 @@ html {
           align-items: center;
           flex-direction: column;
           text-align: center; }
+          html body header .filters .filter .select-work {
+            max-width: 15rem; }
       html body header .exit-form {
         height: 100%; }
         html body header .exit-form .exit {
@@ -345,6 +344,9 @@ html {
           flex-direction: row; }
         html body .add form:not(:first-child) {
           margin-left: auto; }
+        html body .add form.add-student input[type=text],
+        html body .add form.add-student input[type=password] {
+          width: 7rem; }
       html body .add::-webkit-scrollbar {
         width: 6px;
         height: 6px; }
@@ -375,7 +377,8 @@ html {
             white-space: nowrap;
             padding: 10px 12px; }
             html body .table-wrapper table tbody tr td.group {
-              min-width: 200px;
+              background: #ffffff;
+              min-width: 140px;
               position: sticky;
               left: 0; }
             html body .table-wrapper table tbody tr td.number {
@@ -495,24 +498,25 @@ html {
                 background: transparent; }
               html body .table-wrapper table tbody tr td.stats .mark.passed:hover, html body .table-wrapper table tbody tr td.stats .mark.passed:active, html body .table-wrapper table tbody tr td.stats .mark.passed:focus {
                 background: #b2d9b2; }
+            html body .table-wrapper table tbody tr td .retiredBtn {
+              height: 100%;
+              font-weight: 700; }
             html body .table-wrapper table tbody tr td.disciplines {
               gap: 12px; }
               html body .table-wrapper table tbody tr td.disciplines .disciplineBtn {
                 height: 100%; }
                 html body .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected {
-                  border-color: green; }
+                  background: #b2d9b2; }
                   html body .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {
-                    border-color: #202020;
-                    box-shadow: 0 0 3px 2px rgba(0, 128, 0, 0.4); }
-            html body .table-wrapper table tbody tr td .retiredBtn {
-              height: 100%;
-              font-weight: 700; }
+                    background: #7fbf7f; }
       html body .table-wrapper::-webkit-scrollbar {
-        width: 6px;
-        height: 6px; }
+        width: 10px;
+        height: 10px; }
     html body.dark {
       background: #202020;
       color: #e1e3e6; }
+      html body.dark *::-webkit-scrollbar-thumb {
+        background-color: #e1e3e6; }
       html body.dark a {
         color: #e1e3e6; }
       html body.dark button.add-svg svg g path {
@@ -525,8 +529,6 @@ html {
         html body.dark select:hover,
         html body.dark input:hover {
           background-color: #3d3e45; }
-      html body.dark button:active {
-        background: #323236; }
       html body.dark input[type=text],
       html body.dark input[type=password] {
         background: #3d3e45; }
@@ -566,6 +568,8 @@ html {
         html body.dark .table-wrapper table {
           background: #202020;
           color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr td.group {
+            background: #202020; }
           html body.dark .table-wrapper table tbody tr td.number {
             background: #202020; }
           html body.dark .table-wrapper table tbody tr td.fullName {
@@ -579,11 +583,9 @@ html {
             background: #415241; }
             html body.dark .table-wrapper table tbody tr td.stats .markBtn.passed:hover {
               background: #608c60; }
-            html body.dark .table-wrapper table tbody tr td.stats .markBtn.passed:active {
-              background: #587758; }
-          html body.dark .table-wrapper table tbody tr td.stats .mark:hover, html body.dark .table-wrapper table tbody tr td.stats .mark:active, html body.dark .table-wrapper table tbody tr td.stats .mark:focus {
+          html body.dark .table-wrapper table tbody tr td.stats .mark:hover, html body.dark .table-wrapper table tbody tr td.stats .mark:focus {
             background: transparent; }
-          html body.dark .table-wrapper table tbody tr td.stats .mark.passed:hover, html body.dark .table-wrapper table tbody tr td.stats .mark.passed:active, html body.dark .table-wrapper table tbody tr td.stats .mark.passed:focus {
+          html body.dark .table-wrapper table tbody tr td.stats .mark.passed:hover, html body.dark .table-wrapper table tbody tr td.stats .mark.passed:focus {
             background: #415241; }
           html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__numbers:hover {
             border-color: #e1e3e6; }
@@ -591,7 +593,9 @@ html {
             background: #3d3e45; }
           html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
             background: #323236; }
-          html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {
-            border-color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected {
+            background: #415241; }
+            html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {
+              background: #608c60; }
 
 /*# sourceMappingURL=index.css.map */

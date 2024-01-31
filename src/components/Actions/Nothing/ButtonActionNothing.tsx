@@ -6,7 +6,7 @@ interface ButtonActionNothingProps {
 
 const ButtonActionNothing: React.FC<ButtonActionNothingProps> = () => {
     return (
-        <button className="action nothing">
+        <button className="action nothing" title="Никакие задания сразу">
             <svg fill="#ff9a9a" width="256px" height="256px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>

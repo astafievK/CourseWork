@@ -1,6 +1,8 @@
 interface IStudentCommand{
-    name: string
-    surname: string
+    idGroup: number
     login: string
     password: string
+    name: string
+    surname: string
+    patronymic: string
 }

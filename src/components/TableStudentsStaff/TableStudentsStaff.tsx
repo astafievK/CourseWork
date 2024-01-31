@@ -1,10 +1,11 @@
 import TableRowStudentsStaff from "../TableRowStudentsStaff/TableRowStudentsStaff.tsx";
 import AddRowStudents from "../AddRowStudents/AddRowStudents.tsx";
-import {useGetStudentsQuery} from "../../api/studentApi.ts";
+import {useGetStudentsByGroupQuery} from "../../api/groupApi.ts";
+import {useTypedSelector} from "../../store/hooks/redux.ts";
 
 function TableStudentsStaff() {
-    const { data } = useGetStudentsQuery();
-    console.log(data)
+    const { group } = useTypedSelector(state => state.select)
+    const { data=[] } = useGetStudentsByGroupQuery( {idGroup: group ? group.id : 0} );
 
     return(
         <>
