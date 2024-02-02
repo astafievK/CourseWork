@@ -20,7 +20,7 @@ services:
 
   api:
     container_name: Api
-    image: kirill_api
+    image: coursework_api
     build:
       network: host
       context: .
@@ -35,22 +35,22 @@ services:
     logging:
       driver: none
     restart: always
-    
-  react:
-    container_name: App
-    image: app
+  
+  reactapp:
+    container_name: ReactApp
+    image: react_app
     build:
       network: host
-      context: ./App
-      dockerfile: Dockerfile
+      context: ./ReactApp
     depends_on:
       - api
     ports:
       - "3000:80"
-    stdin_open: true
+    environment:
+      - VITE_API_URL=http://localhost:5050/api
     logging:
       driver: none
     restart: always
-    
+
 volumes:
   db:

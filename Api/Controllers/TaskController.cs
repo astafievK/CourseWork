@@ -15,23 +15,27 @@ public sealed class TaskController(IMapper mapper) : BaseController
     public async Task<ActionResult<TaskViewModel[]>> Get(
         [FromServices] ApiDbContext context)
     {
-        return Ok(await context.WorkTypes
+        return Ok(await context.Tasks
             .AsNoTracking()
             .ProjectTo<TaskViewModel>(mapper.ConfigurationProvider)
             .ToListAsync());
     }
 
-    [HttpPost]
+    [HttpPost("{count:int}")]
     public async Task<ActionResult> Post(
+        int count,
         [FromBody] TaskCommand command,
         [FromServices] ApiDbContext context)
     {
-        var task = mapper.Map<Task>(command);
+        for (int i = 1; i <= count; i++)
+        {
+            var task = mapper.Map<Task>(command);
 
-        await context.AddAsync(task);
-        await context.SaveChangesAsync();
+            await context.AddAsync(task);
+            await context.SaveChangesAsync();
+        }
 
-        return Created(string.Empty, task.Id);
+        return Ok();
     }
 
     [HttpPut("{id:int}")]

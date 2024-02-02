@@ -20,6 +20,7 @@ public sealed class DisciplineController(IMapper mapper) : BaseController
             .ToListAsync());
     }
 
+    // Post-метод на добавление дисциплины в систему
     [HttpPost]
     public async Task<ActionResult> Post(
         [FromBody] DisciplineCommand command,

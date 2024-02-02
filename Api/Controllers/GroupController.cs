@@ -8,6 +8,7 @@ using Api.Models.Students;
 using Api.Models.Works;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,17 +46,39 @@ public sealed class GroupController(IMapper mapper) : BaseController
     }
 
     [HttpGet("{id:int}/disciplines")]
-    public async Task<ActionResult<DisciplineViewModel[]>> GetDisciplines(
+    public async Task<IResult> GetDisciplines(
         int id,
         [FromServices] ApiDbContext context)
     {
-        return Ok(await context.GroupDisciplines
+        var allDisciplines = await context.Disciplines
+            .AsNoTracking()
+            .ProjectTo<DisciplineViewModel>(mapper.ConfigurationProvider)
+            .ToListAsync();
+
+        var selectedDisciplines = await context.GroupDisciplines
             .AsNoTracking()
             .Include(e => e.Discipline)
             .Where(e => e.GroupId == id)
             .Select(e => e.Discipline)
             .ProjectTo<DisciplineViewModel>(mapper.ConfigurationProvider)
-            .ToListAsync());
+            .ToListAsync();
+        selectedDisciplines.Reverse();
+        
+        var selectedDisciplinesSorted = await context.GroupDisciplines
+            .AsNoTracking()
+            .Include(e => e.Discipline)
+            .Where(e => e.GroupId == id)
+            .Select(e => e.Discipline)
+            .ProjectTo<DisciplineViewModel>(mapper.ConfigurationProvider)
+            .OrderBy(x => x.Id)
+            .ToListAsync();
+        
+        var notSelectedDisciplinesId = allDisciplines.Select(x => x.Id).Except(selectedDisciplines.Select(x => x.Id)).ToList();
+        
+        List<DisciplineViewModel> notSelectedDisciplines = new(); 
+        notSelectedDisciplinesId.ForEach(x => notSelectedDisciplines.Add(allDisciplines!.FirstOrDefault(y => y.Id == x)!));
+        
+        return Results.Json(new {selectedDisciplinesSorted, selectedDisciplines, notSelectedDisciplines});
     }
 
     [HttpGet("{id:int}/works")]
@@ -127,6 +150,30 @@ public sealed class GroupController(IMapper mapper) : BaseController
         await context.SaveChangesAsync();
 
         return Created(string.Empty, group.Id);
+    }
+
+    [HttpPut("idGroup={idGroup:int}&idDiscipline={idDiscipline:int}")]
+    public async Task<ActionResult> Put(
+        int idGroup,
+        int idDiscipline,
+        [FromServices] ApiDbContext context)
+    {
+
+        var group = await context.Groups.Include(x => x.GroupDisciplines).AsNoTracking().FirstOrDefaultAsync(x => x.Id == idGroup);
+
+        var groupDiscipline = new GroupDiscipline()
+        {
+            DisciplineId = idDiscipline,
+            GroupId = idGroup
+        };
+        
+        if (group!.GroupDisciplines.Any(x => x.DisciplineId == idDiscipline))
+            context.GroupDisciplines.Remove(groupDiscipline);
+        else
+            context.GroupDisciplines.Add(groupDiscipline);
+
+        await context.SaveChangesAsync();
+        return Ok();
     }
 
     [HttpPut("{id:int}")]

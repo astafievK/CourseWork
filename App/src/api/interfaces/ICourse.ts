@@ -1,3 +1,0 @@
-interface Course{
-    id: number
-}

@@ -5,7 +5,7 @@
 -- Dumped from database version 16.1 (Debian 16.1-1.pgdg120+1)
 -- Dumped by pg_dump version 16.0
 
--- Started on 2023-12-05 21:45:32
+-- Started on 2024-01-22 18:53:00
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -816,15 +816,6 @@ COPY public.course (id) FROM stdin;
 --
 
 COPY public.discipline (id, name) FROM stdin;
-2	МДК какое то
-3	МДК 01.01
-4	МДК 01.02
-5	МДК 01.03
-6	МДК 01.04
-7	МДК 02.01
-8	МДК 02.02
-9	МДК 02.03
-10	МДК 02.04
 \.
 
 
@@ -835,9 +826,6 @@ COPY public.discipline (id, name) FROM stdin;
 --
 
 COPY public."group" (id, name, year, course_id, semester_id) FROM stdin;
-2	ИСПП-01	2020	4	1
-14	ПКС-01	2020	1	1
-15	ИСПВ-01	2020	1	1
 \.
 
 
@@ -848,7 +836,6 @@ COPY public."group" (id, name, year, course_id, semester_id) FROM stdin;
 --
 
 COPY public.group_discipline (group_id, discipline_id) FROM stdin;
-2	2
 \.
 
 
@@ -957,6 +944,8 @@ COPY public.teacher_group (teacher_id, group_id) FROM stdin;
 --
 
 COPY public."user" (login, password, name, surname, patronymic, id, role_id) FROM stdin;
+admin	admin	admin	admin	admin	5	2
+student	student	student	student	student	6	1
 \.
 
 
@@ -987,10 +976,12 @@ COPY public.work_mark (work_id, mark_id, task_count) FROM stdin;
 --
 
 COPY public.work_type (id, name) FROM stdin;
-2	Лабораторная
-3	Практическая
-4	Курсовая
-5	Реферат
+4	Учебная практика
+5	Курсовой проект
+6	Курсовая работа
+7	Самостоятельная
+8	Практическая
+9	Лабораторная
 \.
 
 
@@ -1009,7 +1000,7 @@ SELECT pg_catalog.setval('public."Courses_id_seq"', 1, false);
 -- Name: Disciplines_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Disciplines_id_seq"', 10, true);
+SELECT pg_catalog.setval('public."Disciplines_id_seq"', 2, true);
 
 
 --
@@ -1018,7 +1009,7 @@ SELECT pg_catalog.setval('public."Disciplines_id_seq"', 10, true);
 -- Name: Groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Groups_id_seq"', 15, true);
+SELECT pg_catalog.setval('public."Groups_id_seq"', 2, true);
 
 
 --
@@ -1063,7 +1054,7 @@ SELECT pg_catalog.setval('public."Teachers_id_seq"', 1, true);
 -- Name: Users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Users_id_seq"', 4, true);
+SELECT pg_catalog.setval('public."Users_id_seq"', 6, true);
 
 
 --
@@ -1072,7 +1063,7 @@ SELECT pg_catalog.setval('public."Users_id_seq"', 4, true);
 -- Name: WorkType_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."WorkType_id_seq"', 5, true);
+SELECT pg_catalog.setval('public."WorkType_id_seq"', 9, true);
 
 
 --
@@ -1570,7 +1561,7 @@ ALTER TABLE ONLY public.work_mark
     ADD CONSTRAINT work_mark_fk_work FOREIGN KEY (work_id) REFERENCES public.work(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
--- Completed on 2023-12-05 21:45:33
+-- Completed on 2024-01-22 18:53:00
 
 --
 -- PostgreSQL database dump complete

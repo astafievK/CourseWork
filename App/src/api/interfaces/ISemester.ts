@@ -1,3 +1,0 @@
-interface Semester{
-    id: number
-}
