@@ -36,18 +36,20 @@ services:
       driver: none
     restart: always
   
-  reactapp:
-    container_name: ReactApp
-    image: react_app
+  react:
+    container_name: React
+    image: react
     build:
       network: host
       context: ./ReactApp
+      dockerfile: Dockerfile
     depends_on:
       - api
     ports:
       - "3000:80"
     environment:
       - VITE_API_URL=http://localhost:5050/api
+    stdin_open: true
     logging:
       driver: none
     restart: always
