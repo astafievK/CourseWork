@@ -13,8 +13,8 @@ function TableStudentsStaff() {
             <div className="table-wrapper">
                 <table id="table">
                     <tbody>
-                    {data?.map((student) => (
-                        <TableRowStudentsStaff key={student.user.id} name={student.user.name} surname={student.user.surname}/>
+                    {data?.map((student, counter) => (
+                        <TableRowStudentsStaff key={student.user.id} counter={counter+1} name={student.user.name} surname={student.user.surname}/>
                         )
                     )}
                     </tbody>

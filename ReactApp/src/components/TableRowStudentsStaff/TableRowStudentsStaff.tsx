@@ -2,6 +2,7 @@ import React from "react";
 
 interface TableRowStudentsStaffProps{
     key?: number
+    counter: number
     name: string
     surname: string
 }
@@ -10,7 +11,7 @@ const TableRowStudentsStaff: React.FC<TableRowStudentsStaffProps> = (props) => {
     return (
         <tr>
             <td className="number">
-                <span>1</span>
+                <span>{props.counter}</span>
             </td>
             <td className="fullName">
                 <span className="surname">{props.surname}</span>
