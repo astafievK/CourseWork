@@ -22,6 +22,7 @@ export const userApi = baseApi.injectEndpoints({
                 method: "POST",
                 body: command,
             }),
+            invalidatesTags: ['Disciplines', 'Groups', 'Students', 'Works'],
             async onQueryStarted(_, {dispatch, queryFulfilled}){
                 try{
                     const {data} = await queryFulfilled
