@@ -21,7 +21,7 @@ export const groupApi = baseApi.injectEndpoints({
                 url: `Group/${query.idGroup}/disciplines`,
                 method: "GET",
             }),
-            providesTags: ['Disciplines'],
+            providesTags: ['Disciplines', 'Works'],
         }),
         setGroupDiscipline: builder.mutation<IDiscipline, IGroupDisciplineCommand>({
             query: query => ({
@@ -30,33 +30,37 @@ export const groupApi = baseApi.injectEndpoints({
             }),
             invalidatesTags: ['Disciplines'],
         }),
-        getStudentsByGroup: builder.query<IStudent[], { idGroup: number }>({
+        getGroupStudents: builder.query<IStudent[], { idGroup: number }>({
             query: query => ({
                 url: `Group/${query.idGroup}/students`,
                 method: "GET",
             }),
-            providesTags: ['Students']
+            providesTags: ['Students', 'Stats']
         }),
-        getWorksByGroupAndDiscipline: builder.query<IWork[], { id: number, DisciplineId: number}>({
+        getGroupWorks: builder.query<IWork[], { id: number, DisciplineId: number}>({
             query: query => ({
                 url: `Group/${query.id}/works?${buildUrlArguments(query)}`,
                 method: "GET",
             }),
-            providesTags: ['Works']
+            providesTags: ['Works', 'Stats']
         }),
-        addGroup: builder.mutation<IDiscipline[], { name: string }>({
+        addGroup: builder.mutation<IDiscipline[], {
+            name: string,
+            idCourse: number,
+            idSemester: number
+        }>({
             query: query => ({
                 url: `Group`,
                 method: "POST",
                 body: {
                     name: query.name,
                     year: 2020,
-                    courseId: 4,
-                    semesterId: 2,
+                    courseId: query.idCourse,
+                    semesterId: query.idSemester,
                     disciplinesIds: []
                 }
             }),
-            invalidatesTags: ['Groups'],
+            invalidatesTags: ['Groups', 'Stats'],
         }),
     })
 })
@@ -66,7 +70,7 @@ export const {
     useGetGroupInfoQuery,
     useGetGroupDisciplinesQuery,
     useSetGroupDisciplineMutation,
-    useGetStudentsByGroupQuery,
-    useGetWorksByGroupAndDisciplineQuery,
+    useGetGroupStudentsQuery,
+    useGetGroupWorksQuery,
     useAddGroupMutation,
 } = groupApi

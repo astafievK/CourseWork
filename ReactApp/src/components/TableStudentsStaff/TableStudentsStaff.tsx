@@ -1,11 +1,11 @@
 import TableRowStudentsStaff from "../TableRowStudentsStaff/TableRowStudentsStaff.tsx";
 import AddRowStudents from "../AddRowStudents/AddRowStudents.tsx";
-import {useGetStudentsByGroupQuery} from "../../api/groupApi.ts";
+import {useGetGroupStudentsQuery} from "../../api/groupApi.ts";
 import {useTypedSelector} from "../../store/hooks/redux.ts";
 
 function TableStudentsStaff() {
     const { group } = useTypedSelector(state => state.select)
-    const { data=[] } = useGetStudentsByGroupQuery( {idGroup: group ? group.id : 0} );
+    const { data=[] } = useGetGroupStudentsQuery ( {idGroup: group ? group.id : 0} );
 
     return(
         <>
@@ -14,7 +14,14 @@ function TableStudentsStaff() {
                 <table id="table">
                     <tbody>
                     {data?.map((student, counter) => (
-                        <TableRowStudentsStaff key={student.user.id} counter={counter+1} name={student.user.name} surname={student.user.surname}/>
+                        <TableRowStudentsStaff
+                            key={student.user.id}
+                            counter={counter+1}
+                            id={student.user.id}
+                            name={student.user.name}
+                            surname={student.user.surname}
+                            isRetired={student.isRetired}
+                        />
                         )
                     )}
                     </tbody>

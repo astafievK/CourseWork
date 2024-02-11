@@ -1,7 +1,8 @@
-﻿﻿using System.Security.Claims;
+﻿using System.Security.Claims;
 using Api.Common.Interfaces;
 using Api.Context;
 using Api.Models.Sessions;
+using Api.Models.Students;
 using Api.Models.Users;
 using Api.Models.Users.Commands;
 using AutoMapper;

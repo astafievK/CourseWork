@@ -19,6 +19,9 @@ const FormAddTasks: React.FC<FormAddTasksProps> = () => {
                 idWork: work.id,
                 count: data.tasksCount
             })
+
+            console.log("idWork: " + work.id)
+            console.log("count: " + data.tasksCount)
         }
     }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {useGetWorksByGroupAndDisciplineQuery} from "../../api/groupApi.ts";
+import {useGetGroupWorksQuery} from "../../api/groupApi.ts";
 import {useAppDispatch, useTypedSelector} from "../../store/hooks/redux.ts";
 import {setSelectWork} from "../../api/slices/selectSlice.ts";
 
@@ -10,7 +10,8 @@ interface SelectWorkProps{
 const SelectWork: React.FC<SelectWorkProps> = () => {
     const { group } = useTypedSelector(state => state.select)
     const { discipline } = useTypedSelector(state => state.select)
-    const { data=[] } = useGetWorksByGroupAndDisciplineQuery(
+    const { work } = useTypedSelector(state => state.select)
+    const { data=[] } = useGetGroupWorksQuery(
         {
             id: group ? group.id : 0,
             DisciplineId : discipline ? discipline.id : 0
@@ -18,7 +19,6 @@ const SelectWork: React.FC<SelectWorkProps> = () => {
 
     const dispatch = useAppDispatch()
 
-    const { work } = useTypedSelector(state => state.select)
 
     return(
         <div className="filter work">
@@ -35,12 +35,12 @@ const SelectWork: React.FC<SelectWorkProps> = () => {
             >
                 {
                     data.length == 0 ? <option>Нет данных</option> :
-                        data.map((work, key) => (
+                        data.map((work) => (
                         <option
                             key={work.id}
                             value={work.id}
                         >
-                            {work.workType.name} {key+1} ({work.name})
+                            {work.workType.name} ({work.name})
                         </option>
                     ))
                 }

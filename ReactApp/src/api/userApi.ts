@@ -15,6 +15,7 @@ export const userApi = baseApi.injectEndpoints({
                 method: "POST",
                 body: data,
             }),
+            invalidatesTags: ['Disciplines', 'Groups', 'Students', 'Works', 'Stats'],
         }),
         login: builder.mutation<IAuthorizationResult, ILoginCommand>({
             query: command => ({
@@ -22,7 +23,7 @@ export const userApi = baseApi.injectEndpoints({
                 method: "POST",
                 body: command,
             }),
-            invalidatesTags: ['Disciplines', 'Groups', 'Students', 'Works'],
+            invalidatesTags: ['Disciplines', 'Groups', 'Students', 'Works', 'Stats'],
             async onQueryStarted(_, {dispatch, queryFulfilled}){
                 try{
                     const {data} = await queryFulfilled

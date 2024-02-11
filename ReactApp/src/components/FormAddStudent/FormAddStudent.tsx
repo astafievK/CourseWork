@@ -12,14 +12,16 @@ const FormAddStudent: React.FC<FormAddStudentProps> = () => {
     const { group } = useTypedSelector(state => state.select)
 
     const onSubmit: SubmitHandler<IStudentCommand> = async data => {
-        await addStudent({
-            idGroup: (group ? group.id : 0),
-            login: data.login,
-            password: data.password,
-            name: data.name,
-            surname: data.surname,
-            patronymic: data.patronymic
-        })
+        if(group){
+            await addStudent({
+                idGroup: (group.id),
+                login: data.login,
+                password: data.password,
+                name: data.name,
+                surname: data.surname,
+                patronymic: data.patronymic
+            })
+        }
     }
 
     const [addStudent] = useAddStudentMutation()

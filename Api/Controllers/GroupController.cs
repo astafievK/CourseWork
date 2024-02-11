@@ -107,6 +107,7 @@ public sealed class GroupController(IMapper mapper) : BaseController
         }
 
         return Ok(await worksQuery
+            .Select(e => e.Work)
             .ProjectTo<WorkViewModel>(mapper.ConfigurationProvider)
             .ToListAsync());
     }

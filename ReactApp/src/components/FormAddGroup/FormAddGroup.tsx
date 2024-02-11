@@ -1,6 +1,7 @@
 import React from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {useAddGroupMutation} from "../../api/groupApi.ts";
+import {useTypedSelector} from "../../store/hooks/redux.ts";
 
 interface FormAddGroupProps {
 
@@ -8,9 +9,17 @@ interface FormAddGroupProps {
 
 const FormAddGroup: React.FC<FormAddGroupProps> = () => {
     const {handleSubmit, register} = useForm<IGroupCommand>()
+    const {course} = useTypedSelector(state => state.select)
+    const {semester} = useTypedSelector(state => state.select)
 
     const onSubmit: SubmitHandler<IGroupCommand> = async data => {
-        await addGroup({name: data.groupName})
+        if(course && semester){
+            await addGroup({
+                name: data.groupName,
+                idCourse: course.id,
+                idSemester: semester.id
+            })
+        }
     }
 
     const [addGroup] = useAddGroupMutation()

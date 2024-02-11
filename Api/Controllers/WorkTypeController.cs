@@ -18,6 +18,7 @@ public sealed class WorkTypeController(IMapper mapper) : BaseController
         return Ok(await context.WorkTypes
             .AsNoTracking()
             .ProjectTo<WorkTypeViewModel>(mapper.ConfigurationProvider)
+            .OrderBy(e => e.Name)
             .ToListAsync());
     }
 

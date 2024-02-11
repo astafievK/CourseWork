@@ -15,6 +15,7 @@ export const taskApi = baseApi.injectEndpoints({
                     description: "тест"
                 }
             }),
+            invalidatesTags: ['Works', 'Stats']
         })
     })
 })

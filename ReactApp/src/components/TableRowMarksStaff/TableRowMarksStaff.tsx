@@ -1,49 +1,65 @@
 import React from "react";
-import ButtonActionAll from "../Actions/All/ButtonActionAll.tsx";
-import ButtonActionNothing from "../Actions/Nothing/ButtonActionNothing.tsx";
-import FormActionSelected from "../Actions/Selected/FormActionSelected.tsx";
 import ButtonMarkStaff from "../ButtonMarkStaff/ButtonMarkStaff.tsx";
 
 interface TableRowMarksStaffProps{
     counter: number
     name: string
     surname: string
+    completedTasks: ITask[]
+    tasksCount: number
+    totalMark: number
+    percentage: number
 }
 
 const TableRowMarksStaff: React.FC<TableRowMarksStaffProps> = (props) => {
+    function printRectangle(totalMark: number) {
+        switch (totalMark) {
+            case 2:
+                return (<td className="rectangle bad"></td>)
+            case 3:
+                return (<td className="rectangle medium"></td>)
+            case 4:
+                return (<td className="rectangle good"></td>)
+            case 5:
+                return (<td className="rectangle good"></td>)
+        }
+    }
+
     return (
         <tr>
-            <td className="number">
+        <td className="number">
                 <span>{props.counter}</span>
             </td>
             <td className="fullName">
                 <span className="surname">{props.surname}</span>
                 <span className="name">{props.name}</span>
-                <span className="name-short">{props.name.charAt(0)}</span>
+                {
+                    //<span className="name-short">{props.name.charAt(0)}</span>
+                }
             </td>
             <td className="stats">
-                <ButtonMarkStaff counter={1} isPassed={true}/>
-                <ButtonMarkStaff counter={2} isPassed={false}/>
-                <ButtonMarkStaff counter={3} isPassed={true}/>
-                <ButtonMarkStaff counter={4} isPassed={true}/>
-                <ButtonMarkStaff counter={5} isPassed={false}/>
-                <ButtonMarkStaff counter={6} isPassed={true}/>
-                <ButtonMarkStaff counter={7} isPassed={true}/>
-                <ButtonMarkStaff counter={8} isPassed={false}/>
-                <ButtonMarkStaff counter={9} isPassed={false}/>
+                {Array.from({ length: props.tasksCount }).map((_, i) => (
+                    <ButtonMarkStaff isPassed={false} counter={i + 1} key={i} />
+                ))}
             </td>
-            <td className="actions">
-                <ButtonActionAll/>
-                <ButtonActionNothing/>
-                <FormActionSelected/>
-            </td>
+            {
+                /*
+                <td className="actions">
+                    <ButtonActionAll/>
+                    <ButtonActionNothing/>
+                    <FormActionSelected/>
+                </td>
+                 */
+            }
             <td className="percentage">
-                <span>100%</span>
+                <span>{props.percentage}</span>
             </td>
             <td className="total-mark">
-                <span>5</span>
+                <span>{props.totalMark}</span>
             </td>
-            <td className="rectangle good"></td>
+            {
+                printRectangle(props.totalMark)
+            }
         </tr>
     )
 }

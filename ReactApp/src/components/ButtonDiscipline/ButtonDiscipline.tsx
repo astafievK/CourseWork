@@ -18,7 +18,6 @@ const ButtonDiscipline: React.FC<ButtonDisciplineProps> = (props) => {
         if (disciplineBtnRef.current) {
             const newDisciplineId = Number(disciplineBtnRef.current.value)
             const newGroupId = Number(disciplineBtnRef.current.parentElement?.parentElement?.querySelector(".group")?.getAttribute('data-id'))
-            disciplineBtnRef.current.classList.toggle('selected');
             addDiscipline({idGroup: newGroupId, idDiscipline: newDisciplineId})
         }
     };

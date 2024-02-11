@@ -17,7 +17,7 @@ export const studentApi = baseApi.injectEndpoints({
                 method: "GET",
             }),
         }),
-        addStudent: builder.mutation<IStudent[], { // Добавление студента в группу
+        addStudent: builder.mutation<void, { // Добавление студента в группу
             idGroup: number,
             login: string,
             password: string,
@@ -37,13 +37,22 @@ export const studentApi = baseApi.injectEndpoints({
                     patronymic: query.patronymic
                 },
             }),
+            invalidatesTags: ['Students', 'Works', 'Stats']
+        }),
+        setStudentRetiredStatus: builder.mutation<IStudent[], { // Добавление студента в группу
+            idStudent: number}>({
+            query: query => ({
+                url: `Student/${query.idStudent}/isRetired`,
+                method: "PUT",
+            }),
             invalidatesTags: ['Students']
         }),
-    })
+    }),
 })
 
 export const {
     useGetStudentsQuery,
     useGetCompletedWorksQuery,
     useAddStudentMutation,
+    useSetStudentRetiredStatusMutation,
 } = studentApi

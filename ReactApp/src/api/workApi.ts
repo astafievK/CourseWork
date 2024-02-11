@@ -14,11 +14,21 @@ export const workApi = baseApi.injectEndpoints({
                    workTypeId: query.workTypeId,
                },
             }),
-            invalidatesTags: ['Works']
+            invalidatesTags: ['Works', 'Stats']
+        }),
+        getWorkStats: builder.query<IStudentStatistic[], {
+            workId: number
+        }>({
+            query: query => ({
+                url: `Work/${query.workId}/stats`,
+                method: "GET",
+            }),
+            providesTags: ['Stats']
         }),
     })
 })
 
 export const {
     useAddWorkMutation,
+    useGetWorkStatsQuery,
 } = workApi

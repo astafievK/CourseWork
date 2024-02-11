@@ -30,16 +30,25 @@ const FormAddWork: React.FC<FormAddWorkProps> = () => {
 
             if("data" in newWorkId)
             {
-                await addWorkForGroup({
+                console.log("group.id: " +group.id)
+                console.log("workType.id: " + workType.id)
+                console.log("discipline.id: " + discipline.id)
+                console.log("course.id: " + course.id)
+                console.log("semester.id: " + semester.id)
+                console.log("newWorkId.data: " + newWorkId.data)
+
+                const newWorkGroupId = await addWorkForGroup({
                     groupId: group?.id,
                     workId: newWorkId.data,
                     disciplineId: discipline?.id,
                     courseId: course?.id,
                     semesterId: semester?.id
                 })
+
+                console.log(newWorkGroupId)
             }
             else{
-                console.log("Ошибка")
+                console.error("ошибка")
             }
         }
     }

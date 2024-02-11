@@ -16,8 +16,8 @@ export const groupWorkApi = baseApi.injectEndpoints({
                     groupId: query.groupId,
                     workId: query.workId,
                     disciplineId: query.disciplineId,
-                    courseId: 4,
-                    semesterId: 2,
+                    courseId: query.courseId,
+                    semesterId: query.semesterId,
                 },
             }),
             invalidatesTags: ['Works']

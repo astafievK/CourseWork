@@ -49,6 +49,15 @@
   }
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 a{
   text-decoration: none;
@@ -415,7 +424,7 @@ html {
             height: 100%;
             aspect-ratio: 1/1;
 
-            input[type=text] {
+            input {
               width: 100%;
             }
           }
@@ -716,6 +725,14 @@ html {
               .retiredBtn {
                 height: 100%;
                 font-weight: 700;
+
+                &.selected{
+                  background: $theme-light-mark-passed;
+
+                  &:hover{
+                    background: $theme-light-mark-hover;
+                  }
+                }
               }
 
               &.disciplines {
@@ -931,6 +948,16 @@ html {
                       &:active{
                         background: $theme-dark-active-background-color;
                       }
+                    }
+                  }
+                }
+
+                .retiredBtn{
+                  &.selected{
+                    background: $theme-dark-mark-passed;
+
+                    &:hover{
+                      background: $theme-dark-mark-hover;
                     }
                   }
                 }

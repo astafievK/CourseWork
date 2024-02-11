@@ -5,7 +5,7 @@
 -- Dumped from database version 16.1 (Debian 16.1-1.pgdg120+1)
 -- Dumped by pg_dump version 16.0
 
--- Started on 2024-01-22 18:53:00
+-- Started on 2024-02-08 20:51:31
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -19,7 +19,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 3559 (class 1262 OID 16384)
+-- TOC entry 3557 (class 1262 OID 16384)
 -- Name: labworks; Type: DATABASE; Schema: -; Owner: postgres
 --
 
@@ -74,7 +74,7 @@ CREATE SEQUENCE public."Courses_id_seq"
 ALTER SEQUENCE public."Courses_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3560 (class 0 OID 0)
+-- TOC entry 3558 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: Courses_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -112,7 +112,7 @@ CREATE SEQUENCE public."Disciplines_id_seq"
 ALTER SEQUENCE public."Disciplines_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3561 (class 0 OID 0)
+-- TOC entry 3559 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: Disciplines_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -153,7 +153,7 @@ CREATE SEQUENCE public."Groups_id_seq"
 ALTER SEQUENCE public."Groups_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3562 (class 0 OID 0)
+-- TOC entry 3560 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: Groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -191,7 +191,7 @@ CREATE SEQUENCE public."Mark_id_seq"
 ALTER SEQUENCE public."Mark_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3563 (class 0 OID 0)
+-- TOC entry 3561 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: Mark_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -228,7 +228,7 @@ CREATE SEQUENCE public."Semesters_id_seq"
 ALTER SEQUENCE public."Semesters_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3564 (class 0 OID 0)
+-- TOC entry 3562 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: Semesters_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -268,7 +268,7 @@ CREATE SEQUENCE public."Students_id_seq"
 ALTER SEQUENCE public."Students_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3565 (class 0 OID 0)
+-- TOC entry 3563 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: Students_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -306,7 +306,7 @@ CREATE SEQUENCE public."Teachers_id_seq"
 ALTER SEQUENCE public."Teachers_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3566 (class 0 OID 0)
+-- TOC entry 3564 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: Teachers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -349,7 +349,7 @@ CREATE SEQUENCE public."Users_id_seq"
 ALTER SEQUENCE public."Users_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3567 (class 0 OID 0)
+-- TOC entry 3565 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: Users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -387,7 +387,7 @@ CREATE SEQUENCE public."WorkType_id_seq"
 ALTER SEQUENCE public."WorkType_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3568 (class 0 OID 0)
+-- TOC entry 3566 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: WorkType_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -428,7 +428,7 @@ CREATE SEQUENCE public.completed_work_id_seq
 ALTER SEQUENCE public.completed_work_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3569 (class 0 OID 0)
+-- TOC entry 3567 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: completed_work_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -496,7 +496,7 @@ CREATE SEQUENCE public.group_work_id_seq
 ALTER SEQUENCE public.group_work_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3570 (class 0 OID 0)
+-- TOC entry 3568 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: group_work_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -534,7 +534,7 @@ CREATE SEQUENCE public.role_id_seq
 ALTER SEQUENCE public.role_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3571 (class 0 OID 0)
+-- TOC entry 3569 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: role_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -588,7 +588,7 @@ CREATE SEQUENCE public.task_id_seq
 ALTER SEQUENCE public.task_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3572 (class 0 OID 0)
+-- TOC entry 3570 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: task_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -640,7 +640,7 @@ CREATE SEQUENCE public.work_id_seq
 ALTER SEQUENCE public.work_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3573 (class 0 OID 0)
+-- TOC entry 3571 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: work_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -775,7 +775,7 @@ ALTER TABLE ONLY public.work_type ALTER COLUMN id SET DEFAULT nextval('public."W
 
 
 --
--- TOC entry 3539 (class 0 OID 16422)
+-- TOC entry 3537 (class 0 OID 16422)
 -- Dependencies: 233
 -- Data for Name: completed_work; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -785,7 +785,7 @@ COPY public.completed_work (id, percentage, mark_id, work_id, student_id) FROM s
 
 
 --
--- TOC entry 3541 (class 0 OID 16426)
+-- TOC entry 3539 (class 0 OID 16426)
 -- Dependencies: 235
 -- Data for Name: completed_work_task; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -795,7 +795,7 @@ COPY public.completed_work_task (completed_work_id, task_id) FROM stdin;
 
 
 --
--- TOC entry 3521 (class 0 OID 16385)
+-- TOC entry 3519 (class 0 OID 16385)
 -- Dependencies: 215
 -- Data for Name: course; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -805,12 +805,11 @@ COPY public.course (id) FROM stdin;
 3
 2
 1
-5
 \.
 
 
 --
--- TOC entry 3523 (class 0 OID 16389)
+-- TOC entry 3521 (class 0 OID 16389)
 -- Dependencies: 217
 -- Data for Name: discipline; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -820,7 +819,7 @@ COPY public.discipline (id, name) FROM stdin;
 
 
 --
--- TOC entry 3525 (class 0 OID 16393)
+-- TOC entry 3523 (class 0 OID 16393)
 -- Dependencies: 219
 -- Data for Name: group; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -830,7 +829,7 @@ COPY public."group" (id, name, year, course_id, semester_id) FROM stdin;
 
 
 --
--- TOC entry 3542 (class 0 OID 16429)
+-- TOC entry 3540 (class 0 OID 16429)
 -- Dependencies: 236
 -- Data for Name: group_discipline; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -840,7 +839,7 @@ COPY public.group_discipline (group_id, discipline_id) FROM stdin;
 
 
 --
--- TOC entry 3543 (class 0 OID 16432)
+-- TOC entry 3541 (class 0 OID 16432)
 -- Dependencies: 237
 -- Data for Name: group_work; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -850,7 +849,7 @@ COPY public.group_work (group_id, work_id, discipline_id, course_id, semester_id
 
 
 --
--- TOC entry 3527 (class 0 OID 16397)
+-- TOC entry 3525 (class 0 OID 16397)
 -- Dependencies: 221
 -- Data for Name: mark; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -864,7 +863,7 @@ COPY public.mark (id, value) FROM stdin;
 
 
 --
--- TOC entry 3545 (class 0 OID 16436)
+-- TOC entry 3543 (class 0 OID 16436)
 -- Dependencies: 239
 -- Data for Name: role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -876,7 +875,7 @@ COPY public.role (id, name) FROM stdin;
 
 
 --
--- TOC entry 3529 (class 0 OID 16401)
+-- TOC entry 3527 (class 0 OID 16401)
 -- Dependencies: 223
 -- Data for Name: semester; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -888,7 +887,7 @@ COPY public.semester (id) FROM stdin;
 
 
 --
--- TOC entry 3547 (class 0 OID 16440)
+-- TOC entry 3545 (class 0 OID 16440)
 -- Dependencies: 241
 -- Data for Name: session; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -898,7 +897,7 @@ COPY public.session (user_id, id, refresh_token) FROM stdin;
 
 
 --
--- TOC entry 3531 (class 0 OID 16405)
+-- TOC entry 3529 (class 0 OID 16405)
 -- Dependencies: 225
 -- Data for Name: student; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -908,7 +907,7 @@ COPY public.student (id, is_retired, user_id, group_id) FROM stdin;
 
 
 --
--- TOC entry 3548 (class 0 OID 16445)
+-- TOC entry 3546 (class 0 OID 16445)
 -- Dependencies: 242
 -- Data for Name: task; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -918,7 +917,7 @@ COPY public.task (id, title, description, work_id) FROM stdin;
 
 
 --
--- TOC entry 3533 (class 0 OID 16410)
+-- TOC entry 3531 (class 0 OID 16410)
 -- Dependencies: 227
 -- Data for Name: teacher; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -928,7 +927,7 @@ COPY public.teacher (id, user_id) FROM stdin;
 
 
 --
--- TOC entry 3550 (class 0 OID 16451)
+-- TOC entry 3548 (class 0 OID 16451)
 -- Dependencies: 244
 -- Data for Name: teacher_group; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -938,19 +937,18 @@ COPY public.teacher_group (teacher_id, group_id) FROM stdin;
 
 
 --
--- TOC entry 3535 (class 0 OID 16414)
+-- TOC entry 3533 (class 0 OID 16414)
 -- Dependencies: 229
 -- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public."user" (login, password, name, surname, patronymic, id, role_id) FROM stdin;
 admin	admin	admin	admin	admin	5	2
-student	student	student	student	student	6	1
 \.
 
 
 --
--- TOC entry 3551 (class 0 OID 16454)
+-- TOC entry 3549 (class 0 OID 16454)
 -- Dependencies: 245
 -- Data for Name: work; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -960,7 +958,7 @@ COPY public.work (id, name, work_type_id) FROM stdin;
 
 
 --
--- TOC entry 3553 (class 0 OID 16458)
+-- TOC entry 3551 (class 0 OID 16458)
 -- Dependencies: 247
 -- Data for Name: work_mark; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -970,7 +968,7 @@ COPY public.work_mark (work_id, mark_id, task_count) FROM stdin;
 
 
 --
--- TOC entry 3537 (class 0 OID 16418)
+-- TOC entry 3535 (class 0 OID 16418)
 -- Dependencies: 231
 -- Data for Name: work_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -986,7 +984,7 @@ COPY public.work_type (id, name) FROM stdin;
 
 
 --
--- TOC entry 3574 (class 0 OID 0)
+-- TOC entry 3572 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: Courses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -995,25 +993,25 @@ SELECT pg_catalog.setval('public."Courses_id_seq"', 1, false);
 
 
 --
--- TOC entry 3575 (class 0 OID 0)
+-- TOC entry 3573 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: Disciplines_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Disciplines_id_seq"', 2, true);
+SELECT pg_catalog.setval('public."Disciplines_id_seq"', 8, true);
 
 
 --
--- TOC entry 3576 (class 0 OID 0)
+-- TOC entry 3574 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: Groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Groups_id_seq"', 2, true);
+SELECT pg_catalog.setval('public."Groups_id_seq"', 4, true);
 
 
 --
--- TOC entry 3577 (class 0 OID 0)
+-- TOC entry 3575 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: Mark_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1022,7 +1020,7 @@ SELECT pg_catalog.setval('public."Mark_id_seq"', 4, true);
 
 
 --
--- TOC entry 3578 (class 0 OID 0)
+-- TOC entry 3576 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: Semesters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1031,16 +1029,16 @@ SELECT pg_catalog.setval('public."Semesters_id_seq"', 1, false);
 
 
 --
--- TOC entry 3579 (class 0 OID 0)
+-- TOC entry 3577 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: Students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Students_id_seq"', 2, true);
+SELECT pg_catalog.setval('public."Students_id_seq"', 8, true);
 
 
 --
--- TOC entry 3580 (class 0 OID 0)
+-- TOC entry 3578 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: Teachers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1049,16 +1047,16 @@ SELECT pg_catalog.setval('public."Teachers_id_seq"', 1, true);
 
 
 --
--- TOC entry 3581 (class 0 OID 0)
+-- TOC entry 3579 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: Users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Users_id_seq"', 6, true);
+SELECT pg_catalog.setval('public."Users_id_seq"', 12, true);
 
 
 --
--- TOC entry 3582 (class 0 OID 0)
+-- TOC entry 3580 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: WorkType_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1067,25 +1065,25 @@ SELECT pg_catalog.setval('public."WorkType_id_seq"', 9, true);
 
 
 --
--- TOC entry 3583 (class 0 OID 0)
+-- TOC entry 3581 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: completed_work_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.completed_work_id_seq', 1, false);
+SELECT pg_catalog.setval('public.completed_work_id_seq', 4, true);
 
 
 --
--- TOC entry 3584 (class 0 OID 0)
+-- TOC entry 3582 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: group_work_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.group_work_id_seq', 1, false);
+SELECT pg_catalog.setval('public.group_work_id_seq', 46, true);
 
 
 --
--- TOC entry 3585 (class 0 OID 0)
+-- TOC entry 3583 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: role_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1094,21 +1092,21 @@ SELECT pg_catalog.setval('public.role_id_seq', 2, true);
 
 
 --
--- TOC entry 3586 (class 0 OID 0)
+-- TOC entry 3584 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: task_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.task_id_seq', 1, false);
+SELECT pg_catalog.setval('public.task_id_seq', 16, true);
 
 
 --
--- TOC entry 3587 (class 0 OID 0)
+-- TOC entry 3585 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: work_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.work_id_seq', 1, false);
+SELECT pg_catalog.setval('public.work_id_seq', 44, true);
 
 
 --
@@ -1292,21 +1290,12 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 3350 (class 2606 OID 16516)
+-- TOC entry 3350 (class 2606 OID 24843)
 -- Name: work_mark work_mark_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.work_mark
-    ADD CONSTRAINT work_mark_pkey PRIMARY KEY (work_id);
-
-
---
--- TOC entry 3352 (class 2606 OID 16518)
--- Name: work_mark work_mark_unique_work_id_task_count; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.work_mark
-    ADD CONSTRAINT work_mark_unique_work_id_task_count UNIQUE (work_id, task_count);
+    ADD CONSTRAINT work_mark_pkey PRIMARY KEY (work_id, mark_id);
 
 
 --
@@ -1337,7 +1326,7 @@ ALTER TABLE ONLY public.work_type
 
 
 --
--- TOC entry 3359 (class 2606 OID 16525)
+-- TOC entry 3357 (class 2606 OID 16525)
 -- Name: completed_work completed_work_fk_mark; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1346,7 +1335,7 @@ ALTER TABLE ONLY public.completed_work
 
 
 --
--- TOC entry 3360 (class 2606 OID 16530)
+-- TOC entry 3358 (class 2606 OID 16530)
 -- Name: completed_work completed_work_fk_student; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1355,7 +1344,7 @@ ALTER TABLE ONLY public.completed_work
 
 
 --
--- TOC entry 3361 (class 2606 OID 16535)
+-- TOC entry 3359 (class 2606 OID 16535)
 -- Name: completed_work completed_work_fk_work; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1364,7 +1353,7 @@ ALTER TABLE ONLY public.completed_work
 
 
 --
--- TOC entry 3362 (class 2606 OID 16540)
+-- TOC entry 3360 (class 2606 OID 16540)
 -- Name: completed_work_task completed_work_task_fk_completed_work; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1373,7 +1362,7 @@ ALTER TABLE ONLY public.completed_work_task
 
 
 --
--- TOC entry 3363 (class 2606 OID 16545)
+-- TOC entry 3361 (class 2606 OID 16545)
 -- Name: completed_work_task completed_work_task_fk_task; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1382,7 +1371,7 @@ ALTER TABLE ONLY public.completed_work_task
 
 
 --
--- TOC entry 3364 (class 2606 OID 16550)
+-- TOC entry 3362 (class 2606 OID 16550)
 -- Name: group_discipline group_discipline_fk_discipline; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1391,7 +1380,7 @@ ALTER TABLE ONLY public.group_discipline
 
 
 --
--- TOC entry 3365 (class 2606 OID 16555)
+-- TOC entry 3363 (class 2606 OID 16555)
 -- Name: group_discipline group_discipline_fk_group; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1400,7 +1389,7 @@ ALTER TABLE ONLY public.group_discipline
 
 
 --
--- TOC entry 3353 (class 2606 OID 16560)
+-- TOC entry 3351 (class 2606 OID 16560)
 -- Name: group group_fk_course; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1409,7 +1398,7 @@ ALTER TABLE ONLY public."group"
 
 
 --
--- TOC entry 3354 (class 2606 OID 16565)
+-- TOC entry 3352 (class 2606 OID 16565)
 -- Name: group group_fk_semester; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1418,7 +1407,7 @@ ALTER TABLE ONLY public."group"
 
 
 --
--- TOC entry 3366 (class 2606 OID 16570)
+-- TOC entry 3364 (class 2606 OID 16570)
 -- Name: group_work group_work_fk_course; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1427,7 +1416,7 @@ ALTER TABLE ONLY public.group_work
 
 
 --
--- TOC entry 3367 (class 2606 OID 16575)
+-- TOC entry 3365 (class 2606 OID 16575)
 -- Name: group_work group_work_fk_discipline; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1436,7 +1425,7 @@ ALTER TABLE ONLY public.group_work
 
 
 --
--- TOC entry 3368 (class 2606 OID 16580)
+-- TOC entry 3366 (class 2606 OID 16580)
 -- Name: group_work group_work_fk_group; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1445,7 +1434,7 @@ ALTER TABLE ONLY public.group_work
 
 
 --
--- TOC entry 3369 (class 2606 OID 16585)
+-- TOC entry 3367 (class 2606 OID 16585)
 -- Name: group_work group_work_fk_semester; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1454,7 +1443,7 @@ ALTER TABLE ONLY public.group_work
 
 
 --
--- TOC entry 3370 (class 2606 OID 16590)
+-- TOC entry 3368 (class 2606 OID 16590)
 -- Name: group_work group_work_fk_work; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1463,7 +1452,7 @@ ALTER TABLE ONLY public.group_work
 
 
 --
--- TOC entry 3371 (class 2606 OID 16595)
+-- TOC entry 3369 (class 2606 OID 16595)
 -- Name: session session_fk_user; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1472,7 +1461,7 @@ ALTER TABLE ONLY public.session
 
 
 --
--- TOC entry 3355 (class 2606 OID 16600)
+-- TOC entry 3353 (class 2606 OID 16600)
 -- Name: student student_fk_group; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1481,7 +1470,7 @@ ALTER TABLE ONLY public.student
 
 
 --
--- TOC entry 3356 (class 2606 OID 16605)
+-- TOC entry 3354 (class 2606 OID 16605)
 -- Name: student student_fk_user; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1490,7 +1479,7 @@ ALTER TABLE ONLY public.student
 
 
 --
--- TOC entry 3372 (class 2606 OID 16610)
+-- TOC entry 3370 (class 2606 OID 16610)
 -- Name: task task_fk_work; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1499,7 +1488,7 @@ ALTER TABLE ONLY public.task
 
 
 --
--- TOC entry 3357 (class 2606 OID 16615)
+-- TOC entry 3355 (class 2606 OID 16615)
 -- Name: teacher teacher_fk_user; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1508,7 +1497,7 @@ ALTER TABLE ONLY public.teacher
 
 
 --
--- TOC entry 3373 (class 2606 OID 16620)
+-- TOC entry 3371 (class 2606 OID 16620)
 -- Name: teacher_group teacher_group_fk_group; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1517,7 +1506,7 @@ ALTER TABLE ONLY public.teacher_group
 
 
 --
--- TOC entry 3374 (class 2606 OID 16625)
+-- TOC entry 3372 (class 2606 OID 16625)
 -- Name: teacher_group teacher_group_fk_teacher; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1526,7 +1515,7 @@ ALTER TABLE ONLY public.teacher_group
 
 
 --
--- TOC entry 3358 (class 2606 OID 16630)
+-- TOC entry 3356 (class 2606 OID 16630)
 -- Name: user user_fk_role; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1535,7 +1524,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 3375 (class 2606 OID 16635)
+-- TOC entry 3373 (class 2606 OID 16635)
 -- Name: work work_fk_work_type; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1544,7 +1533,7 @@ ALTER TABLE ONLY public.work
 
 
 --
--- TOC entry 3376 (class 2606 OID 16640)
+-- TOC entry 3374 (class 2606 OID 16640)
 -- Name: work_mark work_mark_fk_mark; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1553,7 +1542,7 @@ ALTER TABLE ONLY public.work_mark
 
 
 --
--- TOC entry 3377 (class 2606 OID 16645)
+-- TOC entry 3375 (class 2606 OID 16645)
 -- Name: work_mark work_mark_fk_work; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1561,7 +1550,7 @@ ALTER TABLE ONLY public.work_mark
     ADD CONSTRAINT work_mark_fk_work FOREIGN KEY (work_id) REFERENCES public.work(id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
--- Completed on 2024-01-22 18:53:00
+-- Completed on 2024-02-08 20:51:31
 
 --
 -- PostgreSQL database dump complete

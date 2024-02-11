@@ -54,6 +54,14 @@
       background: transparent !important;
       border: none !important; }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
 a {
   text-decoration: none;
   color: #202020;
@@ -326,7 +334,7 @@ html {
           html body .add form .sample .mark {
             height: 100%;
             aspect-ratio: 1/1; }
-            html body .add form .sample .mark input[type=text] {
+            html body .add form .sample .mark input {
               width: 100%; }
         html body .add form.add-tasks {
           gap: 12px; }
@@ -501,6 +509,10 @@ html {
             html body .table-wrapper table tbody tr td .retiredBtn {
               height: 100%;
               font-weight: 700; }
+              html body .table-wrapper table tbody tr td .retiredBtn.selected {
+                background: #b2d9b2; }
+                html body .table-wrapper table tbody tr td .retiredBtn.selected:hover {
+                  background: #7fbf7f; }
             html body .table-wrapper table tbody tr td.disciplines {
               gap: 12px; }
               html body .table-wrapper table tbody tr td.disciplines .disciplineBtn {
@@ -593,6 +605,10 @@ html {
             background: #3d3e45; }
           html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
             background: #323236; }
+          html body.dark .table-wrapper table tbody tr td .retiredBtn.selected {
+            background: #415241; }
+            html body.dark .table-wrapper table tbody tr td .retiredBtn.selected:hover {
+              background: #608c60; }
           html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected {
             background: #415241; }
             html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {

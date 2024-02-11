@@ -7,6 +7,7 @@ using Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 RegisterServices(builder.Services, builder.Configuration);
@@ -22,7 +23,7 @@ void RegisterServices(IServiceCollection services, IConfiguration configuration)
 {
     services.AddEndpointsApiExplorer();
     services.AddSwaggerGen();
-    services.AddControllers();
+    services.AddControllers().AddJsonOptions(option => option.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
     services.AddDbContext<ApiDbContext>(options =>
         options.UseNpgsql("Name=Database"));
     services.AddAutoMapper(expression =>

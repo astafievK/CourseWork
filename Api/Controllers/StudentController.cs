@@ -1,5 +1,6 @@
 ﻿using Api.Context;
 using Api.Models.CompletedWorks;
+using Api.Models.Groups;
 using Api.Models.Students;
 using Api.Models.Students.Commands;
 using AutoMapper;
@@ -23,6 +24,19 @@ public sealed class StudentController(IMapper mapper) : BaseController
             .AsNoTracking()
             .ProjectTo<StudentViewModel>(mapper.ConfigurationProvider)
             .FirstOrDefaultAsync(e => e.Id == id));
+    }
+    
+    [HttpGet("{idUser:int}/group")]
+    public async Task<ActionResult<GroupViewModel>> GetStudentGroup(
+        int idUser,
+        [FromServices] ApiDbContext context)
+    {
+        var student = await context.Students
+            .AsNoTracking()
+            .Include(e => e.Group)
+            .FirstOrDefaultAsync(e => e.UserId == idUser);
+        
+        return Ok(student.Group);
     }
 
     [HttpGet("{id:int}/completed_works")]
@@ -95,10 +109,28 @@ public sealed class StudentController(IMapper mapper) : BaseController
         student.GroupId = command.GroupId;
         student.IsRetired = command.IsRetired;
 
-        context.Update(student);
+        context.Students.Update(student);
         await context.SaveChangesAsync();
 
         return Ok();
+    }
+    
+    [HttpPut("{idStudent:int}/isRetired")]
+    public async Task<ActionResult> Put(
+        int idStudent,
+        [FromServices] ApiDbContext context)
+    {
+        var student = await context.Students
+            .AsNoTracking()
+            .Include(e => e.Group)
+            .FirstOrDefaultAsync(e => e.UserId == idStudent);
+        
+        student.IsRetired = !student.IsRetired;
+        
+        context.Students.Update(student);
+        await context.SaveChangesAsync();
+        
+        return Ok(student.IsRetired);
     }
 
     [HttpDelete("{id:int}")]
