@@ -6,8 +6,6 @@ using Api.Models.Works;
 using Api.Models.Works.Commands;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using DocumentFormat.OpenXml.Office2010.ExcelAc;
-using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +16,7 @@ public class CompletedWorkAndMarks
     public string StudentName { get; set; }
     public string StudentSurname { get; set; }
     public int[] CompletedTasks { get; set; }
+    public int[] WorkTasks { get; set; }
     public int IdStudent { get; set; }
     public int IdWork { get; set; }
     public double Percentage { get; set; }
@@ -50,6 +49,7 @@ public sealed class WorkController(IMapper mapper) : BaseController
         var work = await context.Works
             .Include(e => e.Tasks)
             .Include(e => e.WorkMarks)
+            .Include(e => e.Tasks)
             .FirstOrDefaultAsync(x => x.Id == idWork);
 
         if (work.WorkMarks.Count == 3)
@@ -92,6 +92,7 @@ public sealed class WorkController(IMapper mapper) : BaseController
             }
             
             var completedWork = student.CompletedWorks.FirstOrDefault(e => e.WorkId == idWork);
+            var workTasks = work.Tasks;
             var completedWorkTasks = completedWork.CompletedTasks;
             double percentage = (double)completedWorkTasks.Count / work.Tasks.Count * 100;
 
