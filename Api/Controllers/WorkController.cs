@@ -1,13 +1,12 @@
 using Api.Context;
-using Api.Models.CompletedWorkTasks;
-using Api.Models.Students;
-using Api.Models.WorkMarks;
+using Api.Models.Tasks;
 using Api.Models.Works;
 using Api.Models.Works.Commands;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Task = Api.Models.Tasks.Task;
 
 namespace Api.Controllers;
 
@@ -21,7 +20,6 @@ public class CompletedWorkAndMarks
     public int IdWork { get; set; }
     public double Percentage { get; set; }
     public int TotalMark { get; set; }
-    
     public int TasksCount { get; set; }
 }
 
@@ -81,6 +79,7 @@ public sealed class WorkController(IMapper mapper) : BaseController
                     StudentName = student.User.Name,
                     StudentSurname = student.User.Surname,
                     CompletedTasks = Array.Empty<int>(),
+                    WorkTasks = work.Tasks.Select(e => e.Id).ToArray(),
                     IdStudent = student.Id,
                     IdWork = idWork,
                     Percentage = 0,
@@ -92,9 +91,7 @@ public sealed class WorkController(IMapper mapper) : BaseController
             }
             
             var completedWork = student.CompletedWorks.FirstOrDefault(e => e.WorkId == idWork);
-            var workTasks = work.Tasks;
             var completedWorkTasks = completedWork.CompletedTasks;
-            double percentage = (double)completedWorkTasks.Count / work.Tasks.Count * 100;
 
             var taskCompleted = completedWorkTasks.Count;
             int totalMark;
@@ -122,9 +119,10 @@ public sealed class WorkController(IMapper mapper) : BaseController
                     StudentName = student.User.Name,
                     StudentSurname = student.User.Surname,
                     CompletedTasks = completedWorkTasks.Select(e => e.TaskId).ToArray(),
+                    WorkTasks = work.Tasks.Select(e => e.Id).ToArray(),
                     IdStudent = student.Id,
                     IdWork = idWork,
-                    Percentage = percentage,
+                    Percentage = (double)completedWorkTasks.Count / work.Tasks.Count * 100,
                     TotalMark = totalMark,
                     TasksCount = work.Tasks.Count
                 }

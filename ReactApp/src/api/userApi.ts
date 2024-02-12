@@ -1,7 +1,6 @@
 import {baseApi} from "./api.ts";
 import {login} from "./slices/authSlice.ts";
 
-
 interface UserData{
     login: string
     password: string

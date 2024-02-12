@@ -3,6 +3,7 @@ import React from "react";
 interface ButtonMarkStaffProps {
     counter: number
     isPassed: boolean
+    value: number
 }
 
 const ButtonMarkStaff: React.FC<ButtonMarkStaffProps> = (props) => {
@@ -13,7 +14,11 @@ const ButtonMarkStaff: React.FC<ButtonMarkStaffProps> = (props) => {
     }
 
     return (
-        <button ref={markBtnRef} className={"markBtn" + (props.isPassed ? " passed" : "")} onClick={togglePassedStatus}>{props.counter}</button>
+        <button
+            ref={markBtnRef}
+            className={"markBtn" + (props.isPassed ? " passed" : "")}
+            value={props.value}
+            onClick={togglePassedStatus}>{props.counter}</button>
     )
 }
 export default ButtonMarkStaff;

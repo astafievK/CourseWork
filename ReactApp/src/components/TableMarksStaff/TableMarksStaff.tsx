@@ -16,8 +16,6 @@ const TableMarksStaff: React.FC<TableMarksStaffProps> = () => {
         workId: work ? work.id : 0
     });
 
-    console.log(data)
-
     if(!user){
         return <Navigate to="/"/>
     }
@@ -34,6 +32,7 @@ const TableMarksStaff: React.FC<TableMarksStaffProps> = () => {
                             name={student.studentName}
                             surname={student.studentSurname}
                             completedTasks={student.completedTasks}
+                            workTasks={student.workTasks}
                             tasksCount={student.tasksCount}
                             totalMark={student.totalMark}
                             percentage={student.percentage}

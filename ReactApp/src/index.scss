@@ -639,16 +639,23 @@ html {
 
               &.total-mark,
               &.percentage {
+                position: sticky;
                 width: 80px;
                 align-items: center;
                 justify-content: center;
+                background: $theme-light-color-primary;
 
                 span {
                   font-weight: 700;
                 }
               }
 
+              &.total-mark{
+                right: 1px;
+              }
+
               &.percentage{
+                right: 81px;
                 margin-left: auto;
               }
 
@@ -896,6 +903,11 @@ html {
                 }
 
                 &.labwork {
+                  background: $theme-dark-color-primary;
+                }
+
+                &.percentage,
+                &.total-mark{
                   background: $theme-dark-color-primary;
                 }
 

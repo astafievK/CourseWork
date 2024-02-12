@@ -462,12 +462,17 @@ html {
                   html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
                     background: #bfc0c5; }
             html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
+              position: sticky;
               width: 80px;
               align-items: center;
-              justify-content: center; }
+              justify-content: center;
+              background: #ffffff; }
               html body .table-wrapper table tbody tr td.total-mark span, html body .table-wrapper table tbody tr td.percentage span {
                 font-weight: 700; }
+            html body .table-wrapper table tbody tr td.total-mark {
+              right: 1px; }
             html body .table-wrapper table tbody tr td.percentage {
+              right: 81px;
               margin-left: auto; }
             html body .table-wrapper table tbody tr td.rectangle {
               position: sticky;
@@ -587,6 +592,8 @@ html {
           html body.dark .table-wrapper table tbody tr td.fullName {
             background: #202020; }
           html body.dark .table-wrapper table tbody tr td.labwork {
+            background: #202020; }
+          html body.dark .table-wrapper table tbody tr td.percentage, html body.dark .table-wrapper table tbody tr td.total-mark {
             background: #202020; }
           html body.dark .table-wrapper table tbody tr td.stats .markBtn.passed,
           html body.dark .table-wrapper table tbody tr td.stats .mark.passed {

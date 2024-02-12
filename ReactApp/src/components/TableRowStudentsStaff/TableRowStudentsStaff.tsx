@@ -24,7 +24,6 @@ const TableRowStudentsStaff: React.FC<TableRowStudentsStaffProps> = (props) => {
     };
      */
 
-
     return (
         <tr>
             <td className="number">

@@ -1,7 +1,8 @@
 interface IStudentStatistic {
     studentName: string
     studentSurname: string
-    completedTasks: ITask[]
+    completedTasks: number[]
+    workTasks: number[]
     idStudent: number
     idWork: number
     percentage: number
