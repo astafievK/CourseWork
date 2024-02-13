@@ -58,7 +58,7 @@ const TableRowMarksStaff: React.FC<TableRowMarksStaffProps> = (props) => {
                  */
             }
             <td className="percentage">
-                <span>{props.percentage}</span>
+                <span>{Math.trunc(props.percentage)}%</span>
             </td>
             <td className="total-mark">
                 <span>{props.totalMark}</span>

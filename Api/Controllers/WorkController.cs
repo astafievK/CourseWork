@@ -4,6 +4,7 @@ using Api.Models.Works;
 using Api.Models.Works.Commands;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using DocumentFormat.OpenXml.Math;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Task = Api.Models.Tasks.Task;
@@ -28,9 +29,6 @@ public sealed class WorkController(IMapper mapper) : BaseController
     [HttpGet("{idWork:int}/stats")]
     public async Task<ActionResult> GetStats(
         int idWork,
-        int markFiveCount,
-        int markFourCount,
-        int markThreeCount,
         [FromServices] ApiDbContext context)
     {
         var students = await context.Students
@@ -50,24 +48,6 @@ public sealed class WorkController(IMapper mapper) : BaseController
             .Include(e => e.Tasks)
             .FirstOrDefaultAsync(x => x.Id == idWork);
 
-        if (work.WorkMarks.Count == 3)
-        {
-            markFiveCount = work.WorkMarks.FirstOrDefault(e => e.MarkId == 1).TaskCount;
-            markFourCount = work.WorkMarks.FirstOrDefault(e => e.MarkId == 2).TaskCount;
-            markThreeCount = work.WorkMarks.FirstOrDefault(e => e.MarkId == 3).TaskCount;
-        }
-        
-        if (markFourCount == 0 && markThreeCount == 0)
-        {
-            markFourCount = (int)Math.Ceiling((double)(work.Tasks.Count - markFiveCount) / 2);
-            markThreeCount = (int)Math.Floor((double)(work.Tasks.Count - markFiveCount) / 2);
-        }
-
-        if (markThreeCount == 0)
-        {
-            markThreeCount = work.Tasks.Count - markFourCount - markFiveCount;
-        }
-        
         List<CompletedWorkAndMarks> listStudentCompletedWorkAndMarks = new();
 
         foreach (var student in students)
@@ -89,29 +69,40 @@ public sealed class WorkController(IMapper mapper) : BaseController
 
                 continue;
             }
-            
+
             var completedWork = student.CompletedWorks.FirstOrDefault(e => e.WorkId == idWork);
             var completedWorkTasks = completedWork.CompletedTasks;
-
+            var percentage = (double)completedWorkTasks.Count / work.Tasks.Count * 100;
             var taskCompleted = completedWorkTasks.Count;
-            int totalMark;
+            int totalMark = 0;
 
-            if (taskCompleted >= markFiveCount)
+            if (work.Tasks.Count == 3)
             {
-                totalMark = 5;
-            }
-            else if (taskCompleted >= markFourCount)
-            {
-                totalMark = 4;
-            }
-            else if (taskCompleted >= markThreeCount)
-            {
-                totalMark = 3;
+                switch (taskCompleted)
+                {
+                    case 1:
+                        totalMark = 3;
+                        break;
+                    case 2:
+                        totalMark = 4;
+                        break;
+                    case 3:
+                        totalMark = 5;
+                        break;
+                }
             }
             else
             {
-                totalMark = 2;
+                if (percentage < 65)
+                    totalMark = 2;
+                else if (percentage is >= 65 and < 85)
+                    totalMark = 3;
+                else if (percentage is >= 65 and < 85)
+                    totalMark = 4;
+                else
+                    totalMark = 5;
             }
+            
 
             listStudentCompletedWorkAndMarks.Add(
                 new CompletedWorkAndMarks()
@@ -122,13 +113,13 @@ public sealed class WorkController(IMapper mapper) : BaseController
                     WorkTasks = work.Tasks.Select(e => e.Id).ToArray(),
                     IdStudent = student.Id,
                     IdWork = idWork,
-                    Percentage = (double)completedWorkTasks.Count / work.Tasks.Count * 100,
+                    Percentage = percentage,
                     TotalMark = totalMark,
                     TasksCount = work.Tasks.Count
                 }
             );
         }
-        
+
         return Ok(listStudentCompletedWorkAndMarks);
     }
 
