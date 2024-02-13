@@ -7,6 +7,7 @@ using AutoMapper.QueryableExtensions;
 using DocumentFormat.OpenXml.Math;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SixLabors.Fonts.Unicode;
 using Task = Api.Models.Tasks.Task;
 
 namespace Api.Controllers;
@@ -73,34 +74,52 @@ public sealed class WorkController(IMapper mapper) : BaseController
             var completedWork = student.CompletedWorks.FirstOrDefault(e => e.WorkId == idWork);
             var completedWorkTasks = completedWork.CompletedTasks;
             var percentage = (double)completedWorkTasks.Count / work.Tasks.Count * 100;
-            var taskCompleted = completedWorkTasks.Count;
+            var tasksCompleted = completedWorkTasks.Count;
             int totalMark = 0;
 
-            if (work.Tasks.Count == 3)
+            switch (work.Tasks.Count)
             {
-                switch (taskCompleted)
-                {
-                    case 1:
+                case 3:
+                    switch (tasksCompleted)
+                    {
+                        case 1:
+                            totalMark = 3;
+                            break;
+                        case 2:
+                            totalMark = 4;
+                            break;
+                        case 3:
+                            totalMark = 5;
+                            break; 
+                    }
+                    break;
+                case 5:
+                    switch (tasksCompleted)
+                    {
+                        case 5:
+                            totalMark = 5;
+                            break;
+                        case 4:
+                            totalMark = 4;
+                            break;
+                        case 3:
+                            totalMark = 3;
+                            break; 
+                        default:
+                            totalMark = 2;
+                            break;
+                    }
+                    break;
+                default:
+                    if (percentage < 65)
+                        totalMark = 2;
+                    else if (percentage is >= 65 and < 85)
                         totalMark = 3;
-                        break;
-                    case 2:
+                    else if (percentage is >= 65 and < 85)
                         totalMark = 4;
-                        break;
-                    case 3:
+                    else
                         totalMark = 5;
-                        break;
-                }
-            }
-            else
-            {
-                if (percentage < 65)
-                    totalMark = 2;
-                else if (percentage is >= 65 and < 85)
-                    totalMark = 3;
-                else if (percentage is >= 65 and < 85)
-                    totalMark = 4;
-                else
-                    totalMark = 5;
+                    break;
             }
             
 
