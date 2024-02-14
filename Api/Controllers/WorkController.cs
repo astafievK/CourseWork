@@ -111,11 +111,11 @@ public sealed class WorkController(IMapper mapper) : BaseController
                     }
                     break;
                 default:
-                    if (percentage < 65)
+                    if (percentage < 60)
                         totalMark = 2;
-                    else if (percentage is >= 65 and < 85)
+                    else if (percentage is >= 60 and < 75)
                         totalMark = 3;
-                    else if (percentage is >= 65 and < 85)
+                    else if (percentage is >= 75 and < 90)
                         totalMark = 4;
                     else
                         totalMark = 5;
