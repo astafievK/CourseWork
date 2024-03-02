@@ -399,7 +399,7 @@ html {
               width: 45px;
               flex-shrink: 1; }
             html body .table-wrapper table tbody tr td.fullName {
-              min-width: 300px;
+              min-width: 20rem;
               position: sticky;
               display: flex;
               flex-direction: row;
@@ -414,18 +414,22 @@ html {
                 display: none;
                 margin-left: 5px; }
             html body .table-wrapper table tbody tr td.labwork {
-              min-width: 325px;
+              min-width: 20rem;
               position: sticky;
               display: flex;
-              flex-direction: row;
+              flex-direction: column;
               background: #ffffff;
               left: 0;
               z-index: 1;
               text-align: left;
               flex-shrink: 1;
-              padding: 0 15px; }
-              html body .table-wrapper table tbody tr td.labwork .title.short {
-                display: none; }
+              padding: 0 15px;
+              align-items: start; }
+              html body .table-wrapper table tbody tr td.labwork .type,
+              html body .table-wrapper table tbody tr td.labwork .title {
+                text-align: start; }
+              html body .table-wrapper table tbody tr td.labwork .title {
+                opacity: 0.8; }
             html body .table-wrapper table tbody tr td.actions {
               display: flex;
               margin-left: auto;
@@ -507,10 +511,12 @@ html {
                   background: #7fbf7f; }
                 html body .table-wrapper table tbody tr td.stats .markBtn.passed:active {
                   background: #75a975; }
-              html body .table-wrapper table tbody tr td.stats .mark:hover, html body .table-wrapper table tbody tr td.stats .mark:active, html body .table-wrapper table tbody tr td.stats .mark:focus {
-                background: transparent; }
-              html body .table-wrapper table tbody tr td.stats .mark.passed:hover, html body .table-wrapper table tbody tr td.stats .mark.passed:active, html body .table-wrapper table tbody tr td.stats .mark.passed:focus {
-                background: #b2d9b2; }
+              html body .table-wrapper table tbody tr td.stats .mark {
+                cursor: default !important; }
+                html body .table-wrapper table tbody tr td.stats .mark:hover, html body .table-wrapper table tbody tr td.stats .mark:active, html body .table-wrapper table tbody tr td.stats .mark:focus {
+                  background: transparent; }
+                html body .table-wrapper table tbody tr td.stats .mark.passed:hover, html body .table-wrapper table tbody tr td.stats .mark.passed:active, html body .table-wrapper table tbody tr td.stats .mark.passed:focus {
+                  background: #b2d9b2; }
             html body .table-wrapper table tbody tr td .retiredBtn {
               height: 100%;
               font-weight: 700; }

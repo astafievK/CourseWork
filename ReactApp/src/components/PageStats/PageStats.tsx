@@ -17,13 +17,11 @@ const PageStats: React.FC<PageStatsProps> = () => {
         return <Navigate to="/"/>
     }
 
-    console.log(user)
-
     return(
         <>
             {user.role.name === "Student" ? (
                 <>
-                    <HeaderStatsStudent name={user.name} surname={user.surname} groupName={"123"}/>
+                    <HeaderStatsStudent name={user.name} surname={user.surname}/>
                     <TableMarksStudent/>
                 </>
             ) : (

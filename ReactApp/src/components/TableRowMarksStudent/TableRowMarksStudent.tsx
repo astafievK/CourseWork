@@ -2,34 +2,53 @@ import React from "react";
 import ButtonMarkStudent from "../ButtonMarkStudent/ButtonMarkStudent.tsx";
 
 interface TableRowMarksStudentProps{
+    counter: number
+    completedTasks: number[]
+    workTasks: number[]
+    workType: string
     workName: string
+    percentage: number
+    totalMark: number
+    tasksCount: number
 }
 
 const TableRowMarksStudent: React.FC<TableRowMarksStudentProps> = (props) => {
-return (
+    function printRectangle(totalMark: number) {
+        switch (totalMark) {
+            case 2:
+                return (<td className="rectangle bad"></td>)
+            case 3:
+                return (<td className="rectangle medium"></td>)
+            case 4:
+                return (<td className="rectangle good"></td>)
+            case 5:
+                return (<td className="rectangle good"></td>)
+        }
+    }
+
+    return (
         <tr>
             <td className="labwork">
+                <span className="type">{props.workType}</span>
                 <span className="title">{props.workName}</span>
-                <span className="title short">{props.workName.replace(/^(.{3}).*(d)$/, "$1 $2")}</span>
             </td>
             <td className="stats">
-                <ButtonMarkStudent counter={1} isPassed={true}/>
-                <ButtonMarkStudent counter={2} isPassed={true}/>
-                <ButtonMarkStudent counter={3} isPassed={false}/>
-                <ButtonMarkStudent counter={4} isPassed={false}/>
-                <ButtonMarkStudent counter={5} isPassed={false}/>
-                <ButtonMarkStudent counter={6} isPassed={true}/>
-                <ButtonMarkStudent counter={7} isPassed={true}/>
-                <ButtonMarkStudent counter={8} isPassed={false}/>
-                <ButtonMarkStudent counter={9} isPassed={true}/>
+                {Array.from({length: props.tasksCount }).map((_, i) => (
+                    <ButtonMarkStudent
+                        isPassed={props.completedTasks.includes(props.workTasks[i])}
+                        counter={i + 1}
+                    />
+                ))}
             </td>
             <td className="percentage">
-                <span>100%</span>
+                <span>{props.percentage}%</span>
             </td>
             <td className="total-mark">
-                <span>5</span>
+                <span>{props.totalMark}</span>
             </td>
-            <td className="rectangle good"></td>
+            {
+                printRectangle(props.totalMark)
+            }
         </tr>
     )
 }

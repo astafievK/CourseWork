@@ -1,4 +1,4 @@
-interface IStudentStatistic {
+interface IStatisticStaff {
     studentName: string
     studentSurname: string
     completedTasks: number[]

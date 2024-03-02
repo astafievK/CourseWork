@@ -6,5 +6,5 @@ public sealed class CompletedWorkCommand : IMapWith<CompletedWork>
 {
     public int StudentId { get; set; }
     public int WorkId { get; set; }
-    public ICollection<int> CompletedTaskIds { get; set; } = null!;
+    public int TaskId { get; set; }
 }

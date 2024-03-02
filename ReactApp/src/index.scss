@@ -522,7 +522,7 @@ html {
               }
 
               &.fullName {
-                min-width: 300px;
+                min-width: 20rem;
                 position: sticky;
                 display: flex;
                 flex-direction: row;
@@ -547,21 +547,29 @@ html {
               }
 
               &.labwork {
-                min-width: 325px;
+                min-width: 20rem;
                 position: sticky;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 background: $theme-light-color-primary;
                 left: 0;
                 z-index: 1;
                 text-align: left;
                 flex-shrink: 1;
                 padding: 0 15px;
+                align-items: start;
+
+                .type,
+                .title{
+                  text-align: start;
+                }
+
+                .type{
+
+                }
 
                 .title{
-                  &.short{
-                    display: none;
-                  }
+                  opacity: 0.8;
                 }
               }
 
@@ -713,6 +721,8 @@ html {
                 }
 
                 .mark{
+                  cursor: default !important;
+
                   &:hover,
                   &:active,
                   &:focus{

@@ -16,7 +16,7 @@ export const workApi = baseApi.injectEndpoints({
             }),
             invalidatesTags: ['Works', 'Stats']
         }),
-        getWorkStats: builder.query<IStudentStatistic[], {
+        getWorkStatsStaff: builder.query<IStatisticStaff[], {
             workId: number
         }>({
             query: query => ({
@@ -25,10 +25,11 @@ export const workApi = baseApi.injectEndpoints({
             }),
             providesTags: ['Stats']
         }),
+
     })
 })
 
 export const {
     useAddWorkMutation,
-    useGetWorkStatsQuery,
+    useGetWorkStatsStaffQuery,
 } = workApi

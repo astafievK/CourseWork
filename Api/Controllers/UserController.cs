@@ -6,13 +6,49 @@ using Api.Models.Students;
 using Api.Models.Users;
 using Api.Models.Users.Commands;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers;
 
-public sealed class UserController : BaseController
+public sealed class UserController(IMapper mapper) : BaseController
 {
+    [HttpGet]
+    public async Task<ActionResult> Get(
+        [FromServices] ApiDbContext context)
+    {
+        return Ok(await context.Users
+            .AsNoTracking()
+            .OrderBy(e => e.Id)
+            .ProjectTo<UserViewModel>(mapper.ConfigurationProvider)
+            .ToListAsync());
+    }
+    
+    [HttpGet("idUser={idUser:int}/group")]
+    public async Task<ActionResult<string>> GetUserGroup(
+        int idUser,
+        [FromServices] ApiDbContext context)
+    {
+        var user = await context.Users
+            .AsNoTracking()
+            .Include(u => u.Role)
+            .FirstOrDefaultAsync(u => u.Id == idUser);
+
+        if (user.Role.Name.ToLower() == "teacher")
+        {
+            return Ok("Данный пользователь не студент");
+        }
+
+        var student = await context.Students
+            .AsNoTracking()
+            .Include(s => s.Group)
+            .Include(s => s.User)
+            .FirstOrDefaultAsync(s => s.User.Id == idUser);
+
+        return Ok(student.Group.Name);
+    }
+    
     [HttpPost("{id:int}/change_password")]
     public async Task<ActionResult> Post(
         int id,

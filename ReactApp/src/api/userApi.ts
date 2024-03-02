@@ -32,10 +32,19 @@ export const userApi = baseApi.injectEndpoints({
                 }
             },
         }),
+        getGroup: builder.query<string, {
+            idUser: number
+        }>({
+            query: query => ({
+                url: `User/idUser=${query.idUser}/group`,
+                method: "GET"
+            })
+        })
     }),
 })
 
 export const {
     useGetUserMutation,
     useLoginMutation,
+    useGetGroupQuery
 } = userApi

@@ -3,7 +3,7 @@ import {useTypedSelector} from "../../store/hooks/redux.ts";
 import {Navigate} from "react-router-dom";
 import TableRowMarksStaff from "../TableRowMarksStaff/TableRowMarksStaff.tsx";
 import React from "react";
-import {useGetWorkStatsQuery} from "../../api/workApi.ts";
+import {useGetWorkStatsStaffQuery} from "../../api/workApi.ts";
 
 interface TableMarksStaffProps{
 
@@ -12,7 +12,7 @@ interface TableMarksStaffProps{
 const TableMarksStaff: React.FC<TableMarksStaffProps> = () => {
     const {user} = useTypedSelector(state => state.auth)
     const {work} = useTypedSelector(state => state.select)
-    const {data=[]} = useGetWorkStatsQuery({
+    const {data=[]} = useGetWorkStatsStaffQuery({
         workId: work ? work.id : 0
     });
 
@@ -33,6 +33,7 @@ const TableMarksStaff: React.FC<TableMarksStaffProps> = () => {
                             surname={student.studentSurname}
                             completedTasks={student.completedTasks}
                             workTasks={student.workTasks}
+                            idStudent={student.idStudent}
                             tasksCount={student.tasksCount}
                             totalMark={student.totalMark}
                             percentage={student.percentage}

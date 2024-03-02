@@ -10,7 +10,8 @@ export const studentApi = baseApi.injectEndpoints({
             providesTags: ['Students']
         }),
         getCompletedWorks: builder.query<IStudent[], { // Завершенные работы студенты
-            idStudent: number}>({
+            idStudent: number
+        }>({
 
             query: query => ({
                 url: `Student/${query.idStudent}/completed_works`,
@@ -23,7 +24,8 @@ export const studentApi = baseApi.injectEndpoints({
             password: string,
             name: string,
             surname: string,
-            patronymic: string}>({
+            patronymic: string
+        }>({
 
             query: query => ({
                 url: `Student`,
@@ -40,12 +42,23 @@ export const studentApi = baseApi.injectEndpoints({
             invalidatesTags: ['Students', 'Works', 'Stats']
         }),
         setStudentRetiredStatus: builder.mutation<IStudent[], { // Добавление студента в группу
-            idStudent: number}>({
+            idStudent: number
+        }>({
             query: query => ({
                 url: `Student/${query.idStudent}/isRetired`,
                 method: "PUT",
             }),
             invalidatesTags: ['Students']
+        }),
+        getStatsStudent: builder.query<IStatisticStudent[], {
+            idDiscipline: number,
+            idUser: number,
+        }>({
+            query: query => ({
+                url: `Student/idDiscipline=${query.idDiscipline}&idUser=${query.idUser}/stats`,
+                method: "GET",
+            }),
+            providesTags: ['Stats']
         }),
     }),
 })
@@ -55,4 +68,5 @@ export const {
     useGetCompletedWorksQuery,
     useAddStudentMutation,
     useSetStudentRetiredStatusMutation,
+    useGetStatsStudentQuery
 } = studentApi

@@ -7,6 +7,7 @@ interface TableRowMarksStaffProps{
     surname: string
     completedTasks: number[]
     workTasks: number[]
+    idStudent: number
     tasksCount: number
     totalMark: number
     percentage: number
@@ -34,9 +35,6 @@ const TableRowMarksStaff: React.FC<TableRowMarksStaffProps> = (props) => {
             <td className="fullName">
                 <span className="surname">{props.surname}</span>
                 <span className="name">{props.name}</span>
-                {
-                    //<span className="name-short">{props.name.charAt(0)}</span>
-                }
             </td>
             <td className="stats">
                 {Array.from({ length: props.tasksCount }).map((_, i) => (
@@ -45,6 +43,7 @@ const TableRowMarksStaff: React.FC<TableRowMarksStaffProps> = (props) => {
                         counter={i + 1}
                         key={i}
                         value={props.workTasks[i]}
+                        idStudent={props.idStudent}
                     />
                 ))}
             </td>

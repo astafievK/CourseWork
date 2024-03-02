@@ -3,6 +3,7 @@ using Api.Models.CompletedWorks;
 using Api.Models.Groups;
 using Api.Models.Students;
 using Api.Models.Students.Commands;
+using Api.Models.Works;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using ClosedXML.Excel;
@@ -10,6 +11,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers;
+
+public class CompletedWorkAndMarksStudent
+{
+    public int[] CompletedTasks { get; set; }
+    public int[] WorkTasks { get; set; }
+    public string WorkType { get; set; }
+    public string WorkName { get; set; }
+    public double Percentage { get; set; }
+    public int TotalMark { get; set; }
+    public int TasksCount { get; set; }
+}
 
 public sealed class StudentController(IMapper mapper) : BaseController
 {
@@ -27,17 +39,142 @@ public sealed class StudentController(IMapper mapper) : BaseController
             .FirstOrDefaultAsync(e => e.Id == id));
     }
     
-    [HttpGet("{idUser:int}/group")]
-    public async Task<ActionResult<GroupViewModel>> GetStudentGroup(
+    [HttpGet("idDiscipline={idDiscipline:int}&idUser={idUser:int}/stats")]
+    public async Task<ActionResult> GetStats(
+        int idDiscipline,
         int idUser,
         [FromServices] ApiDbContext context)
     {
         var student = await context.Students
             .AsNoTracking()
+            .Include(e => e.CompletedWorks)
+            .ThenInclude(e => e.CompletedTasks)
+            .Include(e => e.User)
             .Include(e => e.Group)
+            .ThenInclude(e => e.GroupWorks)
             .FirstOrDefaultAsync(e => e.UserId == idUser);
-        
-        return Ok(student.Group);
+
+        var works = await context.GroupWorks
+            .Include(e => e.Work)
+            .ThenInclude(e => e.Tasks)
+            .Include(e => e.Work)
+            .ThenInclude(e => e.WorkMarks)
+            .Include(e => e.Work)
+            .ThenInclude(e => e.WorkType)
+            .Include(e => e.Work)
+            .ThenInclude(e => e.Tasks)
+            .Include(e => e.Work)
+            .Include(e => e.Discipline)
+            .Where(e => e.GroupId == student.GroupId && e.DisciplineId == idDiscipline)
+            .ToListAsync();
+
+        List<CompletedWorkAndMarksStudent> listStudentCompletedWorkAndMarks = new();
+
+        foreach (var work in works)
+        {
+            if (student.CompletedWorks.FirstOrDefault(e => e.WorkId == work.WorkId) == null)
+            {
+                listStudentCompletedWorkAndMarks.Add(new CompletedWorkAndMarksStudent()
+                {
+                    CompletedTasks = Array.Empty<int>(),
+                    WorkTasks = work.Work.Tasks.Select(e => e.Id).ToArray(),
+                    WorkType = work.Work.WorkType.Name,
+                    WorkName = work.Work.Name,
+                    Percentage = 0,
+                    TotalMark = 2,
+                    TasksCount = work.Work.Tasks.Count
+                });
+
+                continue;
+            }
+
+            var completedWork = student.CompletedWorks.FirstOrDefault(e => e.WorkId == work.WorkId);
+            var completedWorkTasks = completedWork.CompletedTasks;
+            var percentage = (double)completedWorkTasks.Count / work.Work.Tasks.Count * 100;
+            var tasksCompleted = completedWorkTasks.Count;
+            int totalMark = 0;
+
+            switch (work.Work.Tasks.Count)
+            {
+                case 3:
+                    switch (tasksCompleted)
+                    {
+                        case 1:
+                            totalMark = 3;
+                            break;
+                        case 2:
+                            totalMark = 4;
+                            break;
+                        case 3:
+                            totalMark = 5;
+                            break; 
+                    }
+                    break;
+                case 5:
+                    switch (tasksCompleted)
+                    {
+                        case 5:
+                            totalMark = 5;
+                            break;
+                        case 4:
+                            totalMark = 4;
+                            break;
+                        case 3:
+                            totalMark = 3;
+                            break; 
+                        default:
+                            totalMark = 2;
+                            break;
+                    }
+                    break;
+                default:
+                    if (percentage < 65)
+                        totalMark = 2;
+                    else if (percentage is >= 65 and < 85)
+                        totalMark = 3;
+                    else if (percentage is >= 65 and < 85)
+                        totalMark = 4;
+                    else
+                        totalMark = 5;
+                    break;
+            }
+            
+
+            listStudentCompletedWorkAndMarks.Add(
+                new CompletedWorkAndMarksStudent()
+                {
+                    CompletedTasks = completedWorkTasks.Select(e => e.TaskId).ToArray(),
+                    WorkTasks = work.Work.Tasks.Select(e => e.Id).ToArray(),
+                    WorkType = work.Work.WorkType.Name,
+                    WorkName = work.Work.Name,
+                    Percentage = Math.Floor(percentage),
+                    TotalMark = totalMark,
+                    TasksCount = work.Work.Tasks.Count
+                }
+            );
+        }
+
+        return Ok(listStudentCompletedWorkAndMarks);
+    }
+    
+    [HttpGet("{idUser:int}/group")]
+    public async Task<ActionResult<GroupViewModel>> GetStudentGroup(
+        int idUser,
+        [FromServices] ApiDbContext context)
+    {
+        var user = await context.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Id == idUser);
+
+        if (user.Role.Name.ToLower() == "")
+        {
+            return Ok(context.Students
+                .AsNoTracking()
+                .Include(e => e.Group)
+                .FirstOrDefaultAsync(e => e.UserId == idUser));
+        }
+
+        return NotFound("Пользователь не студент");
     }
     
     [HttpGet("xlsx")]

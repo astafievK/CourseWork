@@ -44,7 +44,7 @@ export const groupApi = baseApi.injectEndpoints({
             }),
             providesTags: ['Works', 'Stats']
         }),
-        addGroup: builder.mutation<IDiscipline[], {
+        addGroup: builder.mutation<number, {
             name: string,
             idCourse: number,
             idSemester: number
@@ -60,7 +60,7 @@ export const groupApi = baseApi.injectEndpoints({
                     disciplinesIds: []
                 }
             }),
-            invalidatesTags: ['Groups', 'Stats'],
+            invalidatesTags: ['Groups', 'Stats', 'StudentGroup'],
         }),
     })
 })

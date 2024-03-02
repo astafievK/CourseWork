@@ -1,10 +1,8 @@
-interface IStatisticStaff {
-    studentName: string
-    studentSurname: string
+interface IStatisticStudent {
     completedTasks: number[]
     workTasks: number[]
-    idStudent: number
-    idWork: number
+    workType: string
+    workName: string
     percentage: number
     totalMark: number
     tasksCount: number
