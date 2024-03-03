@@ -17,7 +17,7 @@ const PageStudents: React.FC<PageStudentsProps> = () => {
         return <Navigate to="/"/>
     }
 
-    // Если пользователь является студентом, но перернаправить на страницу ститистики
+    // Если пользователь является студентом, то перернаправить на страницу ститистики
     if(user.role.name === "Student"){
         return <Navigate to="/stats"/>
     }
