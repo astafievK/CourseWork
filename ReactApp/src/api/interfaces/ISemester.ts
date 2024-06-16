@@ -1,3 +1,0 @@
-interface ISemester {
-    id: number
-}

@@ -1,3 +1,0 @@
-interface IGroupCommand {
-    groupName: string
-}

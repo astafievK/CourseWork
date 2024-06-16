@@ -1,3 +1,0 @@
-interface ITasksCommand {
-    tasksCount: number
-}

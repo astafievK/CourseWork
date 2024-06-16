@@ -1,3 +1,0 @@
-interface ITheme{
-    isDarkTheme: boolean
-}

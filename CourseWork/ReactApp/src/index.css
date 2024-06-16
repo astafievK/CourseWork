@@ -1,0 +1,684 @@
+@keyframes opacity-out {
+  0% {
+    opacity: 0.55; }
+  100% {
+    opacity: 1; } }
+@keyframes selected-out-light {
+  0% {
+    background-color: #dcdee2;
+    color: #202020; }
+  100% {
+    background-color: #202020;
+    color: #ffffff; } }
+@keyframes selected-out-dark {
+  0% {
+    background-color: #3d3e45;
+    color: #e1e3e6; }
+  100% {
+    background-color: #e1e3e6;
+    color: #202020; } }
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("./assets/fonts/poppins/Poppins-Regular.ttf"); }
+@keyframes anim-flex-opacity {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(80%); }
+  100% {
+    display: flex;
+    opacity: 1;
+    transform: translateY(90%); } }
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px; }
+
+*::-webkit-scrollbar-track {
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #202020;
+  border-radius: 15px; }
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent; }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  box-sizing: border-box;
+  font-family: Poppins-Regular, sans-serif;
+  transition: background-color 0.3s; }
+  *:disabled {
+    opacity: 0.5; }
+    *:disabled:hover {
+      background: transparent !important;
+      border: none !important; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
+a {
+  text-decoration: none;
+  color: #202020;
+  transition: all 0.2s; }
+
+html {
+  height: 100%; }
+  html body {
+    height: 100%;
+    background: #ffffff;
+    color: #202020;
+    outline: none;
+    overflow: hidden; }
+    html body button.add-svg {
+      padding: 0;
+      aspect-ratio: 1/1; }
+      html body button.add-svg svg {
+        height: 100%;
+        width: 100%; }
+        html body button.add-svg svg g path {
+          transition: all 0.2s;
+          stroke: #202020; }
+    html body button,
+    html body select,
+    html body input {
+      background-color: transparent;
+      color: #202020;
+      border: none;
+      cursor: pointer;
+      padding: 0 10px;
+      user-select: none;
+      border-radius: 7px;
+      transition: all 0.2s; }
+      html body button:hover,
+      html body select:hover,
+      html body input:hover {
+        background-color: #dcdee2;
+        transition: all 0.2s; }
+      html body button img,
+      html body button svg,
+      html body select img,
+      html body select svg,
+      html body input img,
+      html body input svg {
+        height: 100%;
+        width: 100%; }
+    html body input[type=text],
+    html body input[type=password],
+    html body input[type=number] {
+      text-overflow: ellipsis;
+      width: 100px;
+      background: #dcdee2;
+      border: 2px solid transparent;
+      padding: 0 10px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 700; }
+      html body input[type=text]:hover, html body input[type=text]:focus,
+      html body input[type=password]:hover,
+      html body input[type=password]:focus,
+      html body input[type=number]:hover,
+      html body input[type=number]:focus {
+        border-color: #202020;
+        background: transparent !important; }
+    html body input[type=number]::-webkit-inner-spin-button,
+    html body input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    html body select {
+      height: 100%;
+      max-height: 200px;
+      color: #202020;
+      border-radius: 7px;
+      text-align-last: center;
+      overflow-y: auto;
+      transition: all 0.2s; }
+      html body select:hover, html body select:focus {
+        background-color: #dcdee2; }
+    html body header {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      height: 85px;
+      gap: 12px;
+      flex-direction: row;
+      color: #202020;
+      background: #ffffff;
+      padding: 12px;
+      border-bottom: 2px solid #666666;
+      overflow: auto; }
+      html body header .theme {
+        text-wrap: nowrap; }
+      html body header .info {
+        height: 100%;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        white-space: nowrap;
+        gap: 8px; }
+        html body header .info .info-item {
+          font-size: 26px; }
+      html body header nav {
+        display: flex;
+        flex-direction: row;
+        gap: 12px; }
+        html body header nav a {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          justify-content: center;
+          border-radius: 7px;
+          border: none;
+          color: #202020;
+          padding: 12px 10px;
+          transition: all 0.2s; }
+          html body header nav a.selected {
+            border-color: #202020;
+            animation: selected-out-light forwards;
+            animation-duration: 0.2s; }
+          html body header nav a:hover, html body header nav a:focus {
+            background-color: #dcdee2; }
+      html body header .export {
+        padding: 0 10px; }
+        html body header .export a {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%; }
+      html body header .filters {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        gap: 12px; }
+        html body header .filters .filter {
+          justify-content: center;
+          display: flex;
+          height: 100%;
+          align-items: center;
+          flex-direction: column;
+          text-align: center; }
+          html body header .filters .filter .select-work {
+            max-width: 15rem; }
+      html body header .exit-form {
+        height: 100%; }
+        html body header .exit-form .exit {
+          height: 100%; }
+          html body header .exit-form .exit:hover {
+            background-color: rgba(255, 154, 154, 0.55); }
+      html body header::-webkit-scrollbar {
+        width: 6px;
+        height: 6px; }
+    html body .auth-window {
+      display: flex;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 800px;
+      background: #292929;
+      border-radius: 7px;
+      overflow: hidden;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 60px 33px;
+      animation: opacity-out;
+      animation-duration: 0.2s; }
+      html body .auth-window .auth-promo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center; }
+        html body .auth-window .auth-promo h1, html body .auth-window .auth-promo h2 {
+          text-align: center;
+          font-size: 35px;
+          font-weight: 700; }
+        html body .auth-window .auth-promo h1 {
+          font-size: 35px;
+          color: #e1e3e6; }
+        html body .auth-window .auth-promo h2 {
+          font-size: 20px;
+          line-height: 1.1;
+          color: #afafaf; }
+      html body .auth-window .auth {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
+        width: 50%; }
+        html body .auth-window .auth .subtitle {
+          color: #e1e3e6;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          font-size: 35px;
+          font-weight: 700; }
+        html body .auth-window .auth .auth-login,
+        html body .auth-window .auth .auth-password {
+          background-color: transparent;
+          color: #ffffff;
+          border-color: #dcdee2; }
+          html body .auth-window .auth .auth-login::placeholder,
+          html body .auth-window .auth .auth-password::placeholder {
+            color: #dcdee2; }
+          html body .auth-window .auth .auth-login:focus,
+          html body .auth-window .auth .auth-password:focus {
+            border-color: #ffffff;
+            background-color: #ffffff;
+            color: #202020; }
+            html body .auth-window .auth .auth-login:focus::placeholder,
+            html body .auth-window .auth .auth-password:focus::placeholder {
+              color: #202020; }
+        html body .auth-window .auth .auth-login,
+        html body .auth-window .auth .auth-password,
+        html body .auth-window .auth .auth-submit {
+          width: 80%;
+          padding: 5px 12px; }
+        html body .auth-window .auth .auth-submit {
+          background-color: #dcdee2;
+          color: #202020;
+          width: 65%; }
+          html body .auth-window .auth .auth-submit:hover {
+            border-color: green;
+            box-shadow: 0 0 12px 0 green; }
+        html body .auth-window .auth .auth-forgot {
+          background: transparent;
+          border: none;
+          font-size: 14px;
+          font-weight: 500;
+          margin-top: -5px;
+          color: #666;
+          width: auto; }
+          html body .auth-window .auth .auth-forgot:hover {
+            color: #e1e3e6; }
+    html body .add {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      overflow: auto;
+      padding: 12px;
+      gap: 12px;
+      border-bottom: 2px solid #666666;
+      background: #ffffff;
+      height: 85px;
+      box-shadow: 0 0 11px 0 black;
+      animation: opacity-out;
+      animation-duration: 0.35s; }
+      html body .add span {
+        text-wrap: nowrap;
+        transition: color 0.2s; }
+      html body .add form {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px; }
+        html body .add form input,
+        html body .add form button,
+        html body .add form select {
+          height: 100%;
+          width: auto; }
+        html body .add form input[type=text],
+        html body .add form input[type=password] {
+          max-width: 250px; }
+        html body .add form .sample {
+          height: 100%;
+          gap: 12px; }
+          html body .add form .sample .mark {
+            height: 100%;
+            aspect-ratio: 1/1; }
+            html body .add form .sample .mark input {
+              width: 100%; }
+        html body .add form.add-tasks {
+          gap: 12px; }
+          html body .add form.add-tasks .add-task {
+            display: flex;
+            gap: 12px;
+            flex-direction: row;
+            height: 100%; }
+            html body .add form.add-tasks .add-task .add-task__numbers {
+              aspect-ratio: 1/1; }
+              html body .add form.add-tasks .add-task .add-task__numbers:hover {
+                border-color: #202020; }
+        html body .add form .sample {
+          display: flex;
+          flex-direction: row; }
+        html body .add form:not(:first-child) {
+          margin-left: auto; }
+        html body .add form.add-student input[type=text],
+        html body .add form.add-student input[type=password] {
+          width: 7rem; }
+      html body .add::-webkit-scrollbar {
+        width: 6px;
+        height: 6px; }
+    html body .table-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: auto;
+      width: 100%;
+      background: #ffffff;
+      animation: opacity-out;
+      animation-duration: 0.35s; }
+      html body .table-wrapper table {
+        height: 100%;
+        width: 100%;
+        background: #ffffff;
+        color: #202020;
+        border-collapse: collapse; }
+        html body .table-wrapper table tbody tr {
+          display: flex;
+          height: 80px;
+          border-bottom: 2px solid #666666;
+          transition: all 0.2s; }
+          html body .table-wrapper table tbody tr td {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            white-space: nowrap;
+            padding: 10px 12px;
+            background: #ffffff; }
+            html body .table-wrapper table tbody tr td.group {
+              min-width: 140px;
+              position: sticky;
+              left: 0; }
+            html body .table-wrapper table tbody tr td.number {
+              display: flex;
+              justify-content: center;
+              position: sticky;
+              left: 0;
+              z-index: 1;
+              width: 45px;
+              flex-shrink: 1; }
+            html body .table-wrapper table tbody tr td.fullName {
+              min-width: 20rem;
+              position: sticky;
+              display: flex;
+              flex-direction: row;
+              left: 45px;
+              z-index: 1;
+              text-align: left;
+              flex-shrink: 1; }
+              html body .table-wrapper table tbody tr td.fullName .name {
+                margin-left: 5px; }
+              html body .table-wrapper table tbody tr td.fullName .name-short {
+                display: none;
+                margin-left: 5px; }
+            html body .table-wrapper table tbody tr td.student {
+              padding: 0 12px;
+              min-width: 20rem;
+              position: sticky;
+              display: flex;
+              flex-direction: column;
+              left: 45px;
+              text-align: left;
+              flex-shrink: 1;
+              align-items: start; }
+              html body .table-wrapper table tbody tr td.student .fullname {
+                display: flex;
+                flex: 1; }
+                html body .table-wrapper table tbody tr td.student .fullname .name {
+                  margin-left: 5px; }
+                html body .table-wrapper table tbody tr td.student .fullname .name-short {
+                  display: none;
+                  margin-left: 5px; }
+              html body .table-wrapper table tbody tr td.student .login {
+                display: flex;
+                align-items: center;
+                flex: 1; }
+                html body .table-wrapper table tbody tr td.student .login span {
+                  opacity: 0.8; }
+            html body .table-wrapper table tbody tr td.labwork {
+              min-width: 20rem;
+              position: sticky;
+              display: flex;
+              flex-direction: column;
+              left: 0;
+              z-index: 1;
+              text-align: left;
+              flex-shrink: 1;
+              padding: 0 15px;
+              align-items: start; }
+              html body .table-wrapper table tbody tr td.labwork .type,
+              html body .table-wrapper table tbody tr td.labwork .title {
+                display: flex;
+                flex: 1;
+                text-align: start; }
+              html body .table-wrapper table tbody tr td.labwork .title {
+                display: flex;
+                flex: 1;
+                opacity: 0.8; }
+            html body .table-wrapper table tbody tr td.actions {
+              display: flex;
+              margin-left: auto;
+              justify-content: center;
+              gap: 5px; }
+              html body .table-wrapper table tbody tr td.actions .action {
+                font-weight: 700;
+                height: 100%;
+                user-select: none;
+                transition: all 0.2s; }
+                html body .table-wrapper table tbody tr td.actions .action.all, html body .table-wrapper table tbody tr td.actions .action.nothing {
+                  padding: 10px;
+                  aspect-ratio: 1/1; }
+                  html body .table-wrapper table tbody tr td.actions .action.all svg, html body .table-wrapper table tbody tr td.actions .action.nothing svg {
+                    height: 100%; }
+                    html body .table-wrapper table tbody tr td.actions .action.all svg path, html body .table-wrapper table tbody tr td.actions .action.nothing svg path {
+                      transition: all 0.2s; }
+                html body .table-wrapper table tbody tr td.actions .action.all:hover svg path {
+                  fill: #008d00; }
+                html body .table-wrapper table tbody tr td.actions .action.nothing:hover svg {
+                  fill: red; }
+              html body .table-wrapper table tbody tr td.actions .select-tasks {
+                display: flex;
+                gap: 5px; }
+                html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__numbers {
+                  height: 100%;
+                  margin-left: 5px; }
+                  html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__numbers:hover {
+                    border-color: #202020; }
+                html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select {
+                  height: 100%; }
+                  html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:hover {
+                    background: #dcdee2; }
+                  html body .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
+                    background: #bfc0c5; }
+            html body .table-wrapper table tbody tr td.total-mark, html body .table-wrapper table tbody tr td.percentage {
+              position: sticky;
+              width: 80px;
+              align-items: center;
+              justify-content: center;
+              background: #ffffff; }
+              html body .table-wrapper table tbody tr td.total-mark span, html body .table-wrapper table tbody tr td.percentage span {
+                font-weight: 700; }
+            html body .table-wrapper table tbody tr td.total-mark {
+              right: 1px; }
+            html body .table-wrapper table tbody tr td.percentage {
+              right: 81px;
+              margin-left: auto; }
+            html body .table-wrapper table tbody tr td.rectangle {
+              position: sticky;
+              right: 0;
+              padding: 0 !important;
+              transition: all 0.3s; }
+              html body .table-wrapper table tbody tr td.rectangle.good {
+                box-shadow: 0 0 20px 5px green; }
+              html body .table-wrapper table tbody tr td.rectangle.medium {
+                box-shadow: 0 0 20px 5px orange; }
+              html body .table-wrapper table tbody tr td.rectangle.bad {
+                box-shadow: 0 0 20px 5px red; }
+            html body .table-wrapper table tbody tr td.stats {
+              gap: 12px;
+              display: flex;
+              justify-content: start;
+              height: 100%;
+              position: relative;
+              font-size: 21px; }
+              html body .table-wrapper table tbody tr td.stats .task-wrapper {
+                position: relative;
+                height: 100%;
+                aspect-ratio: 1 / 1; }
+                html body .table-wrapper table tbody tr td.stats .task-wrapper .markBtn,
+                html body .table-wrapper table tbody tr td.stats .task-wrapper .mark {
+                  font-size: 26px;
+                  font-weight: 700;
+                  height: 100%;
+                  width: 100%; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .markBtn.passed,
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .mark.passed {
+                    background: #b2d9b2; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .markBtn:hover + .task-info,
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .mark:hover + .task-info {
+                    display: flex;
+                    animation: anim-flex-opacity 0.2s ease-in-out forwards; }
+                html body .table-wrapper table tbody tr td.stats .task-wrapper .markBtn.passed {
+                  background: #b2d9b2; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .markBtn.passed:hover {
+                    background: #7fbf7f; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .markBtn.passed:active {
+                    background: #75a975; }
+                html body .table-wrapper table tbody tr td.stats .task-wrapper .mark {
+                  cursor: default !important; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .mark:hover, html body .table-wrapper table tbody tr td.stats .task-wrapper .mark:active, html body .table-wrapper table tbody tr td.stats .task-wrapper .mark:focus {
+                    background: transparent; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .mark.passed:hover, html body .table-wrapper table tbody tr td.stats .task-wrapper .mark.passed:active, html body .table-wrapper table tbody tr td.stats .task-wrapper .mark.passed:focus {
+                    background: #b2d9b2; }
+                html body .table-wrapper table tbody tr td.stats .task-wrapper .task-info {
+                  display: none;
+                  position: absolute;
+                  max-width: 280px;
+                  opacity: 0;
+                  top: 0;
+                  left: 0;
+                  border-radius: 7px;
+                  z-index: 3;
+                  background: #292929;
+                  padding: 8px;
+                  flex-direction: column;
+                  gap: 4px; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .task-info .title,
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .task-info .description {
+                    text-align: start; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .task-info .title {
+                    font-size: 18px; }
+                  html body .table-wrapper table tbody tr td.stats .task-wrapper .task-info .description {
+                    font-size: 16px; }
+            html body .table-wrapper table tbody tr td .retiredBtn {
+              height: 100%;
+              font-weight: 700; }
+              html body .table-wrapper table tbody tr td .retiredBtn.selected {
+                background: #b2d9b2; }
+                html body .table-wrapper table tbody tr td .retiredBtn.selected:hover {
+                  background: #7fbf7f; }
+            html body .table-wrapper table tbody tr td.disciplines {
+              gap: 12px; }
+              html body .table-wrapper table tbody tr td.disciplines .disciplineBtn {
+                height: 100%; }
+                html body .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected {
+                  background: #b2d9b2; }
+                  html body .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {
+                    background: #7fbf7f; }
+      html body .table-wrapper::-webkit-scrollbar {
+        width: 10px;
+        height: 10px; }
+    html body.dark {
+      background: #202020;
+      color: #e1e3e6; }
+      html body.dark *::-webkit-scrollbar-thumb {
+        background-color: #e1e3e6; }
+      html body.dark a {
+        color: #e1e3e6; }
+      html body.dark button.add-svg svg g path {
+        stroke: #e1e3e6; }
+      html body.dark button,
+      html body.dark select,
+      html body.dark input {
+        color: #e1e3e6; }
+        html body.dark button:hover,
+        html body.dark select:hover,
+        html body.dark input:hover {
+          background-color: #3d3e45; }
+      html body.dark input[type=text],
+      html body.dark input[type=password] {
+        background: #3d3e45; }
+        html body.dark input[type=text]:hover, html body.dark input[type=text]:focus,
+        html body.dark input[type=password]:hover,
+        html body.dark input[type=password]:focus {
+          border-color: #e1e3e6; }
+      html body.dark select {
+        color: #e1e3e6; }
+        html body.dark select:hover, html body.dark select:focus {
+          background-color: #3d3e45; }
+      html body.dark header {
+        color: #e1e3e6;
+        background: #202020; }
+        html body.dark header nav a {
+          color: #e1e3e6;
+          animation-name: selected-out-dark; }
+          html body.dark header nav a.selected {
+            border-color: #e1e3e6; }
+          html body.dark header nav a:hover, html body.dark header nav a:focus {
+            background-color: #3d3e45; }
+      html body.dark .add {
+        background: #202020;
+        height: 85px; }
+        html body.dark .add form.add-tasks .add-task .add-task__numbers:hover {
+          border-color: #e1e3e6; }
+        html body.dark .add form.add-tasks .add-task .add-task__add svg g path {
+          stroke: #e1e3e6; }
+        html body.dark .add form.add-tasks .add-task:focus-within {
+          border-color: #e1e3e6; }
+          html body.dark .add form.add-tasks .add-task:focus-within .add-task__numbers {
+            border-right-color: #e1e3e6; }
+          html body.dark .add form.add-tasks .add-task:focus-within .add-task__add {
+            border-left-color: #e1e3e6; }
+      html body.dark .table-wrapper {
+        background: #202020; }
+        html body.dark .table-wrapper table {
+          background: #202020;
+          color: #e1e3e6; }
+          html body.dark .table-wrapper table tbody tr td {
+            background: #202020; }
+            html body.dark .table-wrapper table tbody tr td.stats .markBtn.passed,
+            html body.dark .table-wrapper table tbody tr td.stats .mark.passed {
+              background: #415241; }
+            html body.dark .table-wrapper table tbody tr td.stats .markBtn.passed {
+              background: #415241; }
+              html body.dark .table-wrapper table tbody tr td.stats .markBtn.passed:hover {
+                background: #608c60; }
+            html body.dark .table-wrapper table tbody tr td.stats .mark:hover, html body.dark .table-wrapper table tbody tr td.stats .mark:focus {
+              background: transparent; }
+            html body.dark .table-wrapper table tbody tr td.stats .mark.passed:hover, html body.dark .table-wrapper table tbody tr td.stats .mark.passed:focus {
+              background: #415241; }
+            html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__numbers:hover {
+              border-color: #e1e3e6; }
+            html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:hover {
+              background: #3d3e45; }
+            html body.dark .table-wrapper table tbody tr td.actions .select-tasks .select-tasks__select:active {
+              background: #323236; }
+            html body.dark .table-wrapper table tbody tr td .retiredBtn.selected {
+              background: #415241; }
+              html body.dark .table-wrapper table tbody tr td .retiredBtn.selected:hover {
+                background: #608c60; }
+            html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected {
+              background: #415241; }
+              html body.dark .table-wrapper table tbody tr td.disciplines .disciplineBtn.selected:hover {
+                background: #608c60; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,3 +1,0 @@
-interface ICourse{
-    id: number
-}

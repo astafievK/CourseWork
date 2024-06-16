@@ -1,3 +1,0 @@
-interface ISampleMarkCommand {
-    taskCount: number
-}
