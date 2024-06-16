@@ -25,16 +25,17 @@ const SelectWorkType: React.FC<SelectWorkTypeProps> = () => {
                 } as IWorkType))
             }}
         >
+            <option disabled>Тип работы</option>
             {
                 data.length == 0 ? <option>Нет данных</option> :
-                data.map((workType) => (
-                    <option
-                        key={workType.id}
-                        value={workType.id}
-                    >
-                        {workType.name}
-                    </option>
-                ))
+                    data.map((workType) => (
+                        <option
+                            key={workType.id}
+                            value={workType.id}
+                        >
+                            {workType.name}
+                        </option>
+                    ))
             }
         </select>
     )

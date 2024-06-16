@@ -21,6 +21,7 @@ function TableStudentsStaff() {
                             name={student.user.name}
                             surname={student.user.surname}
                             isRetired={student.isRetired}
+                            login={student.user.login}
                         />
                         )
                     )}

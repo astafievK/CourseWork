@@ -5,6 +5,19 @@
   src: url('./assets/fonts/poppins/Poppins-Regular.ttf');
 }
 
+@keyframes anim-flex-opacity {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+    transform: translateY(90%);
+  }
+}
+
 *::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -502,9 +515,9 @@ html {
               text-align: center;
               white-space: nowrap;
               padding: 10px 12px;
+              background: $theme-light-color-primary;
 
               &.group{
-                background: $theme-light-color-primary;
                 min-width: 140px;
                 position: sticky;
                 left: 0;
@@ -514,7 +527,6 @@ html {
                 display: flex;
                 justify-content: center;
                 position: sticky;
-                background: $theme-light-color-primary;
                 left: 0;
                 z-index: 1;
                 width: 45px;
@@ -526,7 +538,6 @@ html {
                 position: sticky;
                 display: flex;
                 flex-direction: row;
-                background: $theme-light-color-primary;
                 left: 45px;
                 z-index: 1;
                 text-align: left;
@@ -546,12 +557,51 @@ html {
                 }
               }
 
+              &.student {
+                padding: 0 12px;
+                min-width: 20rem;
+                position: sticky;
+                display: flex;
+                flex-direction: column;
+                left: 45px;
+                text-align: left;
+                flex-shrink: 1;
+                align-items: start;
+
+                .fullname{
+                  display: flex;
+                  flex: 1;
+
+                  .name {
+                    margin-left: 5px;
+                  }
+
+                  .surname {
+
+                  }
+
+                  .name-short{
+                    display: none;
+                    margin-left: 5px;
+                  }
+                }
+
+                .login{
+                  display: flex;
+                  align-items: center;
+                  flex: 1;
+
+                  span{
+                    opacity: 0.8;
+                  }
+                }
+              }
+
               &.labwork {
                 min-width: 20rem;
                 position: sticky;
                 display: flex;
                 flex-direction: column;
-                background: $theme-light-color-primary;
                 left: 0;
                 z-index: 1;
                 text-align: left;
@@ -561,6 +611,8 @@ html {
 
                 .type,
                 .title{
+                  display: flex;
+                  flex: 1;
                   text-align: start;
                 }
 
@@ -569,6 +621,8 @@ html {
                 }
 
                 .title{
+                  display: flex;
+                  flex: 1;
                   opacity: 0.8;
                 }
               }
@@ -694,46 +748,85 @@ html {
                 position: relative;
                 font-size: 21px;
 
-                .markBtn,
-                .mark{
-                  font-size: 26px;
-                  font-weight: 700;
+                .task-wrapper {
+                  position: relative;
                   height: 100%;
                   aspect-ratio: 1 / 1;
 
-                  &.passed{
-                    background: $theme-light-mark-passed;
-                  }
-                }
+                  .markBtn,
+                  .mark {
+                    font-size: 26px;
+                    font-weight: 700;
+                    height: 100%;
+                    width: 100%;
 
-                .markBtn{
-                  &.passed{
-                    background: $theme-light-mark-passed;
-
-                    &:hover{
-                      background: $theme-light-mark-hover;
+                    &.passed {
+                      background: $theme-light-mark-passed;
                     }
 
-                    &:active{
-                      background: $theme-light-mark-active;
+                    &:hover + .task-info{
+                      display: flex;
+                      animation: anim-flex-opacity 0.2s ease-in-out forwards;
                     }
                   }
-                }
 
-                .mark{
-                  cursor: default !important;
+                  .markBtn {
+                    &.passed {
+                      background: $theme-light-mark-passed;
 
-                  &:hover,
-                  &:active,
-                  &:focus{
-                    background: transparent;
+                      &:hover {
+                        background: $theme-light-mark-hover;
+                      }
+
+                      &:active {
+                        background: $theme-light-mark-active;
+                      }
+                    }
                   }
 
-                  &.passed{
+                  .mark {
+                    cursor: default !important;
+
                     &:hover,
                     &:active,
-                    &:focus{
-                      background: rgb(178,217,178);
+                    &:focus {
+                      background: transparent;
+                    }
+
+                    &.passed {
+                      &:hover,
+                      &:active,
+                      &:focus {
+                        background: rgb(178, 217, 178);
+                      }
+                    }
+                  }
+
+                  .task-info {
+                    display: none;
+                    position: absolute;
+                    max-width: 280px;
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    border-radius: 7px;
+                    z-index: 3;
+                    background: #292929;
+                    padding: 8px;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    .title,
+                    .description{
+                      text-align: start;
+                    }
+
+                    .title{
+                      font-size: 18px;
+                    }
+
+                    .description{
+                      font-size: 16px;
                     }
                   }
                 }
@@ -900,26 +993,7 @@ html {
           tbody {
             tr {
               td {
-                &.group{
-                  background: $theme-dark-color-primary;
-                }
-
-                &.number {
-                  background: $theme-dark-color-primary;
-                }
-
-                &.fullName {
-                  background: $theme-dark-color-primary;
-                }
-
-                &.labwork {
-                  background: $theme-dark-color-primary;
-                }
-
-                &.percentage,
-                &.total-mark{
-                  background: $theme-dark-color-primary;
-                }
+                background: $theme-dark-color-primary;
 
                 &.stats {
                   .markBtn,

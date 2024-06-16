@@ -26,13 +26,17 @@ const TableMarksStaff: React.FC<TableMarksStaffProps> = () => {
             <div className="table-wrapper">
                 <table id="table">
                     <tbody>
-                    {data.map((student, counter) => (
+                    {
+                        data.length === 0 ?
+                            (<tr><td className={"no-data"}>Нет данных</td></tr>) :
+                        data.map((student, counter) => (
                         <TableRowMarksStaff
                             counter={counter+1}
                             name={student.studentName}
                             surname={student.studentSurname}
                             completedTasks={student.completedTasks}
                             workTasks={student.workTasks}
+                            workTasksFull={student.workTasksFull}
                             idStudent={student.idStudent}
                             tasksCount={student.tasksCount}
                             totalMark={student.totalMark}

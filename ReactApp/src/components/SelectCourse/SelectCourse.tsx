@@ -26,6 +26,7 @@ const SelectCourse: React.FC<SelectCourseProps> = () => {
                     } as ICourse))
                 }}
             >
+                <option disabled>Курс</option>
                 {
                     data.length == 0 ? <option>Нет данных</option> :
                     data.map((course) => (

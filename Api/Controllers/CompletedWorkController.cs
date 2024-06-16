@@ -30,8 +30,8 @@ public sealed class CompletedWorkController(IMapper mapper) : BaseController
         completedWork.MarkId = work.WorkMarks
             .FirstOrDefault(e => e.TaskCount == completedWork.CompletedTasks.Count)
             ?.MarkId;
-
-        if (await context.CompletedWorks.FirstOrDefaultAsync(w => w.WorkId == completedWork.WorkId) is CompletedWork completedWorkUse)
+        
+        if (await context.CompletedWorks.FirstOrDefaultAsync(w => w.WorkId == completedWork.WorkId && w.StudentId == command.StudentId) is CompletedWork completedWorkUse)
         {
             completedWork.Id = completedWorkUse.Id;
         }
@@ -41,7 +41,7 @@ public sealed class CompletedWorkController(IMapper mapper) : BaseController
             await context.SaveChangesAsync();
         }
         
-        if (await context.CompletedWorkTasks.FirstOrDefaultAsync(w => w.TaskId == command.TaskId) is CompletedWorkTask completedWorkTaskUse)
+        if (await context.CompletedWorkTasks.FirstOrDefaultAsync(w => w.TaskId == command.TaskId && w.CompletedWorkId == completedWork.Id) is CompletedWorkTask completedWorkTaskUse)
         {
             context.Remove(completedWorkTaskUse);
             await context.SaveChangesAsync();
@@ -52,6 +52,7 @@ public sealed class CompletedWorkController(IMapper mapper) : BaseController
             {
                 CompletedWorkId = completedWork.Id,
                 TaskId = command.TaskId,
+                
             });
             await context.SaveChangesAsync();
         }

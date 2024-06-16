@@ -37,6 +37,8 @@ const TableRowMarksStudent: React.FC<TableRowMarksStudentProps> = (props) => {
                     <ButtonMarkStudent
                         isPassed={props.completedTasks.includes(props.workTasks[i])}
                         counter={i + 1}
+                        title={"Тестовый заголовок"}
+                        description={"Тестовое описание"}
                     />
                 ))}
             </td>

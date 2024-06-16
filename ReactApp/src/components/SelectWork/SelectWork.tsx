@@ -19,7 +19,6 @@ const SelectWork: React.FC<SelectWorkProps> = () => {
 
     const dispatch = useAppDispatch()
 
-
     return(
         <div className="filter work">
             <select
@@ -33,16 +32,17 @@ const SelectWork: React.FC<SelectWorkProps> = () => {
                     } as IWork))
                 }}
             >
+                <option disabled>Работа</option>
                 {
                     data.length == 0 ? <option>Нет данных</option> :
                         data.map((work) => (
-                        <option
-                            key={work.id}
-                            value={work.id}
-                        >
-                            {work.workType.name} ({work.name})
-                        </option>
-                    ))
+                            <option
+                                key={work.id}
+                                value={work.id}
+                            >
+                                {work.workType.name} ({work.name})
+                            </option>
+                        ))
                 }
             </select>
         </div>

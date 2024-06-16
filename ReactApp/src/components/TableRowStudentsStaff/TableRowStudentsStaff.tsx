@@ -7,6 +7,7 @@ interface TableRowStudentsStaffProps{
     name: string
     surname: string
     isRetired: boolean
+    login: string
 }
 
 const TableRowStudentsStaff: React.FC<TableRowStudentsStaffProps> = (props) => {
@@ -29,9 +30,14 @@ const TableRowStudentsStaff: React.FC<TableRowStudentsStaffProps> = (props) => {
             <td className="number">
                 <span>{props.counter}</span>
             </td>
-            <td className="fullName">
-                <span className="surname">{props.surname}</span>
-                <span className="name">{props.name}</span>
+            <td className="student">
+                <div className="fullname">
+                    <span className="surname">{props.surname}</span>
+                    <span className="name">{props.name}</span>
+                </div>
+                <div className="login">
+                    <span>{props.login}</span>
+                </div>
             </td>
             {
                 /*

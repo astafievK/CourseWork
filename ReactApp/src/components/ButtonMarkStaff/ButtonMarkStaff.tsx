@@ -7,6 +7,8 @@ interface ButtonMarkStaffProps {
     isPassed: boolean
     value: number
     idStudent: number
+    title: string
+    description: string
 }
 
 const ButtonMarkStaff: React.FC<ButtonMarkStaffProps> = (props) => {
@@ -21,20 +23,23 @@ const ButtonMarkStaff: React.FC<ButtonMarkStaffProps> = (props) => {
                 idWork: work.id,
                 idTask: Number(markBtnRef.current.value)
             })
-            console.log(Number(markBtnRef.current.getAttribute('data-student')))
-            console.log(work.id)
-            console.log(Number(markBtnRef.current.value))
             markBtnRef.current?.classList.toggle('passed')
         }
     }
 
     return (
-        <button
-            ref={markBtnRef}
-            className={"markBtn" + (props.isPassed ? " passed" : "")}
-            value={props.value}
-            data-student={props.idStudent}
-            onClick={setTaskHandle}>{props.counter}</button>
+        <div className={"task-wrapper"}>
+            <button
+                ref={markBtnRef}
+                className={"markBtn" + (props.isPassed ? " passed" : "")}
+                value={props.value}
+                data-student={props.idStudent}
+                onClick={setTaskHandle}>{props.counter}</button>
+            <div className="task-info">
+                <span className={"title"}>{props.title}</span>
+                <span className={"description"}>{props.description}</span>
+            </div>
+        </div>
     )
 }
 export default ButtonMarkStaff;

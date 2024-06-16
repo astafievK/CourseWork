@@ -26,16 +26,17 @@ const SelectGroup: React.FC<SelectGroupProps> = () => {
                     } as IGroup))
                 }}
             >
+                <option disabled>Группа</option>
                 {
                     data.length == 0 ? <option>Нет данных</option> :
-                    data.map((group) => (
-                        <option
-                            key={group.id}
-                            value={group.id}
-                        >
-                            {group.name}
-                        </option>
-                    ))
+                        data.map((group) => (
+                            <option
+                                key={group.id}
+                                value={group.id}
+                            >
+                                {group.name}
+                            </option>
+                        ))
                 }
             </select>
         </div>

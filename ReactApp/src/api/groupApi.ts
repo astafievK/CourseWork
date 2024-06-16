@@ -10,12 +10,6 @@ export const groupApi = baseApi.injectEndpoints({
             }),
             providesTags: ['Groups'],
         }),
-        getGroupInfo: builder.query<IGroup[], { idGroup: number }>({
-            query: query => ({
-                url: `Group/${query.idGroup}`,
-                method: "GET",
-            })
-        }),
         getGroupDisciplines: builder.query<IGroupDisciplines, { idGroup: number }>({
             query: query => ({
                 url: `Group/${query.idGroup}/disciplines`,
@@ -67,7 +61,6 @@ export const groupApi = baseApi.injectEndpoints({
 
 export const {
     useGetGroupsQuery,
-    useGetGroupInfoQuery,
     useGetGroupDisciplinesQuery,
     useSetGroupDisciplineMutation,
     useGetGroupStudentsQuery,

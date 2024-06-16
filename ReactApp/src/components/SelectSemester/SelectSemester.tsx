@@ -2,6 +2,7 @@ import { useGetSemestersQuery } from "../../api/semesterApi.ts";
 import {useAppDispatch, useTypedSelector} from "../../store/hooks/redux.ts";
 import {setSelectSemester} from "../../api/slices/selectSlice.ts";
 
+
 function SelectSemester() {
     const { data=[] } = useGetSemestersQuery();
     const dispatch = useAppDispatch()
@@ -21,16 +22,17 @@ function SelectSemester() {
                     } as ISemester))
                 }}
             >
+                <option disabled>Семестр</option>
                 {
                     data.length == 0 ? <option>Нет данных</option> :
-                    data.map((semester) => (
-                        <option
-                            key={semester.id}
-                            value={semester.id}
-                        >
-                            {semester.id} семестр
-                        </option>
-                    ))
+                        data.map((semester) => (
+                            <option
+                                key={semester.id}
+                                value={semester.id}
+                            >
+                                {semester.id} семестр
+                            </option>
+                        ))
                 }
             </select>
         </div>

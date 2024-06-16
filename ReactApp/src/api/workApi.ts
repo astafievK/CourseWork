@@ -5,20 +5,18 @@ export const workApi = baseApi.injectEndpoints({
         addWork: builder.mutation<number, {
             workTitle: string,
             workTypeId: number }>({
-            
+
             query: query => ({
-               url: `Work`,
-               method: "POST",
-               body: {
-                   name: query.workTitle,
-                   workTypeId: query.workTypeId,
-               },
+                url: `Work`,
+                method: "POST",
+                body: {
+                    name: query.workTitle,
+                    workTypeId: query.workTypeId,
+                },
             }),
             invalidatesTags: ['Works', 'Stats']
         }),
-        getWorkStatsStaff: builder.query<IStatisticStaff[], {
-            workId: number
-        }>({
+        getWorkStatsStaff: builder.query<IStatisticStaff[], { workId: number }>({
             query: query => ({
                 url: `Work/${query.workId}/stats`,
                 method: "GET",

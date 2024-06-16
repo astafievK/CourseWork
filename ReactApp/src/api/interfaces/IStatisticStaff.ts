@@ -3,6 +3,7 @@ interface IStatisticStaff {
     studentSurname: string
     completedTasks: number[]
     workTasks: number[]
+    workTasksFull: ITask[]
     idStudent: number
     idWork: number
     percentage: number

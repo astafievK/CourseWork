@@ -18,6 +18,7 @@ public class CompletedWorkAndMarks
     public string StudentSurname { get; set; }
     public int[] CompletedTasks { get; set; }
     public int[] WorkTasks { get; set; }
+    public TaskViewModel[] WorkTasksFull { get; set; }
     public int IdStudent { get; set; }
     public int IdWork { get; set; }
     public double Percentage { get; set; }
@@ -61,6 +62,7 @@ public sealed class WorkController(IMapper mapper) : BaseController
                     StudentSurname = student.User.Surname,
                     CompletedTasks = Array.Empty<int>(),
                     WorkTasks = work.Tasks.Select(e => e.Id).ToArray(),
+                    WorkTasksFull = work.Tasks.Select(x => new TaskViewModel {Id = x.Id, Title = x.Title, Description = x.Description}).ToArray(),
                     IdStudent = student.Id,
                     IdWork = idWork,
                     Percentage = 0,
@@ -130,6 +132,7 @@ public sealed class WorkController(IMapper mapper) : BaseController
                     StudentSurname = student.User.Surname,
                     CompletedTasks = completedWorkTasks.Select(e => e.TaskId).ToArray(),
                     WorkTasks = work.Tasks.Select(e => e.Id).ToArray(),
+                    WorkTasksFull = work.Tasks.Select(x => new TaskViewModel {Id = x.Id, Title = x.Title, Description = x.Description}).ToArray(),
                     IdStudent = student.Id,
                     IdWork = idWork,
                     Percentage = percentage,
